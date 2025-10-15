@@ -1,0 +1,15 @@
+{
+  "name": "abissnet-subscribers-portal",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server/server_subs.js",
+    "dev": "node --watch server/server_subs.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "git": "^0.1.5"
+  }
+}

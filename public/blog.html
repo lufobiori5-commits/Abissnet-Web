@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abissnet Blog - Teknologjia & Inovacioni</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <!-- <link rel="stylesheet" href="assets/css/style-light.css" /> -->
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="header-logo">
+          <a href="index.html"
+            ><img
+              src="/assets/img/abissnet-logo.png"
+              alt="Abissnet"
+              height="40"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <span
+              style="
+                display: none;
+                font-style: italic;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #fff;
+              "
+              >abissnet</span
+            ></a
+          >
+        </div>
+        <nav class="header-nav">
+          <a href="index.html">Internet</a>
+
+          <!-- DROPDOWN: Pse Abissnet? -->
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Abissnet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li>
+                <a class="dropdown-item" href="internet-ne-shtepi.html"
+                  >Internet per shtepine tuaj</a
+                >
+              </li>
+              <li class="divider" role="separator"></li>
+              <li>
+                <a class="dropdown-item" href="abissnet.html">Abissnet</a>
+              </li>
+              <li><a class="dropdown-item" href="stream.html">Streaming</a></li>
+              <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
+              <li>
+                <a class="dropdown-item" href="puno-nga-shtepia.html"
+                  >Puno nga Shtepia</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- /DROPDOWN -->
+
+          <a href="suport.html">Suport</a>
+          <a href="partner.html">Partnerët</a>
+          <a href="abonentet.html">Abonentët</a>
+          <a href="karriera.html">Karriera</a>
+          <a href="blog.html">Blog</a>
+        </nav>
+
+        <div class="header-actions">
+          <tr>
+            <button class="header-btn outline">
+              <a href="dyqanet.html">Harta e Mbulimit</a>
+            </button>
+          </tr>
+
+          <button class="header-btn outline">Paguaj Tani</button>
+          <button class="header-btn primary">
+            <a href="suport.html">Na Kontakto</a>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sub Navigation -->
+    <div class="subnav" role="navigation" aria-label="Shërbime">
+      <div class="subnav-inner">
+        <span class="pill">Individ</span>
+        <span class="pill">Biznes</span>
+      </div>
+    </div>
+
+    <!-- Blog Hero Section -->
+    <section class="blog-hero-section">
+      <div class="blog-hero-inner">
+        <h1 class="blog-hero-title">Abissnet Blog</h1>
+        <p class="blog-hero-subtitle">
+          Zbulo trendet më të fundit në teknologji, internet, dhe inovacione
+          dixhitale
+        </p>
+      </div>
+    </section>
+
+    <!-- Categories Filter -->
+    <div class="blog-categories">
+      <div class="blog-categories-inner">
+        <button class="category-btn active" data-category="all">
+          Të gjitha
+        </button>
+        <button class="category-btn" data-category="ai">
+          Inteligjenca Artificiale
+        </button>
+        <button class="category-btn" data-category="fiber">Fiber Optik</button>
+        <button class="category-btn" data-category="security">
+          Siguria Kibernetike
+        </button>
+        <button class="category-btn" data-category="5g">5G & IoT</button>
+        <button class="category-btn" data-category="tips">
+          Këshilla & Truke
+        </button>
+      </div>
+    </div>
+
+    <!-- Blog Container -->
+    <div class="blog-container">
+      <!-- Featured Post -->
+      <article class="blog-featured">
+        <img
+          src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800"
+          alt="AI Technology"
+          class="blog-featured-image"
+          loading="lazy"
+        />
+        <div class="blog-featured-content">
+          <span class="blog-featured-badge">E ZGJEDHUR</span>
+          <h2 class="blog-featured-title">
+            Si po Ndryshon Inteligjenca Artificiale Përdorimin e Internetit në
+            2025
+          </h2>
+          <div class="blog-featured-meta">
+            <span>📅 8 Tetor 2025</span>
+            <span>👤 Erion Krasniqi</span>
+            <span>⏱️ 5 min</span>
+          </div>
+          <p class="blog-featured-excerpt">
+            Inteligjenca Artificiale po revolucionarizon mënyrën se si ne
+            ndërveprojmë me internetin. Nga asistentët virtualë te personalizimi
+            i përmbajtjes, AI po bëhet pjesë integrale e jetës sonë dixhitale...
+          </p>
+          <button class="blog-read-btn">Lexo më shumë →</button>
+        </div>
+      </article>
+
+      <!-- Blog Grid -->
+      <div class="blog-grid">
+        <article class="blog-card" data-category="fiber">
+          <img
+            src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=600"
+            alt="Fiber Optic"
+            class="blog-card-image"
+            loading="lazy"
+          />
+          <div class="blog-card-content">
+            <span class="blog-card-tag">Fiber Optik</span>
+            <h3 class="blog-card-title">
+              10G Internet: Shpejtësia e së Ardhmes është Këtu
+            </h3>
+            <p class="blog-card-excerpt">
+              Zbulo si teknologjia 10G po transformon eksperiencën e internetit
+              dhe çfarë do të thotë kjo për ty...
+            </p>
+            <div class="blog-card-footer">
+              <span class="blog-card-date">7 Tetor 2025</span>
+              <span class="blog-card-arrow">→</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" data-category="security">
+          <img
+            src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600"
+            alt="Cybersecurity"
+            class="blog-card-image"
+            loading="lazy"
+          />
+          <div class="blog-card-content">
+            <span class="blog-card-tag">Siguria Kibernetike</span>
+            <h3 class="blog-card-title">
+              5 Hapa për të Mbrojtur Rrjetin Tuaj Shtëpiak
+            </h3>
+            <p class="blog-card-excerpt">
+              Siguria kibernetike fillon nga shtëpia. Mëso si të mbash të sigurt
+              të dhënat dhe pajisjet e tua...
+            </p>
+            <div class="blog-card-footer">
+              <span class="blog-card-date">6 Tetor 2025</span>
+              <span class="blog-card-arrow">→</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" data-category="ai">
+          <img
+            src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600"
+            alt="AI Assistant"
+            class="blog-card-image"
+            loading="lazy"
+          />
+          <div class="blog-card-content">
+            <span class="blog-card-tag">Inteligjenca Artificiale</span>
+            <h3 class="blog-card-title">
+              Asistentët Virtualë: Si po Ndryshojnë Shtëpitë Inteligjente
+            </h3>
+            <p class="blog-card-excerpt">
+              Nga kontrolli i zërit te automatizimi inteligjent, zbulo
+              potencialin e asistentëve virtualë...
+            </p>
+            <div class="blog-card-footer">
+              <span class="blog-card-date">5 Tetor 2025</span>
+              <span class="blog-card-arrow">→</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" data-category="5g">
+          <img
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600"
+            alt="5G Technology"
+            class="blog-card-image"
+            loading="lazy"
+          />
+          <div class="blog-card-content">
+            <span class="blog-card-tag">5G & IoT</span>
+            <h3 class="blog-card-title">
+              5G dhe IoT: Revolucioni i Paisjeve të Lidhura
+            </h3>
+            <p class="blog-card-excerpt">
+              Shiko se si 5G po mundëson një botë të paisjeve inteligjente dhe
+              të lidhura ndërmjet tyre...
+            </p>
+            <div class="blog-card-footer">
+              <span class="blog-card-date">4 Tetor 2025</span>
+              <span class="blog-card-arrow">→</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" data-category="tips">
+          <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600"
+            alt="WiFi Tips"
+            class="blog-card-image"
+            loading="lazy"
+          />
+          <div class="blog-card-content">
+            <span class="blog-card-tag">Këshilla & Truke</span>
+            <h3 class="blog-card-title">
+              Si të Optimizosh WiFi-n Tuaj për Gaming
+            </h3>
+            <p class="blog-card-excerpt">
+              Reduktimi i lag-ut dhe rritja e performancës për një eksperiencë
+              gaming perfekte...
+            </p>
+            <div class="blog-card-footer">
+              <span class="blog-card-date">3 Tetor 2025</span>
+              <span class="blog-card-arrow">→</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" data-category="fiber">
+          <img
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600"
+            alt="Smart City"
+            class="blog-card-image"
+            loading="lazy"
+          />
+          <div class="blog-card-content">
+            <span class="blog-card-tag">Fiber Optik</span>
+            <h3 class="blog-card-title">
+              Fiber Optik në Shqipëri: Ndryshimi që Po Vjen
+            </h3>
+            <p class="blog-card-excerpt">
+              Si infrastruktura e fiber optikut po transformon qytetet tona në
+              qytete inteligjente...
+            </p>
+            <div class="blog-card-footer">
+              <span class="blog-card-date">2 Tetor 2025</span>
+              <span class="blog-card-arrow">→</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" data-category="ai">
+          <img
+            src="https://images.unsplash.com/photo-1655720828018-edd2daec9349?w=600"
+            alt="AI Future"
+            class="blog-card-image"
+            loading="lazy"
+          />
+          <div class="blog-card-content">
+            <span class="blog-card-tag">Inteligjenca Artificiale</span>
+            <h3 class="blog-card-title">
+              Etika e AI: Çfarë Duhet të Dimë për të Ardhmen
+            </h3>
+            <p class="blog-card-excerpt">
+              Diskutim i rëndësishëm rreth implikimeve etike të inteligjencës
+              artificiale...
+            </p>
+            <div class="blog-card-footer">
+              <span class="blog-card-date">1 Tetor 2025</span>
+              <span class="blog-card-arrow">→</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" data-category="tips">
+          <img
+            src="https://images.unsplash.com/photo-1593642532400-2682810df593?w=600"
+            alt="Remote Work"
+            class="blog-card-image"
+            loading="lazy"
+          />
+          <div class="blog-card-content">
+            <span class="blog-card-tag">Këshilla & Truke</span>
+            <h3 class="blog-card-title">
+              Puna nga Shtëpia: Setup i Përkryer për Internet
+            </h3>
+            <p class="blog-card-excerpt">
+              Krijoni hapësirën ideale të punës me këshilla për lidhje të
+              qëndrueshme dhe produktive...
+            </p>
+            <div class="blog-card-footer">
+              <span class="blog-card-date">30 Shtator 2025</span>
+              <span class="blog-card-arrow">→</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card" data-category="security">
+          <img
+            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600"
+            alt="VPN Security"
+            class="blog-card-image"
+            loading="lazy"
+          />
+          <div class="blog-card-content">
+            <span class="blog-card-tag">Siguria Kibernetike</span>
+            <h3 class="blog-card-title">
+              VPN 101: Udhëzuesi Komplet për Fillestartë
+            </h3>
+            <p class="blog-card-excerpt">
+              Çfarë është një VPN, pse e keni nevojë, dhe si të zgjidhni më të
+              mirën për ju...
+            </p>
+            <div class="blog-card-footer">
+              <span class="blog-card-date">29 Shtator 2025</span>
+              <span class="blog-card-arrow">→</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Newsletter Section -->
+      <section class="blog-newsletter">
+        <div class="blog-newsletter-content">
+          <h2 class="blog-newsletter-title">📧 Abonohu në Newsletter</h2>
+          <p class="blog-newsletter-text">
+            Merr artikujt më të fundit dhe ofertat ekskluzive direkt në email!
+          </p>
+          <form class="blog-newsletter-form" id="blog-newsletter-form">
+            <input
+              type="email"
+              placeholder="Email-i juaj..."
+              required
+              aria-label="Email për newsletter"
+            />
+            <button type="submit">Abonohu</button>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col brand">
+          <div class="footer-logo">abissnet</div>
+          <ul>
+            <li><a href="#">Kompania</a></li>
+            <li><a href="#">Rreth Nesh</a></li>
+            <li><a href="#">Partnerët</a></li>
+            <li><a href="#">Karriera</a></li>
+
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Shërbime/Produkte</h3>
+          <ul>
+            <li><a href="#">Fiber në Shtëpi</a></li>
+            <li><a href="#">Korporata</a></li>
+            <li><a href="#">Televizioni</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Më të Populluara</h3>
+          <ul>
+            <li><a href="#">Internet i Shpejtë</a></li>
+            <li><a href="#">Ofertat e Verës</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Shkruaj email-in tuaj" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="footer-social">
+            <a
+              href="https://facebook.com/abissnet"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://instagram.com/abissnet"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="https://youtube.com/@abissnet"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Partner logos row -->
+      <div class="footer-partners" aria-label="Partner logos">
+        <ul class="partner-logos" role="list">
+          <li>
+            <img
+              src="/assets/img/partners/logo-1.svg"
+              alt="Logo Partner 1"
+              loading="lazy"
+              decoding="async"
+            />
+          </li>
+          <li>
+            <img
+              src="/assets/img/partners/logo-2.svg"
+              alt="Logo Partner 2"
+              loading="lazy"
+              decoding="async"
+            />
+          </li>
+          <li>
+            <img
+              src="/assets/img/partners/logo-3.svg"
+              alt="Logo Partner 3"
+              loading="lazy"
+              decoding="async"
+            />
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        © 2025 Abissnet. Të gjitha të drejtat e rezervuara.
+      </div>
+    </footer>
+
+    <script src="assets/js/toast.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/blog.js"></script>
+  </body>
+</html>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Menaxho shërbimet, faturat dhe suportin e Abissnet në një vend. Zona e abonentëve Abissnet."
+    />
+    <title>Zona e Abonentëve - Abissnet</title>
+
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <!-- <link rel="stylesheet" href="assets/css/style-light.css" /> -->
+    <link rel="stylesheet" href="assets/css/abonentet.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="header-logo">
+          <a href="index.html"
+            ><img
+              src="/assets/img/abissnet-logo.png"
+              alt="Abissnet"
+              height="40"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <span
+              style="
+                display: none;
+                font-style: italic;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #fff;
+              "
+              >abissnet</span
+            ></a
+          >
+        </div>
+        <nav class="header-nav">
+          <a href="index.html">Internet</a>
+
+          <!-- DROPDOWN: Pse Abissnet? -->
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Abissnet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li>
+                <a class="dropdown-item" href="internet-ne-shtepi.html"
+                  >Internet per shtepine tuaj</a
+                >
+              </li>
+              <li class="divider" role="separator"></li>
+              <li>
+                <a class="dropdown-item" href="abissnet.html">Abissnet</a>
+              </li>
+              <li><a class="dropdown-item" href="stream.html">Streaming</a></li>
+              <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
+              <li>
+                <a class="dropdown-item" href="puno-nga-shtepia.html"
+                  >Puno nga Shtepia</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- /DROPDOWN -->
+
+          <a href="suport.html">Suport</a>
+          <a href="partner.html">Partnerët</a>
+          <a href="abonentet.html">Abonentët</a>
+          <a href="karriera.html">Karriera</a>
+          <a href="blog.html">Blog</a>
+        </nav>
+
+        <div class="header-actions">
+          <tr>
+            <button class="header-btn outline">
+              <a href="dyqanet.html">Harta e Mbulimit</a>
+            </button>
+          </tr>
+
+          <button class="header-btn outline">Paguaj Tani</button>
+          <button class="header-btn primary">
+            <a href="suport.html">Na Kontakto</a>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sub Navigation -->
+    <div class="subnav" role="navigation" aria-label="Shërbime">
+      <div class="subnav-inner">
+        <span class="pill">Individ</span>
+        <span class="pill">Biznes</span>
+      </div>
+    </div>
+
+    <main id="main-content">
+      <!-- Hero Section -->
+      <section class="subs-hero">
+        <div class="subs-hero-inner">
+          <h1>Zona e Abonentëve</h1>
+          <p>Menaxho shërbimet, faturat dhe suportin në një vend.</p>
+          <div class="subs-cta">
+            <button
+              class="btn primary"
+              id="btnLogin"
+              aria-label="Hyr në llogari ose regjistrohu"
+            >
+              Hyr / Regjistrohu
+            </button>
+            <button
+              class="btn ghost"
+              id="btnPay"
+              aria-label="Paguaj faturën pa u identifikuar"
+            >
+              Paguaj Faturën
+            </button>
+          </div>
+          <p
+            id="loginInfo"
+            class="muted login-info"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </div>
+      </section>
+
+      <!-- Service Overview -->
+      <section class="subs-overview" aria-labelledby="overview-title">
+        <h2 id="overview-title" class="sr-only">Përmbledhje e shërbimeve</h2>
+        <div class="grid3">
+          <!-- Service Status Card -->
+          <article class="card">
+            <div class="card-h">
+              <h3>Gjendja e Shërbimit</h3>
+              <span id="serviceStatus" class="badge" role="status"
+                >Jo i identifikuar</span
+              >
+            </div>
+            <p id="serviceNote" class="muted">Hyni për të parë statusin.</p>
+            <div class="row">
+              <button
+                class="btn"
+                id="btnLineTest"
+                disabled
+                aria-label="Testo linjën e internetit"
+              >
+                Testo Linjën
+              </button>
+              <button
+                class="btn ghost"
+                id="btnRestartCPE"
+                disabled
+                aria-label="Rindizo modemin"
+              >
+                Rindizo Modemin
+              </button>
+            </div>
+          </article>
+
+          <!-- Billing Card -->
+          <article class="card">
+            <div class="card-h">
+              <h3>Faturimi</h3>
+              <span
+                class="muted"
+                id="billingCycle"
+                aria-label="Cikli i faturimit"
+                >—</span
+              >
+            </div>
+            <ul class="list">
+              <li>
+                <span>Fatura e fundit</span>
+                <strong id="lastInvoice" aria-label="Shuma e faturës së fundit"
+                  >—</strong
+                >
+              </li>
+              <li>
+                <span>Skadenca</span>
+                <strong id="dueDate" aria-label="Data e skadencës">—</strong>
+              </li>
+              <li>
+                <span>Balanca</span>
+                <strong id="balance" aria-label="Balanca aktuale">—</strong>
+              </li>
+            </ul>
+            <div class="row">
+              <button
+                class="btn"
+                id="btnPayNow"
+                disabled
+                aria-label="Paguaj faturën tani"
+              >
+                Paguaj Tani
+              </button>
+              <button
+                class="btn ghost"
+                id="btnInvoices"
+                disabled
+                aria-label="Shiko të gjitha faturat"
+              >
+                Shiko Faturat
+              </button>
+            </div>
+          </article>
+
+          <!-- Active Plan Card -->
+          <article class="card">
+            <div class="card-h">
+              <h3>Plani Aktiv</h3>
+              <span id="planTag" class="tag" role="status">—</span>
+            </div>
+            <p class="muted" id="planDesc">—</p>
+            <div class="row">
+              <button
+                class="btn"
+                id="btnUpgrade"
+                disabled
+                aria-label="Rrit shpejtësinë e internetit"
+              >
+                Rrit Shpejtësinë
+              </button>
+              <button
+                class="btn ghost"
+                id="btnAddTV"
+                disabled
+                aria-label="Shto shërbimin e televizionit"
+              >
+                Shto TV
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Tools Section -->
+      <section class="subs-tools" aria-labelledby="tools-title">
+        <h2 id="tools-title" class="sr-only">Mjetet dhe suporti</h2>
+        <div class="grid2">
+          <!-- Speed Test Card -->
+          <article class="card">
+            <div class="card-h">
+              <h3>Shpejtësia e Internetit</h3>
+              <span class="muted">Mates i thjeshtë (down/up)</span>
+            </div>
+            <div class="speed-wrap">
+              <div class="speed-number">
+                <span id="downMbps" aria-label="Shpejtësia e shkarkimit"
+                  >—</span
+                >
+                <small>Mbps Down</small>
+              </div>
+              <div class="speed-number">
+                <span id="upMbps" aria-label="Shpejtësia e ngarkimit">—</span>
+                <small>Mbps Up</small>
+              </div>
+            </div>
+            <button
+              class="btn"
+              id="btnSpeedTest"
+              disabled
+              aria-label="Fillo testin e shpejtësisë"
+            >
+              Start Test
+            </button>
+          </article>
+
+          <!-- Support & Tickets Card -->
+          <article class="card">
+            <div class="card-h">
+              <h3>Support & Ticket</h3>
+              <span class="muted">Raporto problem ose ndiq ticket-in</span>
+            </div>
+            <form
+              id="ticketForm"
+              class="form-grid"
+              aria-labelledby="ticket-form-title"
+            >
+              <h4 id="ticket-form-title" class="sr-only">
+                Formulari i ticket-it të suportit
+              </h4>
+
+              <label for="ticketSubject" class="sr-only"
+                >Subjekti i ticket-it</label
+              >
+              <input
+                id="ticketSubject"
+                name="subject"
+                placeholder="Subjekti*"
+                required
+                disabled
+                aria-required="true"
+                aria-describedby="ticketStatus"
+              />
+
+              <label for="ticketCategory" class="sr-only"
+                >Kategoria e problemit</label
+              >
+              <select
+                id="ticketCategory"
+                name="category"
+                required
+                disabled
+                aria-required="true"
+              >
+                <option value="">Kategoria*</option>
+                <option value="internet">Internet</option>
+                <option value="tv">TV</option>
+                <option value="billing">Faturim</option>
+                <option value="other">Tjetër</option>
+              </select>
+
+              <label for="ticketMessage" class="sr-only"
+                >Përshkrimi i problemit</label
+              >
+              <textarea
+                id="ticketMessage"
+                name="message"
+                rows="4"
+                placeholder="Përshkruaj problemin*"
+                required
+                disabled
+                aria-required="true"
+              ></textarea>
+
+              <div class="row">
+                <button
+                  class="btn"
+                  type="submit"
+                  disabled
+                  aria-label="Hap një ticket të ri"
+                >
+                  Hap Ticket
+                </button>
+                <button
+                  class="btn ghost"
+                  type="button"
+                  id="btnMyTickets"
+                  disabled
+                  aria-label="Shiko të gjitha ticket-et e mia"
+                >
+                  Ticket-et e mia
+                </button>
+              </div>
+              <p
+                id="ticketStatus"
+                class="status"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+              ></p>
+            </form>
+          </article>
+        </div>
+      </section>
+
+      <!-- Devices Section -->
+      <section class="subs-devices" aria-labelledby="devices-title">
+        <div class="card">
+          <div class="card-h">
+            <h2 id="devices-title">Pajisjet & Wi-Fi</h2>
+            <span class="muted">Modem/ONT, SSID, MAC, IP publike</span>
+          </div>
+          <div class="devices-grid" id="devicesGrid" role="list"></div>
+          <div class="row">
+            <button
+              class="btn"
+              id="btnChangeWifi"
+              disabled
+              aria-label="Ndrysho fjalëkalimin e Wi-Fi"
+            >
+              Ndrysho Wi-Fi
+            </button>
+            <button
+              class="btn ghost"
+              id="btnPublicIP"
+              disabled
+              aria-label="Shiko adresën IP publike"
+            >
+              Shiko IP Publike
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Downloads Section -->
+      <section class="subs-downloads" aria-labelledby="downloads-title">
+        <h2 id="downloads-title" class="sr-only">Shkarkime dhe resurse</h2>
+        <div class="grid3">
+          <a
+            class="dl-card"
+            href="#"
+            onclick="alert('Së shpejti!'); return false;"
+            aria-label="Shkarko aplikacionin Abissnet për Android dhe iOS"
+          >
+            <div
+              class="dl-ic"
+              role="img"
+              aria-label="Ikona e aplikacionit mobil"
+            >
+              📱
+            </div>
+            <div>
+              <h3>Aplikacioni Abissnet</h3>
+              <p class="muted">Menaxho llogarinë nga telefoni.</p>
+            </div>
+          </a>
+          <a
+            class="dl-card"
+            href="#"
+            onclick="alert('Së shpejti!'); return false;"
+            aria-label="Shkarko aplikacionin Abissnet TV"
+          >
+            <div class="dl-ic" role="img" aria-label="Ikona e televizionit">
+              📺
+            </div>
+            <div>
+              <h3>Abissnet TV</h3>
+              <p class="muted">Shiko TV në Smart TV/Android.</p>
+            </div>
+          </a>
+          <a
+            class="dl-card"
+            href="#"
+            onclick="alert('Së shpejti!'); return false;"
+            aria-label="Shiko udhëzuesit dhe manualet"
+          >
+            <div class="dl-ic" role="img" aria-label="Ikona e mjeteve">🧰</div>
+            <div>
+              <h3>Udhëzues & Manuale</h3>
+              <p class="muted">Konfigurime modem, FAQ, etj.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="subs-faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Pyetje të shpeshta</h2>
+        <div class="faq" id="faq">
+          <details>
+            <summary>Si paguaj faturën online?</summary>
+            <div>
+              Përdor "Paguaj Tani" ose Portalin e Abonentëve. Mund të përdorësh
+              kartë/debit ose bankë.
+            </div>
+          </details>
+          <details>
+            <summary>Nuk kam internet. Çfarë bëj?</summary>
+            <div>
+              Rindizo modemin, kontrollo kabllot, test me kabëll. Nëse
+              s'kthehet, hap ticket.
+            </div>
+          </details>
+          <details>
+            <summary>Si rris shpejtësinë?</summary>
+            <div>Zgjidh "Rrit Shpejtësinë" dhe zgjidh planin.</div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col brand">
+          <div class="footer-logo">Abissnet</div>
+          <ul>
+            <li><a href="index.html">Kompania</a></li>
+            <li><a href="index.html#about">Rreth Nesh</a></li>
+            <li><a href="partner.html">Partnerët</a></li>
+            <li><a href="karriera.html">Karriera</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Shërbime/Produkte</h3>
+          <ul>
+            <li><a href="index.html">Fiber në Shtëpi</a></li>
+            <li><a href="#">Korporata</a></li>
+            <li><a href="#">Televizioni</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Më të Populluara</h3>
+          <ul>
+            <li><a href="index.html">Internet i Shpejtë</a></li>
+            <li><a href="#">Ofertat e Verës</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form" aria-label="Regjistrohu për newsletter">
+            <label for="newsletter-email" class="sr-only">Email adresa</label>
+            <input
+              id="newsletter-email"
+              type="email"
+              placeholder="Shkruaj email-in tuaj"
+              required
+              aria-required="true"
+            />
+            <button type="submit" aria-label="Regjistrohu">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2025 Abissnet. Të gjitha të drejtat e rezervuara.
+      </div>
+    </footer>
+
+    <script>
+      // API configuration - auto-detects environment
+      window.API_BASE =
+        window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1"
+          ? "http://localhost:4000"
+          : "";
+    </script>
+
+    <script src="assets/js/toast.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/abonentet.js"></script>
+  </body>
+</html>
