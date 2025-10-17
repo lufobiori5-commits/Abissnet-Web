@@ -2,17 +2,13 @@
 deployment:
   tasks:
     - set -euxo pipefail
-    - export SRC="$PWD/public"
+    - export SRC="$PWD"                 # <— root of repo
     - export DEPLOY_PATH="/home/abissneti/public_html"
     - /bin/mkdir -p "$DEPLOY_PATH"
-    - date
-
-    # Prefer rsync if available (either /usr/bin or /bin)
     - |
       if command -v rsync >/dev/null 2>&1; then
-        RSYNC_BIN="$(command -v rsync)"
-        "$RSYNC_BIN" -a --delete --info=stats2 \
-          --exclude=".git" --exclude="node_modules" --exclude=".env" \
+        "$(command -v rsync)" -a --delete --info=stats2 \
+          --exclude="/.git" --exclude="/node_modules" --exclude="/.env" \
           "$SRC"/ "$DEPLOY_PATH"/
       else
         echo "rsync not found; using cp fallback"
@@ -21,6 +17,4 @@ deployment:
         for p in "$DEPLOY_PATH"/!(.well-known); do rm -rf "$p"; done
         cp -a "$SRC"/. "$DEPLOY_PATH"/
       fi
-
     - '[ -f "$DEPLOY_PATH/.htaccess" ] || printf "%s\n" "Options -Indexes" > "$DEPLOY_PATH/.htaccess"'
-    - date
