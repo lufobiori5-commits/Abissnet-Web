@@ -3,34 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <!-- Favicon -->
     <link
       rel="shortcut icon"
-      href="assets/img/favicon.png"
+      href="../assets/img/favicon.png"
       type="image/x-icon"
     />
-    <title>Abissnet - Dyqanet & Pikat e Shërbimit</title>
-    <meta
-      name="description"
-      content="Gjej dyqanin më të afërt Abissnet për shërbim dhe pagesë fature në të gjithë Shqipërinë."
-    />
-
-    <!-- Stilet kryesore të sajtit -->
-    <link rel="stylesheet" href="assets/css/style-light.css" />
-
-    <!-- Leaflet CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
-    />
+    <title>Abissnet - Shpejtësia që nuk njeh limite</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
     <!-- Header -->
@@ -39,7 +19,7 @@
         <div class="header-logo">
           <a href="index.html">
             <img
-              src="/assets/img/abissnet-logo-dark.png"
+              src="../assets/img/abissnet-logo.png"
               alt="Abissnet"
               height="40"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
@@ -167,123 +147,124 @@
       </div>
     </header>
 
-    <!-- SUBNAV -->
-    <div class="subnav" role="navigation" aria-label="Filtro sipas qytetit">
+    <!-- Sub Navigation -->
+    <div class="subnav" role="navigation" aria-label="Shërbime">
       <div class="subnav-inner">
-        <span class="pill active">Të gjitha</span>
-        <span class="pill">Tiranë</span>
-        <span class="pill">Durrës</span>
-        <span class="pill">Shkodër</span>
-
-        <span class="pill">Elbasan</span>
-        <span class="pill">Fier</span>
-        <span class="pill">Korçë</span>
+        <a href="../index.html" class="pill">Individ</a>
+        <a href="index.html" class="pill active">Biznes</a>
       </div>
     </div>
 
-    <!-- ================ HERO ================== -->
-    <section class="hero-section">
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
       <div class="hero-inner">
         <div class="hero-left">
-          <h1 class="hero-title hero-title-stores">
-            Dyqanet & Pikat e Shërbimit Abissnet
-          </h1>
-          <p class="hero-subtitle">
-            Gjej pikën më të afërt për shërbim apo pagesë fature.
-          </p>
+          <h1 class="hero-title">Shpejtësia<br />që nuk njeh limite...</h1>
+          <div class="hero-speed">10G</div>
         </div>
         <div class="hero-right">
           <img
+            src="../assets/img/robot.png"
+            alt="AI Robot with Headphones"
             class="hero-img"
-            src="/assets/img/shops.png"
-            alt="Dyqanet Abissnet"
-            onerror="this.style.display='none'"
           />
         </div>
       </div>
     </section>
-
-    <!-- ============== MAP SECTION ============== -->
-    <main class="stores-section stores-map-only">
-      <div class="stores-map-wrap">
-        <!-- Search & Filter Overlay -->
-        <div class="stores-overlay">
-          <input
-            id="storeSearch"
-            class="search"
-            type="search"
-            placeholder="Kërko qytet/adresë..."
-            aria-label="Kërko dyqane"
-          />
-          <select
-            id="cityFilter"
-            class="select"
-            aria-label="Filtro sipas qytetit"
-          >
-            <option value="">Të gjitha qytetet</option>
-            <option>Tiranë</option>
-            <option>Durrës</option>
-            <option>Shkodër</option>
-
-            <option>Elbasan</option>
-            <option>Fier</option>
-            <option>Korçë</option>
-          </select>
+    <!-- Packages Section -->
+    <section class="packages-section" id="paketat">
+      <h2 class="packages-title">Zgjidh një nga paketat e internetit!</h2>
+      <div class="package-grid">
+        <div class="package-card">
+          <div class="package-speed">300</div>
+          <div class="package-label">mbps</div>
         </div>
-
-        <!-- Map Container -->
-        <div id="stores-map" aria-label="Harta e dyqaneve Abissnet"></div>
+        <div class="package-card">
+          <div class="package-speed">600</div>
+          <div class="package-label">mbps</div>
+        </div>
+        <div class="package-card">
+          <div class="package-speed">1000</div>
+          <div class="package-label">mbps</div>
+        </div>
+        <div class="package-card">
+          <div class="package-speed">2500</div>
+          <div class="package-label">mbps</div>
+        </div>
+        <div class="package-card special">
+          <div class="package-speed">10G</div>
+        </div>
       </div>
-    </main>
+    </section>
+    <!-- Offer Banner Carousel -->
+    <div class="offer-banner-carousel">
+      <div class="offer-banner active">
+        Shijo Halloween me Ofertat e Abissnet
+      </div>
+      <div class="offer-banner">
+        Instalim Falas për të gjitha paketat mbi 600 mbps!
+      </div>
+      <div class="offer-banner">Muaji i parë vetëm 1€ - Ofertë e kufizuar!</div>
+      <div class="offer-banner">
+        Fito 3 muaj WiFi falas me çdo abonament vjetor!
+      </div>
+    </div>
 
-    <!-- ============== CONTACT SECTION ============== -->
-    <section class="contact-section" id="kontakto">
-      <div class="contact-container">
-        <div class="contact-header">
-          <h2 class="contact-title">Na Kontakto</h2>
-          <p class="contact-subtitle">
-            Për çdo pyetje ose kërkesë, na shkruaj!
-          </p>
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <img src="../assets/img/feature-eksperienca.png" alt="Eksperienca" />
         </div>
-        <form class="contact-form" id="contact-form-stores">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="emri">Emri & Mbiemri *</label>
-              <input
-                id="emri"
-                name="emri"
-                type="text"
-                placeholder="p.sh. Arlind Hoxha"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="telefoni">Telefoni *</label>
-              <input
-                id="telefoni"
-                name="telefoni"
-                type="tel"
-                placeholder="+355 69 123 4567"
-                required
-              />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="mesazhi">Mesazhi *</label>
-            <textarea
-              id="mesazhi"
-              name="mesazhi"
-              placeholder="Shkruani mesazhin tuaj këtu..."
-              rows="5"
-              required
-            ></textarea>
-          </div>
-          <button class="form-submit-btn" type="submit">Dërgo Mesazhin</button>
-        </form>
+        <h3 class="feature-title">Eksperienca</h3>
+        <p class="feature-desc">
+          E themeluar në vitin 2008, Abissnet është shoqëria e parë me fibër
+          optike që të gjithë shqiptarët e njohin me të mirë.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <img src="../assets/img/feature-shpejte.png" alt="I shpejtë" />
+        </div>
+        <h3 class="feature-title">I shpejtë</h3>
+        <p class="feature-desc">
+          Ofrojmë më shumë se të tjerat internet më të shpejta. Shpejtësi të
+          cilësisë së lartë për të tërë familjen.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <img src="../assets/img/feature-fiber.png" alt="Fiber Optike" />
+        </div>
+        <h3 class="feature-title">Fiber Optike</h3>
+        <p class="feature-desc">
+          Rrjet më i mirë dhe më i madh në fibër optike. Internet i shpejtë,
+          qëndrueshëm dhe i besueshëm me fibër Optike FTTH.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <img src="../assets/img/feature-support.png" alt="Suport 24/7" />
+        </div>
+        <h3 class="feature-title">Suport 24/7</h3>
+        <p class="feature-desc">
+          Abissnet është e gatshme për ndihmën tuaj 24 orë në ditë, 7 ditë në
+          javë. Jemi të përkushtuar për të qenë në dispozicion gjithmonë.
+        </p>
       </div>
     </section>
 
-    <!-- ============== FOOTER ============== -->
+    <!-- CTA Button (Separate from features) -->
+    <div class="features-cta">
+      <a href="tel:+35542000000" class="hero-cta-btn">
+        <span class="cta-arrows">>>></span> Telefono Tani
+      </a>
+    </div>
+
+    <!-- Footer -->
     <footer class="footer">
       <div class="footer-inner">
         <div class="footer-col brand">
@@ -376,13 +357,8 @@
       </div>
     </footer>
 
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-
-    <!-- Global Scripts -->
-    <script src="/assets/js/script.js"></script>
-    <script src="/assets/js/stores.js"></script>
+    <script src="../assets/js/toast.js"></script>
+    <script src="../assets/js/script.js"></script>
     <!-- Back to Top Button -->
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">
       <svg

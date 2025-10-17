@@ -15,197 +15,7 @@ function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-// ========== THEME SWITCHER ==========
-const THEME_KEY = "abissnet-theme";
-const THEMES = {
-  DARK: "dark",
-  LIGHT: "light",
-};
-
-function getStoredTheme() {
-  return localStorage.getItem(THEME_KEY) || THEMES.DARK;
-}
-
-function setStoredTheme(theme) {
-  localStorage.setItem(THEME_KEY, theme);
-}
-
-function getCurrentTheme() {
-  const styleLink = document.querySelector('link[href*="style"]');
-  if (!styleLink) return THEMES.DARK;
-  return styleLink.href.includes("style-light.css")
-    ? THEMES.LIGHT
-    : THEMES.DARK;
-}
-
-function applyTheme(theme) {
-  const head = document.head;
-  const existingLink = document.querySelector('link[href*="style"]');
-
-  if (!existingLink) {
-    console.error("No stylesheet link found!");
-    return;
-  }
-
-  const newHref =
-    theme === THEMES.LIGHT
-      ? existingLink.href.replace("style.css", "style-light.css")
-      : existingLink.href.replace("style-light.css", "style.css");
-
-  existingLink.href = newHref;
-  setStoredTheme(theme);
-
-  // Update theme toggle button icon if it exists
-  updateThemeToggleIcon(theme);
-
-  showToast(
-    theme === THEMES.LIGHT
-      ? "🌞 Tema e ndriçuar u aktivizua!"
-      : "🌙 Tema e errët u aktivizua!",
-    "info",
-    2000
-  );
-}
-
-function toggleTheme() {
-  const currentTheme = getCurrentTheme();
-  const newTheme = currentTheme === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK;
-  applyTheme(newTheme);
-}
-
-function updateThemeToggleIcon(theme) {
-  const themeBtn = document.getElementById("theme-toggle-btn");
-  if (!themeBtn) return;
-
-  const icon = themeBtn.querySelector(".theme-icon");
-  if (icon) {
-    icon.textContent = theme === THEMES.LIGHT ? "🌙" : "🌞";
-  }
-
-  themeBtn.setAttribute(
-    "aria-label",
-    theme === THEMES.LIGHT
-      ? "Aktivizo temën e errët"
-      : "Aktivizo temën e ndriçuar"
-  );
-}
-
-function initTheme() {
-  const storedTheme = getStoredTheme();
-
-  // Apply stored theme on page load
-  if (storedTheme === THEMES.LIGHT) {
-    applyTheme(THEMES.LIGHT);
-  }
-
-  // Create theme toggle button if it doesn't exist
-  createThemeToggleButton();
-
-  // Listen for theme toggle button clicks
-  const themeBtn = document.getElementById("theme-toggle-btn");
-  if (themeBtn) {
-    themeBtn.addEventListener("click", toggleTheme);
-  }
-}
-
-function createThemeToggleButton() {
-  // Check if button already exists
-  if (document.getElementById("theme-toggle-btn")) return;
-
-  const themeBtn = document.createElement("button");
-  themeBtn.id = "theme-toggle-btn";
-  themeBtn.className = "theme-toggle-btn";
-  themeBtn.setAttribute("aria-label", "Ndrysho temën");
-  themeBtn.innerHTML = `
-    <span class="theme-icon">${
-      getCurrentTheme() === THEMES.LIGHT ? "🌙" : "🌞"
-    }</span>
-  `;
-
-  // Add to header actions or create floating button
-  const headerActions = document.querySelector(".header-actions");
-  if (headerActions) {
-    headerActions.insertBefore(themeBtn, headerActions.firstChild);
-  } else {
-    // Create floating button if no header actions
-    themeBtn.classList.add("theme-toggle-floating");
-    document.body.appendChild(themeBtn);
-  }
-
-  // Add styles dynamically
-  addThemeToggleStyles();
-}
-
-function addThemeToggleStyles() {
-  if (document.getElementById("theme-toggle-styles")) return;
-
-  const style = document.createElement("style");
-  style.id = "theme-toggle-styles";
-  style.textContent = `
-    .theme-toggle-btn {
-      background: transparent;
-      border: 2px solid currentColor;
-      border-radius: 50%;
-      width: 42px;
-      height: 42px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 1.2rem;
-      color: inherit;
-    }
-    
-    .theme-toggle-btn:hover {
-      transform: scale(1.1) rotate(15deg);
-      background: rgba(255, 255, 255, 0.1);
-    }
-    
-    .theme-toggle-btn:active {
-      transform: scale(0.95);
-    }
-    
-    .theme-toggle-floating {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 9999;
-      background: linear-gradient(135deg, #F68732, #FF9D5C);
-      color: white;
-      border-color: white;
-      box-shadow: 0 4px 15px rgba(246, 135, 50, 0.4);
-    }
-    
-    .theme-toggle-floating:hover {
-      box-shadow: 0 6px 25px rgba(246, 135, 50, 0.6);
-      background: linear-gradient(135deg, #FF9D5C, #F68732);
-    }
-    
-    .theme-icon {
-      display: inline-block;
-      transition: transform 0.3s ease;
-    }
-    
-    .theme-toggle-btn:hover .theme-icon {
-      transform: rotate(180deg);
-    }
-    
-    @media (max-width: 600px) {
-      .theme-toggle-floating {
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        font-size: 1.4rem;
-      }
-    }
-  `;
-
-  document.head.appendChild(style);
-}
-
-// ========== TOAST NOTIFICATION SYSTEM (Updated) ==========
+// ========== TOAST NOTIFICATION SYSTEM ==========
 function showToast(message, type = "success", duration = 3000) {
   const existingToast = document.querySelector(".toast");
   if (existingToast) existingToast.remove();
@@ -380,11 +190,6 @@ if (contactForm) {
       // Reset button
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;
-
-      // Optional: Redirect after 2 seconds
-      // setTimeout(() => {
-      //   window.location.href = "index.html";
-      // }, 2000);
     }, 1500);
   });
 
@@ -422,75 +227,91 @@ window.addEventListener(
   }, 10)
 );
 
-// ========== MOBILE MENU TOGGLE ==========
-const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
-const headerNav = document.querySelector(".header-nav");
+// ========== HAMBURGER MENU FUNCTIONALITY ==========
+function initHamburgerMenu() {
+  const hamburger = document.getElementById("hamburger-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-if (mobileMenuBtn && headerNav) {
-  mobileMenuBtn.addEventListener("click", () => {
-    headerNav.classList.toggle("active");
-    mobileMenuBtn.classList.toggle("active");
-    document.body.classList.toggle("menu-open");
-  });
+  if (!hamburger || !mobileMenu) return;
 
-  document.addEventListener("click", (e) => {
-    if (!headerNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-      headerNav.classList.remove("active");
-      mobileMenuBtn.classList.remove("active");
-      document.body.classList.remove("menu-open");
+  // Toggle menu
+  hamburger.addEventListener("click", function () {
+    const isActive = this.classList.contains("active");
+
+    if (isActive) {
+      closeMenu();
+    } else {
+      openMenu();
     }
   });
 
-  headerNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      headerNav.classList.remove("active");
-      mobileMenuBtn.classList.remove("active");
-      document.body.classList.remove("menu-open");
+  function openMenu() {
+    hamburger.classList.add("active");
+    mobileMenu.classList.add("active");
+    document.body.classList.add("menu-open");
+    hamburger.setAttribute("aria-expanded", "true");
+  }
+
+  function closeMenu() {
+    hamburger.classList.remove("active");
+    mobileMenu.classList.remove("active");
+    document.body.classList.remove("menu-open");
+    hamburger.setAttribute("aria-expanded", "false");
+  }
+
+  // Close menu when clicking outside
+  mobileMenu.addEventListener("click", function (e) {
+    if (e.target === mobileMenu) {
+      closeMenu();
+    }
+  });
+
+  // Close menu on escape key
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && mobileMenu.classList.contains("active")) {
+      closeMenu();
+    }
+  });
+
+  // Close menu when clicking on a link
+  const mobileLinks = mobileMenu.querySelectorAll("a");
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  // Mobile dropdown toggle
+  const mobileDropdowns = document.querySelectorAll("[data-mobile-dropdown]");
+  mobileDropdowns.forEach((toggle) => {
+    toggle.addEventListener("click", function () {
+      const isActive = this.classList.contains("active");
+      const content = this.nextElementSibling;
+
+      // Close all other dropdowns
+      mobileDropdowns.forEach((t) => {
+        if (t !== this) {
+          t.classList.remove("active");
+          t.nextElementSibling.classList.remove("active");
+        }
+      });
+
+      // Toggle current dropdown
+      this.classList.toggle("active");
+      content.classList.toggle("active");
     });
+  });
+
+  // Close menu on window resize to desktop
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 900 && mobileMenu.classList.contains("active")) {
+      closeMenu();
+    }
   });
 }
 
-// ========== DROPDOWN TOGGLE FOR TOUCH/MOBILE ==========
-// Dropdown with .dropdown-menu
+// ========== DROPDOWN TOGGLE FOR DESKTOP ==========
 document.querySelectorAll("[data-dropdown]").forEach((dd) => {
   const btn = dd.querySelector("[data-dropdown-toggle]");
-  const menu = dd.querySelector(".dropdown-menu");
-
-  // close others
-  const closeAll = () => {
-    document
-      .querySelectorAll("[data-dropdown] .dropdown-menu")
-      .forEach((m) => (m.style.display = "none"));
-    document
-      .querySelectorAll("[data-dropdown] [data-dropdown-toggle]")
-      .forEach((b) => b.setAttribute("aria-expanded", "false"));
-  };
-
-  if (btn && menu) {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const open = menu.style.display === "block";
-      closeAll();
-      if (!open) {
-        menu.style.display = "block";
-        btn.setAttribute("aria-expanded", "true");
-      }
-    });
-
-    // click outside closes
-    document.addEventListener("click", (e) => {
-      if (!dd.contains(e.target)) {
-        menu.style.display = "none";
-        btn.setAttribute("aria-expanded", "false");
-      }
-    });
-  }
-});
-
-// Dropdown with .dropdown-panel (if you use this style)
-document.querySelectorAll("[data-dropdown]").forEach((dd) => {
-  const btn = dd.querySelector("[data-dropdown-toggle]");
-  const menu = dd.querySelector(".dropdown-panel");
+  if (!btn) return;
 
   function closeAll() {
     document.querySelectorAll("[data-dropdown]").forEach((x) => {
@@ -500,38 +321,67 @@ document.querySelectorAll("[data-dropdown]").forEach((dd) => {
     });
   }
 
-  if (btn && menu) {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const willOpen = !dd.classList.contains("open");
-      closeAll();
-      if (willOpen) {
-        dd.classList.add("open");
-        btn.setAttribute("aria-expanded", "true");
-      }
-    });
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const toOpen = !dd.classList.contains("open");
+    closeAll();
+    if (toOpen) {
+      dd.classList.add("open");
+      btn.setAttribute("aria-expanded", "true");
+    }
+  });
 
-    document.addEventListener("click", (e) => {
-      if (!dd.contains(e.target)) {
-        dd.classList.remove("open");
-        btn.setAttribute("aria-expanded", "false");
-      }
-    });
+  document.addEventListener("click", (e) => {
+    if (!dd.contains(e.target)) {
+      dd.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+    }
+  });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        dd.classList.remove("open");
-        btn.setAttribute("aria-expanded", "false");
-        btn.focus();
-      }
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      dd.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+      btn.focus();
+    }
+  });
+});
+
+// ========== BACK TO TOP BUTTON ==========
+function initBackToTop() {
+  const backToTopBtn = document.getElementById("back-to-top");
+  if (!backToTopBtn) return;
+
+  // Show/hide button based on scroll position
+  function toggleBackToTop() {
+    if (window.pageYOffset > 300) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
+  }
+
+  // Scroll to top smoothly
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
     });
   }
-});
+
+  // Event listeners
+  window.addEventListener("scroll", debounce(toggleBackToTop, 100));
+  backToTopBtn.addEventListener("click", scrollToTop);
+
+  // Initial check
+  toggleBackToTop();
+}
 
 // ========== INITIALIZE ON PAGE LOAD ==========
 document.addEventListener("DOMContentLoaded", () => {
-  initTheme();
-  console.log("🚀 Abissnet website initialized with theme switcher!");
+  initHamburgerMenu();
+  initBackToTop();
+  console.log("🚀 Abissnet website initialized!");
 });
 
 console.log("🚀 Abissnet website scripts loaded!");

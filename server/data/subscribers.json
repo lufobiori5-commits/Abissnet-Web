@@ -50,14 +50,5 @@
       "status": "Paguar"
     }
   ],
-  "tickets": [
-    {
-      "id": "1001",
-      "subject": "8jkhsjd",
-      "category": "internet",
-      "message": "SADASDASDADASD",
-      "status": "open",
-      "created_at": "2025-10-15T08:05:30.991Z"
-    }
-  ]
+  "tickets": []
 }

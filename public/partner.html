@@ -3,18 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
     <title>Abissnet - Partnerët Tanë</title>
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    <!-- <link rel="stylesheet" href="assets/css/style-light.css" /> -->
+    <link rel="stylesheet" href="assets/css/style-light.css" />
   </head>
   <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="siteHeader">
       <div class="header-inner">
         <div class="header-logo">
-          <a href="index.html"
-            ><img
-              src="/assets/img/abissnet-logo.png"
+          <a href="index.html">
+            <img
+              src="/assets/img/abissnet-logo-dark.png"
               alt="Abissnet"
               height="40"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
@@ -28,13 +33,15 @@
                 color: #fff;
               "
               >abissnet</span
-            ></a
-          >
+            >
+          </a>
         </div>
+
+        <!-- Desktop Navigation -->
         <nav class="header-nav">
           <a href="index.html">Internet</a>
 
-          <!-- DROPDOWN: Pse Abissnet? -->
+          <!-- DROPDOWN -->
           <div class="nav-dropdown" data-dropdown>
             <button
               class="nav-trigger"
@@ -47,23 +54,24 @@
             <ul class="dropdown-panel" role="menu">
               <li>
                 <a class="dropdown-item" href="internet-ne-shtepi.html"
-                  >Internet per shtepine tuaj</a
+                  >Internet për shtëpinë tuaj</a
                 >
               </li>
               <li class="divider" role="separator"></li>
               <li>
                 <a class="dropdown-item" href="abissnet.html">Abissnet</a>
               </li>
-              <li><a class="dropdown-item" href="stream.html">Streaming</a></li>
+              <li>
+                <a class="dropdown-item" href="stream.html">Streaming</a>
+              </li>
               <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
               <li>
                 <a class="dropdown-item" href="puno-nga-shtepia.html"
-                  >Puno nga Shtepia</a
+                  >Puno nga Shtëpia</a
                 >
               </li>
             </ul>
           </div>
-          <!-- /DROPDOWN -->
 
           <a href="suport.html">Suport</a>
           <a href="partner.html">Partnerët</a>
@@ -72,26 +80,78 @@
           <a href="blog.html">Blog</a>
         </nav>
 
+        <!-- Desktop Actions -->
         <div class="header-actions">
-          <tr>
-            <button class="header-btn outline">
-              <a href="dyqanet.html">Harta e Mbulimit</a>
-            </button>
-          </tr>
-
-          <button class="header-btn outline">Paguaj Tani</button>
-          <button class="header-btn primary">
-            <a href="suport.html">Na Kontakto</a>
-          </button>
+          <a class="header-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
+          <a class="header-btn outline" href="abissnet.html">Paguaj Tani</a>
+          <a class="header-btn primary" href="suport.html">Na Kontakto</a>
         </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button
+          class="hamburger-menu"
+          id="hamburger-btn"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+          <a href="index.html" class="mobile-nav-link">Internet</a>
+
+          <!-- Mobile Dropdown -->
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Abissnet
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="internet-ne-shtepi.html">Internet për shtëpinë tuaj</a>
+              <a href="abissnet.html">Abissnet</a>
+              <a href="stream.html">Streaming</a>
+              <a href="gaming.html">Gaming</a>
+              <a href="puno-nga-shtepia.html">Puno nga Shtëpia</a>
+            </div>
+          </div>
+
+          <a href="suport.html" class="mobile-nav-link">Suport</a>
+          <a href="partner.html" class="mobile-nav-link">Partnerët</a>
+          <a href="abonentet.html" class="mobile-nav-link">Abonentët</a>
+          <a href="karriera.html" class="mobile-nav-link">Karriera</a>
+          <a href="blog.html" class="mobile-nav-link">Blog</a>
+
+          <!-- Mobile Action Buttons -->
+          <div class="mobile-actions">
+            <a class="mobile-btn outline" href="dyqanet.html"
+              >Harta e Mbulimit</a
+            >
+            <a class="mobile-btn outline" href="abissnet.html">Paguaj Tani</a>
+            <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
+          </div>
+        </nav>
       </div>
     </header>
 
     <!-- Sub Navigation -->
     <div class="subnav" role="navigation" aria-label="Shërbime">
       <div class="subnav-inner">
-        <span class="pill">Individ</span>
-        <span class="pill">Biznes</span>
+        <a href="partner.html" class="pill active">Individ</a>
+        <a href="biznesi/partner.html" class="pill">Biznes</a>
       </div>
     </div>
 
@@ -267,20 +327,19 @@
         <div class="footer-col brand">
           <div class="footer-logo">Abissnet</div>
           <ul>
-            <li><a href="index.html">Kompania</a></li>
-            <li><a href="#">Rreth Nesh</a></li>
+            <li><a href="abissnet.html">Kompania</a></li>
+            <li><a href="abissnet.html">Rreth Nesh</a></li>
             <li><a href="partner.html">Partnerët</a></li>
             <li><a href="karriera.html">Karriera</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="abonentet.html">Abonentët</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h3>Shërbime/Produkte</h3>
           <ul>
-            <li><a href="#">Fiber në Shtëpi</a></li>
-            <li><a href="#">Korporata</a></li>
-            <li><a href="#">Televizioni</a></li>
+            <li><a href="internet-ne-shtepi.html">Fiber në Shtëpi</a></li>
+            <li><a href="puno-nga-shtepia.html">Korporata</a></li>
+            <li><a href="internet-ne-shtepi.html">Televizioni</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -348,6 +407,7 @@
           </div>
         </div>
       </div>
+      <!-- Partner logos row -->
 
       <div class="footer-bottom">
         © 2025 Abissnet. Të gjitha të drejtat e rezervuara.
@@ -356,5 +416,18 @@
     <script src="assets/js/toast.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/partner.js"></script>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
   </body>
 </html>

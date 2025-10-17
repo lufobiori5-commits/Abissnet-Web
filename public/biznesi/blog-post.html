@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Si po Ndryshon Inteligjenca Artificiale Përdorimin e Internetit | Abissnet
+      Blog
+    </title>
+    <meta
+      name="description"
+      content="Zbulo si AI po revolucionarizon mënyrën se si ne ndërveprojmë me internetin në 2025."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="siteHeader">
+      <div class="header-inner">
+        <div class="header-logo">
+          <a href="index.html">
+            <img
+              src="../assets/img/abissnet-logo.png"
+              alt="Abissnet"
+              height="40"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <span
+              style="
+                display: none;
+                font-style: italic;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #fff;
+              "
+              >abissnet</span
+            >
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="header-nav">
+          <a href="index.html">Internet</a>
+
+          <!-- DROPDOWN -->
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Abissnet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li>
+                <a class="dropdown-item" href="internet-ne-shtepi.html"
+                  >Internet për shtëpinë tuaj</a
+                >
+              </li>
+              <li class="divider" role="separator"></li>
+              <li>
+                <a class="dropdown-item" href="abissnet.html">Abissnet</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="stream.html">Streaming</a>
+              </li>
+              <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
+              <li>
+                <a class="dropdown-item" href="puno-nga-shtepia.html"
+                  >Puno nga Shtëpia</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <a href="suport.html">Suport</a>
+          <a href="partner.html">Partnerët</a>
+          <a href="abonentet.html">Abonentët</a>
+          <a href="karriera.html">Karriera</a>
+          <a href="blog.html">Blog</a>
+        </nav>
+
+        <!-- Desktop Actions -->
+        <div class="header-actions">
+          <a class="header-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
+          <a class="header-btn outline" href="abissnet.html">Paguaj Tani</a>
+          <a class="header-btn primary" href="suport.html">Na Kontakto</a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button
+          class="hamburger-menu"
+          id="hamburger-btn"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+          <a href="index.html" class="mobile-nav-link">Internet</a>
+
+          <!-- Mobile Dropdown -->
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Abissnet
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="internet-ne-shtepi.html">Internet për shtëpinë tuaj</a>
+              <a href="abissnet.html">Abissnet</a>
+              <a href="stream.html">Streaming</a>
+              <a href="gaming.html">Gaming</a>
+              <a href="puno-nga-shtepia.html">Puno nga Shtëpia</a>
+            </div>
+          </div>
+
+          <a href="suport.html" class="mobile-nav-link">Suport</a>
+          <a href="partner.html" class="mobile-nav-link">Partnerët</a>
+          <a href="abonentet.html" class="mobile-nav-link">Abonentët</a>
+          <a href="karriera.html" class="mobile-nav-link">Karriera</a>
+          <a href="blog.html" class="mobile-nav-link">Blog</a>
+
+          <!-- Mobile Action Buttons -->
+          <div class="mobile-actions">
+            <a class="mobile-btn outline" href="dyqanet.html"
+              >Harta e Mbulimit</a
+            >
+            <a class="mobile-btn outline" href="abissnet.html">Paguaj Tani</a>
+            <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Sub Navigation -->
+    <div class="subnav" role="navigation" aria-label="Shërbime">
+      <div class="subnav-inner">
+        <a href="../blog-post.html" class="pill">Individ</a>
+        <a href="blog-post.html" class="pill active">Biznes</a>
+      </div>
+    </div>
+
+    <!-- Blog Post Container -->
+    <article class="blog-post-container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Abissnet</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><span>Inteligjenca Artificiale</span></li>
+        </ol>
+      </nav>
+
+      <!-- Post Header -->
+      <header class="post-header">
+        <div class="post-category-badge">Inteligjenca Artificiale</div>
+        <h1 class="post-title">
+          Si po Ndryshon Inteligjenca Artificiale Përdorimin e Internetit në
+          2025
+        </h1>
+
+        <div class="post-meta">
+          <div class="author-info">
+            <img
+              src="https://ui-avatars.com/api/?name=Erion+Krasniqi&background=F68732&color=fff&size=80"
+              alt="Erion Krasniqi"
+              class="author-avatar"
+            />
+            <div class="author-details">
+              <span class="author-name">Erion Krasniqi</span>
+              <span class="post-date">📅 8 Tetor 2025 • ⏱️ 5 min lexim</span>
+            </div>
+          </div>
+          <div class="post-share">
+            <button class="share-btn" title="Shpërndaj në Facebook">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+            </button>
+            <button class="share-btn" title="Shpërndaj në Twitter">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                />
+              </svg>
+            </button>
+            <button class="share-btn" title="Kopjo link">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+                ></path>
+                <path
+                  d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Featured Image -->
+      <figure class="post-featured-image">
+        <img
+          src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=600&fit=crop"
+          alt="Inteligjenca Artificiale dhe Interneti"
+          loading="eager"
+        />
+        <figcaption>
+          Inteligjenca Artificiale po transformon mënyrën se si ne ndërveprojmë
+          me internetin
+        </figcaption>
+      </figure>
+
+      <!-- Post Content -->
+      <div class="post-content">
+        <!-- Introduction -->
+        <div class="post-intro">
+          <p class="lead">
+            Inteligjenca Artificiale (AI) nuk është më një koncept
+            futuristik—ajo tashmë po ndryshon rrënjësisht mënyrën se si ne
+            përdorim internetin çdo ditë. Nga asistentët virtualë inteligjentë
+            te algoritmet e personalizimit, AI po bëhet pjesë integrale e
+            eksperiencës sonë dixhitale.
+          </p>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="table-of-contents">
+          <h2>Përmbajtja</h2>
+          <ol>
+            <li>
+              <a href="#section-1"
+                >Asistentët Virtualë: Shoqëruesit tanë dixhitalë</a
+              >
+            </li>
+            <li><a href="#section-2">Personalizimi i Përmbajtjes</a></li>
+            <li><a href="#section-3">Kërkimi i Fuqizuar me AI</a></li>
+            <li><a href="#section-4">Siguria Kibernetike e Avancuar</a></li>
+            <li><a href="#section-5">E Ardhmja: Çfarë na Pret?</a></li>
+          </ol>
+        </div>
+
+        <!-- Section 1 -->
+        <section id="section-1" class="post-section">
+          <h2>1. Asistentët Virtualë: Shoqëruesit tanë dixhitalë</h2>
+
+          <p>
+            Asistentët virtualë të fuqizuar me AI, si Alexa, Siri, dhe Google
+            Assistant, kanë revolucionuar mënyrën se si ne ndërveprojmë me
+            teknologjinë. Ata nuk janë më thjesht pajisje që kryejnë komanda—ata
+            mësojnë nga sjellja jonë, parashikojnë nevojat tona, dhe ofrojnë
+            përvojë të personalizuar.
+          </p>
+
+          <div class="highlight-box">
+            <h3>💡 Fakti i Ditës</h3>
+            <p>
+              Deri në fund të 2025-ës, parashikohet që 8.4 miliardë pajisje do
+              të jenë të paisura me asistentë virtualë—më shumë se popullsia e
+              botës!
+            </p>
+          </div>
+
+          <p>
+            Këta asistentë mund të kontrollojnë shtëpitë inteligjente, të
+            organizojnë kalendarët tanë, të bëjnë porosi online, madje edhe të
+            ofrojnë mbështetje emocionale duke identifikuar tonet e zërit dhe
+            duke u përgjigjur në mënyrë empatike.
+          </p>
+
+          <h3>Shembuj Praktikë:</h3>
+          <ul>
+            <li>
+              <strong>Në shtëpi:</strong> "Alexa, çel dritat në dhomë dhe luaj
+              muzikë relaksuese"
+            </li>
+            <li>
+              <strong>Në punë:</strong> "Siri, organizo një mbledhje me ekipin
+              për të martën"
+            </li>
+            <li>
+              <strong>Në udhëtim:</strong> "Google, ku është restoranti më i
+              afërt italian?"
+            </li>
+          </ul>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="section-2" class="post-section">
+          <h2>2. Personalizimi i Përmbajtjes</h2>
+
+          <p>
+            Algoritmet e AI analizojnë miliarda pika të dhënash për të krijuar
+            një eksperiencë interneti unike për çdo përdorues. Netflix di çfarë
+            filmi do të shikosh nesër, Spotify krijon playlistë që përputhen me
+            mood-in tënd, dhe Instagram të tregon pikërisht postimet që të
+            interesojnë.
+          </p>
+
+          <blockquote class="post-quote">
+            "Personalizimi nuk është më një opsion—është bërë një pritje.
+            Përdoruesit presin që interneti të kuptojë nevojat e tyre pa u
+            dashur t'i shpjegojnë."
+            <cite>— Reed Hastings, CEO i Netflix</cite>
+          </blockquote>
+
+          <h3>Si Funksionon?</h3>
+          <p>
+            Sistemet e AI përdorin <strong>machine learning</strong> për të
+            studiuar sjelljen tuaj:
+          </p>
+
+          <ol>
+            <li>
+              <strong>Mbledhja e të dhënave:</strong> Çdo klikim, shikim, like,
+              dhe kohëzgjatje monitorohet
+            </li>
+            <li>
+              <strong>Analiza e modeleve:</strong> AI identifikon patterne në
+              sjelljet tuaja
+            </li>
+            <li>
+              <strong>Parashikimi:</strong> Algoritmet parashikojnë çfarë do
+              t'ju pëlqejë më pas
+            </li>
+            <li>
+              <strong>Optimizimi:</strong> Sistemi përmirësohet vazhdimisht
+              bazuar në reagimet tuaja
+            </li>
+          </ol>
+
+          <div class="info-box">
+            <h4>⚠️ Kujdes: Privatësia Importon</h4>
+            <p>
+              Ndërsa personalizimi është i dobishëm, është e rëndësishme të jeni
+              të vetëdijshëm se çfarë të dhënash po ndani. Gjithmonë kontrolloni
+              cilësimet e privatësisë në aplikacionet tuaja.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="section-3" class="post-section">
+          <h2>3. Kërkimi i Fuqizuar me AI</h2>
+
+          <p>
+            Motorët e kërkimit modernë janë shumë më të zgjuar se thjesht
+            kërkimi për fjalë kyçe. Ata kuptojnë kontekstin, qëllimin, madje
+            edhe emocionet pas pyetjeve tuaja.
+          </p>
+
+          <h3>Përparimet Kryesore:</h3>
+
+          <div class="feature-grid">
+            <div class="feature-item">
+              <span class="feature-icon">🎤</span>
+              <h4>Kërkimi me Zë</h4>
+              <p>Fol natyrshëm dhe AI kupton edhe pyetjet komplekse</p>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">📸</span>
+              <h4>Kërkimi Visual</h4>
+              <p>Foto një objekt dhe gjej informacion për të</p>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🧠</span>
+              <h4>Kuptimi Kontekstual</h4>
+              <p>AI kupton çfarë ke në mendje, jo vetëm çfarë shkruan</p>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">💬</span>
+              <h4>Përgjigje të Drejtpërdrejta</h4>
+              <p>Merrni përgjigje të plota pa klikuar në linqe</p>
+            </div>
+          </div>
+
+          <p>
+            Google, Bing, dhe DuckDuckGo të gjithë përdorin AI për të ofruar
+            rezultate më relevante. Në vend që të shfletoni 10 faqe për të
+            gjetur një përgjigje, AI e sjell informacionin tek ju në kohë
+            rekord.
+          </p>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="section-4" class="post-section">
+          <h2>4. Siguria Kibernetike e Avancuar</h2>
+
+          <p>
+            Me rritjen e kërcënimeve kibernetike, AI po bëhet arma më e fuqishme
+            në mbrojtjen e përdoruesve dhe organizatave.
+          </p>
+
+          <h3>Si AI Mbron Përdoruesit:</h3>
+
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Kërcënimi</th>
+                <th>Mbrojtja me AI</th>
+                <th>Efektiviteti</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Phishing Emails</td>
+                <td>Detektim automatik i email-eve të dyshimta</td>
+                <td>99.9%</td>
+              </tr>
+              <tr>
+                <td>Malware</td>
+                <td>Analizë në kohë reale e skedarëve të shkarkuar</td>
+                <td>98.5%</td>
+              </tr>
+              <tr>
+                <td>Sulmet DDoS</td>
+                <td>Identifikim i trafiku të parregullt</td>
+                <td>99.7%</td>
+              </tr>
+              <tr>
+                <td>Hyrje të Paautorizuara</td>
+                <td>Njohja e modeleve të pazakonta të sjelljeve</td>
+                <td>97.3%</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="warning-box">
+            <h4>🔒 Këshilla për Siguri</h4>
+            <ul>
+              <li>
+                Aktivizoni autentifikimin me dy faktorë kudo që është e mundur
+              </li>
+              <li>Përdorni password manager të fuqizuar me AI</li>
+              <li>Përditësoni software-in tuaj rregullisht</li>
+              <li>Jini skeptikë ndaj email-eve të padëshiruara</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section id="section-5" class="post-section">
+          <h2>5. E Ardhmja: Çfarë na Pret?</h2>
+
+          <p>
+            Të ardhmen e internetit do ta përcaktojë AI, dhe ndryshimet që po
+            vijnë janë emocionuese:
+          </p>
+
+          <h3>Pritshmëritë për 5 Vitet e Ardhshme:</h3>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-year">2025-2026</div>
+              <div class="timeline-content">
+                <h4>Web i Personalizuar Plotësisht</h4>
+                <p>
+                  Çdo përdorues do të ketë një eksperiencë interneti unike, të
+                  krijuar veçanërisht për të
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2026-2027</div>
+              <div class="timeline-content">
+                <h4>Asistentë AI Proaktivë</h4>
+                <p>
+                  AI do të parashikojë nevojat tuaja para se t'i kërkoni—duke
+                  rezervuar takime, duke bërë blerje, dhe duke menaxhuar jetën
+                  tuaj dixhitale
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2027-2028</div>
+              <div class="timeline-content">
+                <h4>Internet i Realitetit të Shtuar</h4>
+                <p>
+                  AI do të integrojë botën fizike me atë dixhitale nëpërmjet AR
+                  dhe VR
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2028-2030</div>
+              <div class="timeline-content">
+                <h4>AI si Krijes i Përmbajtjes</h4>
+                <p>
+                  Shumica e përmbajtjes online do të krijohet ose kuratorohet
+                  nga AI
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="post-conclusion">
+          <h2>Përfundim</h2>
+          <p>
+            Inteligjenca Artificiale po transformon internetin në mënyra që mezi
+            po fillojmë të kuptojmë. Ndërsa këto teknologji ofrojnë përfitime të
+            jashtëzakonshme—nga efikasiteti i përmirësuar te eksperienca e
+            personalizuar—është thelbësore të mbetemi të vetëdijshëm për
+            privatësinë, sigurinë, dhe impaktin etik të tyre.
+          </p>
+          <p>
+            Në Abissnet, ne jemi të përkushtuar të sjellim teknologjinë më të
+            fundit për klientët tanë, duke siguruar që ju të keni aksesi të më
+            të mirë ndaj kësaj revolucioni dixhital. Me shpejtësi deri në 10G
+            dhe infrastrukturë fiber optike, ju jeni të përgatitur për të
+            ardhmen e internetit.
+          </p>
+          <div class="cta-box">
+            <h3>Jeni gati për internet të së ardhmes?</h3>
+            <p>
+              Zbuloni planet tona të internetit të shpejtë dhe filloni udhëtimin
+              tuaj drejt një eksperience dixhitale të transformuar.
+            </p>
+            <a href="index.html" class="cta-button">Shiko Paketat Tona</a>
+          </div>
+        </section>
+
+        <!-- Tags -->
+        <div class="post-tags">
+          <span class="tag-label">Tags:</span>
+          <a href="#" class="tag">#InteligjencaArtificiale</a>
+          <a href="#" class="tag">#Teknologji</a>
+          <a href="#" class="tag">#Internet</a>
+          <a href="#" class="tag">#AI</a>
+          <a href="#" class="tag">#Inovacion</a>
+        </div>
+
+        <!-- Author Bio -->
+        <div class="author-bio">
+          <img
+            src="https://ui-avatars.com/api/?name=Erion+Krasniqi&background=F68732&color=fff&size=120"
+            alt="Erion Krasniqi"
+            class="author-bio-avatar"
+          />
+          <div class="author-bio-content">
+            <h3>Rreth Autorit</h3>
+            <h4>Erion Krasniqi</h4>
+            <p>
+              Erion është ekspert i teknologjisë me mbi 10 vjet përvojë në
+              fushën e AI dhe cloud computing. Ai punon si Tech Lead në Abissnet
+              dhe është pasionant i shkrimit rreth trendeve të reja
+              teknologjike.
+            </p>
+            <div class="author-social">
+              <a href="#" aria-label="Twitter">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="LinkedIn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="GitHub">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comments Section -->
+        <div class="comments-section">
+          <h3 class="comments-title">Komente (3)</h3>
+
+          <!-- Comment 1 -->
+          <div class="comment">
+            <img
+              src="https://ui-avatars.com/api/?name=Arta+Hoxha&background=2196F3&color=fff&size=60"
+              alt="Arta Hoxha"
+              class="comment-avatar"
+            />
+            <div class="comment-content">
+              <div class="comment-header">
+                <span class="comment-author">Arta Hoxha</span>
+                <span class="comment-date">5 Tetor 2025, 14:30</span>
+              </div>
+              <p class="comment-text">
+                Artikull shumë informativ! Jam e mahnitur me sa shpejt po
+                zhvillohet AI. Kam filluar të përdor asistentin virtual për
+                organizimin e ditës dhe më ka ndryshuar jetën.
+              </p>
+              <button class="comment-reply-btn">Përgjigju</button>
+            </div>
+          </div>
+
+          <!-- Comment 2 -->
+          <div class="comment">
+            <img
+              src="https://ui-avatars.com/api/?name=Blerim+Berisha&background=4CAF50&color=fff&size=60"
+              alt="Blerim Berisha"
+              class="comment-avatar"
+            />
+            <div class="comment-content">
+              <div class="comment-header">
+                <span class="comment-author">Blerim Berisha</span>
+                <span class="comment-date">6 Tetor 2025, 09:15</span>
+              </div>
+              <p class="comment-text">
+                A mendon se ka shqetësime për privatësinë me këtë nivel
+                personalizimi? Unë jam pak skeptik...
+              </p>
+              <button class="comment-reply-btn">Përgjigju</button>
+
+              <!-- Nested Reply -->
+              <div class="comment reply">
+                <img
+                  src="https://ui-avatars.com/api/?name=Erion+Krasniqi&background=F68732&color=fff&size=60"
+                  alt="Erion Krasniqi"
+                  class="comment-avatar"
+                />
+                <div class="comment-content">
+                  <div class="comment-header">
+                    <span class="comment-author"
+                      >Erion Krasniqi
+                      <span class="author-badge">Autor</span></span
+                    >
+                    <span class="comment-date">6 Tetor 2025, 11:45</span>
+                  </div>
+                  <p class="comment-text">
+                    Pyetje shumë e mirë, Blerim! Privatësia është vërtet një
+                    shqetësim. Këshilloj gjithmonë të kontrolloni cilësimet e
+                    privatësisë, të përdorni VPN, dhe të jeni selektivë me të
+                    dhënat që ndani. Kompani të mëdha si Apple po fokusohen më
+                    shumë te privacy-first AI.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comment 3 -->
+          <div class="comment">
+            <img
+              src="https://ui-avatars.com/api/?name=Dorina+Lika&background=9C27B0&color=fff&size=60"
+              alt="Dorina Lika"
+              class="comment-avatar"
+            />
+            <div class="comment-content">
+              <div class="comment-header">
+                <span class="comment-author">Dorina Lika</span>
+                <span class="comment-date">7 Tetor 2025, 16:20</span>
+              </div>
+              <p class="comment-text">
+                Faleminderit për shpjegimin e thjeshtë! Tani e kuptoj më mirë se
+                si funksionon AI në jetën time të përditshme. 👏
+              </p>
+              <button class="comment-reply-btn">Përgjigju</button>
+            </div>
+          </div>
+
+          <!-- Add Comment Form -->
+          <form class="add-comment-form">
+            <h4>Lër një koment</h4>
+            <div class="form-row">
+              <input type="text" placeholder="Emri" required />
+              <input type="email" placeholder="Email" required />
+            </div>
+            <textarea
+              placeholder="Mesazhi juaj..."
+              rows="5"
+              required
+            ></textarea>
+            <button type="submit" class="submit-comment-btn">
+              Dërgo Komentin
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Related Posts -->
+      <aside class="related-posts">
+        <h2 class="related-posts-title">Artikuj të Ngjashëm</h2>
+        <div class="related-posts-grid">
+          <!-- Related Post 1 -->
+          <article class="related-post-card">
+            <img
+              src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400"
+              alt="AI Assistant"
+              class="related-post-image"
+              loading="lazy"
+            />
+            <div class="related-post-content">
+              <span class="related-post-tag">Inteligjenca Artificiale</span>
+              <h3 class="related-post-title">
+                <a href="blog-post-2.html"
+                  >Asistentët Virtualë: Si po Ndryshojnë Shtëpitë
+                  Inteligjente</a
+                >
+              </h3>
+              <div class="related-post-meta">
+                <span>📅 5 Tetor 2025</span>
+                <span>⏱️ 4 min</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Related Post 2 -->
+          <article class="related-post-card">
+            <img
+              src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=400"
+              alt="Fiber Optic"
+              class="related-post-image"
+              loading="lazy"
+            />
+            <div class="related-post-content">
+              <span class="related-post-tag">Fiber Optik</span>
+              <h3 class="related-post-title">
+                <a href="blog-post-3.html"
+                  >10G Internet: Shpejtësia e së Ardhmes është Këtu</a
+                >
+              </h3>
+              <div class="related-post-meta">
+                <span>📅 7 Tetor 2025</span>
+                <span>⏱️ 6 min</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Related Post 3 -->
+          <article class="related-post-card">
+            <img
+              src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400"
+              alt="Cybersecurity"
+              class="related-post-image"
+              loading="lazy"
+            />
+            <div class="related-post-content">
+              <span class="related-post-tag">Siguria Kibernetike</span>
+              <h3 class="related-post-title">
+                <a href="blog-post-4.html"
+                  >5 Hapa për të Mbrojtur Rrjetin Tuaj Shtëpiak</a
+                >
+              </h3>
+              <div class="related-post-meta">
+                <span>📅 6 Tetor 2025</span>
+                <span>⏱️ 5 min</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </aside>
+    </article>
+
+    <!-- Newsletter CTA -->
+    <section class="newsletter-cta">
+      <div class="newsletter-cta-content">
+        <h2>📧 Mos Humb Asnjë Artikull!</h2>
+        <p>
+          Abonohu në newsletter tonë dhe merr artikujt më të fundit direkt në
+          email.
+        </p>
+        <form class="newsletter-cta-form">
+          <input type="email" placeholder="Email-i juaj..." required />
+          <button type="submit">Abonohu Tani</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col brand">
+          <div class="footer-logo">Abissnet</div>
+          <ul>
+            <li><a href="abissnet.html">Kompania</a></li>
+            <li><a href="abissnet.html">Rreth Nesh</a></li>
+            <li><a href="partner.html">Partnerët</a></li>
+            <li><a href="karriera.html">Karriera</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Shërbime/Produkte</h3>
+          <ul>
+            <li><a href="internet-ne-shtepi.html">Fiber në Shtëpi</a></li>
+            <li><a href="puno-nga-shtepia.html">Korporata</a></li>
+            <li><a href="internet-ne-shtepi.html">Televizioni</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Më të Populluara</h3>
+          <ul>
+            <li><a href="#">Internet i Shpejtë</a></li>
+            <li><a href="#">Ofertat e Verës</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Shkruaj email-in tuaj" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="footer-social">
+            <a
+              href="https://facebook.com/abissnet"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://instagram.com/abissnet"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://youtube.com/@abissnet"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Partner logos row -->
+
+      <div class="footer-bottom">
+        © 2025 Abissnet. Të gjitha të drejtat e rezervuara.
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>
