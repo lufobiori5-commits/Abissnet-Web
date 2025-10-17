@@ -2,6 +2,6 @@
 deployment:
   tasks:
     - export DEPLOY_PATH=/home/abissneti/public_html
-    - /bin/mkdir -p $DEPLOY_PATH
-    - /bin/rsync -a --delete --exclude=".git" --exclude="node_modules" --exclude=".env" public/ $DEPLOY_PATH/
-    - 'if [ ! -f "$DEPLOY_PATH/.htaccess" ]; then printf "%s\n" "Options -Indexes" > $DEPLOY_PATH/.htaccess; fi'
+    - /bin/mkdir -p "$DEPLOY_PATH"
+    - /usr/bin/rsync -a --delete --exclude=".git" --exclude="node_modules" --exclude=".env" ./ "$DEPLOY_PATH"/
+    - 'if [ ! -f "$DEPLOY_PATH/.htaccess" ]; then printf "%s\n" "Options -Indexes" > "$DEPLOY_PATH/.htaccess"; fi'
