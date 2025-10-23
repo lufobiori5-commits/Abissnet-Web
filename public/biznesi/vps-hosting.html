@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../assets/img/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Abissnet — VPS Hosting</title>
+    <meta
+      name="description"
+      content="VPS Hosting nga Abissnet: Performancë NVMe, izolim i plotë, akses root. Skaloni aplikacionet pa stres me mbrojtje DDoS dhe suport 24/7."
+    />
+    <link rel="stylesheet" href="../assets/css/biznesi/style.css" />
+    <link rel="stylesheet" href="../assets/css/biznesi/vpshosting.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="siteHeader">
+      <div class="header-inner">
+        <div class="header-logo">
+          <a href="index.html">
+            <img
+              src="../assets/img/abissnet-logo.png"
+              alt="Abissnet"
+              height="40"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <span
+              style="
+                display: none;
+                font-style: italic;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #fff;
+              "
+              >abissnet</span
+            >
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="header-nav">
+          <a href="index.html">Internet i Dedikuar</a>
+
+          <!-- DROPDOWN -->
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Hosting <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li>
+                <a class="dropdown-item" href="email-hosting.html"
+                  >Email Hosting</a
+                >
+              </li>
+              <li class="divider" role="separator"></li>
+              <li>
+                <a class="dropdown-item" href="website-hosting.html"
+                  >Website Professional Hosting</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="vps-hosting.html">VPS Hosting</a>
+              </li>
+            </ul>
+          </div>
+
+          <a href="colocation.html">Colocation</a>
+          <a href="mbrojtja-ddos.html">Mbrojtja DDOS</a>
+          <a href="telefonia-fix-voip.html">Telefonia Fix&VoiP</a>
+          <a href="dark-fiber.html">Dark Fiber</a>
+          <a href="tv.html">TV</a>
+        </nav>
+
+        <!-- Desktop Actions -->
+        <div class="header-actions">
+          <a class="header-btn primary" href="suport.html">Na Kontakto</a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button
+          class="hamburger-menu"
+          id="hamburger-btn"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+          <a href="index.html" class="mobile-nav-link">Internet i Dedikuar</a>
+
+          <!-- Mobile Dropdown -->
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Hosting
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="email-hosting.html">Email Hosting</a>
+              <a href="website-hosting.html">Website Professional Hosting</a>
+              <a href="vps-hosting.html">VPS Hosting</a>
+            </div>
+          </div>
+
+          <a href="colocation.html" class="mobile-nav-link">Colocation</a>
+          <a href="mbrojtja-ddos.html" class="mobile-nav-link">Mbrojtja DDOS</a>
+          <a href="telefonia-fix-voip.html" class="mobile-nav-link"
+            >Telefonia Fix&VoiP</a
+          >
+          <a href="dark-fiber.html" class="mobile-nav-link">Dark Fiber</a>
+          <a href="tv.html" class="mobile-nav-link">TV</a>
+
+          <!-- Mobile Action Buttons -->
+          <div class="mobile-actions">
+            <a class="mobile-btn outline" href="dyqanet.html"
+              >Harta e Mbulimit</a
+            >
+            <a class="mobile-btn outline" href="abissnet.html">Paguaj Tani</a>
+            <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Sub Navigation -->
+    <div class="subnav" role="navigation" aria-label="Shërbime">
+      <div class="subnav-inner">
+        <a href="index.html" class="pill">Biznes</a>
+        <a href="#karakteristika" class="pill">Karakteristika</a>
+        <a href="#planet" class="pill">Planet</a>
+        <a href="#pyetje" class="pill">FAQ</a>
+      </div>
+    </div>
+
+    <main>
+      <!-- ENHANCED HERO SECTION -->
+      <section class="vpshosting-hero">
+        <!-- Animated Background -->
+        <div class="vpshosting-hero-bg">
+          <div class="vps-line" style="--delay: 0s"></div>
+          <div class="vps-line" style="--delay: 0.4s"></div>
+          <div class="vps-line" style="--delay: 0.8s"></div>
+          <div class="vps-line" style="--delay: 1.2s"></div>
+        </div>
+
+        <div class="vpshosting-hero-inner">
+          <div class="vpshosting-hero-content">
+            <span class="hero-badge">Virtual Private Server</span>
+            <h1 class="vpshosting-hero-title">
+              VPS Hosting
+              <span class="gradient-text">i Shpejtë & i Sigurt</span>
+            </h1>
+            <p class="vpshosting-hero-subtitle">
+              Performancë NVMe, izolim i plotë, akses root. Skaloni aplikacionet
+              pa stres – me mbrojtje DDoS dhe suport 24/7.
+            </p>
+
+            <!-- Key Stats -->
+            <div class="vpshosting-stats">
+              <div class="stat-item">
+                <div class="stat-number">NVMe</div>
+                <div class="stat-label">Storage</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">Root</div>
+                <div class="stat-label">Access</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">DDoS</div>
+                <div class="stat-label">Protection</div>
+              </div>
+            </div>
+
+            <!-- Hero Actions -->
+            <div class="vpshosting-hero-actions">
+              <a href="#planet" class="btn-hero primary">
+                <span>Shiko Planet</span>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a href="#karakteristika" class="btn-hero secondary">
+                <span>Karakteristikat</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VPS Features Overview -->
+      <section class="stream-section soft" id="karakteristika">
+        <div class="stream-section-inner">
+          <h2 class="stream-h3">Përse VPS nga Abissnet?</h2>
+          <p>
+            Performancë e lartë, kontroll i plotë dhe fleksibilitet maksimal për
+            aplikacionet tuaja. Zgjidhje ideale për biznese që kërkojnë më shumë
+            se hosting i thjeshtë.
+          </p>
+          <div class="feature-grid">
+            <div class="feature-item">
+              <span class="feature-icon">⚡</span>
+              <h4>Performancë NVMe</h4>
+              <p>
+                Storage me shpejtësi të jashtëzakonshme. I/O deri në 10x më i
+                shpejtë se SSD tradicional.
+              </p>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🔐</span>
+              <h4>Izolim i Plotë</h4>
+              <p>
+                Resurse të dedikuara, zero ndikim nga klientë të tjerë.
+                Stabiliteti i serverit fizik.
+              </p>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🔧</span>
+              <h4>Akses Root</h4>
+              <p>
+                Kontroll i plotë mbi sistemin. Instaloni çdo software,
+                konfiguroni sipas nevojave.
+              </p>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">📈</span>
+              <h4>Skalim i Lehtë</h4>
+              <p>
+                Përshtatni CPU, RAM dhe storage pa migracion. Upgrade në minuta,
+                jo ditë.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VPS Plans (Package Cards) -->
+      <section class="packages-section" id="planet">
+        <h2 class="packages-title">Planet VPS</h2>
+        <div class="package-grid">
+          <!-- Plan 1: Nova -->
+          <div class="package-card">
+            <div class="package-label">Abissnet Nova</div>
+            <div class="package-speed">📦 Start</div>
+            <div class="package-details">
+              <p>
+                <strong>4 vCore</strong> · <strong>4 GB RAM</strong> ·
+                <strong>30 GB NVMe</strong>
+              </p>
+              <div class="package-price">
+                <span class="price-amount">3,000</span>
+                <span class="price-currency">ALL / muaj</span>
+              </div>
+            </div>
+            <a href="#kerkese" class="package-btn">Zgjidh Planin</a>
+          </div>
+
+          <!-- Plan 2: Vector (Featured) -->
+          <div class="package-card special">
+            <span class="package-badge">Më i kërkuari</span>
+            <div class="package-label">Abissnet Vector</div>
+            <div class="package-speed">🚀 Pro</div>
+            <div class="package-details">
+              <p>
+                <strong>6 vCore</strong> · <strong>6 GB RAM</strong> ·
+                <strong>40 GB NVMe</strong>
+              </p>
+              <div class="package-price">
+                <span class="price-amount">4,000</span>
+                <span class="price-currency">ALL / muaj</span>
+              </div>
+            </div>
+            <a href="#kerkese" class="package-btn">Zgjidh Planin</a>
+          </div>
+
+          <!-- Plan 3: Quantum -->
+          <div class="package-card">
+            <div class="package-label">Abissnet Quantum</div>
+            <div class="package-speed">⚡ Enterprise</div>
+            <div class="package-details">
+              <p>
+                <strong>12 vCPU</strong> · <strong>8 GB RAM</strong> ·
+                <strong>60 GB NVMe</strong>
+              </p>
+              <div class="package-price">
+                <span class="price-amount">6,000</span>
+                <span class="price-currency">ALL / muaj</span>
+              </div>
+            </div>
+            <a href="#kerkese" class="package-btn">Zgjidh Planin</a>
+          </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <h3 class="packages-subtitle">Krahasim i Detajuar</h3>
+        <table class="comparison-table" aria-label="Krahasim paketash VPS">
+          <thead>
+            <tr>
+              <th>Karakteristika</th>
+              <th>Nova</th>
+              <th>Vector</th>
+              <th>Quantum</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Çmimi</th>
+              <td>3,000 ALL/muaj</td>
+              <td>4,000 ALL/muaj</td>
+              <td>6,000 ALL/muaj</td>
+            </tr>
+            <tr>
+              <th>Storage NVMe</th>
+              <td>30 GB</td>
+              <td>40 GB</td>
+              <td>60 GB</td>
+            </tr>
+            <tr>
+              <th>Bandwidth</th>
+              <td>40 TB / muaj</td>
+              <td>60 TB / muaj</td>
+              <td>80 TB / muaj</td>
+            </tr>
+            <tr>
+              <th>CPU</th>
+              <td>4 vCore</td>
+              <td>6 vCore</td>
+              <td>12 vCPU</td>
+            </tr>
+            <tr>
+              <th>RAM</th>
+              <td>4 GB</td>
+              <td>6 GB</td>
+              <td>8 GB</td>
+            </tr>
+            <tr>
+              <th>Akses Root</th>
+              <td>Po</td>
+              <td>Po</td>
+              <td>Po</td>
+            </tr>
+            <tr>
+              <th>SSL</th>
+              <td>Po</td>
+              <td>Po</td>
+              <td>Po</td>
+            </tr>
+            <tr>
+              <th>IPv6 i dedikuar</th>
+              <td>Po</td>
+              <td>Po</td>
+              <td>Po</td>
+            </tr>
+            <tr>
+              <th>Mbrojtje nga DDoS</th>
+              <td>Po</td>
+              <td>Po</td>
+              <td>Po</td>
+            </tr>
+            <tr>
+              <th>Panel menaxhimi</th>
+              <td>Opsional (shtesë)</td>
+              <td>Opsional (shtesë)</td>
+              <td>Opsional (shtesë)</td>
+            </tr>
+            <tr>
+              <th>Menaxhim teknik</th>
+              <td>Nga përdoruesi</td>
+              <td>Nga përdoruesi</td>
+              <td>Nga përdoruesi</td>
+            </tr>
+            <tr>
+              <th>Suport teknik</th>
+              <td>24/7</td>
+              <td>24/7</td>
+              <td>24/7</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- CTA Box -->
+        <div class="cta-box" id="kerkese">
+          <h3>Gati për të nisur?</h3>
+          <p>
+            Dërgo kërkesën për ofertë ose migro shpejt nga ofruesi aktual. Ne e
+            bëjmë thjesht dhe pa dhimbje koke.
+          </p>
+          <a href="contact.html" class="cta-button">Kërko ofertë</a>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="stream-section soft" id="pyetje">
+        <div class="stream-section-inner">
+          <h2 class="stream-h3">Pyetje të Shpeshta</h2>
+          <div class="feature-grid">
+            <div class="feature-item">
+              <span class="feature-icon">ⓘ</span>
+              <h4>A mund ta rris CPU/RAM më vonë?</h4>
+              <p>
+                Po. Skalimi vertikal bëhet pa ndërprerje të gjatë – plan i ri,
+                reboot i shpejtë, gati.
+              </p>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🔐</span>
+              <h4>Si ofrohet DDoS?</h4>
+              <p>
+                Mitigim në edge + filtre trafiku në core. Nuk ju kushton ekstra
+                në këto plane.
+              </p>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🧰</span>
+              <h4>Panel menaxhimi?</h4>
+              <p>
+                Opsional (cPanel/aaPanel). Shumica e klientëve prod përdorin SSH
+                + automatizime.
+              </p>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🕘</span>
+              <h4>SLA & suport</h4>
+              <p>
+                24/7 NOC. Ticket, telefon dhe on-call për incidente kritike.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col brand">
+          <div class="footer-logo">Abissnet</div>
+          <ul>
+            <li><a href="colocation.html">Colocation</a></li>
+            <li><a href="mbrojtja-ddos.html">Mbrojtja DDOS</a></li>
+            <li><a href="telefonia-fix-voip.html">Telefonia Fix&VoiP</a></li>
+            <li><a href="dark-fiber.html">Dark Fiber</a></li>
+            <li><a href="tv.html">TV</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Shërbime/Produkte</h3>
+          <ul>
+            <li><a href="email-hosting.html">Email Hosting</a></li>
+            <li>
+              <a href="website-hosting.html">Website Professional Hosting</a>
+            </li>
+            <li><a href="vps-hosting.html">VPS Hosting</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Më të Populluara</h3>
+          <ul>
+            <li><a href="email-hosting.html">Email Hosting</a></li>
+            <li>
+              <a href="website-hosting.html">Website Professional Hosting</a>
+            </li>
+            <li><a href="vps-hosting.html">VPS Hosting</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Shkruaj email-in tuaj" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="footer-social">
+            <a
+              href="https://facebook.com/abissnet"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://instagram.com/abissnet"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://youtube.com/@abissnet"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Partner logos row -->
+
+      <div class="footer-bottom">
+        © 2025 Abissnet. Të gjitha të drejtat e rezervuara.
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/toast.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/biznesi/vps-hosting.js"></script>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+  </body>
+</html>

@@ -190,7 +190,7 @@
       phone: "084 22 22 22",
       lat: 41.32005061888263, 
       lng: 19.445336025573223,
-      hours: "Hën–Sht: 09:00–17:00",
+      hours: "Hen–Sht: 09:00–17:00",
       gmaps: "https://www.google.com/maps/search/?api=1&query=Abissnet+Store+Durr%C3%ABs",
     },
   
@@ -206,7 +206,7 @@
       hours: "Hën–Sht: 09:00–17:00",
       gmaps: "https://www.google.com/maps/search/?api=1&query=Abissnet+Store+Elbasan",
     },
-    
+
     {
       id: 16,
       name: "Abissnet Store Fier",

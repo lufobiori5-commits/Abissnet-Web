@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../assets/img/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Mbrojtje DDoS e Menaxhuar – Abissnet</title>
+    <meta
+      name="description"
+      content="Mbrojtje DDoS profesionale me monitoring 24/7, pastrim automatik i trafikut dhe rrugëzim drejt Scrubbing Center. Mbro biznesin tënd nga sulmet volumetrike."
+    />
+    <link rel="stylesheet" href="../assets/css/biznesi/style.css" />
+    <link rel="stylesheet" href="../assets/css/biznesi/ddos.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="siteHeader">
+      <div class="header-inner">
+        <div class="header-logo">
+          <a href="index.html">
+            <img
+              src="../assets/img/abissnet-logo.png"
+              alt="Abissnet"
+              height="40"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <span
+              style="
+                display: none;
+                font-style: italic;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #fff;
+              "
+              >abissnet</span
+            >
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="header-nav">
+          <a href="index.html">Internet i Dedikuar</a>
+
+          <!-- DROPDOWN -->
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Hosting <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li>
+                <a class="dropdown-item" href="email-hosting.html"
+                  >Email Hosting</a
+                >
+              </li>
+              <li class="divider" role="separator"></li>
+              <li>
+                <a class="dropdown-item" href="website-hosting.html"
+                  >Website Professional Hosting</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="vps-hosting.html">VPS Hosting</a>
+              </li>
+            </ul>
+          </div>
+
+          <a href="colocation.html">Colocation</a>
+          <a href="mbrojtja-ddos.html">Mbrojtja DDOS</a>
+          <a href="telefonia-fix-voip.html">Telefonia Fix&VoiP</a>
+          <a href="dark-fiber.html">Dark Fiber</a>
+          <a href="tv.html">TV</a>
+        </nav>
+
+        <!-- Desktop Actions -->
+        <div class="header-actions">
+          <a class="header-btn primary" href="suport.html">Na Kontakto</a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button
+          class="hamburger-menu"
+          id="hamburger-btn-ddos"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu" id="mobile-menu-ddos">
+        <nav class="mobile-nav">
+          <a href="index.html" class="mobile-nav-link">Internet i Dedikuar</a>
+
+          <!-- Mobile Dropdown -->
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Hosting
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="email-hosting.html">Email Hosting</a>
+              <a href="website-hosting.html">Website Professional Hosting</a>
+              <a href="vps-hosting.html">VPS Hosting</a>
+            </div>
+          </div>
+
+          <a href="colocation.html" class="mobile-nav-link">Colocation</a>
+          <a href="mbrojtja-ddos.html" class="mobile-nav-link">Mbrojtja DDOS</a>
+          <a href="telefonia-fix-voip.html" class="mobile-nav-link"
+            >Telefonia Fix&VoiP</a
+          >
+          <a href="dark-fiber.html" class="mobile-nav-link">Dark Fiber</a>
+          <a href="tv.html" class="mobile-nav-link">TV</a>
+
+          <!-- Mobile Action Buttons -->
+          <div class="mobile-actions">
+            <a class="mobile-btn outline" href="dyqanet.html"
+              >Harta e Mbulimit</a
+            >
+            <a class="mobile-btn outline" href="abissnet.html">Paguaj Tani</a>
+            <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Sub Navigation -->
+    <div class="subnav" role="navigation" aria-label="Navigimi">
+      <div class="subnav-inner">
+        <a href="../index.html" class="pill">Individ</a>
+        <a href="index.html" class="pill active">Biznes</a>
+      </div>
+    </div>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section class="ddos-hero">
+        <div class="ddos-hero-bg">
+          <div class="shield-animation">
+            <div class="shield-ring"></div>
+            <div class="shield-ring"></div>
+            <div class="shield-ring"></div>
+          </div>
+        </div>
+        <div class="ddos-hero-container">
+          <div class="ddos-hero-content">
+            <div class="ddos-badge">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"
+                />
+              </svg>
+              Mbrojtje Profesionale
+            </div>
+            <h1 class="ddos-hero-title">
+              Mbrojtje <span class="gradient-text">DDoS</span> e Menaxhuar
+            </h1>
+            <p class="ddos-hero-subtitle">
+              Monitorim 24/7, pastrim automatik i trafikut dhe rrugëzim drejt
+              Scrubbing Center. Rrjeti juaj vazhdon punën normalisht edhe gjatë
+              sulmeve volumetrike më të forta.
+            </p>
+            <div class="ddos-hero-actions">
+              <a href="#kërko-ofertë" class="ddos-btn primary">Kërko Ofertë</a>
+              <a href="#si-funksionon" class="ddos-btn secondary"
+                >Si Funksionon</a
+              >
+            </div>
+
+            <!-- Stats -->
+            <div class="ddos-stats">
+              <div class="stat-item">
+                <div class="stat-value" data-count="99.99">0</div>
+                <div class="stat-label">% Uptime</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value"><span data-count="24">0</span>/7</div>
+                <div class="stat-label">Monitoring</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value" data-count="50">0</div>
+                <div class="stat-label">Gbps Kapacitet</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ddos-hero-visual">
+            <div class="shield-icon">
+              <svg viewBox="0 0 200 200" fill="none">
+                <defs>
+                  <linearGradient
+                    id="shieldGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop
+                      offset="0%"
+                      style="stop-color: #10b981; stop-opacity: 1"
+                    />
+                    <stop
+                      offset="100%"
+                      style="stop-color: #3b82f6; stop-opacity: 1"
+                    />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M100 10 L30 40 L30 100 C30 145 55 180 100 190 C145 180 170 145 170 100 L170 40 Z"
+                  stroke="url(#shieldGradient)"
+                  stroke-width="4"
+                  fill="rgba(16, 185, 129, 0.1)"
+                />
+                <path
+                  d="M70 100 L90 120 L130 80"
+                  stroke="#10b981"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="checkmark"
+                />
+              </svg>
+            </div>
+            <div class="attack-waves">
+              <div class="wave"></div>
+              <div class="wave"></div>
+              <div class="wave"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES SECTION -->
+      <section class="ddos-services" id="si-funksionon">
+        <div class="ddos-container">
+          <div class="section-header">
+            <h2 class="section-title">Si Funksionon Mbrojtja</h2>
+            <p class="section-subtitle">
+              Teknologji e avancuar për të mbrojtur infrastrukturën tuaj
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <div class="service-card" data-animate>
+              <div class="service-icon green">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </div>
+              <h3 class="service-title">Monitorim 24/7</h3>
+              <p class="service-desc">
+                Identifikim i hershëm i pattern-eve DDoS dhe eskalim automatik.
+                Sistemet tona monitorojnë trafikun vazhdimisht për anomali.
+              </p>
+            </div>
+
+            <div class="service-card" data-animate>
+              <div class="service-icon blue">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="3" />
+                  <path d="M12 1v6m0 6v6M1 12h6m6 0h6" />
+                  <circle cx="12" cy="12" r="10" />
+                </svg>
+              </div>
+              <h3 class="service-title">Pastrim Automatik</h3>
+              <p class="service-desc">
+                Filtra, rate-limit dhe blocklists aplikohen automatikisht.
+                Transparencë e plotë ndaj trafikut legjitim, zero downtime.
+              </p>
+            </div>
+
+            <div class="service-card" data-animate>
+              <div class="service-icon orange">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                  <line x1="12" y1="2" x2="12" y2="22" />
+                </svg>
+              </div>
+              <h3 class="service-title">Rrugëzim BGP</h3>
+              <p class="service-desc">
+                Mbrojtje e serverëve dhe BGP routing që mban rrjetin funksional
+                gjatë gjithë kohës, edhe gjatë sulmeve intensive.
+              </p>
+            </div>
+
+            <div class="service-card" data-animate>
+              <div class="service-icon purple">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                  <line x1="9" y1="9" x2="9.01" y2="9" />
+                  <line x1="15" y1="9" x2="15.01" y2="9" />
+                </svg>
+              </div>
+              <h3 class="service-title">Scrubbing Center</h3>
+              <p class="service-desc">
+                Trafiku i sulmit devijohet drejt "Scrubbing Center" ku bëhet
+                pastrimi volumetrik para se të kthehet i pastër.
+              </p>
+            </div>
+
+            <div class="service-card" data-animate>
+              <div class="service-icon red">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                  />
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                  <line x1="12" y1="22.08" x2="12" y2="12" />
+                </svg>
+              </div>
+              <h3 class="service-title">Lidhje L2</h3>
+              <p class="service-desc">
+                Lidhje Layer 2 direkte drejt Scrubbing Center për analizë të
+                plotë para se trafiku të hyjë në perimetrin tuaj.
+              </p>
+            </div>
+
+            <div class="service-card" data-animate>
+              <div class="service-icon teal">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <h3 class="service-title">Specialistë On-Call</h3>
+              <p class="service-desc">
+                Inxhinierë me eksperiencë të gjerë në incidente reale DDoS, të
+                disponueshëm 24/7 për çdo emergjencë.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY IT MATTERS -->
+      <section class="ddos-benefits">
+        <div class="ddos-container">
+          <div class="benefits-highlight">
+            <div class="highlight-icon">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+            </div>
+            <div class="highlight-content">
+              <h2>Pse ka rëndësi Mbrojtja DDoS</h2>
+              <p>
+                Mbrojtja DDoS mbron të ardhurat, reputacionin dhe SLA-t tuaja.
+                Operacionet s'ndalen, shërbimet qëndrojnë online, dhe klientët
+                tuaj nuk përjetojnë asnjë ndërprerje. Një sulm DDoS mund të
+                kushtojë mijëra euro në humbje të ardhurash - parandalimi është
+                gjithmonë më i lirë se riparimi.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefits-grid">
+            <div class="benefit-item" data-animate>
+              <div class="benefit-number">01</div>
+              <h3>Mbron të Ardhurat</h3>
+              <p>
+                Zero downtime = zero humbje financiare nga shitjet e humbura
+              </p>
+            </div>
+            <div class="benefit-item" data-animate>
+              <div class="benefit-number">02</div>
+              <h3>Ruan Reputacionin</h3>
+              <p>
+                Klientët besojnë tek shërbime që janë gjithmonë të disponueshëm
+              </p>
+            </div>
+            <div class="benefit-item" data-animate>
+              <div class="benefit-number">03</div>
+              <h3>Garanton SLA</h3>
+              <p>Përmbush kontrata me klientët dhe partnerët pa kompromis</p>
+            </div>
+            <div class="benefit-item" data-animate>
+              <div class="benefit-number">04</div>
+              <h3>Qetësi Mendore</h3>
+              <p>Fokuso në biznesin tënd, ne kujdesemi për sigurinë</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING SECTION -->
+      <section class="ddos-pricing" id="cmimet">
+        <div class="ddos-container">
+          <div class="section-header">
+            <h2 class="section-title">Çmimet</h2>
+            <p class="section-subtitle">
+              Tarifa transparente të bazuara në kapacitetin që nevojitet
+            </p>
+          </div>
+
+          <div class="pricing-table-wrapper">
+            <table class="pricing-table">
+              <thead>
+                <tr>
+                  <th class="capacity-col">Kapaciteti i Mbrojtjes</th>
+                  <th class="price-col">Çmimi për Gbps/muaj</th>
+                  <th class="total-col">Shembull Çmimi Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="capacity">1 Gbps</td>
+                  <td class="price">5,000 Lekë</td>
+                  <td class="total">5,000 Lekë/muaj</td>
+                </tr>
+                <tr>
+                  <td class="capacity">2 – 5 Gbps</td>
+                  <td class="price">4,000 Lekë</td>
+                  <td class="total">8,000 - 20,000 Lekë/muaj</td>
+                </tr>
+                <tr class="recommended">
+                  <td class="capacity">
+                    6 – 10 Gbps
+                    <span class="badge">E Rekomanduar</span>
+                  </td>
+                  <td class="price">3,500 Lekë</td>
+                  <td class="total">21,000 - 35,000 Lekë/muaj</td>
+                </tr>
+                <tr>
+                  <td class="capacity">11 – 20 Gbps</td>
+                  <td class="price">3,200 Lekë</td>
+                  <td class="total">35,200 - 64,000 Lekë/muaj</td>
+                </tr>
+                <tr>
+                  <td class="capacity">27 – 50 Gbps</td>
+                  <td class="price">2,400 Lekë</td>
+                  <td class="total">64,800 - 120,000 Lekë/muaj</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="pricing-notes">
+            <h4>Shënime Transparence</h4>
+            <ul>
+              <li>✓ Çmimet përfshijnë TVSH</li>
+              <li>
+                ✓ Tarifimi është proporcional sipas kapacitetit të kërkuar (në
+                Gbps)
+              </li>
+              <li>
+                ✓ Për çdo interval kapaciteti aplikohet vlera për 1 Gbps dhe
+                shumëzohet me sasinë e kërkuar
+              </li>
+              <li>✓ Kontrata minimale 12 muaj për çmime më të mira</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUOTE REQUEST FORM -->
+      <section class="ddos-form-section" id="kërko-ofertë">
+        <div class="ddos-container-small">
+          <div class="form-header">
+            <h2 class="form-title">Kërko Ofertë për Mbrojtje DDoS</h2>
+            <p class="form-subtitle">
+              Plotëso formularin dhe ne do të llogarisim kapacitetin optimal për
+              biznesin tënd brenda 24 orëve.
+            </p>
+          </div>
+
+          <form class="ddos-form" id="ddos-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="emri">Emri & Mbiemri *</label>
+                <input
+                  id="emri"
+                  name="emri"
+                  type="text"
+                  placeholder="p.sh. Ardit Kelmendi"
+                  required
+                />
+                <span class="form-error" id="emri-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="telefoni">Telefoni *</label>
+                <input
+                  id="telefoni"
+                  name="telefoni"
+                  type="tel"
+                  placeholder="+355 69 123 4567"
+                  required
+                />
+                <span class="form-error" id="telefoni-error"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="email@kompania.com"
+                  required
+                />
+                <span class="form-error" id="email-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="kompania">Kompania *</label>
+                <input
+                  id="kompania"
+                  name="kompania"
+                  type="text"
+                  placeholder="Emri i kompanisë"
+                  required
+                />
+                <span class="form-error" id="kompania-error"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="kapaciteti">Kapaciteti i Dëshiruar (Gbps) *</label>
+                <select id="kapaciteti" name="kapaciteti" required>
+                  <option value="">Zgjidh kapacitetin...</option>
+                  <option value="1">1 Gbps (5,000 Lekë/muaj)</option>
+                  <option value="2-5">2-5 Gbps (4,000 Lekë/Gbps)</option>
+                  <option value="6-10">
+                    6-10 Gbps (3,500 Lekë/Gbps) — E REKOMANDUAR
+                  </option>
+                  <option value="11-20">11-20 Gbps (3,200 Lekë/Gbps)</option>
+                  <option value="27-50">27-50 Gbps (2,400 Lekë/Gbps)</option>
+                  <option value="custom">Kapacitet i personalizuar</option>
+                </select>
+                <span class="form-error" id="kapaciteti-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="tipi-biznesit">Tipi i Biznesit</label>
+                <select id="tipi-biznesit" name="tipi-biznesit">
+                  <option value="">Zgjidh...</option>
+                  <option value="hosting">Hosting Provider</option>
+                  <option value="ecommerce">E-commerce</option>
+                  <option value="gaming">Gaming/Entertainment</option>
+                  <option value="finance">Financa/Banking</option>
+                  <option value="media">Media/Streaming</option>
+                  <option value="other">Tjetër</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="mesazhi">Detaje Shtesë</label>
+              <textarea
+                id="mesazhi"
+                name="mesazhi"
+                rows="5"
+                placeholder="Përshkruani nevojat tuaja specifike:
+• A keni pasur sulme DDoS më parë?
+• Sa trafik normal keni (Gbps)?
+• A keni BGP peering ekzistues?
+• Kur dëshironi të aktivizoni shërbimin?"
+              ></textarea>
+            </div>
+
+            <div class="form-checkbox">
+              <input type="checkbox" id="privacy" name="privacy" required />
+              <label for="privacy">
+                Pranoj <a href="#">kushtet e përdorimit</a> dhe
+                <a href="#">politikën e privatësisë</a> *
+              </label>
+            </div>
+
+            <button class="form-submit" type="submit" id="submit-btn">
+              <span class="btn-text">Dërgo Kërkesën</span>
+              <span class="btn-loader" style="display: none">
+                <svg class="spinner" width="20" height="20" viewBox="0 0 24 24">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    fill="none"
+                    opacity="0.25"
+                  />
+                  <path
+                    fill="currentColor"
+                    d="M12 2a10 10 0 0 1 10 10h-4a6 6 0 0 0-6-6V2z"
+                    opacity="0.75"
+                  />
+                </svg>
+                Po dërgon...
+              </span>
+            </button>
+          </form>
+
+          <!-- Pricing Calculator -->
+          <div class="pricing-calculator" id="calculator">
+            <h3>Llogaritësi i Shpejtë</h3>
+            <div class="calculator-content">
+              <div class="calculator-input">
+                <label for="calc-gbps">Gbps të nevojshme:</label>
+                <input
+                  type="number"
+                  id="calc-gbps"
+                  min="1"
+                  max="50"
+                  value="10"
+                />
+              </div>
+              <div class="calculator-result">
+                <div class="result-label">Çmimi i Përafërt:</div>
+                <div class="result-value" id="calc-result">
+                  35,000 Lekë/muaj
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="ddos-faq" id="faq">
+        <div class="ddos-container">
+          <div class="section-header">
+            <h2 class="section-title">Pyetje të Shpeshta (FAQ)</h2>
+            <p class="section-subtitle">
+              Përgjigje për pyetjet më të zakonshme rreth mbrojtjes DDoS
+            </p>
+          </div>
+
+          <div class="faq-list">
+            <div class="faq-item" data-animate>
+              <button class="faq-question">
+                <span class="faq-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"
+                    />
+                  </svg>
+                </span>
+                <span class="faq-text"
+                  >A prek mbrojtja DDoS trafikun legjitim?</span
+                >
+                <span class="faq-arrow">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Jo aspak. Scrubbing Center-i ynë përdor teknologji të avancuar
+                  për të segmentuar trafikun dhe për të lënë të paprekur
+                  trafikun legjitim. Filtrat zbatohen vetëm mbi trafikun e
+                  dyshimtë, ndërsa vizitorët dhe klientët tuaj normalë nuk
+                  eksperiencojnë asnjë vonesë apo ndërprerje.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-animate>
+              <button class="faq-question">
+                <span class="faq-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                    />
+                  </svg>
+                </span>
+                <span class="faq-text"
+                  >Çfarë kërkohet teknikisht për të aktivizuar shërbimin?</span
+                >
+                <span class="faq-arrow">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Kërkohet BGP peering ose lidhje Layer 2 me Abissnet, së bashku
+                  me prefikset dhe AS numrin tuaj. Për konfigurime më të
+                  thjeshta, mund të përdoret edhe tunelim i dedikuar (GRE/IPsec)
+                  për devijimin e trafikut. Ekipi ynë teknik do të ju ndihmojë
+                  me të gjithë setup-in.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-animate>
+              <button class="faq-question">
+                <span class="faq-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="19 12 12 19 5 12" />
+                  </svg>
+                </span>
+                <span class="faq-text"
+                  >Si skalohet kapaciteti nëse më duhet më shumë?</span
+                >
+                <span class="faq-arrow">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Kapaciteti mund të rritet me hapa prej 1 Gbps në çdo kohë.
+                  Çmimi llogaritet automatikisht sipas tabelës së çmimeve për
+                  intervalin përkatës. Për sulme jashtëzakonisht të mëdha (>50
+                  Gbps), ofrojmë zgjidhje të personalizuara.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-animate>
+              <button class="faq-question">
+                <span class="faq-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                </span>
+                <span class="faq-text"
+                  >Sa kohë zgjat aktivizimi i shërbimit?</span
+                >
+                <span class="faq-arrow">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Aktivizimi bëhet shpejt, zakonisht brenda 24-48 orëve pas
+                  validimit teknik dhe konfigurimit të rregullave të
+                  sinjalizimit/peering. Për emergjenca, ofrojmë setup të
+                  përshpejtuar brenda disa orëve.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-animate>
+              <button class="faq-question">
+                <span class="faq-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                  </svg>
+                </span>
+                <span class="faq-text"
+                  >Çfarë llojesh sulmesh DDoS mbulon shërbimi?</span
+                >
+                <span class="faq-arrow">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Shërbimi mbron nga të gjitha llojet e sulmeve DDoS:
+                  volumetrike (UDP flood, ICMP flood), protokoll (SYN flood, ACK
+                  flood), dhe aplikacion (HTTP flood, Slowloris). Përdorim
+                  machine learning për të identifikuar edhe pattern-e të reja
+                  sulmesh.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-animate>
+              <button class="faq-question">
+                <span class="faq-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                    <polyline points="10 9 9 9 8 9" />
+                  </svg>
+                </span>
+                <span class="faq-text"
+                  >A marr raporte dhe statistika për sulmet?</span
+                >
+                <span class="faq-arrow">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Po, absolutisht. Ju merrni raporte të detajuara për çdo sulm
+                  të identifikuar: tipi i sulmit, madhësia, kohëzgjatja, burimi
+                  gjeografik, dhe veprimet e marra. Në portalin e klientit mund
+                  të shikoni statistika në kohë reale dhe historike.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col brand">
+          <div class="footer-logo">Abissnet</div>
+          <ul>
+            <li><a href="colocation.html">Colocation</a></li>
+            <li><a href="mbrojtja-ddos.html">Mbrojtja DDOS</a></li>
+            <li><a href="telefonia-fix-voip.html">Telefonia Fix&VoiP</a></li>
+            <li><a href="dark-fiber.html">Dark Fiber</a></li>
+            <li><a href="tv.html">TV</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Shërbime/Produkte</h3>
+          <ul>
+            <li><a href="email-hosting.html">Email Hosting</a></li>
+            <li>
+              <a href="website-hosting.html">Website Professional Hosting</a>
+            </li>
+            <li><a href="vps-hosting.html">VPS Hosting</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Më të Populluara</h3>
+          <ul>
+            <li><a href="email-hosting.html">Email Hosting</a></li>
+            <li>
+              <a href="website-hosting.html">Website Professional Hosting</a>
+            </li>
+            <li><a href="vps-hosting.html">VPS Hosting</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Shkruaj email-in tuaj" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="footer-social">
+            <a
+              href="https://facebook.com/abissnet"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://instagram.com/abissnet"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://youtube.com/@abissnet"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Partner logos row -->
+
+      <div class="footer-bottom">
+        © 2025 Abissnet. Të gjitha të drejtat e rezervuara.
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/toast.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/biznesi/ddos.js"></script>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+  </body>
+</html>

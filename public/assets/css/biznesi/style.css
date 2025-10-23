@@ -565,14 +565,18 @@ button {
   bottom: -50px;
 }
 
+.white {
+  color: white !important;
+}
+
 /* ========================================
    FEATURES SECTION
    ======================================== */
 .features-section {
-  background: #ffffff99;
+  background: #23262b;
   padding: var(--spacing-3xl) var(--spacing-2xl) var(--spacing-2xl)
     var(--spacing-2xl);
-  margin: 25px auto 0 auto;
+  margin: 0 auto;
   position: relative;
   z-index: 10;
   display: grid;

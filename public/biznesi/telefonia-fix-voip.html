@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../assets/img/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Telefonia Fix & VoIP – Abissnet</title>
+    <meta
+      name="description"
+      content="Telefonia fikse dhe portabiliteti i numrit nga Abissnet: oferta fleksibile, ruajtje numri ekzistues, tarifa konkurruese nga €4.50/muaj."
+    />
+    <link rel="stylesheet" href="../assets/css/biznesi/style.css" />
+    <link rel="stylesheet" href="../assets/css/biznesi/telephony.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="siteHeader">
+      <div class="header-inner">
+        <div class="header-logo">
+          <a href="index.html">
+            <img
+              src="../assets/img/abissnet-logo.png"
+              alt="Abissnet"
+              height="40"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <span
+              style="
+                display: none;
+                font-style: italic;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #fff;
+              "
+              >abissnet</span
+            >
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="header-nav">
+          <a href="index.html">Internet i Dedikuar</a>
+
+          <!-- DROPDOWN -->
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Hosting <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li>
+                <a class="dropdown-item" href="email-hosting.html"
+                  >Email Hosting</a
+                >
+              </li>
+              <li class="divider" role="separator"></li>
+              <li>
+                <a class="dropdown-item" href="website-hosting.html"
+                  >Website Professional Hosting</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="vps-hosting.html">VPS Hosting</a>
+              </li>
+            </ul>
+          </div>
+
+          <a href="colocation.html">Colocation</a>
+          <a href="mbrojtja-ddos.html">Mbrojtja DDOS</a>
+          <a href="telefonia-fix-voip.html">Telefonia Fix&VoiP</a>
+          <a href="dark-fiber.html">Dark Fiber</a>
+          <a href="tv.html">TV</a>
+        </nav>
+
+        <!-- Desktop Actions -->
+        <div class="header-actions">
+          <a class="header-btn primary" href="suport.html">Na Kontakto</a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button
+          class="hamburger-menu"
+          id="hamburger-btn-tel"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu" id="mobile-menu-tel">
+        <nav class="mobile-nav">
+          <a href="index.html" class="mobile-nav-link">Internet i Dedikuar</a>
+
+          <!-- Mobile Dropdown -->
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Hosting
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="email-hosting.html">Email Hosting</a>
+              <a href="website-hosting.html">Website Professional Hosting</a>
+              <a href="vps-hosting.html">VPS Hosting</a>
+            </div>
+          </div>
+
+          <a href="colocation.html" class="mobile-nav-link">Colocation</a>
+          <a href="mbrojtja-ddos.html" class="mobile-nav-link">Mbrojtja DDOS</a>
+          <a href="telefonia-fix-voip.html" class="mobile-nav-link"
+            >Telefonia Fix&VoiP</a
+          >
+          <a href="dark-fiber.html" class="mobile-nav-link">Dark Fiber</a>
+          <a href="tv.html" class="mobile-nav-link">TV</a>
+
+          <!-- Mobile Action Buttons -->
+          <div class="mobile-actions">
+            <a class="mobile-btn outline" href="dyqanet.html"
+              >Harta e Mbulimit</a
+            >
+            <a class="mobile-btn outline" href="abissnet.html">Paguaj Tani</a>
+            <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Sub Navigation -->
+    <div class="subnav" role="navigation" aria-label="Navigimi">
+      <div class="subnav-inner">
+        <a href="../index.html" class="pill">Individ</a>
+        <a href="index.html" class="pill active">Biznes</a>
+      </div>
+    </div>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section class="tel-hero">
+        <div class="tel-hero-bg">
+          <div class="signal-waves">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+          </div>
+        </div>
+        <div class="tel-hero-container">
+          <div class="tel-hero-content">
+            <div class="tel-badge">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z"
+                />
+              </svg>
+              Telefonia Profesionale
+            </div>
+            <h1 class="tel-hero-title">
+              Telefonia <span class="gradient-text">Fix & VoiP</span>
+            </h1>
+            <p class="tel-hero-subtitle">
+              Mbani numrin ekzistues me portabilitet ose zgjidhni një numër të
+              ri fiks. Tarifa konkurruese, komunikim i qëndrueshëm dhe shërbime
+              profesionale për biznesin dhe shtëpinë tuaj.
+            </p>
+            <div class="tel-hero-actions">
+              <a href="#paketat" class="tel-btn primary">Shiko Paketat</a>
+              <a href="#apliko" class="tel-btn secondary">Kërko Ofertë</a>
+            </div>
+
+            <!-- Stats -->
+            <div class="tel-stats">
+              <div class="stat-item">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Paketa</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">€4.50</div>
+                <div class="stat-label">Nga</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">3-5</div>
+                <div class="stat-label">Ditë Aktivizim</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tel-hero-visual">
+            <div class="phone-icon">
+              <svg viewBox="0 0 200 200" fill="none">
+                <defs>
+                  <linearGradient
+                    id="phoneGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop
+                      offset="0%"
+                      style="stop-color: #ff6b00; stop-opacity: 1"
+                    />
+                    <stop
+                      offset="100%"
+                      style="stop-color: #3b82f6; stop-opacity: 1"
+                    />
+                  </linearGradient>
+                </defs>
+                <!-- Phone Body -->
+                <rect
+                  x="60"
+                  y="30"
+                  width="80"
+                  height="140"
+                  rx="10"
+                  stroke="url(#phoneGradient)"
+                  stroke-width="4"
+                  fill="rgba(255, 107, 0, 0.1)"
+                />
+                <!-- Screen -->
+                <rect
+                  x="70"
+                  y="45"
+                  width="60"
+                  height="100"
+                  rx="5"
+                  fill="rgba(255, 107, 0, 0.2)"
+                />
+                <!-- Signal Lines -->
+                <g class="signal-lines">
+                  <line
+                    x1="80"
+                    y1="60"
+                    x2="120"
+                    y2="60"
+                    stroke="#ff6b00"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                  />
+                  <line
+                    x1="80"
+                    y1="75"
+                    x2="120"
+                    y2="75"
+                    stroke="#ff6b00"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                  />
+                  <line
+                    x1="80"
+                    y1="90"
+                    x2="110"
+                    y2="90"
+                    stroke="#ff6b00"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                  />
+                </g>
+                <!-- Button -->
+                <circle cx="100" cy="155" r="8" fill="#ff6b00" />
+              </svg>
+            </div>
+            <div class="call-waves">
+              <div class="call-wave"></div>
+              <div class="call-wave"></div>
+              <div class="call-wave"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES SECTION -->
+      <section class="tel-features">
+        <div class="tel-container">
+          <div class="section-header">
+            <h2 class="section-title">Çfarë Përfshihet</h2>
+            <p class="section-subtitle">
+              Shërbime profesionale të telefonisë fikse dhe portabiliteti
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-card" data-animate>
+              <div class="feature-icon orange">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+              </div>
+              <h3 class="feature-title">Telefonia Fikse</h3>
+              <p class="feature-desc">
+                Komunikim i qëndrueshëm dhe profesional. Mundësi zgjedhje e një
+                numri të ri fiks kundrejt një pagese fillestare që kreditohet
+                për thirrje dalëse.
+              </p>
+            </div>
+
+            <div class="feature-card" data-animate>
+              <div class="feature-icon blue">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="17 1 21 5 17 9" />
+                  <path d="M3 11V9a4 4 0 0 1 4-4h14" />
+                  <polyline points="7 23 3 19 7 15" />
+                  <path d="M21 13v2a4 4 0 0 1-4 4H3" />
+                </svg>
+              </div>
+              <h3 class="feature-title">Portabiliteti i Numrit</h3>
+              <p class="feature-desc">
+                Mbani numrin fiks ekzistues kur ndryshoni operatorin. Zero
+                konfuzion për kontaktet tuaja — e njëjta numër, shërbim më i
+                mirë.
+              </p>
+            </div>
+
+            <div class="feature-card" data-animate>
+              <div class="feature-icon green">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                  />
+                </svg>
+              </div>
+              <h3 class="feature-title">Tarifa Konkurruese</h3>
+              <p class="feature-desc">
+                Nga vetëm €4.50/muaj për 100 minuta. Pagesa fillestare
+                kreditohet për thirrjet dalëse. Zgjidhje ekonomike për çdo
+                biznes.
+              </p>
+            </div>
+
+            <div class="feature-card" data-animate>
+              <div class="feature-icon purple">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                  />
+                </svg>
+              </div>
+              <h3 class="feature-title">Proces i Shpejtë</h3>
+              <p class="feature-desc">
+                Aktivizim në 3-5 ditë pune. Procesi i portimit kërkon vetëm
+                dokument identifikimi dhe formular. Ekipi ynë ju ndihmon në çdo
+                hap.
+              </p>
+            </div>
+
+            <div class="feature-card" data-animate>
+              <div class="feature-icon red">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                  />
+                </svg>
+              </div>
+              <h3 class="feature-title">Suport 24/7</h3>
+              <p class="feature-desc">
+                Ekip i disponueshëm për çdo pyetje ose problem teknik. Asistencë
+                e plotë gjatë procesit të portimit dhe aktivizimit.
+              </p>
+            </div>
+
+            <div class="feature-card" data-animate>
+              <div class="feature-icon teal">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M9 11l3 3L22 4" />
+                  <path
+                    d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+                  />
+                </svg>
+              </div>
+              <h3 class="feature-title">Fleksibilitet</h3>
+              <p class="feature-desc">
+                Zgjidhni paketën që ju përshtatet: 100, 200 ose 300 minuta.
+                Ndryshoni paketën në çdo kohë sipas nevojave tuaja.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BENEFITS SECTION -->
+      <section class="tel-benefits">
+        <div class="tel-container">
+          <div class="section-header">
+            <h2 class="section-title">Përse Abissnet Telefonia</h2>
+            <p class="section-subtitle">
+              Përfitimet që ju bëjnë të zgjidhni ne
+            </p>
+          </div>
+
+          <div class="benefits-grid">
+            <div class="benefit-item" data-animate>
+              <div class="benefit-number">01</div>
+              <h3>Ruani Identitetin Tuaj</h3>
+              <p>
+                Me portabilitetin e numrit, kontaktet tuaja nuk humbin numrin.
+                Biznesi juaj vazhdon pa ndërprerje dhe pa ndryshime në materiale
+                marketingu.
+              </p>
+            </div>
+
+            <div class="benefit-item" data-animate>
+              <div class="benefit-number">02</div>
+              <h3>Kurseni Para</h3>
+              <p>
+                Tarifa nga €4.50/muaj janë ndër më konkurrueset në treg. Pagesa
+                fillestare kreditohet për thirrje, pra zero humbje.
+              </p>
+            </div>
+
+            <div class="benefit-item" data-animate>
+              <div class="benefit-number">03</div>
+              <h3>Proces i Thjeshtë</h3>
+              <p>
+                Nuk keni nevojë të jeni ekspert teknik. Ne ju drejtojmë hap pas
+                hapi dhe kujdesemi për të gjitha detajet teknike.
+              </p>
+            </div>
+
+            <div class="benefit-item" data-animate>
+              <div class="benefit-number">04</div>
+              <h3>Cilësi e Garantuar</h3>
+              <p>
+                Rrjeti i Abissnet ofron komunikim të qartë dhe të qëndrueshëm.
+                Teknologjia VoIP moderne për thirrje pa ndërprerje.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PACKAGES SECTION -->
+      <section class="tel-packages" id="paketat">
+        <div class="tel-container">
+          <div class="section-header">
+            <h2 class="section-title">Paketat e Telefonisë</h2>
+            <p class="section-subtitle">
+              Zgjidhni paketën që përshtatet me nevojat tuaja
+            </p>
+          </div>
+
+          <div class="packages-grid">
+            <!-- Package 1 -->
+            <div class="package-card" data-animate>
+              <div class="package-header">
+                <h3 class="package-name">Fiks 100</h3>
+                <div class="package-price">
+                  <span class="price">€4.50</span>
+                  <span class="period">/muaj</span>
+                </div>
+              </div>
+              <div class="package-features">
+                <div class="package-feature">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>100 minuta në muaj</span>
+                </div>
+                <div class="package-feature">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Numër fiks i ri</span>
+                </div>
+                <div class="package-feature">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Portabilitet opsional</span>
+                </div>
+                <div class="package-feature">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Pagesa kreditohet</span>
+                </div>
+                <div class="package-feature">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Suport teknik</span>
+                </div>
+              </div>
+              <a href="#apliko" class="package-btn">Zgjidh Paketën</a>
+            </div>
+
+            <!-- Package 2 - Featured -->
+            <div class="package-card featured" data-animate>
+              <div class="featured-badge">Më e Zgjedhur</div>
+              <div class="package-header">
+                <h3 class="package-name">Fiks 200</h3>
+                <div class="package-price">
+                  <span class="price">€7.50</span>
+                  <span class="period">/muaj</span>
+                </div>
+              </div>
+              <div class="package-features">
+                <div class="package-feature">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>200 minuta në muaj</span>
+                </div>
+                <div class="package-feature">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Numër fiks i ri</span>
+                </div>
+                <div class="package-feature">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Portabilitet opsional</span>
+                </div>
+                <div class="package-feature">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Pagesa kreditohet</span>
+                </div>
+                <div class="package-feature">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Suport prioritar</span>
+                </div>
+              </div>
+              <a href="#apliko" class="package-btn primary">Zgjidh Paketën</a>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="package-card" data-animate>
+              <div class="package-header">
+                <h3 class="package-name">Fiks 300</h3>
+                <div class="package-price">
+                  <span class="price">€10.50</span>
+                  <span class="period">/muaj</span>
+                </div>
+              </div>
+              <div class="package-features">
+                <div class="package-feature">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>300 minuta në muaj</span>
+                </div>
+                <div class="package-feature">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Numër fiks i ri</span>
+                </div>
+                <div class="package-feature">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Portabilitet opsional</span>
+                </div>
+                <div class="package-feature">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Pagesa kreditohet</span>
+                </div>
+                <div class="package-feature">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Suport prioritar</span>
+                </div>
+              </div>
+              <a href="#apliko" class="package-btn">Zgjidh Paketën</a>
+            </div>
+          </div>
+
+          <div class="package-note">
+            <p>
+              💡 <strong>Shënim:</strong> Të gjitha paketat përfshijnë mundësinë
+              e portabilitetit të numrit ekzistues. Pagesa fillestare kreditohet
+              për thirrje dalëse.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUOTE REQUEST FORM -->
+      <section class="tel-form-section" id="apliko">
+        <div class="tel-container-small">
+          <div class="form-header">
+            <h2 class="form-title">Kërko Ofertë</h2>
+            <p class="form-subtitle">
+              Plotëso formularin dhe ne do të kontaktojmë brenda 24 orëve për të
+              aktivizuar shërbimin ose për të filluar procesin e portabilitetit.
+            </p>
+          </div>
+
+          <form class="tel-form" id="tel-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="emri">Emri i Biznesit / Individit *</label>
+                <input
+                  id="emri"
+                  name="emri"
+                  type="text"
+                  placeholder="p.sh. Company Shpk / Emër Mbiemër"
+                  required
+                />
+                <span class="form-error" id="emri-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="telefoni">Telefon Kontakti *</label>
+                <input
+                  id="telefoni"
+                  name="telefoni"
+                  type="tel"
+                  placeholder="+355 69 123 4567"
+                  required
+                />
+                <span class="form-error" id="telefoni-error"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="contact@kompania.al"
+                  required
+                />
+                <span class="form-error" id="email-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="paketa">Paketa e Interesit *</label>
+                <select id="paketa" name="paketa" required>
+                  <option value="">Zgjidh paketën...</option>
+                  <option value="fiks-100">
+                    Abissnet Fiks 100 (€4.50/muaj)
+                  </option>
+                  <option value="fiks-200">
+                    Abissnet Fiks 200 (€7.50/muaj) — E REKOMANDUAR
+                  </option>
+                  <option value="fiks-300">
+                    Abissnet Fiks 300 (€10.50/muaj)
+                  </option>
+                  <option value="portim">Portim i numrit ekzistues</option>
+                </select>
+                <span class="form-error" id="paketa-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="mesazhi">Detaje Shtesë</label>
+              <textarea
+                id="mesazhi"
+                name="mesazhi"
+                rows="5"
+                placeholder="Ju lutemi përshkruani:
+• A dëshironi numër të ri apo portim të numrit ekzistues?
+• Nëse portim, cili është numri aktual?
+• Adresa e instalimit
+• Orari i preferuar për kontakt"
+              ></textarea>
+            </div>
+
+            <div class="form-checkbox">
+              <input type="checkbox" id="privacy" name="privacy" required />
+              <label for="privacy">
+                Pranoj <a href="#">kushtet e përdorimit</a> dhe
+                <a href="#">politikën e privatësisë</a> *
+              </label>
+            </div>
+
+            <button class="form-submit" type="submit" id="submit-btn">
+              <span class="btn-text">Dërgo Kërkesën</span>
+              <span class="btn-loader" style="display: none">
+                <svg class="spinner" width="20" height="20" viewBox="0 0 24 24">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    fill="none"
+                    opacity="0.25"
+                  />
+                  <path
+                    fill="currentColor"
+                    d="M12 2a10 10 0 0 1 10 10h-4a6 6 0 0 0-6-6V2z"
+                    opacity="0.75"
+                  />
+                </svg>
+                Po dërgon...
+              </span>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col brand">
+          <div class="footer-logo">Abissnet</div>
+          <ul>
+            <li><a href="colocation.html">Colocation</a></li>
+            <li><a href="mbrojtja-ddos.html">Mbrojtja DDOS</a></li>
+            <li><a href="telefonia-fix-voip.html">Telefonia Fix&VoiP</a></li>
+            <li><a href="dark-fiber.html">Dark Fiber</a></li>
+            <li><a href="tv.html">TV</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Shërbime/Produkte</h3>
+          <ul>
+            <li><a href="email-hosting.html">Email Hosting</a></li>
+            <li>
+              <a href="website-hosting.html">Website Professional Hosting</a>
+            </li>
+            <li><a href="vps-hosting.html">VPS Hosting</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Më të Populluara</h3>
+          <ul>
+            <li><a href="email-hosting.html">Email Hosting</a></li>
+            <li>
+              <a href="website-hosting.html">Website Professional Hosting</a>
+            </li>
+            <li><a href="vps-hosting.html">VPS Hosting</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Shkruaj email-in tuaj" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="footer-social">
+            <a
+              href="https://facebook.com/abissnet"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://instagram.com/abissnet"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://youtube.com/@abissnet"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Partner logos row -->
+
+      <div class="footer-bottom">
+        © 2025 Abissnet. Të gjitha të drejtat e rezervuara.
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/toast.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/biznesi/telephony.js"></script>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+  </body>
+</html>

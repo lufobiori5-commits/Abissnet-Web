@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../assets/img/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Abissnet — Email Hosting</title>
+    <meta
+      name="description"
+      content="Email Hosting profesional nga Abissnet: cPanel, NVMe, SSL, DDoS, suport 24/7. Zgjidhje të siguruara për biznesin tuaj."
+    />
+
+    <!-- SEO Enhancements -->
+    <meta property="og:title" content="Email Hosting — Abissnet" />
+    <meta
+      property="og:description"
+      content="Email hosting i shpejtë dhe i sigurt me cPanel, NVMe, SSL dhe suport 24/7"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="../assets/img/emailhost.png" />
+    <link rel="canonical" href="https://abissnet.al/email-hosting.html" />
+
+    <link rel="stylesheet" href="../assets/css/biznesi/style.css" />
+    <link rel="stylesheet" href="../assets/css/biznesi/email-hosting.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="site-header">
+      <div class="header-inner">
+        <div class="header-logo">
+          <a href="index.html">
+            <img
+              src="../assets/img/abissnet-logo.png"
+              alt="Abissnet"
+              height="40"
+              id="logo-img"
+            />
+            <span class="logo-fallback" style="display: none">abissnet</span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="header-nav">
+          <a href="index.html">Internet i Dedikuar</a>
+
+          <!-- DROPDOWN -->
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Hosting <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li>
+                <a class="dropdown-item" href="email-hosting.html"
+                  >Email Hosting</a
+                >
+              </li>
+              <li class="divider" role="separator"></li>
+              <li>
+                <a class="dropdown-item" href="website-hosting.html"
+                  >Website Professional Hosting</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="vps-hosting.html">VPS Hosting</a>
+              </li>
+            </ul>
+          </div>
+
+          <a href="colocation.html">Colocation</a>
+          <a href="mbrojtja-ddos.html">Mbrojtja DDOS</a>
+          <a href="telefonia-fix-voip.html">Telefonia Fix&VoiP</a>
+          <a href="dark-fiber.html">Dark Fiber</a>
+          <a href="tv.html">TV</a>
+        </nav>
+
+        <!-- Desktop Actions -->
+        <div class="header-actions">
+          <a class="header-btn primary" href="suport.html">Na Kontakto</a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button
+          class="hamburger-menu"
+          id="hamburger-btn"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <nav class="mobile-nav">
+          <a href="index.html" class="mobile-nav-link">Internet i Dedikuar</a>
+
+          <!-- Mobile Dropdown -->
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Hosting
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="email-hosting.html">Email Hosting</a>
+              <a href="website-hosting.html">Website Professional Hosting</a>
+              <a href="vps-hosting.html">VPS Hosting</a>
+            </div>
+          </div>
+
+          <a href="colocation.html" class="mobile-nav-link">Colocation</a>
+          <a href="mbrojtja-ddos.html" class="mobile-nav-link">Mbrojtja DDOS</a>
+          <a href="telefonia-fix-voip.html" class="mobile-nav-link"
+            >Telefonia Fix&VoiP</a
+          >
+          <a href="dark-fiber.html" class="mobile-nav-link">Dark Fiber</a>
+          <a href="tv.html" class="mobile-nav-link">TV</a>
+
+          <!-- Mobile Action Buttons -->
+          <div class="mobile-actions">
+            <a class="mobile-btn outline" href="dyqanet.html"
+              >Harta e Mbulimit</a
+            >
+            <a class="mobile-btn outline" href="abissnet.html">Paguaj Tani</a>
+            <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Sub Navigation -->
+    <div class="subnav" role="navigation" aria-label="Shërbime">
+      <div class="subnav-inner">
+        <a href="#paketat" class="pill active">Paketat</a>
+        <a href="#avantazhet" class="pill">Avantazhet</a>
+        <a href="#pricing" class="pill">Çmimet</a>
+        <a href="#apliko" class="pill">Apliko</a>
+      </div>
+    </div>
+
+    <main>
+      <!-- ENHANCED HERO SECTION -->
+      <section class="emailhosting-hero">
+        <!-- Animated Background -->
+        <div class="emailhosting-hero-bg">
+          <div
+            class="email-particle"
+            style="--delay: 0s; --x: 10%; --y: 20%"
+          ></div>
+          <div
+            class="email-particle"
+            style="--delay: 0.5s; --x: 80%; --y: 30%"
+          ></div>
+          <div
+            class="email-particle"
+            style="--delay: 1s; --x: 50%; --y: 70%"
+          ></div>
+          <div
+            class="email-particle"
+            style="--delay: 1.5s; --x: 30%; --y: 80%"
+          ></div>
+        </div>
+
+        <div class="emailhosting-hero-inner">
+          <div class="emailhosting-hero-content">
+            <span class="hero-badge">Professional Email</span>
+            <h1 class="emailhosting-hero-title">
+              Email Hosting
+              <span class="gradient-text">Profesional dhe i Sigurt</span>
+            </h1>
+            <p class="emailhosting-hero-subtitle">
+              cPanel i plotë, NVMe për shpejtësi maksimale, SSL dhe mbrojtje
+              DDoS. Email hosting i dizajnuar për bizneset moderne.
+            </p>
+
+            <!-- Key Stats -->
+            <div class="emailhosting-stats">
+              <div class="stat-item">
+                <div class="stat-number">99.9%</div>
+                <div class="stat-label">Uptime</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">NVMe</div>
+                <div class="stat-label">Storage</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Suport</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">SSL</div>
+                <div class="stat-label">I Sigurt</div>
+              </div>
+            </div>
+
+            <!-- Hero Actions -->
+            <div class="emailhosting-hero-actions">
+              <a href="#paketat" class="btn-hero primary">
+                <span>Shiko Paketat</span>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a href="#apliko" class="btn-hero ghost">
+                <span>Kërko Ofertë</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Visual -->
+          <div class="emailhosting-hero-visual">
+            <div class="email-visualization">
+              <div class="email-core"></div>
+              <div class="email-pulse"></div>
+              <div class="email-icons">
+                <div class="email-icon" style="--angle: 0deg">✉️</div>
+                <div class="email-icon" style="--angle: 72deg">🔒</div>
+                <div class="email-icon" style="--angle: 144deg">⚡</div>
+                <div class="email-icon" style="--angle: 216deg">📊</div>
+                <div class="email-icon" style="--angle: 288deg">🛡️</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PACKAGES SECTION -->
+      <section id="paketat" class="stream-section soft">
+        <div class="stream-section-inner">
+          <h2 class="stream-h3">Zgjedh Paketën e Përshtatshme</h2>
+          <p>
+            Tre paketa të dizajnuara për nevoja të ndryshme - nga startup deri
+            te enterprise.
+          </p>
+
+          <div class="package-grid-enhanced">
+            <!-- Basic Package -->
+            <div class="package-card-modern">
+              <div class="package-header">
+                <div class="package-name">Basic</div>
+                <div class="package-storage">50 GB NVMe</div>
+              </div>
+
+              <div class="package-price-modern">
+                <span class="price-value">6,000</span>
+                <span class="price-currency">ALL</span>
+                <span class="price-period">/vit</span>
+              </div>
+
+              <ul class="package-features-modern">
+                <li>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <span>50 Llogari Email</span>
+                </li>
+                <li>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <span>200 Email/orë</span>
+                </li>
+                <li>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <span>Backup Javor</span>
+                </li>
+                <li>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <span>SSL & DDoS</span>
+                </li>
+                <li>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <span>cPanel</span>
+                </li>
+              </ul>
+
+              <button class="package-btn-modern" data-package="basic">
+                <span>Zgjedh Paketën</span>
+              </button>
+            </div>
+
+            <!-- Core Package - Featured -->
+            <div class="package-card-modern featured">
+              <span class="package-badge-modern">Më e Përzgjedhur</span>
+              <div class="package-header">
+                <div class="package-name">Core</div>
+                <div class="package-storage">100 GB NVMe</div>
+              </div>
+
+              <div class="package-price-modern">
+                <span class="price-value">8,400</span>
+                <span class="price-currency">ALL</span>
+                <span class="price-period">/vit</span>
+              </div>
+
+              <ul class="package-features-modern">
+                <li>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <span>Llogari të Pakufizuara</span>
+                </li>
+                <li>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <span>500 Email/orë</span>
+                </li>
+                <li>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <span>Backup Ditor</span>
+                </li>
+                <li>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <span>SSL & DDoS</span>
+                </li>
+                <li>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <span>cPanel Premium</span>
+                </li>
+              </ul>
+
+              <button class="package-btn-modern primary" data-package="core">
+                <span>Zgjedh Paketën</span>
+              </button>
+            </div>
+
+            <!-- Pro Package -->
+            <div class="package-card-modern">
+              <div class="package-header">
+                <div class="package-name">Pro</div>
+                <div class="package-storage">150 GB NVMe</div>
+              </div>
+
+              <div class="package-price-modern">
+                <span class="price-value">16,800</span>
+                <span class="price-currency">ALL</span>
+                <span class="price-period">/vit</span>
+              </div>
+
+              <ul class="package-features-modern">
+                <li>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <span>Llogari të Pakufizuara</span>
+                </li>
+                <li>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <span>800 Email/orë</span>
+                </li>
+                <li>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <span>Backup Ditor</span>
+                </li>
+                <li>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <span>IP e Dedikuar</span>
+                </li>
+                <li>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <span>Suport Prioritar</span>
+                </li>
+              </ul>
+
+              <button class="package-btn-modern" data-package="pro">
+                <span>Zgjedh Paketën</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES SECTION -->
+      <section id="avantazhet" class="stream-section">
+        <div class="stream-section-inner">
+          <h2 class="stream-h3 white">
+            Pse të Zgjedhësh Email Hosting nga Abissnet?
+          </h2>
+          <p>Teknologji e avancuar dhe cilësi në çdo aspekt të shërbimit.</p>
+
+          <div class="feature-grid">
+            <div class="feature-item">
+              <span class="feature-icon">⚡</span>
+              <h4>Shpejtësi Maksimale</h4>
+              <p>
+                Storage NVMe për kohë reagimi të menjëhershme. Email-et tuaj
+                dërgohen dhe pranohen me shpejtësinë më të lartë.
+              </p>
+            </div>
+
+            <div class="feature-item">
+              <span class="feature-icon">🔒</span>
+              <h4>Sigurinë Totale</h4>
+              <p>
+                SSL falas, mbrojtje nga DDoS, anti-virus dhe anti-spam. Të
+                dhënat tuaja janë të mbrojtura 24/7.
+              </p>
+            </div>
+
+            <div class="feature-item">
+              <span class="feature-icon">🎛️</span>
+              <h4>Panel i Plotë cPanel</h4>
+              <p>
+                Menaxhoni të gjitha aspektet e email hosting përmes cPanel -
+                paneli më i popullarizuar në botë.
+              </p>
+            </div>
+
+            <div class="feature-item">
+              <span class="feature-icon">💾</span>
+              <h4>Backup Automatik</h4>
+              <p>
+                Backup-et e rregullta (ditore ose javore) garantojnë që të
+                dhënat tuaja nuk humben kurrë.
+              </p>
+            </div>
+
+            <div class="feature-item">
+              <span class="feature-icon">📱</span>
+              <h4>Webmail i Avancuar</h4>
+              <p>
+                Qasje në email-et tuaj nga çdo pajisje përmes Roundcube, Horde
+                ose klientëve të tjerë.
+              </p>
+            </div>
+
+            <div class="feature-item">
+              <span class="feature-icon">🛟</span>
+              <h4>Suport 24/7</h4>
+              <p>
+                Ekipi ynë teknik është gjithmonë gati të ju ndihmojë në gjuhën
+                shqipe, 24 orë në ditë.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING TABLE SECTION -->
+      <section id="pricing" class="pricing-section">
+        <div class="pricing-section-inner">
+          <div class="pricing-header">
+            <h2 class="pricing-title">Krahasimi i Detajuar i Paketave</h2>
+            <p class="pricing-subtitle">
+              Të gjitha detajet teknike të çdo pakete në një vend.
+            </p>
+          </div>
+
+          <div class="pricing-table-wrapper">
+            <table class="pricing-table">
+              <thead>
+                <tr>
+                  <th class="feature-col">Karakteristika</th>
+                  <th class="package-col">
+                    <div class="table-package-header">
+                      <span class="table-package-name">Basic</span>
+                      <span class="table-package-price">6,000 ALL/vit</span>
+                    </div>
+                  </th>
+                  <th class="package-col featured-col">
+                    <div class="table-package-header">
+                      <span class="table-featured-badge">Më e Përzgjedhur</span>
+                      <span class="table-package-name">Core</span>
+                      <span class="table-package-price">8,400 ALL/vit</span>
+                    </div>
+                  </th>
+                  <th class="package-col">
+                    <div class="table-package-header">
+                      <span class="table-package-name">Pro</span>
+                      <span class="table-package-price">16,800 ALL/vit</span>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="feature-name">Hapësirë NVMe</td>
+                  <td>50 GB</td>
+                  <td class="featured-col">100 GB</td>
+                  <td>150 GB</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Llogari Email</td>
+                  <td>50</td>
+                  <td class="featured-col">
+                    <span class="highlight-value">Infinit</span>
+                  </td>
+                  <td>
+                    <span class="highlight-value">Infinit</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Dërgesa Email/orë</td>
+                  <td>200</td>
+                  <td class="featured-col">500</td>
+                  <td>800</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Panel Menaxhimi</td>
+                  <td><span class="check-icon">✓</span> cPanel</td>
+                  <td class="featured-col">
+                    <span class="check-icon">✓</span> cPanel
+                  </td>
+                  <td><span class="check-icon">✓</span> cPanel</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Backup</td>
+                  <td>Javor</td>
+                  <td class="featured-col">
+                    <span class="highlight-value">Ditor</span>
+                  </td>
+                  <td>
+                    <span class="highlight-value">Ditor</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="feature-name">SSL Falas</td>
+                  <td><span class="check-icon">✓</span> Po</td>
+                  <td class="featured-col">
+                    <span class="check-icon">✓</span> Po
+                  </td>
+                  <td><span class="check-icon">✓</span> Po</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Mbrojtje DDoS</td>
+                  <td><span class="check-icon">✓</span> Po</td>
+                  <td class="featured-col">
+                    <span class="check-icon">✓</span> Po
+                  </td>
+                  <td><span class="check-icon">✓</span> Po</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">IP e Dedikuar</td>
+                  <td><span class="cross-icon">✗</span> Jo</td>
+                  <td class="featured-col">
+                    <span class="cross-icon">✗</span> Jo
+                  </td>
+                  <td><span class="check-icon">✓</span> Po</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Mbrojtje nga Viruset</td>
+                  <td><span class="check-icon">✓</span> Po</td>
+                  <td class="featured-col">
+                    <span class="check-icon">✓</span> Po
+                  </td>
+                  <td><span class="check-icon">✓</span> Po</td>
+                </tr>
+                <tr>
+                  <td class="feature-name">Suport Teknik</td>
+                  <td>24/7</td>
+                  <td class="featured-col">24/7</td>
+                  <td>
+                    <span class="highlight-value">Prioritar 24/7</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="pricing-notes">
+            <div class="pricing-notes-header">
+              <span class="notes-icon">📋</span>
+              <h3>Shënime të Rëndësishme</h3>
+            </div>
+            <div class="pricing-notes-grid">
+              <div class="pricing-note-item">
+                <strong>Çmimet:</strong>
+                <span>Të gjitha çmimet përfshijnë TVSH-në</span>
+              </div>
+              <div class="pricing-note-item">
+                <strong>SSL:</strong>
+                <span>Certifikatë SSL falas në të gjitha paketat</span>
+              </div>
+              <div class="pricing-note-item">
+                <strong>Migrimi:</strong>
+                <span>Ndihmë falas për migrim nga hosting i mëparshëm</span>
+              </div>
+              <div class="pricing-note-item">
+                <strong>Kontrakti:</strong>
+                <span
+                  >Pa kontratë afatgjatë - mund të anuloni kur të
+                  dëshironi</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- APPLICATION FORM -->
+      <section class="contact-section" id="apliko">
+        <div class="contact-container">
+          <div class="contact-header">
+            <h2 class="contact-title">Kërko Ofertë për Email Hosting</h2>
+            <p class="contact-subtitle">
+              Plotëso formularin dhe do të kontaktohesh brenda 24 orëve me një
+              ofertë të personalizuar për biznesin tuaj.
+            </p>
+          </div>
+
+          <form class="contact-form" id="email-hosting-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="emri">Emri & Mbiemri *</label>
+                <input
+                  id="emri"
+                  name="emri"
+                  type="text"
+                  placeholder="p.sh. Arlind Hoxha"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="telefoni">Telefoni *</label>
+                <input
+                  id="telefoni"
+                  name="telefoni"
+                  type="tel"
+                  placeholder="+355 69 123 4567"
+                  pattern="(\+355|0)?[6-9]\d{8}"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="email@kompania.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="paketa">Paketa e Interesit</label>
+                <select id="paketa" name="paketa">
+                  <option value="">Zgjedh paketën...</option>
+                  <option value="basic">Basic - 6,000 ALL/vit</option>
+                  <option value="core">Core - 8,400 ALL/vit</option>
+                  <option value="pro">Pro - 16,800 ALL/vit</option>
+                  <option value="custom">Paketë e personalizuar</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="mesazhi">Mesazhi (opsionale)</label>
+              <textarea
+                id="mesazhi"
+                name="mesazhi"
+                rows="5"
+                placeholder="Cila është nevoja juaj specifike? Sa llogari email keni nevojë?"
+              ></textarea>
+            </div>
+
+            <button class="form-submit-btn" type="submit">
+              <span class="btn-text">Dërgo Kërkesën</span>
+              <span class="btn-loading" style="display: none"
+                >Duke dërguar...</span
+              >
+            </button>
+
+            <div
+              id="form-status"
+              class="form-status"
+              style="display: none"
+            ></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col brand">
+          <div class="footer-logo">Abissnet</div>
+          <ul>
+            <li><a href="colocation.html">Colocation</a></li>
+            <li><a href="mbrojtja-ddos.html">Mbrojtja DDOS</a></li>
+            <li><a href="telefonia-fix-voip.html">Telefonia Fix&VoiP</a></li>
+            <li><a href="dark-fiber.html">Dark Fiber</a></li>
+            <li><a href="tv.html">TV</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Shërbime/Produkte</h3>
+          <ul>
+            <li><a href="email-hosting.html">Email Hosting</a></li>
+            <li>
+              <a href="website-hosting.html">Website Professional Hosting</a>
+            </li>
+            <li><a href="vps-hosting.html">VPS Hosting</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Më të Populluara</h3>
+          <ul>
+            <li><a href="email-hosting.html">Email Hosting</a></li>
+            <li>
+              <a href="website-hosting.html">Website Professional Hosting</a>
+            </li>
+            <li><a href="vps-hosting.html">VPS Hosting</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Shkruaj email-in tuaj" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="footer-social">
+            <a
+              href="https://facebook.com/abissnet"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://instagram.com/abissnet"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://youtube.com/@abissnet"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Partner logos row -->
+
+      <div class="footer-bottom">
+        © 2025 Abissnet. Të gjitha të drejtat e rezervuara.
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/toast.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/biznesi/email-hosting.js"></script>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+  </body>
+</html>

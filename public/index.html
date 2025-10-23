@@ -6,11 +6,13 @@
     <!-- Favicon -->
     <link
       rel="shortcut icon"
-      href="assets/img/favicon.png"
+      href="assets/img/abissnet-logo-dark.png"
       type="image/x-icon"
     />
-    <title>Abissnet - Shpejtësia qënuknjeh limite</title>
+    <title>Abissnet - Shpejtësia që nuk njeh limite</title>
     <link rel="stylesheet" href="assets/css/style-light.css" />
+      <link rel="stylesheet" href="../assets/css/biznesi/speedtest.css" />
+    
   </head>
   <body>
     <!-- Header -->
@@ -19,7 +21,7 @@
         <div class="header-logo">
           <a href="index.html">
             <img
-              src="assets/img/abissnet-logo-dark.png"
+              src="/assets/img/abissnet-logo-dark.png"
               alt="Abissnet"
               height="40"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
@@ -83,7 +85,7 @@
         <!-- Desktop Actions -->
         <div class="header-actions">
           <a class="header-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
-          <a class="header-btn outline" href="abissnet.html">Paguaj Tani</a>
+          <a class="header-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
           <a class="header-btn primary" href="suport.html">Na Kontakto</a>
         </div>
 
@@ -140,7 +142,7 @@
             <a class="mobile-btn outline" href="dyqanet.html"
               >Harta e Mbulimit</a
             >
-            <a class="mobile-btn outline" href="abissnet.html">Paguaj Tani</a>
+            <a class="mobile-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
             <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
           </div>
         </nav>
@@ -173,33 +175,36 @@
     </section>
 
     <!-- Features Section -->
-    <section class="packages-section" id="paketat">
+      <section class="packages-section" id="paketat">
       <h2 class="packages-title">Zgjidh një nga paketat e internetit!</h2>
       <div class="package-grid">
         <div class="package-card">
-          <div class="package-speed">300</div>
+          <div class="package-speed">500  / 50 </div>
           <div class="package-label">mbps</div>
         </div>
         <div class="package-card">
-          <div class="package-speed">600</div>
+          <div class="package-speed">1000 / 100 </div>
           <div class="package-label">mbps</div>
         </div>
         <div class="package-card">
-          <div class="package-speed">1000</div>
+          <div class="package-speed">1500  / 150 </div>
           <div class="package-label">mbps</div>
         </div>
         <div class="package-card">
-          <div class="package-speed">2500</div>
+          <div class="package-speed">2500  / 250 </div>
           <div class="package-label">mbps</div>
         </div>
         <div class="package-card special">
-          <div class="package-speed">10G</div>
+          <div class="package-speed">10G / 1G</div>
         </div>
       </div>
     </section>
 
+    
+  
+
     <!-- Offer Banner Carousel -->
-    <div class="offer-banner-carousel">
+     <div class="offer-banner-carousel">
       <div class="offer-banner active">
         Shijo Halloween me Ofertat e Abissnet
       </div>
@@ -210,12 +215,11 @@
       <div class="offer-banner">
         Fito 3 muaj WiFi falas me çdo abonament vjetor!
       </div>
-    </div>
+    </div><br><br><br>
 
     <!-- Packages Section -->
-    <!-- Features Section -->
-
-    <section class="features-section">
+      <!-- Features Section -->
+      <section class="features-section">
       <div class="feature-card">
         <div class="feature-icon">
           <img src="/assets/img/feature-eksperienca.png" alt="Eksperienca" />
@@ -260,13 +264,186 @@
         </p>
       </div>
     </section>
-
+  
     <div class="features-cta">
       <a href="tel:+35542000000" class="hero-cta-btn">
         <span class="cta-arrows">>>></span> Telefono Tani
       </a>
     </div>
+    
+    
+     <!-- Tools Section -->
+    <section class="subs-tools" aria-labelledby="tools-title">
+      <h2 id="tools-title" class="sr-only">Mjetet dhe suporti</h2>
+      <div>
+        <!-- Speed Test Card -->
+        <article class="card" >
+          <div class="card-h">
+            <h3>Shpejtësia e Internetit</h3>
+            <span class="muted">Test i plotë (down/up/ping)</span>
+          </div>
 
+          <!-- Progress Bar (shown during test) -->
+          <div id="progressContainer" style="display: none; margin: 0.5rem 0">
+            <div
+              style="
+                width: 100%;
+                height: 6px;
+                background: #e5e7eb;
+                border-radius: 10px;
+                overflow: hidden;
+                margin-bottom: 0.5rem;
+              "
+            >
+              <div
+                id="progressFill"
+                style="
+                  height: 100%;
+                  background: linear-gradient(
+                    90deg,
+                    var(--color-primary, #ff9800) 0%,
+                    #f57c00 100%
+                  );
+                  width: 0%;
+                  transition: width 0.3s ease;
+                  border-radius: 10px;
+                "
+              ></div>
+            </div>
+            <div
+              id="progressText"
+              style="
+                text-align: center;
+                color: #6b7280;
+                font-size: 0.875rem;
+                font-weight: 500;
+              "
+            >
+              Duke filluar testin...
+            </div>
+          </div>
+
+          <!-- Speed Display -->
+          <div class="speed-wrap">
+            <div class="speed-number" id="downloadMetric">
+              <span id="downMbps" aria-label="Shpejtësia e shkarkimit">—</span>
+              <small>Mbps Down</small>
+            </div>
+            <div class="speed-number" id="uploadMetric">
+              <span id="upMbps" aria-label="Shpejtësia e ngarkimit">—</span>
+              <small>Mbps Up</small>
+            </div>
+            <div class="speed-number" id="pingMetric">
+              <span id="pingSpeed" aria-label="Ping">—</span>
+              <small>ms Ping</small>
+            </div>
+          </div>
+
+          <!-- Additional Stats (shown after test) -->
+          <div id="additionalStats" style="display: none">
+            <div class="list">
+              <li>
+                <span>Jitter:</span>
+                <strong id="jitterValue">— ms</strong>
+              </li>
+              <li>
+                <span>Humbje Pakete:</span>
+                <strong id="packetLoss">—%</strong>
+              </li>
+              <li>
+                <span>Kohëzgjatja:</span>
+                <strong id="testDuration">—s</strong>
+              </li>
+            </div>
+          </div>
+
+          <!-- Connection Info (shown after test) -->
+          <div
+            id="connectionInfo"
+            style="
+              display: none;
+              background: #f9fafb;
+              border-radius: 8px;
+              padding: 1rem;
+              margin-top: 0.5rem;
+              border: 1px solid #e5e7eb;
+            "
+          >
+            <div
+              style="
+                font-weight: 700;
+                font-size: 0.875rem;
+                color: #111827;
+                margin-bottom: 0.5rem;
+              "
+            >
+              📊 Informacioni i Lidhjes
+            </div>
+            <div class="list">
+              <li>
+                <span>IP Adresa:</span>
+                <strong id="ipAddress">—</strong>
+              </li>
+              <li>
+                <span>ISP:</span>
+                <strong id="isp">—</strong>
+              </li>
+              <li>
+                <span>Vendndodhja:</span>
+                <strong id="location">—</strong>
+              </li>
+              <li>
+                <span>Tipi i Lidhjes:</span>
+                <strong id="connectionType">—</strong>
+              </li>
+            </div>
+          </div>
+
+          <button
+            class="btn primary"
+            id="btnSpeedTest"
+            aria-label="Fillo testin e shpejtësisë"
+          >
+            Fillo Testin
+          </button>
+
+          <!-- Test History (shown after first test) -->
+          <div
+            id="historySection"
+            style="
+              display: none;
+              margin-top: 1rem;
+              padding-top: 1rem;
+              border-top: 1px solid #e5e7eb;
+            "
+          >
+            <div
+              style="
+                font-weight: 700;
+                font-size: 0.875rem;
+                color: #111827;
+                margin-bottom: 0.75rem;
+              "
+            >
+              📜 Historiku i Testeve
+            </div>
+            <div
+              id="historyList"
+              style="display: flex; flex-direction: column; gap: 0.5rem"
+            ></div>
+          </div>
+        </article>
+      </div>
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-inner">
@@ -359,10 +536,11 @@
         © 2025 Abissnet. Të gjitha të drejtat e rezervuara.
       </div>
     </footer>
-
+<script src="/assets/js/speedtest.js"></script>
     <script src="/assets/js/toast.js"></script>
     <script src="/assets/js/script.js"></script>
-    <script>
+    <!-- Back to Top Button -->
+     <script>
       // Numri i WhatsApp (ndryshoje sipas nevojës)
       const whatsappNumber = "+355695588569"; // vendos numrin e Abissnet pa +
 
@@ -381,7 +559,6 @@
         });
       });
     </script>
-    <!-- Back to Top Button -->
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">
       <svg
         width="24"

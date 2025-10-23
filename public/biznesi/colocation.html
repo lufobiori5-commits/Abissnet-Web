@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../assets/img/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Abissnet — Colocation (Server me Qera/Rack Unit)</title>
+    <meta
+      name="description"
+      content="Colocation në Data Center-et e Abissnet: rack units, fuqi e pandërprerë, klimë, siguri fizike/kibernetike, lidhje të shpejta, fleksibilitet dhe shkallëzim."
+    />
+    <link rel="stylesheet" href="../assets/css/biznesi/style.css" />
+    <link rel="stylesheet" href="../assets/css/biznesi/colocation.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="siteHeader">
+      <div class="header-inner">
+        <div class="header-logo">
+          <a href="index.html">
+            <img
+              src="../assets/img/abissnet-logo.png"
+              alt="Abissnet"
+              height="40"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <span
+              style="
+                display: none;
+                font-style: italic;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #fff;
+              "
+              >abissnet</span
+            >
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="header-nav">
+          <a href="index.html">Internet i Dedikuar</a>
+
+          <!-- DROPDOWN -->
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Hosting <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li>
+                <a class="dropdown-item" href="email-hosting.html"
+                  >Email Hosting</a
+                >
+              </li>
+              <li class="divider" role="separator"></li>
+              <li>
+                <a class="dropdown-item" href="website-hosting.html"
+                  >Website Professional Hosting</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="vps-hosting.html">VPS Hosting</a>
+              </li>
+            </ul>
+          </div>
+
+          <a href="colocation.html">Colocation</a>
+          <a href="mbrojtja-ddos.html">Mbrojtja DDOS</a>
+          <a href="telefonia-fix-voip.html">Telefonia Fix&VoiP</a>
+          <a href="dark-fiber.html">Dark Fiber</a>
+          <a href="tv.html">TV</a>
+        </nav>
+
+        <!-- Desktop Actions -->
+        <div class="header-actions">
+          <a class="header-btn primary" href="suport.html">Na Kontakto</a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button
+          class="hamburger-menu"
+          id="hamburger-btn-colo"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu" id="mobile-menu-colo">
+        <nav class="mobile-nav">
+          <a href="index.html" class="mobile-nav-link">Internet i Dedikuar</a>
+
+          <!-- Mobile Dropdown -->
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Hosting
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="email-hosting.html">Email Hosting</a>
+              <a href="website-hosting.html">Website Professional Hosting</a>
+              <a href="vps-hosting.html">VPS Hosting</a>
+            </div>
+          </div>
+
+          <a href="colocation.html" class="mobile-nav-link">Colocation</a>
+          <a href="mbrojtja-ddos.html" class="mobile-nav-link">Mbrojtja DDOS</a>
+          <a href="telefonia-fix-voip.html" class="mobile-nav-link"
+            >Telefonia Fix&VoiP</a
+          >
+          <a href="dark-fiber.html" class="mobile-nav-link">Dark Fiber</a>
+          <a href="tv.html" class="mobile-nav-link">TV</a>
+
+          <!-- Mobile Action Buttons -->
+          <div class="mobile-actions">
+            <a class="mobile-btn outline" href="dyqanet.html"
+              >Harta e Mbulimit</a
+            >
+            <a class="mobile-btn outline" href="abissnet.html">Paguaj Tani</a>
+            <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Sub Navigation -->
+    <div class="subnav" role="navigation" aria-label="Shërbime">
+      <div class="subnav-inner">
+        <a href="../index.html" class="pill">Individ</a>
+        <a href="index.html" class="pill active">Biznes</a>
+      </div>
+    </div>
+
+    <main>
+      <!-- HERO SECTION - MODERNIZED -->
+      <section class="colo-hero">
+        <div class="colo-hero-bg"></div>
+        <div class="colo-hero-container">
+          <div class="colo-hero-content">
+            <div class="colo-badge">🏢 Enterprise Data Center</div>
+            <h1 class="colo-hero-title">
+              Colocation & <span class="gradient-text">Server me Qera</span>
+            </h1>
+            <p class="colo-hero-subtitle">
+              Vendos pajisjet e tua në Data Center-in tonë me siguri maksimale,
+              energji të pandërprerë, klimë të kontrolluar dhe uplinks 10Gbps+.
+              Shkallëzo nga 1U në kabinet të plotë 42U.
+            </p>
+            <div class="colo-hero-actions">
+              <a href="#apliko" class="colo-btn primary">Kërko Ofertë</a>
+              <a href="#paketat" class="colo-btn secondary">Shiko Paketat</a>
+            </div>
+            <div class="colo-hero-stats">
+              <div class="stat-item">
+                <div class="stat-value">99.99%</div>
+                <div class="stat-label">Uptime</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">24/7</div>
+                <div class="stat-label">Suport</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">10Gbps</div>
+                <div class="stat-label">Uplink</div>
+              </div>
+            </div>
+          </div>
+          <div class="colo-hero-image">
+            <div class="image-glow"></div>
+            <img
+              src="../assets/img/hero-home-fiber.png"
+              alt="Data Center Infrastructure"
+              loading="eager"
+              onerror="this.src='../assets/img/hero-fallback.png'"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES SECTION -->
+      <section class="colo-features">
+        <div class="colo-container">
+          <div class="section-header">
+            <h2 class="section-title">Çfarë Përfshihet</h2>
+            <p class="section-subtitle">
+              Infrastrukturë e plotë për hosting të pajisjeve tuaja
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <div class="feature-card" data-animate>
+              <div class="feature-icon orange">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+              </div>
+              <h3 class="feature-title">Rack Units (U/RU)</h3>
+              <p class="feature-desc">
+                Njësi standarte 1U ≈ 4.45cm. Zgjidh nga 1U, 2U, 4U, 20U deri në
+                kabinet të plotë 42U sipas nevojave tuaja.
+              </p>
+            </div>
+
+            <div class="feature-card" data-animate>
+              <div class="feature-icon blue">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              </div>
+              <h3 class="feature-title">Energji e Pandërprerë</h3>
+              <p class="feature-desc">
+                UPS dhe gjenerator për të garantuar 99.99% uptime. Fuqi e
+                dedikuar nga 1A deri 16A @230V.
+              </p>
+            </div>
+
+            <div class="feature-card" data-animate>
+              <div class="feature-icon green">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="11" width="18" height="11" rx="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+              </div>
+              <h3 class="feature-title">Siguri Maksimale</h3>
+              <p class="feature-desc">
+                Kontrolli i aksesit fizik, kamera, alarm, mbrojtje DDoS dhe
+                monitoring 24/7 për sigurinë tuaj.
+              </p>
+            </div>
+
+            <div class="feature-card" data-animate>
+              <div class="feature-icon purple">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              <h3 class="feature-title">Klimë e Kontrolluar</h3>
+              <p class="feature-desc">
+                Sistemet e avancuara të ftohjes dhe klimës ruajnë temperaturën
+                dhe lagështinë ideale për pajisjet.
+              </p>
+            </div>
+
+            <div class="feature-card" data-animate>
+              <div class="feature-icon red">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+              </div>
+              <h3 class="feature-title">Uplink të Shpejta</h3>
+              <p class="feature-desc">
+                Lidhje nga 1Gbps deri në 2×10Gbps me IP publike (/30 deri /26)
+                dhe mundësi për BGP routing.
+              </p>
+            </div>
+
+            <div class="feature-card" data-animate>
+              <div class="feature-icon teal">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <h3 class="feature-title">Suport 24/7</h3>
+              <p class="feature-desc">
+                Ekip teknike i disponueshëm gjithë kohën për asistencë në
+                vendosje, konfigurimin dhe mbajtjen e pajisjeve.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BENEFITS SECTION -->
+      <section class="colo-benefits">
+        <div class="colo-container">
+          <div class="section-header">
+            <h2 class="section-title">Përfitimet Kryesore</h2>
+            <p class="section-subtitle">
+              Pse të zgjedhësh Colocation në Abissnet
+            </p>
+          </div>
+
+          <div class="benefits-grid">
+            <div class="benefit-card" data-animate>
+              <div class="benefit-number">01</div>
+              <h3>Besueshmëri e Lartë</h3>
+              <p>
+                Infrastrukturë redundante me UPS, gjeneratorë dhe sistemet e
+                shumëfishta të rrjetit për uptime 99.99%.
+              </p>
+            </div>
+
+            <div class="benefit-card" data-animate>
+              <div class="benefit-number">02</div>
+              <h3>Shkallëzueshmëri</h3>
+              <p>
+                Fillo me 1U dhe rritet deri në kabinet të plotë 42U pa ndryshuar
+                lokacionin apo kontratën.
+              </p>
+            </div>
+
+            <div class="benefit-card" data-animate>
+              <div class="benefit-number">03</div>
+              <h3>Kosto Efektive</h3>
+              <p>
+                Eleminon kostot e ndërtimit të data center-it tuaj: energji,
+                klimë, siguri dhe maintenance.
+              </p>
+            </div>
+
+            <div class="benefit-card" data-animate>
+              <div class="benefit-number">04</div>
+              <h3>Lidhje të Shpejta</h3>
+              <p>
+                Akses direkt në backbone-in e Abissnet me uplinks 10Gbps dhe
+                mundësi për BGP peering.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING TABLE SECTION -->
+      <section class="colo-pricing" id="paketat">
+        <div class="colo-container">
+          <div class="section-header">
+            <h2 class="section-title">Paketat e Colocation</h2>
+            <p class="section-subtitle">
+              Zgjidh paketen që përshtatet me infrastrukturën tuaj
+            </p>
+          </div>
+
+          <div class="pricing-table-wrapper">
+            <table class="pricing-table">
+              <thead>
+                <tr>
+                  <th class="feature-col">Karakteristika</th>
+                  <th>
+                    <div class="package-header">
+                      <div class="package-name">Start</div>
+                      <div class="package-price">€49<span>/muaj</span></div>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="package-header">
+                      <div class="package-name">Pro</div>
+                      <div class="package-price">€89<span>/muaj</span></div>
+                    </div>
+                  </th>
+                  <th class="featured">
+                    <div class="featured-badge">Më e Zgjedhur</div>
+                    <div class="package-header">
+                      <div class="package-name">Grow</div>
+                      <div class="package-price">€149<span>/muaj</span></div>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="package-header">
+                      <div class="package-name">Cabinet Half</div>
+                      <div class="package-price">€499<span>/muaj</span></div>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="package-header">
+                      <div class="package-name">Full Cabinet</div>
+                      <div class="package-price">€899<span>/muaj</span></div>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Rack Units</th>
+                  <td>1U</td>
+                  <td>2U</td>
+                  <td class="featured">4U</td>
+                  <td>20U (gjysmë)</td>
+                  <td>42U (i plotë)</td>
+                </tr>
+                <tr>
+                  <th>Fuqi (230V)</th>
+                  <td>1A</td>
+                  <td>2A</td>
+                  <td class="featured">4A</td>
+                  <td>10A</td>
+                  <td>16A</td>
+                </tr>
+                <tr>
+                  <th>Uplink</th>
+                  <td>1 Gbps</td>
+                  <td>1 Gbps</td>
+                  <td class="featured">10 Gbps</td>
+                  <td>10 Gbps</td>
+                  <td>2×10 Gbps</td>
+                </tr>
+                <tr>
+                  <th>IPv4 publike</th>
+                  <td>/30 (2 IP)</td>
+                  <td>/29 (6 IP)</td>
+                  <td class="featured">/28 (14 IP)</td>
+                  <td>/27 (30 IP)</td>
+                  <td>/26 (62 IP)</td>
+                </tr>
+                <tr>
+                  <th>Trafik (TB/muaj)</th>
+                  <td>2 TB</td>
+                  <td>5 TB</td>
+                  <td class="featured">Unlimited</td>
+                  <td>Unlimited</td>
+                  <td>Unlimited</td>
+                </tr>
+                <tr>
+                  <th>UPS & Gjenerator</th>
+                  <td>✓ Përfshihet</td>
+                  <td>✓ Përfshihet</td>
+                  <td class="featured">✓ Përfshihet</td>
+                  <td>✓ Përfshihet</td>
+                  <td>✓ Përfshihet</td>
+                </tr>
+                <tr>
+                  <th>Klimë & Ftohje</th>
+                  <td>✓ Përfshihet</td>
+                  <td>✓ Përfshihet</td>
+                  <td class="featured">✓ Përfshihet</td>
+                  <td>✓ Përfshihet</td>
+                  <td>✓ Përfshihet</td>
+                </tr>
+                <tr>
+                  <th>Siguri Fizike</th>
+                  <td>✓ Përfshihet</td>
+                  <td>✓ Përfshihet</td>
+                  <td class="featured">✓ Përfshihet</td>
+                  <td>✓ Përfshihet</td>
+                  <td>✓ Përfshihet</td>
+                </tr>
+                <tr>
+                  <th>Anti DDoS</th>
+                  <td>✓ Përfshihet</td>
+                  <td>✓ Përfshihet</td>
+                  <td class="featured">✓ Përfshihet</td>
+                  <td>✓ Përfshihet</td>
+                  <td>✓ Përfshihet</td>
+                </tr>
+                <tr>
+                  <th>Suport Teknik</th>
+                  <td>24/7</td>
+                  <td>24/7</td>
+                  <td class="featured">24/7</td>
+                  <td>24/7</td>
+                  <td>24/7</td>
+                </tr>
+                <tr>
+                  <th>BGP Routing</th>
+                  <td>Opsional</td>
+                  <td>Opsional</td>
+                  <td class="featured">✓ Përfshihet</td>
+                  <td>✓ Përfshihet</td>
+                  <td>✓ Përfshihet</td>
+                </tr>
+                <tr class="cta-row">
+                  <th></th>
+                  <td><a href="#apliko" class="table-btn">Zgjidh</a></td>
+                  <td><a href="#apliko" class="table-btn">Zgjidh</a></td>
+                  <td class="featured">
+                    <a href="#apliko" class="table-btn primary">Zgjidh</a>
+                  </td>
+                  <td><a href="#apliko" class="table-btn">Zgjidh</a></td>
+                  <td><a href="#apliko" class="table-btn">Zgjidh</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="pricing-note">
+            *Çmimet e shfaqura janë bazë. Shtesa si IP shtesë, uplink shtesë,
+            fuqi shtesë, cross-connect dhe mbrojtje e avancuar DDoS mund të
+            tarifohen veçmas.
+          </p>
+        </div>
+      </section>
+
+      <!-- APPLICATION FORM -->
+      <section class="colo-form-section" id="apliko">
+        <div class="colo-container-small">
+          <div class="form-header">
+            <h2 class="form-title">Kërko Ofertë për Colocation</h2>
+            <p class="form-subtitle">
+              Plotëso formularin dhe ne do të të kontaktojmë brenda 24 orëve me
+              një ofertë të personalizuar.
+            </p>
+          </div>
+
+          <form class="colo-form" id="colo-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="emri">Emri & Mbiemri *</label>
+                <input
+                  id="emri"
+                  name="emri"
+                  type="text"
+                  placeholder="p.sh. Arlind Hoxha"
+                  required
+                />
+                <span class="form-error" id="emri-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="telefoni">Telefoni *</label>
+                <input
+                  id="telefoni"
+                  name="telefoni"
+                  type="tel"
+                  placeholder="+355 69 123 4567"
+                  required
+                />
+                <span class="form-error" id="telefoni-error"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="email@kompania.com"
+                  required
+                />
+                <span class="form-error" id="email-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="kompania">Kompania *</label>
+                <input
+                  id="kompania"
+                  name="kompania"
+                  type="text"
+                  placeholder="Emri i kompanisë"
+                  required
+                />
+                <span class="form-error" id="kompania-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="paketa">Paketa e Interesit *</label>
+              <select id="paketa" name="paketa" required>
+                <option value="">Zgjidh paketen...</option>
+                <option value="1U">Start — 1U (€49/muaj)</option>
+                <option value="2U">Pro — 2U (€89/muaj)</option>
+                <option value="4U">
+                  Grow — 4U (€149/muaj) — E REKOMANDUAR
+                </option>
+                <option value="20U">Cabinet Half — 20U (€499/muaj)</option>
+                <option value="42U">Full Cabinet — 42U (€899/muaj)</option>
+                <option value="custom">Konfiguracion i personalizuar</option>
+              </select>
+              <span class="form-error" id="paketa-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="mesazhi">Detajet Teknike</label>
+              <textarea
+                id="mesazhi"
+                name="mesazhi"
+                rows="6"
+                placeholder="Përshkruani nevojat tuaja teknike:
+• Sa RU ju duhen?
+• Fuqi e nevojshme (Ampere)?
+• Uplink (1Gbps, 10Gbps)?
+• Sa IP publike?
+• A keni nevojë për BGP routing?
+• Cross-connect me ISP të tjerë?
+• Mbrojtje e avancuar DDoS?
+• Koha e fillimit të shërbimit?"
+              ></textarea>
+            </div>
+
+            <div class="form-checkbox">
+              <input type="checkbox" id="privacy" name="privacy" required />
+              <label for="privacy">
+                Pranoj <a href="#">kushtet e përdorimit</a> dhe
+                <a href="#">politikën e privatësisë</a> *
+              </label>
+            </div>
+
+            <button class="form-submit" type="submit" id="submit-btn">
+              <span class="btn-text">Dërgo Kërkesën</span>
+              <span class="btn-loader" style="display: none">
+                <svg class="spinner" width="20" height="20" viewBox="0 0 24 24">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    fill="none"
+                    opacity="0.25"
+                  />
+                  <path
+                    fill="currentColor"
+                    d="M12 2a10 10 0 0 1 10 10h-4a6 6 0 0 0-6-6V2z"
+                    opacity="0.75"
+                  />
+                </svg>
+                Po dërgon...
+              </span>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col brand">
+          <div class="footer-logo">Abissnet</div>
+          <ul>
+            <li><a href="colocation.html">Colocation</a></li>
+            <li><a href="mbrojtja-ddos.html">Mbrojtja DDOS</a></li>
+            <li><a href="telefonia-fix-voip.html">Telefonia Fix&VoiP</a></li>
+            <li><a href="dark-fiber.html">Dark Fiber</a></li>
+            <li><a href="tv.html">TV</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Shërbime/Produkte</h3>
+          <ul>
+            <li><a href="email-hosting.html">Email Hosting</a></li>
+            <li>
+              <a href="website-hosting.html">Website Professional Hosting</a>
+            </li>
+            <li><a href="vps-hosting.html">VPS Hosting</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Më të Populluara</h3>
+          <ul>
+            <li><a href="email-hosting.html">Email Hosting</a></li>
+            <li>
+              <a href="website-hosting.html">Website Professional Hosting</a>
+            </li>
+            <li><a href="vps-hosting.html">VPS Hosting</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Shkruaj email-in tuaj" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="footer-social">
+            <a
+              href="https://facebook.com/abissnet"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://instagram.com/abissnet"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://youtube.com/@abissnet"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Partner logos row -->
+
+      <div class="footer-bottom">
+        © 2025 Abissnet. Të gjitha të drejtat e rezervuara.
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/toast.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/biznesi/colocation.js"></script>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+  </body>
+</html>

@@ -10,7 +10,8 @@
       type="image/x-icon"
     />
     <title>Abissnet - Shpejtësia që nuk njeh limite</title>
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/biznesi/style.css" />
+    <link rel="stylesheet" href="../assets/css/biznesi/speedtest.css" />
   </head>
   <body>
     <!-- Header -->
@@ -39,7 +40,7 @@
 
         <!-- Desktop Navigation -->
         <nav class="header-nav">
-          <a href="index.html">Internet</a>
+          <a href="index.html">Internet i Dedikuar</a>
 
           <!-- DROPDOWN -->
           <div class="nav-dropdown" data-dropdown>
@@ -49,41 +50,36 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Abissnet <span class="chev">▾</span>
+              Hosting <span class="chev">▾</span>
             </button>
             <ul class="dropdown-panel" role="menu">
               <li>
-                <a class="dropdown-item" href="internet-ne-shtepi.html"
-                  >Internet për shtëpinë tuaj</a
+                <a class="dropdown-item" href="email-hosting.html"
+                  >Email Hosting</a
                 >
               </li>
               <li class="divider" role="separator"></li>
               <li>
-                <a class="dropdown-item" href="abissnet.html">Abissnet</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="stream.html">Streaming</a>
-              </li>
-              <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
-              <li>
-                <a class="dropdown-item" href="puno-nga-shtepia.html"
-                  >Puno nga Shtëpia</a
+                <a class="dropdown-item" href="website-hosting.html"
+                  >Website Professional Hosting</a
                 >
+              </li>
+              <li>
+                <a class="dropdown-item" href="vps-hosting.html">VPS Hosting</a>
               </li>
             </ul>
           </div>
 
-          <a href="suport.html">Suport</a>
-          <a href="partner.html">Partnerët</a>
-          <a href="abonentet.html">Abonentët</a>
-          <a href="karriera.html">Karriera</a>
-          <a href="blog.html">Blog</a>
+          <a href="colocation.html">Colocation</a>
+          <a href="mbrojtja-ddos.html">Mbrojtja DDOS</a>
+          <a href="telefonia-fix-voip.html">Telefonia Fix&VoiP</a>
+          <a href="dark-fiber.html">Dark Fiber</a>
+
+          <a href="tv.html">TV</a>
         </nav>
 
         <!-- Desktop Actions -->
         <div class="header-actions">
-          <a class="header-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
-          <a class="header-btn outline" href="abissnet.html">Paguaj Tani</a>
           <a class="header-btn primary" href="suport.html">Na Kontakto</a>
         </div>
 
@@ -103,12 +99,12 @@
       <!-- Mobile Menu Overlay -->
       <div class="mobile-menu" id="mobile-menu">
         <nav class="mobile-nav">
-          <a href="index.html" class="mobile-nav-link">Internet</a>
+          <a href="index.html" class="mobile-nav-link">Internet i Dedikuar</a>
 
           <!-- Mobile Dropdown -->
           <div class="mobile-dropdown">
             <button class="mobile-dropdown-toggle" data-mobile-dropdown>
-              Abissnet
+              Hosting
               <svg
                 width="16"
                 height="16"
@@ -121,19 +117,19 @@
               </svg>
             </button>
             <div class="mobile-dropdown-content">
-              <a href="internet-ne-shtepi.html">Internet për shtëpinë tuaj</a>
-              <a href="abissnet.html">Abissnet</a>
-              <a href="stream.html">Streaming</a>
-              <a href="gaming.html">Gaming</a>
-              <a href="puno-nga-shtepia.html">Puno nga Shtëpia</a>
+              <a href="email-hosting.html">Email Hosting</a>
+              <a href="website-hosting.html">Website Professional Hosting</a>
+              <a href="vps-hosting.html">VPS Hosting</a>
             </div>
           </div>
 
-          <a href="suport.html" class="mobile-nav-link">Suport</a>
-          <a href="partner.html" class="mobile-nav-link">Partnerët</a>
-          <a href="abonentet.html" class="mobile-nav-link">Abonentët</a>
-          <a href="karriera.html" class="mobile-nav-link">Karriera</a>
-          <a href="blog.html" class="mobile-nav-link">Blog</a>
+          <a href="colocation.html" class="mobile-nav-link">Colocation</a>
+          <a href="mbrojtja-ddos.html" class="mobile-nav-link">Mbrojtja DDOS</a>
+          <a href="abonentet.html" class="mobile-nav-link"
+            >Telefonia Fix&VoiP</a
+          >
+          <a href="dark-fiber.html" class="mobile-nav-link">Dark Fiber</a>
+          <a href="tv.html" class="mobile-nav-link">TV</a>
 
           <!-- Mobile Action Buttons -->
           <div class="mobile-actions">
@@ -171,6 +167,7 @@
         </div>
       </div>
     </section>
+
     <!-- Packages Section -->
     <section class="packages-section" id="paketat">
       <h2 class="packages-title">Zgjidh një nga paketat e internetit!</h2>
@@ -196,6 +193,7 @@
         </div>
       </div>
     </section>
+
     <!-- Offer Banner Carousel -->
     <div class="offer-banner-carousel">
       <div class="offer-banner active">
@@ -264,32 +262,201 @@
       </a>
     </div>
 
+    <!-- Tools Section -->
+    <section class="subs-tools" aria-labelledby="tools-title">
+      <h2 id="tools-title" class="sr-only">Mjetet dhe suporti</h2>
+      <div>
+        <!-- Speed Test Card -->
+        <article class="card">
+          <div class="card-h">
+            <h3>Shpejtësia e Internetit</h3>
+            <span class="muted">Test i plotë (down/up/ping)</span>
+          </div>
+
+          <!-- Progress Bar (shown during test) -->
+          <div id="progressContainer" style="display: none; margin: 0.5rem 0">
+            <div
+              style="
+                width: 100%;
+                height: 6px;
+                background: #e5e7eb;
+                border-radius: 10px;
+                overflow: hidden;
+                margin-bottom: 0.5rem;
+              "
+            >
+              <div
+                id="progressFill"
+                style="
+                  height: 100%;
+                  background: linear-gradient(
+                    90deg,
+                    var(--color-primary, #ff9800) 0%,
+                    #f57c00 100%
+                  );
+                  width: 0%;
+                  transition: width 0.3s ease;
+                  border-radius: 10px;
+                "
+              ></div>
+            </div>
+            <div
+              id="progressText"
+              style="
+                text-align: center;
+                color: #6b7280;
+                font-size: 0.875rem;
+                font-weight: 500;
+              "
+            >
+              Duke filluar testin...
+            </div>
+          </div>
+
+          <!-- Speed Display -->
+          <div class="speed-wrap">
+            <div class="speed-number" id="downloadMetric">
+              <span id="downMbps" aria-label="Shpejtësia e shkarkimit">—</span>
+              <small>Mbps Down</small>
+            </div>
+            <div class="speed-number" id="uploadMetric">
+              <span id="upMbps" aria-label="Shpejtësia e ngarkimit">—</span>
+              <small>Mbps Up</small>
+            </div>
+            <div class="speed-number" id="pingMetric">
+              <span id="pingSpeed" aria-label="Ping">—</span>
+              <small>ms Ping</small>
+            </div>
+          </div>
+
+          <!-- Additional Stats (shown after test) -->
+          <div id="additionalStats" style="display: none">
+            <div class="list">
+              <li>
+                <span>Jitter:</span>
+                <strong id="jitterValue">— ms</strong>
+              </li>
+              <li>
+                <span>Humbje Pakete:</span>
+                <strong id="packetLoss">—%</strong>
+              </li>
+              <li>
+                <span>Kohëzgjatja:</span>
+                <strong id="testDuration">—s</strong>
+              </li>
+            </div>
+          </div>
+
+          <!-- Connection Info (shown after test) -->
+          <div
+            id="connectionInfo"
+            style="
+              display: none;
+              background: #f9fafb;
+              border-radius: 8px;
+              padding: 1rem;
+              margin-top: 0.5rem;
+              border: 1px solid #e5e7eb;
+            "
+          >
+            <div
+              style="
+                font-weight: 700;
+                font-size: 0.875rem;
+                color: #111827;
+                margin-bottom: 0.5rem;
+              "
+            >
+              📊 Informacioni i Lidhjes
+            </div>
+            <div class="list">
+              <li>
+                <span>IP Adresa:</span>
+                <strong id="ipAddress">—</strong>
+              </li>
+              <li>
+                <span>ISP:</span>
+                <strong id="isp">—</strong>
+              </li>
+              <li>
+                <span>Vendndodhja:</span>
+                <strong id="location">—</strong>
+              </li>
+              <li>
+                <span>Tipi i Lidhjes:</span>
+                <strong id="connectionType">—</strong>
+              </li>
+            </div>
+          </div>
+
+          <button
+            class="btn primary"
+            id="btnSpeedTest"
+            aria-label="Fillo testin e shpejtësisë"
+          >
+            Fillo Testin
+          </button>
+
+          <!-- Test History (shown after first test) -->
+          <div
+            id="historySection"
+            style="
+              display: none;
+              margin-top: 1rem;
+              padding-top: 1rem;
+              border-top: 1px solid #e5e7eb;
+            "
+          >
+            <div
+              style="
+                font-weight: 700;
+                font-size: 0.875rem;
+                color: #111827;
+                margin-bottom: 0.75rem;
+              "
+            >
+              📜 Historiku i Testeve
+            </div>
+            <div
+              id="historyList"
+              style="display: flex; flex-direction: column; gap: 0.5rem"
+            ></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-inner">
         <div class="footer-col brand">
           <div class="footer-logo">Abissnet</div>
           <ul>
-            <li><a href="abissnet.html">Kompania</a></li>
-            <li><a href="abissnet.html">Rreth Nesh</a></li>
-            <li><a href="partner.html">Partnerët</a></li>
-            <li><a href="karriera.html">Karriera</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="colocation.html">Colocation</a></li>
+            <li><a href="mbrojtja-ddos.html">Mbrojtja DDOS</a></li>
+            <li><a href="telefonia-fix-voip.html">Telefonia Fix&VoiP</a></li>
+            <li><a href="dark-fiber.html">Dark Fiber</a></li>
+            <li><a href="tv.html">TV</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h3>Shërbime/Produkte</h3>
           <ul>
-            <li><a href="internet-ne-shtepi.html">Fiber në Shtëpi</a></li>
-            <li><a href="puno-nga-shtepia.html">Korporata</a></li>
-            <li><a href="internet-ne-shtepi.html">Televizioni</a></li>
+            <li><a href="email-hosting.html">Email Hosting</a></li>
+            <li>
+              <a href="website-hosting.html">Website Professional Hosting</a>
+            </li>
+            <li><a href="vps-hosting.html">VPS Hosting</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h3>Më të Populluara</h3>
           <ul>
-            <li><a href="#">Internet i Shpejtë</a></li>
-            <li><a href="#">Ofertat e Verës</a></li>
+            <li><a href="email-hosting.html">Email Hosting</a></li>
+            <li>
+              <a href="website-hosting.html">Website Professional Hosting</a>
+            </li>
+            <li><a href="vps-hosting.html">VPS Hosting</a></li>
           </ul>
         </div>
         <div class="footer-col newsletter-col">
@@ -359,6 +526,7 @@
 
     <script src="../assets/js/toast.js"></script>
     <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/biznesi/speedtest.js"></script>
     <!-- Back to Top Button -->
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">
       <svg

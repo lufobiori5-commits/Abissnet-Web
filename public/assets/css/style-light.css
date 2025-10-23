@@ -231,6 +231,7 @@ button {
   color: var(--color-gray-800);
   font-style: italic;
   transition: transform var(--transition-base);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.7));
 }
 
 .header-logo:hover {
@@ -578,7 +579,7 @@ button {
   background: var(--color-white);
   padding: var(--spacing-3xl) var(--spacing-2xl) var(--spacing-2xl)
     var(--spacing-2xl);
-  margin: 25px auto 0 auto;
+  margin: 0 auto;
   position: relative;
   z-index: 10;
   display: grid;
