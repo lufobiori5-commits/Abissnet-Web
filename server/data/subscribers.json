@@ -11,8 +11,8 @@
       "balance": "0 ALL"
     },
     "plan": {
-      "name": "500",
-      "desc": "500 Mbps, kontratë 12M, IP dinamike"
+      "name": "10G",
+      "desc": "10G Mbps, kontratë 12M, IP dinamike"
     }
   },
   "devices": [

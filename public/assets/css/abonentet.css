@@ -78,7 +78,7 @@
 .grid3 {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .grid2 {
@@ -121,6 +121,13 @@
     width: 100%;
   }
 }
+
+
+
+
+
+
+
 
 /* ========================================
    CARDS
@@ -925,3 +932,5 @@ input[type="file"] {
     font-size: 1.5rem;
   }
 }
+
+
