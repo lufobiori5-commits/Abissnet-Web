@@ -1,24 +1,33 @@
 ---
 deployment:
   tasks:
-    - /bin/bash -lc 'set -euxo pipefail; \
-      SRC="$PWD"; \
-      DST="/home/abissneti/public_html/abissnet.cloud"; \
-      mkdir -p "$DST" "$DST/.well-known"; \
-      if command -v rsync >/dev/null 2>&1; then \
+    - |
+      set -euxo pipefail
+
+      SRC="$PWD"
+      DST="/home/abissneti/public_html/abissnet.cloud"  # exact docroot for abissnet.cloud
+
+      mkdir -p "$DST" "$DST/.well-known"
+
+      if command -v rsync >/dev/null 2>&1; then
         rsync -a --delete --info=stats2 \
-          --exclude="/.git" \
-          --exclude="/.github" \
-          --exclude="/.cpanel.yml" \
-          --exclude="/.env*" \
-          --exclude="/node_modules" \
-          --exclude="/server" \
-          --exclude="/.well-known" \
-          "$SRC"/ "$DST"/; \
-      else \
-        echo "rsync not found; using cp fallback"; \
-        find "$DST" -mindepth 1 -maxdepth 1 -not -name ".well-known" -exec rm -rf {} +; \
-        cp -a "$SRC"/. "$DST"/; \
-        rm -f "$DST/.cpanel.yml" || true; \
-      fi; \
-      [ -f "$DST/.htaccess" ] || printf "%s\n" "Options -Indexes" > "$DST/.htaccess"'
+          --exclude='/.git' \
+          --exclude='/.github' \
+          --exclude='/.cpanel.yml' \
+          --exclude='/.env*' \
+          --exclude='/node_modules' \
+          --exclude='/server' \
+          --exclude='/.well-known' \
+          "$SRC"/ "$DST"/
+      else
+        echo "rsync not found; using cp fallback"
+        shopt -s dotglob extglob
+        # preserve .well-known
+        mkdir -p "$DST/.well-known"
+        for p in "$DST"/!(.well-known); do rm -rf "$p"; done
+        cp -a "$SRC"/. "$DST"/
+        rm -f "$DST/.cpanel.yml" || true
+      fi
+
+      # basic hardening, only if missing
+      [ -f "$DST/.htaccess" ] || printf "%s\n" "Options -Indexes" > "$DST/.htaccess"
