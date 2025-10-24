@@ -78,6 +78,11 @@
 .grid3 {
   display: grid;
   gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.grid3-bottom {
+  display: grid;
+  gap: 1.5rem;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
@@ -157,8 +162,14 @@
   gap: 1rem;
   flex-wrap: wrap;
 }
-
-.card-h h3 {
+.card-h-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+ .card-h h3 {
   font-size: 1.125rem;
   font-weight: 800;
   margin: 0;
