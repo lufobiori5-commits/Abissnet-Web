@@ -1,151 +1,524 @@
 <!DOCTYPE html>
 <html lang="sq">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="assets/img/favicon.png"
-      type="image/x-icon"
-    />
-    <title>Së Shpejti - Abissnet</title>
-    <meta
-      name="description"
-      content="Diçka e re po vjen! Qëndro i lidhur me Abissnet për të mësuar më shumë."
-    />
+    <link rel="shortcut icon" href="assets/img/abissnet-logo-dark.png" type="image/x-icon" />
+    <title>Abissnet - Shpejtësia që nuk njeh limite</title>
+    <link rel="stylesheet" href="assets/css/style-light.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="siteHeader">
+        <div class="header-inner">
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="/assets/img/abissnet-logo-dark.png" alt="Abissnet" height="40" />
+                </a>
+            </div>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
+            <!-- Desktop Navigation -->
+            <nav class="header-nav">
+                <a href="index.html">Internet</a>
+                <div class="nav-dropdown" data-dropdown>
+                    <button class="nav-trigger" data-dropdown-toggle>
+                        Abissnet <span class="chev">▾</span>
+                    </button>
+                    <ul class="dropdown-panel">
+                        <li><a class="dropdown-item" href="internet-ne-shtepi.html">Internet për shtëpinë tuaj</a></li>
+                        <li class="divider"></li>
+                        <li><a class="dropdown-item" href="abissnet.html">Abissnet</a></li>
+                        <li><a class="dropdown-item" href="stream.html">Streaming</a></li>
+                        <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
+                        <li><a class="dropdown-item" href="puno-nga-shtepia.html">Puno nga Shtëpia</a></li>
+                    </ul>
+                </div>
+                <a href="suport.html">Suport</a>
+                <a href="partner.html">Partnerët</a>
+                <a href="abonentet.html">Abonentët</a>
+                <a href="karriera.html">Karriera</a>
+                <a href="blog.html">Blog</a>
+            </nav>
 
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="/assets/css/coming-soon.css" />
-  </head>
-  <body>
-    <!-- Back to Home -->
-    <div class="back-home">
-      <a href="index.html">
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path d="M19 12H5M12 19l-7-7 7-7" />
-        </svg>
-        Kthehu
-      </a>
+            <!-- Desktop Actions -->
+            <div class="header-actions">
+                <a class="header-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
+                <a class="header-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+                <a class="header-btn primary" href="suport.html">Na Kontakto</a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button class="hamburger-menu" id="hamburger-btn">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <nav class="mobile-nav">
+                <a href="index.html" class="mobile-nav-link">Internet</a>
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+                        Abissnet
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content">
+                        <a href="internet-ne-shtepi.html">Internet për shtëpinë tuaj</a>
+                        <a href="abissnet.html">Abissnet</a>
+                        <a href="stream.html">Streaming</a>
+                        <a href="gaming.html">Gaming</a>
+                        <a href="puno-nga-shtepia.html">Puno nga Shtëpia</a>
+                    </div>
+                </div>
+                <a href="suport.html" class="mobile-nav-link">Suport</a>
+                <a href="partner.html" class="mobile-nav-link">Partnerët</a>
+                <a href="abonentet.html" class="mobile-nav-link">Abonentët</a>
+                <a href="karriera.html" class="mobile-nav-link">Karriera</a>
+                <a href="blog.html" class="mobile-nav-link">Blog</a>
+                <div class="mobile-actions">
+                    <a class="mobile-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
+                    <a class="mobile-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+                    <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sub Navigation -->
+    <div class="subnav">
+        <div class="subnav-inner">
+            <a href="index.html" class="pill active">Individ</a>
+            <a href="biznesi/index.html" class="pill">Biznes</a>
+        </div>
     </div>
 
-    <!-- Coming Soon Wrapper -->
-    <div class="coming-soon-wrapper">
-      <!-- Animated Background -->
-      <div class="coming-soon-bg">
-        <div class="bg-circle"></div>
-        <div class="bg-circle"></div>
-        <div class="bg-circle"></div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-inner">
+            <div class="hero-left">
+                <h1 class="hero-title">Shpejtësia që nuk njeh limite...</h1>
+               
+                <div class="hero-speed">10G</div>
+            </div>
+            <div class="hero-right">
+                <img src="/assets/img/robot.png" alt="AI Robot" class="hero-img" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Info Section -->
+    <section class="packages-section" style="margin-top: var(--spacing-4xl); padding-top: var(--spacing-4xl);">
+        <div style="max-width: 900px; margin: 0 auto var(--spacing-3xl); text-align: center;">
+            <h2 class="packages-title" style="margin-bottom: var(--spacing-lg);">Zgjidh Paketën Ideale</h2>
+            <p style="font-size: var(--font-size-lg); color: var(--color-gray-600); line-height: 1.6;">
+                Zgjidhni nga paketat tona të internetit me fiber optike me shpejtësi deri në 10 Gbps. 
+                Çmimet përfshijnë TVSH dhe ofrojmë kontrata 12 mujore, 24 mujore dhe parapagime 12 mujore.
+            </p>
+            <div style="margin-top: var(--spacing-xl); padding: var(--spacing-lg); background: rgba(246, 135, 50, 0.1); border-radius: var(--radius-lg); border-left: 4px solid var(--color-primary);">
+                <p style="font-weight: 600; color: var(--color-gray-800); margin: 0;">
+                    ⚠️ Kjo ofertë është e vlefshme vetëm për zonën e Tiranës dhe për klientë të rinj.
+                </p>
+            </div>
+        </div>
+
+        <!-- Tabela 1: Paketat Internet -->
+        <div style="margin-bottom: var(--spacing-4xl);">
+            <h3 style="font-size: var(--font-size-3xl); font-weight: 700; text-align: center; margin-bottom: var(--spacing-2xl); color: var(--color-gray-800);">
+                💻 Paketat Internet
+            </h3>
+            <div style="overflow-x: auto; margin: 0 auto; max-width: var(--max-width);">
+                <table class="comparison-table" style="width: 100%; min-width: 600px;">
+                    <thead>
+                        <tr>
+                            <th style="width: 30%;">Paketa</th>
+                            <th style="width: 23%;">Parapagim 12M</th>
+                            <th style="width: 23%;">Kontratë 12M</th>
+                            <th style="width: 24%;">Kontratë 24M</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>500/50 Mbps</strong></td>
+                            <td>1,200 Lekë</td>
+                            <td>1,300 Lekë</td>
+                            <td>1,200 Lekë</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1000/100 Mbps</strong></td>
+                            <td>1,400 Lekë</td>
+                            <td>1,500 Lekë</td>
+                            <td>1,400 Lekë</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1500/150 Mbps</strong></td>
+                            <td>1,600 Lekë</td>
+                            <td>1,700 Lekë</td>
+                            <td>1,600 Lekë</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2500/250 Mbps</strong></td>
+                            <td>3,200 Lekë</td>
+                            <td>3,300 Lekë</td>
+                            <td>3,200 Lekë</td>
+                        </tr>
+                        <tr style="background: rgba(246, 135, 50, 0.1);">
+                            <td><strong>10G / 1G</strong> 🔥</td>
+                            <td><strong>7,000 Lekë</strong></td>
+                            <td><strong>8,000 Lekë</strong></td>
+                            <td><strong>7,000 Lekë</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="text-align: center; font-size: var(--font-size-sm); color: var(--color-gray-600); margin-top: var(--spacing-md);">
+                *Çmimet e mësipërme kanë TVSH-në e përfshirë.
+            </p>
+        </div>
+
+        <!-- Tabela 2: Paketat me Tring -->
+        <div style="margin-bottom: var(--spacing-4xl);">
+            <h3 style="font-size: var(--font-size-3xl); font-weight: 700; text-align: center; margin-bottom: var(--spacing-2xl); color: var(--color-gray-800);">
+                📺 Paketat me Tring
+            </h3>
+            <div style="overflow-x: auto; margin: 0 auto; max-width: var(--max-width);">
+                <table class="comparison-table" style="width: 100%; min-width: 800px;">
+                    <thead>
+                        <tr>
+                            <th rowspan="2" style="width: 20%; vertical-align: middle;">Paketa</th>
+                            <th colspan="3" style="background: linear-gradient(135deg, #f68732, #ff9d5c); color: white;">Tring Baze</th>
+                            <th colspan="3" style="background: linear-gradient(135deg, #f68732, #ff9d5c); color: white;">Tring Baze + Sporte</th>
+                            <th colspan="3" style="background: linear-gradient(135deg, #f68732, #ff9d5c); color: white;">Tring Plote</th>
+                        </tr>
+                        <tr>
+                            <th style="font-size: 0.85rem;">P 12M</th>
+                            <th style="font-size: 0.85rem;">K 12M</th>
+                            <th style="font-size: 0.85rem;">K 24M</th>
+                            <th style="font-size: 0.85rem;">P 12M</th>
+                            <th style="font-size: 0.85rem;">K 12M</th>
+                            <th style="font-size: 0.85rem;">K 24M</th>
+                            <th style="font-size: 0.85rem;">P 12M</th>
+                            <th style="font-size: 0.85rem;">K 12M</th>
+                            <th style="font-size: 0.85rem;">K 24M</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>500/50 Mbps</strong></td>
+                            <td>1,800</td><td>1,900</td><td>1,800</td>
+                            <td>2,000</td><td>2,100</td><td>2,000</td>
+                            <td>2,200</td><td>2,300</td><td>2,200</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1000/100 Mbps</strong></td>
+                            <td>2,000</td><td>2,100</td><td>2,000</td>
+                            <td>2,200</td><td>2,300</td><td>2,200</td>
+                            <td>2,400</td><td>2,500</td><td>2,400</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1500/150 Mbps</strong></td>
+                            <td>2,200</td><td>2,300</td><td>2,200</td>
+                            <td>2,400</td><td>2,500</td><td>2,400</td>
+                            <td>2,600</td><td>2,700</td><td>2,600</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2500/250 Mbps</strong></td>
+                            <td>3,800</td><td>3,900</td><td>3,800</td>
+                            <td>4,000</td><td>4,100</td><td>4,000</td>
+                            <td>4,200</td><td>4,300</td><td>4,200</td>
+                        </tr>
+                        <tr style="background: rgba(246, 135, 50, 0.1);">
+                            <td><strong>10G / 1G</strong> 🔥</td>
+                            <td>7,600</td><td>8,600</td><td>7,600</td>
+                            <td>7,800</td><td>8,800</td><td>7,800</td>
+                            <td>8,000</td><td>9,000</td><td>8,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="text-align: center; font-size: var(--font-size-sm); color: var(--color-gray-600); margin-top: var(--spacing-md);">
+                *Çmimet e mësipërme kanë TVSH-në e përfshirë.
+            </p>
+        </div>
+
+        <!-- Tabela 3: Paketat me Digitalb -->
+        <div style="margin-bottom: var(--spacing-4xl);">
+            <h3 style="font-size: var(--font-size-3xl); font-weight: 700; text-align: center; margin-bottom: var(--spacing-2xl); color: var(--color-gray-800);">
+                📡 Paketat me Digitalb
+            </h3>
+            <div style="overflow-x: auto; margin: 0 auto; max-width: var(--max-width);">
+                <table class="comparison-table" style="width: 100%; min-width: 700px;">
+                    <thead>
+                        <tr>
+                            <th rowspan="2" style="width: 25%; vertical-align: middle;">Paketa</th>
+                            <th colspan="3" style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white;">Digitalb Familjare</th>
+                            <th colspan="3" style="background: linear-gradient(135deg, #7c2d12, #ea580c); color: white;">Digitalb Premium</th>
+                        </tr>
+                        <tr>
+                            <th style="font-size: 0.85rem;">P 12M</th>
+                            <th style="font-size: 0.85rem;">K 12M</th>
+                            <th style="font-size: 0.85rem;">K 24M</th>
+                            <th style="font-size: 0.85rem;">P 12M</th>
+                            <th style="font-size: 0.85rem;">K 12M</th>
+                            <th style="font-size: 0.85rem;">K 24M</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>500/50 Mbps</strong></td>
+                            <td>2,000</td><td>2,100</td><td>2,000</td>
+                            <td>2,800</td><td>2,900</td><td>2,800</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1000/100 Mbps</strong></td>
+                            <td>2,200</td><td>2,300</td><td>2,200</td>
+                            <td>3,000</td><td>3,100</td><td>3,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1500/150 Mbps</strong></td>
+                            <td>2,400</td><td>2,500</td><td>2,400</td>
+                            <td>3,200</td><td>3,300</td><td>3,200</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2500/250 Mbps</strong></td>
+                            <td>4,000</td><td>4,100</td><td>4,000</td>
+                            <td>4,800</td><td>4,900</td><td>4,800</td>
+                        </tr>
+                        <tr style="background: rgba(246, 135, 50, 0.1);">
+                            <td><strong>10G / 1G</strong> 🔥</td>
+                            <td>7,800</td><td>8,800</td><td>7,800</td>
+                            <td>8,600</td><td>9,600</td><td>8,600</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="text-align: center; font-size: var(--font-size-sm); color: var(--color-gray-600); margin-top: var(--spacing-md);">
+                *Çmimet e mësipërme kanë TVSH-në e përfshirë.
+            </p>
+        </div>
+
+        <!-- Tabela 4: Çmimet e Pajisjeve -->
+        <div style="margin-bottom: var(--spacing-4xl);">
+            <h3 style="font-size: var(--font-size-3xl); font-weight: 700; text-align: center; margin-bottom: var(--spacing-2xl); color: var(--color-gray-800);">
+                🔧 Çmimet e Pajisjeve dhe Instalimit
+            </h3>
+            <div style="overflow-x: auto; margin: 0 auto; max-width: 900px;">
+                <table class="comparison-table" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th style="width: 35%;">Përshkrimi</th>
+                            <th style="width: 22%;">Kontratë 12M</th>
+                            <th style="width: 22%;">Kontratë 24M</th>
+                            <th style="width: 21%;">Parapagim 12M</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>ZTE ZXHN F6600P</strong></td>
+                            <td>2,000 Lekë</td>
+                            <td>1,500 Lekë</td>
+                            <td>1,500 Lekë</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ZTE F8648P</strong></td>
+                            <td>4,000 Lekë</td>
+                            <td>3,500 Lekë</td>
+                            <td>3,500 Lekë</td>
+                        </tr>
+                        <tr>
+                            <td><strong>More TV IP STB</strong></td>
+                            <td>1,000 Lekë qera + 100 Lekë/muaj për 12 muaj</td>
+                            <td>100 Lekë/muaj për 24 muaj</td>
+                            <td>100 Lekë/muaj për 12 muaj</td>
+                        </tr>
+                        <tr style="background: rgba(16, 185, 129, 0.1);">
+                            <td><strong>Kosto Instalimi</strong></td>
+                            <td colspan="3" style="text-align: center;"><strong>FALAS</strong> ✅</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="text-align: center; font-size: var(--font-size-sm); color: var(--color-gray-600); margin-top: var(--spacing-md);">
+                *Çmimet e mësipërme kanë TVSH-në e përfshirë.
+            </p>
+        </div>
+
+        <!-- Informacioni i Rëndësishëm -->
+        <div style="max-width: 1000px; margin: var(--spacing-3xl) auto;">
+            <div class="warning-box" style="margin-bottom: var(--spacing-xl);">
+                <h4>⚠️ Kujdes për Pajisjet</h4>
+                <ul style="margin: var(--spacing-md) 0 0 var(--spacing-lg); line-height: 1.8;">
+                    <li>Pajisja <strong>ZTE F8648P</strong> jepet me qira dhe duhet të kthehet në përfundim të kontratës, ndryshe klienti e paguan me vlerë të plotë <strong>12,000 Lekë</strong>.</li>
+                    <li>Pajisja <strong>ZTE ZXHN F6600P</strong> jepet me qira dhe duhet të kthehet në përfundim të kontratës, ndryshe klienti e paguan me vlerë të plotë <strong>8,000 Lekë</strong>.</li>
+                    <li>Pajisja <strong>More TV IP STB</strong> jepet me qira dhe duhet të kthehet në përfundim të kontratës, ndryshe klienti e paguan me vlerë të plotë <strong>3,500 Lekë</strong>.</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>ℹ️ Pajisjet Falas për Kontrata të Gjata</h4>
+                <p style="margin: 0;">
+                    Vetëm për promocionin, pajisja <strong>ZTE ZXHN F6600P</strong> jepet në përdorim pa kosto shtesë për paketat 
+                    <strong>500/50 Mbps</strong> dhe <strong>1000/100 Mbps</strong>, por vetëm në rastet kur klienti pranon të parapaguaj 
+                    ose të lidhë kontratë 24 mujore.
+                </p>
+            </div>
+        </div>
+
+        <!-- Zonat e Disponueshme -->
+        <div style="max-width: 1000px; margin: var(--spacing-3xl) auto; background: var(--color-gray-50); padding: var(--spacing-2xl); border-radius: var(--radius-lg);">
+            <h3 style="font-size: var(--font-size-2xl); font-weight: 700; margin-bottom: var(--spacing-lg); color: var(--color-gray-800);">
+                📍 Zonat e Disponueshme për 2.5G dhe 10G
+            </h3>
+            <p style="margin-bottom: var(--spacing-lg); color: var(--color-gray-700);">
+                Zonat e mëposhtme janë të konvertuara në teknologjinë <strong>XGSPON</strong> dhe janë të gatshme për shërbim:
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md);">
+                <div style="padding: var(--spacing-md); background: white; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">✅ 21 Dhjetori</div>
+                <div style="padding: var(--spacing-md); background: white; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">✅ Siri Kodra</div>
+                <div style="padding: var(--spacing-md); background: white; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">✅ Abissnet në Bllok</div>
+                <div style="padding: var(--spacing-md); background: white; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">✅ Don Bosko</div>
+                <div style="padding: var(--spacing-md); background: white; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">✅ TEG</div>
+                <div style="padding: var(--spacing-md); background: white; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">✅ Omega Farma</div>
+                <div style="padding: var(--spacing-md); background: white; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">✅ Min. e Shëndetësisë</div>
+                <div style="padding: var(--spacing-md); background: white; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">✅ Kopshti Botanik</div>
+                <div style="padding: var(--spacing-md); background: white; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">✅ Unaza e Re</div>
+            </div>
+            <p style="margin-top: var(--spacing-lg); color: var(--color-gray-600); font-style: italic;">
+                🔄 Zonat <strong>Fresku, Shkolla e Bashkuar, Ales, Santara</strong> janë në proces konvertimi. Do të informoheni për ecurinë.
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); padding: var(--spacing-4xl) var(--spacing-2xl); text-align: center; margin-top: var(--spacing-4xl);">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: var(--font-size-3xl); font-weight: 700; color: white; margin-bottom: var(--spacing-lg);">
+                Gati për Internet Super të Shpejtë?
+            </h2>
+            <p style="font-size: var(--font-size-xl); color: rgba(255,255,255,0.95); margin-bottom: var(--spacing-2xl); line-height: 1.6;">
+                Na kontaktoni tani për të porositur paketën tuaj ideale të Abissnet Super Speed!
+            </p>
+            <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
+                <a href="tel:+35542000000" class="hero-cta-btn" style="background: white; color: var(--color-primary); box-shadow: var(--shadow-xl);">
+                    📞 Telefono: 042 000 000
+                </a>
+                <a href="suport.html" class="hero-cta-btn" style="background: var(--color-gray-800); box-shadow: var(--shadow-xl);">
+                    ✉️ Na Shkruaj
+                </a>
+            </div>
+        </div>
+    </section>
+
+ <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col brand">
+          <div class="footer-logo">Abissnet</div>
+          <ul>
+            <li><a href="abissnet.html">Kompania</a></li>
+            <li><a href="abissnet.html">Rreth Nesh</a></li>
+            <li><a href="partner.html">Partnerët</a></li>
+            <li><a href="karriera.html">Karriera</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Shërbime/Produkte</h3>
+          <ul>
+            <li><a href="internet-ne-shtepi.html">Fiber në Shtëpi</a></li>
+            <li><a href="puno-nga-shtepia.html">Korporata</a></li>
+            <li><a href="internet-ne-shtepi.html">Televizioni</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Më të Populluara</h3>
+          <ul>
+            <li><a href="#">Internet i Shpejtë</a></li>
+            <li><a href="#">Ofertat e Verës</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Shkruaj email-in tuaj" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="footer-social">
+            <a
+              href="https://facebook.com/abissnet"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://instagram.com/abissnet"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://youtube.com/@abissnet"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
+      <!-- Partner logos row -->
 
-      <!-- Main Content -->
-      <div class="coming-soon-content">
-        <!-- Logo -->
-        <div class="coming-soon-logo">
-          <img
-            src="/assets/img/abissnet-logo.png"
-            alt="Abissnet"
-            onerror="this.style.display='none'"
-          />
-        </div>
-
-        <!-- Title -->
-        <h1 class="coming-soon-title">
-          Diçka e <span class="highlight">Mahnitshme</span><br />
-          Po Vjen Së Shpejti
-        </h1>
-
-        <!-- Subtitle -->
-        <p class="coming-soon-subtitle">
-          Jemi duke punuar në diçka të veçantë. Qëndro i lidhur!
-        </p>
-
-        <!-- Countdown Timer -->
-        <div class="countdown-timer" id="countdown">
-          <div class="countdown-item">
-            <span class="countdown-number" id="days">00</span>
-            <span class="countdown-label">Ditë</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" id="hours">00</span>
-            <span class="countdown-label">Orë</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" id="minutes">00</span>
-            <span class="countdown-label">Min</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" id="seconds">00</span>
-            <span class="countdown-label">Sek</span>
-          </div>
-        </div>
-
-        <!-- Newsletter Form -->
-        <form class="coming-soon-form" id="notify-form">
-          <input
-            type="email"
-            name="email"
-            placeholder="Email-i juaj"
-            required
-            autocomplete="email"
-            aria-label="Email për njoftim"
-          />
-          <button type="submit">Më Njofto</button>
-        </form>
-
-        <!-- Social Links -->
-        <div class="coming-soon-social">
-          <a
-            href="https://facebook.com/abissnet"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-          >
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://instagram.com/abissnet"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          >
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://youtube.com/@abissnet"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="YouTube"
-          >
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
-              />
-            </svg>
-          </a>
-        </div>
+      <div class="footer-bottom">
+        © 2025 Abissnet. Të gjitha të drejtat e rezervuara.
       </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/coming-soon.js"></script>
+    </footer>
+    <script src="assets/js/toast.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/partner.js"></script>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
   </body>
 </html>

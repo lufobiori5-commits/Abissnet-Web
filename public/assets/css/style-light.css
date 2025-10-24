@@ -231,7 +231,7 @@ button {
   color: var(--color-gray-800);
   font-style: italic;
   transition: transform var(--transition-base);
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.7));
+ 
 }
 
 .header-logo:hover {
