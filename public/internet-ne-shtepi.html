@@ -21,63 +21,40 @@
     <link rel="stylesheet" href="assets/css/style-light.css" />
   </head>
   <body>
-   <!-- Header -->
+  <!-- Header -->
     <header class="header" id="siteHeader">
       <div class="header-inner">
         <div class="header-logo">
           <a href="index.html">
-            <img
-              src="/assets/img/abissnet-logo-dark.png"
-              alt="Abissnet"
-              height="40"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-            />
-            <span
-              style="
-                display: none;
-                font-style: italic;
-                font-size: 1.5rem;
-                font-weight: 700;
-                color: #fff;
-              "
-              >abissnet</span
-            >
+            <img src="/assets/img/abissnet-logo-dark.png" alt="Abissnet" height="40"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
+            <span style="display:none;font-style:italic;font-size:1.5rem;font-weight:700;color:#fff;">abissnet</span>
           </a>
         </div>
 
-        <!-- Desktop Navigation -->
         <nav class="header-nav">
-          <a href="index.html">Internet</a>
-
-          <!-- DROPDOWN -->
           <div class="nav-dropdown" data-dropdown>
-            <button
-              class="nav-trigger"
-              data-dropdown-toggle
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
+            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+              Internet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li><a class="dropdown-item" href="internet-ne-shtepi.html">Internet</a></li>
+              <li class="divider" role="separator"></li>
+              <li><a class="dropdown-item" href="abissnet.html">Internet & TV</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
               Abissnet <span class="chev">▾</span>
             </button>
             <ul class="dropdown-panel" role="menu">
-              <li>
-                <a class="dropdown-item" href="internet-ne-shtepi.html"
-                  >Internet për shtëpinë tuaj</a
-                >
-              </li>
+              <li><a class="dropdown-item" href="internet-ne-shtepi.html">Fto nje Mik</a></li>
               <li class="divider" role="separator"></li>
-              <li>
-                <a class="dropdown-item" href="abissnet.html">Abissnet</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="stream.html">Streaming</a>
-              </li>
+              <li><a class="dropdown-item" href="abissnet.html">WiFi Falas</a></li>
+              <li><a class="dropdown-item" href="stream.html">Benefite per Studentet</a></li>
               <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
-              <li>
-                <a class="dropdown-item" href="puno-nga-shtepia.html"
-                  >Puno nga Shtëpia</a
-                >
-              </li>
+              <li><a class="dropdown-item" href="puno-nga-shtepia.html">Puno nga Shtëpia</a></li>
             </ul>
           </div>
 
@@ -85,52 +62,46 @@
           <a href="partner.html">Partnerët</a>
           <a href="abonentet.html">Abonentët</a>
           <a href="karriera.html">Karriera</a>
-          <a href="blog.html">Blog</a>
+          <a href="blog.html">APP</a>
         </nav>
 
-        <!-- Desktop Actions -->
         <div class="header-actions">
-          <a class="header-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
-          <a class="header-btn outline" href="abissnet.html">Paguaj Tani</a>
+          <a class="header-btn outline" href="dyqanet.html">Harta Retail</a>
+          <a class="header-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
           <a class="header-btn primary" href="suport.html">Na Kontakto</a>
         </div>
 
-        <!-- Mobile Hamburger Button -->
-        <button
-          class="hamburger-menu"
-          id="hamburger-btn"
-          aria-label="Toggle menu"
-          aria-expanded="false"
-        >
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
         </button>
       </div>
 
-      <!-- Mobile Menu Overlay -->
       <div class="mobile-menu" id="mobile-menu">
         <nav class="mobile-nav">
-          <a href="index.html" class="mobile-nav-link">Internet</a>
-
-          <!-- Mobile Dropdown -->
           <div class="mobile-dropdown">
             <button class="mobile-dropdown-toggle" data-mobile-dropdown>
-              Abissnet
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
+              <a href="index.html" class="mobile-nav-link">Internet</a>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
             <div class="mobile-dropdown-content">
-              <a href="internet-ne-shtepi.html">Internet për shtëpinë tuaj</a>
-              <a href="abissnet.html">Abissnet</a>
+              <a href="internet-ne-shtepi.html">Internet</a>
+              <a href="abissnet.html">Internet & TV</a>
+            </div>
+          </div>
+
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Abissnet
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="stream.html">Fto nje Mik</a>
+              <a href="gaming.html">WiFi Falas</a>
+              <a href="puno-nga-shtepia.html">Benefite per Studentet</a>
               <a href="stream.html">Streaming</a>
               <a href="gaming.html">Gaming</a>
               <a href="puno-nga-shtepia.html">Puno nga Shtëpia</a>
@@ -141,14 +112,11 @@
           <a href="partner.html" class="mobile-nav-link">Partnerët</a>
           <a href="abonentet.html" class="mobile-nav-link">Abonentët</a>
           <a href="karriera.html" class="mobile-nav-link">Karriera</a>
-          <a href="blog.html" class="mobile-nav-link">Blog</a>
+          <a href="blog.html" class="mobile-nav-link">App</a>
 
-          <!-- Mobile Action Buttons -->
           <div class="mobile-actions">
-            <a class="mobile-btn outline" href="dyqanet.html"
-              >Harta e Mbulimit</a
-            >
-            <a class="mobile-btn outline" href="abissnet.html">Paguaj Tani</a>
+            <a class="mobile-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
+            <a class="mobile-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
             <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
           </div>
         </nav>

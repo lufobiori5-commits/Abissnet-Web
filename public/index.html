@@ -3,75 +3,132 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Favicon -->
-    <link
-      rel="shortcut icon"
-      href="assets/img/favicon.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
     <title>Abissnet - Shpejtësia që nuk njeh limite</title>
     <link rel="stylesheet" href="assets/css/style-light.css" />
-      <link rel="stylesheet" href="../assets/css/biznesi/speedtest.css" />
+<link rel="stylesheet" href="../assets/css/biznesi/speedtest.css" />
     
+
+<!-- Karusel i blogut (stil minimal, përputhet me paletën ekzistuese) -->
+    <style>
+      .blog-center{
+        max-width:var(--max-width);
+        margin:var(--spacing-3xl) auto var(--spacing-xl);
+        padding:var(--spacing-3xl) var(--spacing-2xl);
+        background:var(--color-white);
+        border:1px solid var(--color-gray-200);
+        border-radius:var(--radius-lg);
+        box-shadow:var(--shadow-xl);
+      }
+      .blog-center-h{
+        display:flex;align-items:flex-end;justify-content:space-between;gap:var(--spacing-lg);
+        margin-bottom:var(--spacing-xl);
+      }
+      .blog-center-title{
+        font-family:var(--font-primary);font-weight:900;letter-spacing:-.02em;
+        font-size:var(--font-size-4xl);
+        background:linear-gradient(135deg,var(--color-gray-800) 0%,var(--color-primary) 100%);
+        -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+      }
+      .blog-center-sub{color:var(--color-gray-600);font-size:var(--font-size-sm);white-space:nowrap}
+
+      /* Slider */
+      .blog-slider{position:relative}
+      .slider-viewport{overflow:hidden}
+      .slider-track{
+        display:flex;gap:24px;will-change:transform;transition:transform 500ms ease;
+      }
+      .slider-slide{flex:0 0 auto}
+      /* bëji kartat të dukshme (CSS-ja jote i ka me opacity:0) */
+      .blog-slider .blog-card{opacity:1;transform:none;height:100%;display:flex;flex-direction:column}
+      .blog-slider .blog-card-image{height:220px;object-fit:cover}
+
+      /* kartë me hero më moderne */
+      .card-hero{position:relative;aspect-ratio:16/9;border-radius:var(--radius-lg);overflow:hidden}
+      .card-hero img{width:100%;height:100%;object-fit:cover;transform:scale(1);transition:transform .6s ease}
+      .blog-card:hover .card-hero img{transform:scale(1.05)}
+      .card-chip{
+        position:absolute;top:10px;left:10px;background:rgba(0,0,0,.55);
+        color:#fff;padding:6px 10px;border-radius:999px;font-size:.72rem;font-weight:700
+      }
+      .card-gradient{
+        position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.4) 100%);
+        pointer-events:none;
+      }
+
+      /* shigjeta – glass */
+      .slider-nav{
+        position:absolute;top:50%;transform:translateY(-50%);
+        width:48px;height:48px;border-radius:999px;backdrop-filter:blur(8px);
+        background:rgba(255,255,255,.9);border:1px solid var(--color-gray-200);
+        display:grid;place-items:center;box-shadow:var(--shadow-md);cursor:pointer;z-index:2;
+        transition:transform .25s ease,box-shadow .25s ease,background .25s ease
+      }
+      .slider-nav:hover{transform:translateY(-50%) scale(1.06);box-shadow:var(--shadow-xl)}
+      .slider-nav:active{transform:translateY(-50%) scale(.98)}
+      .slider-prev{left:-16px}
+      .slider-next{right:-16px}
+      .slider-nav[disabled]{opacity:.5;cursor:not-allowed}
+
+      /* dots */
+      .slider-dots{display:flex;gap:8px;justify-content:center;margin-top:var(--spacing-lg)}
+      .slider-dot{
+        width:8px;height:8px;border-radius:999px;background:var(--color-gray-300);
+        transition:transform .25s ease,background .25s ease
+      }
+      .slider-dot.active{background:var(--color-primary);transform:scale(1.25)}
+
+      .blog-center-actions{display:flex;justify-content:center;margin-top:var(--spacing-xl)}
+
+      /* Responsivitet i kolonave */
+      @media (max-width:1200px){ .slider-track{gap:18px} .slider-prev{left:-10px} .slider-next{right:-10px} }
+      @media (max-width:900px){
+        .blog-center{padding:var(--spacing-2xl) var(--spacing-lg)}
+        .blog-center-title{font-size:var(--font-size-3xl)}
+        .blog-slider .blog-card-image{height:200px}
+      }
+      @media (max-width:600px){
+        .blog-slider .blog-card-image{height:190px}
+        .slider-prev{left:-6px} .slider-next{right:-6px}
+      }
+    </style>
   </head>
+
   <body>
     <!-- Header -->
     <header class="header" id="siteHeader">
       <div class="header-inner">
         <div class="header-logo">
           <a href="index.html">
-            <img
-              src="/assets/img/abissnet-logo-dark.png"
-              alt="Abissnet"
-              height="40"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-            />
-            <span
-              style="
-                display: none;
-                font-style: italic;
-                font-size: 1.5rem;
-                font-weight: 700;
-                color: #fff;
-              "
-              >abissnet</span
-            >
+            <img src="/assets/img/abissnet-logo-dark.png" alt="Abissnet" height="40"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
+            <span style="display:none;font-style:italic;font-size:1.5rem;font-weight:700;color:#fff;">abissnet</span>
           </a>
         </div>
 
-        <!-- Desktop Navigation -->
         <nav class="header-nav">
-          <a href="index.html">Internet</a>
-
-          <!-- DROPDOWN -->
           <div class="nav-dropdown" data-dropdown>
-            <button
-              class="nav-trigger"
-              data-dropdown-toggle
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
+            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+              Internet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li><a class="dropdown-item" href="internet-ne-shtepi.html">Internet</a></li>
+              <li class="divider" role="separator"></li>
+              <li><a class="dropdown-item" href="abissnet.html">Internet & TV</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
               Abissnet <span class="chev">▾</span>
             </button>
             <ul class="dropdown-panel" role="menu">
-              <li>
-                <a class="dropdown-item" href="internet-ne-shtepi.html"
-                  >Internet për shtëpinë tuaj</a
-                >
-              </li>
+              <li><a class="dropdown-item" href="internet-ne-shtepi.html">Fto nje Mik</a></li>
               <li class="divider" role="separator"></li>
-              <li>
-                <a class="dropdown-item" href="abissnet.html">Abissnet</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="stream.html">Streaming</a>
-              </li>
+              <li><a class="dropdown-item" href="abissnet.html">WiFi Falas</a></li>
+              <li><a class="dropdown-item" href="stream.html">Benefite per Studentet</a></li>
               <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
-              <li>
-                <a class="dropdown-item" href="puno-nga-shtepia.html"
-                  >Puno nga Shtëpia</a
-                >
-              </li>
+              <li><a class="dropdown-item" href="puno-nga-shtepia.html">Puno nga Shtëpia</a></li>
             </ul>
           </div>
 
@@ -79,52 +136,46 @@
           <a href="partner.html">Partnerët</a>
           <a href="abonentet.html">Abonentët</a>
           <a href="karriera.html">Karriera</a>
-          <a href="blog.html">Blog</a>
+          <a href="blog.html">APP</a>
         </nav>
 
-        <!-- Desktop Actions -->
         <div class="header-actions">
-          <a class="header-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
+          <a class="header-btn outline" href="dyqanet.html">Harta Retail</a>
           <a class="header-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
           <a class="header-btn primary" href="suport.html">Na Kontakto</a>
         </div>
 
-        <!-- Mobile Hamburger Button -->
-        <button
-          class="hamburger-menu"
-          id="hamburger-btn"
-          aria-label="Toggle menu"
-          aria-expanded="false"
-        >
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
         </button>
       </div>
 
-      <!-- Mobile Menu Overlay -->
       <div class="mobile-menu" id="mobile-menu">
         <nav class="mobile-nav">
-          <a href="index.html" class="mobile-nav-link">Internet</a>
-
-          <!-- Mobile Dropdown -->
           <div class="mobile-dropdown">
             <button class="mobile-dropdown-toggle" data-mobile-dropdown>
-              Abissnet
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
+              <a href="index.html" class="mobile-nav-link">Internet</a>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
             <div class="mobile-dropdown-content">
-              <a href="internet-ne-shtepi.html">Internet për shtëpinë tuaj</a>
-              <a href="abissnet.html">Abissnet</a>
+              <a href="internet-ne-shtepi.html">Internet</a>
+              <a href="abissnet.html">Internet & TV</a>
+            </div>
+          </div>
+
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Abissnet
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="stream.html">Fto nje Mik</a>
+              <a href="gaming.html">WiFi Falas</a>
+              <a href="puno-nga-shtepia.html">Benefite per Studentet</a>
               <a href="stream.html">Streaming</a>
               <a href="gaming.html">Gaming</a>
               <a href="puno-nga-shtepia.html">Puno nga Shtëpia</a>
@@ -135,13 +186,10 @@
           <a href="partner.html" class="mobile-nav-link">Partnerët</a>
           <a href="abonentet.html" class="mobile-nav-link">Abonentët</a>
           <a href="karriera.html" class="mobile-nav-link">Karriera</a>
-          <a href="blog.html" class="mobile-nav-link">Blog</a>
+          <a href="blog.html" class="mobile-nav-link">App</a>
 
-          <!-- Mobile Action Buttons -->
           <div class="mobile-actions">
-            <a class="mobile-btn outline" href="dyqanet.html"
-              >Harta e Mbulimit</a
-            >
+            <a class="mobile-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
             <a class="mobile-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
             <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
           </div>
@@ -149,7 +197,6 @@
       </div>
     </header>
 
-    <!-- Sub Navigation -->
     <div class="subnav" role="navigation" aria-label="Shërbime">
       <div class="subnav-inner">
         <a href="index.html" class="pill active">Individ</a>
@@ -157,293 +204,211 @@
       </div>
     </div>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero-section" id="home">
       <div class="hero-inner">
         <div class="hero-left">
           <h1 class="hero-title">Shpejtësia që nuk njeh limite...</h1>
           <div class="hero-speed">10G</div>
         </div>
-        <div class="hero-right">
-          <img
-            src="/assets/img/robot.png"
-            alt="AI Robot with Headphones"
-            class="hero-img"
-          />
-        </div>
+        <div class="hero-right"><img src="/assets/img/robot.png" alt="AI Robot" class="hero-img"/></div>
       </div>
     </section>
 
-    <!-- Features Section -->
-      <section class="packages-section" id="paketat">
+    <!-- Paketat -->
+    <section class="packages-section" id="paketat">
       <h2 class="packages-title">Zgjidh një nga paketat e internetit!</h2>
       <div class="package-grid">
-        <div class="package-card">
-          <div class="package-speed">500  / 50 </div>
-          <div class="package-label">mbps</div>
-        </div>
-        <div class="package-card">
-          <div class="package-speed">1000 / 100 </div>
-          <div class="package-label">mbps</div>
-        </div>
-        <div class="package-card">
-          <div class="package-speed">1500  / 150 </div>
-          <div class="package-label">mbps</div>
-        </div>
-        <div class="package-card">
-          <div class="package-speed">2500  / 250 </div>
-          <div class="package-label">mbps</div>
-        </div>
-        <div class="package-card special">
-          <div class="package-speed">10G / 1G</div>
-        </div>
+        <div class="package-card"><div class="package-speed">500  / 50</div><div class="package-label">mbps</div></div>
+        <div class="package-card"><div class="package-speed">1000 / 100</div><div class="package-label">mbps</div></div>
+        <div class="package-card"><div class="package-speed">1500  / 150</div><div class="package-label">mbps</div></div>
+        <div class="package-card"><div class="package-speed">2500  / 250</div><div class="package-label">mbps</div></div>
+        <div class="package-card special"><div class="package-speed">10G / 1G</div></div>
       </div>
     </section>
 
-    
-  
-
-    <!-- Offer Banner Carousel -->
-     <div class="offer-banner-carousel">
-      <div class="offer-banner active">
-        Shijo Halloween me Ofertat e Abissnet
-      </div>
-      <div class="offer-banner">
-        Instalim Falas për të gjitha paketat mbi 600 mbps!
-      </div>
+    <!-- Banner ofertash -->
+    <div class="offer-banner-carousel">
+      <div class="offer-banner active">Shijo Halloween me Ofertat e Abissnet</div>
+      <div class="offer-banner">Instalim Falas për të gjitha paketat mbi 600 mbps!</div>
       <div class="offer-banner">Muaji i parë vetëm 1€ - Ofertë e kufizuar!</div>
-      <div class="offer-banner">
-        Fito 3 muaj WiFi falas me çdo abonament vjetor!
-      </div>
-    </div><br><br><br>
+      <div class="offer-banner">Fito 3 muaj WiFi falas me çdo abonament vjetor!</div>
+    </div>
+    <br><br><br>
 
-    <!-- Packages Section -->
-      <!-- Features Section -->
-      <section class="features-section">
-      <div class="feature-card">
-        <div class="feature-icon">
-          <img src="/assets/img/feature-eksperienca.png" alt="Eksperienca" />
-        </div>
-        <h3 class="feature-title">Eksperienca</h3>
-        <p class="feature-desc">
-          E themeluar në vitin 2008, Abissnet është shoqëria e parë me fibër
-          optike që të gjithë shqiptarët e njohin me të mirë.
-        </p>
+    <!-- ================= BLOG CENTER – KARUSEL ================= -->
+    <section class="blog-center" id="blog-center">
+      <div class="blog-center-h">
+        <h2 class="blog-center-title">Nga Blogu i Abissnet</h2>
+        <div class="blog-center-sub">Artikuj teknologjie, internet, siguri dhe lifestyle</div>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-icon">
-          <img src="/assets/img/feature-shpejte.png" alt="I shpejtë" />
+      <div class="blog-slider" data-autoplay="5500">
+        <button class="slider-nav slider-prev" aria-label="Mbrapa" id="blogPrev">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+
+        <div class="slider-viewport" id="blogViewport">
+          <div class="slider-track" id="blogTrack">
+            <!-- Slide 1 -->
+            <article class="slider-slide blog-card" data-href="blog-post-1.html" role="button" tabindex="0">
+              <div class="card-hero">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80" alt="AI & Internet 2025" />
+                <span class="card-chip">Inteligjenca Artificiale</span>
+                <span class="card-gradient"></span>
+              </div>
+              <div class="blog-card-content">
+                <h3 class="blog-card-title">Si po Ndryshon Inteligjenca Artificiale Përdorimin e Internetit në 2025</h3>
+                <p class="blog-card-excerpt">Asistentë virtualë, kërkim kontekstual, personalizim i thellë dhe siguri më e zgjuar.</p>
+                <div class="blog-card-footer">
+                  <span class="blog-card-date">8 Tetor 2025 • 5 min</span><span class="blog-card-arrow">→</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Slide 2 -->
+            <article class="slider-slide blog-card" data-href="blog-post-3.html" role="button" tabindex="0">
+              <div class="card-hero">
+                <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=1200&q=80" alt="10G Fiber" />
+                <span class="card-chip">Fiber Optik</span>
+                <span class="card-gradient"></span>
+              </div>
+              <div class="blog-card-content">
+                <h3 class="blog-card-title">10G Internet: Shpejtësia e së Ardhmes është Këtu</h3>
+                <p class="blog-card-excerpt">Gaming, krijim përmbajtjeje, kopje cloud – pa kufizime.</p>
+                <div class="blog-card-footer">
+                  <span class="blog-card-date">7 Tetor 2025 • 6 min</span><span class="blog-card-arrow">→</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Slide 3 -->
+            <article class="slider-slide blog-card" data-href="blog-post-4.html" role="button" tabindex="0">
+              <div class="card-hero">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80" alt="Cybersecurity" />
+                <span class="card-chip">Siguria Kibernetike</span>
+                <span class="card-gradient"></span>
+              </div>
+              <div class="blog-card-content">
+                <h3 class="blog-card-title">5 Hapa për të Mbrojtur Rrjetin Tuaj Shtëpiak</h3>
+                <p class="blog-card-excerpt">MFA, firewall i ruterit, izolim IoT dhe fjalëkalime të forta.</p>
+                <div class="blog-card-footer">
+                  <span class="blog-card-date">6 Tetor 2025 • 5 min</span><span class="blog-card-arrow">→</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Slide 4 -->
+            <article class="slider-slide blog-card" data-href="blog-post-5.html" role="button" tabindex="0">
+              <div class="card-hero">
+                <img src="https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?w=1200&q=80" alt="WiFi Tips" />
+                <span class="card-chip">Wi-Fi</span>
+                <span class="card-gradient"></span>
+              </div>
+              <div class="blog-card-content">
+                <h3 class="blog-card-title">7 Këshilla për Wi-Fi më të Shpejtë në Shtëpi</h3>
+                <p class="blog-card-excerpt">Pozicionimi i AP, kanalet, band steering dhe mesh.</p>
+                <div class="blog-card-footer">
+                  <span class="blog-card-date">4 Tetor 2025 • 4 min</span><span class="blog-card-arrow">→</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Slide 5 -->
+            <article class="slider-slide blog-card" data-href="blog-post-6.html" role="button" tabindex="0">
+              <div class="card-hero">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80" alt="Gaming latency" />
+                <span class="card-chip">Gaming</span>
+                <span class="card-gradient"></span>
+              </div>
+              <div class="blog-card-content">
+                <h3 class="blog-card-title">Ping nën 10ms: Çfarë Ndryshon për Gamer-at</h3>
+                <p class="blog-card-excerpt">QoS, peering dhe rrugëzimi ynë. Pse ping i ulët fiton ndeshjen.</p>
+                <div class="blog-card-footer">
+                  <span class="blog-card-date">2 Tetor 2025 • 3 min</span><span class="blog-card-arrow">→</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Slide 6 -->
+            <article class="slider-slide blog-card" data-href="blog-post-7.html" role="button" tabindex="0">
+              <div class="card-hero">
+                <img src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?w=1200&q=80" alt="Work from home" />
+                <span class="card-chip">Produktivitet</span>
+                <span class="card-gradient"></span>
+              </div>
+              <div class="blog-card-content">
+                <h3 class="blog-card-title">Puno nga Shtëpia pa Kompromis në Lidhje</h3>
+                <p class="blog-card-excerpt">VPN, prioritetim trafiku, kamera 4K dhe backup LTE.</p>
+                <div class="blog-card-footer">
+                  <span class="blog-card-date">1 Tetor 2025 • 4 min</span><span class="blog-card-arrow">→</span>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
-        <h3 class="feature-title">I shpejtë</h3>
-        <p class="feature-desc">
-          Ofrojmë më shumë se të tjerat internet më të shpejta. Shpejtësi të
-          cilësisë së lartë për të tërë familjen.
-        </p>
+
+        <button class="slider-nav slider-next" aria-label="Përpara" id="blogNext">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-icon">
-          <img src="/assets/img/feature-fiber.png" alt="Fiber Optike" />
-        </div>
-        <h3 class="feature-title">Fiber Optike</h3>
-        <p class="feature-desc">
-          Rrjet më i mirë dhe më i madh në fibër optike. Internet i shpejtë,
-          qëndrueshëm dhe i besueshëm me fibër Optike FTTH.
-        </p>
-      </div>
+      <div class="slider-dots" id="blogDots"></div>
 
-      <div class="feature-card">
-        <div class="feature-icon">
-          <img src="/assets/img/feature-support.png" alt="Suport 24/7" />
-        </div>
-        <h3 class="feature-title">Suport 24/7</h3>
-        <p class="feature-desc">
-          Abissnet është e gatshme për ndihmën tuaj 24 orë në ditë, 7 ditë në
-          javë. Jemi të përkushtuar për të qenë në dispozicion gjithmonë.
-        </p>
+      <div class="blog-center-actions">
+        <a href="blog.html" class="hero-cta-btn"><span class="cta-arrows">>>></span> Shiko të Gjitha</a>
       </div>
     </section>
-  
-    <div class="features-cta">
-      <a href="tel:+35542000000" class="hero-cta-btn">
-        <span class="cta-arrows">>>></span> Telefono Tani
-      </a>
-    </div>
     
-    
-     <!-- Tools Section -->
+
+ 
+    <!-- Speed Test (si te faqja jote) -->
     <section class="subs-tools" aria-labelledby="tools-title">
       <h2 id="tools-title" class="sr-only">Mjetet dhe suporti</h2>
       <div>
-        <!-- Speed Test Card -->
-        <article class="card" >
-          <div class="card-h">
-            <h3>Shpejtësia e Internetit</h3>
-            <span class="muted">Test i plotë (down/up/ping)</span>
+        <article class="card">
+          <div class="card-h"><h3>Shpejtësia e Internetit</h3><span class="muted">Test i plotë (down/up/ping)</span></div>
+          <div id="progressContainer" style="display:none;margin:.5rem 0">
+            <div style="width:100%;height:6px;background:#e5e7eb;border-radius:10px;overflow:hidden;margin-bottom:.5rem;">
+              <div id="progressFill" style="height:100%;background:linear-gradient(90deg,var(--color-primary,#ff9800) 0%,#f57c00 100%);width:0%;transition:width .3s ease;border-radius:10px;"></div>
+            </div>
+            <div id="progressText" style="text-align:center;color:#6b7280;font-size:.875rem;font-weight:500;">Duke filluar testin...</div>
           </div>
 
-          <!-- Progress Bar (shown during test) -->
-          <div id="progressContainer" style="display: none; margin: 0.5rem 0">
-            <div
-              style="
-                width: 100%;
-                height: 6px;
-                background: #e5e7eb;
-                border-radius: 10px;
-                overflow: hidden;
-                margin-bottom: 0.5rem;
-              "
-            >
-              <div
-                id="progressFill"
-                style="
-                  height: 100%;
-                  background: linear-gradient(
-                    90deg,
-                    var(--color-primary, #ff9800) 0%,
-                    #f57c00 100%
-                  );
-                  width: 0%;
-                  transition: width 0.3s ease;
-                  border-radius: 10px;
-                "
-              ></div>
-            </div>
-            <div
-              id="progressText"
-              style="
-                text-align: center;
-                color: #6b7280;
-                font-size: 0.875rem;
-                font-weight: 500;
-              "
-            >
-              Duke filluar testin...
-            </div>
-          </div>
-
-          <!-- Speed Display -->
           <div class="speed-wrap">
-            <div class="speed-number" id="downloadMetric">
-              <span id="downMbps" aria-label="Shpejtësia e shkarkimit">—</span>
-              <small>Mbps Down</small>
-            </div>
-            <div class="speed-number" id="uploadMetric">
-              <span id="upMbps" aria-label="Shpejtësia e ngarkimit">—</span>
-              <small>Mbps Up</small>
-            </div>
-            <div class="speed-number" id="pingMetric">
-              <span id="pingSpeed" aria-label="Ping">—</span>
-              <small>ms Ping</small>
-            </div>
+            <div class="speed-number" id="downloadMetric"><span id="downMbps">—</span><small>Mbps Down</small></div>
+            <div class="speed-number" id="uploadMetric"><span id="upMbps">—</span><small>Mbps Up</small></div>
+            <div class="speed-number" id="pingMetric"><span id="pingSpeed">—</span><small>ms Ping</small></div>
           </div>
 
-          <!-- Additional Stats (shown after test) -->
-          <div id="additionalStats" style="display: none">
+          <div id="additionalStats" style="display:none">
             <div class="list">
-              <li>
-                <span>Jitter:</span>
-                <strong id="jitterValue">— ms</strong>
-              </li>
-              <li>
-                <span>Humbje Pakete:</span>
-                <strong id="packetLoss">—%</strong>
-              </li>
-              <li>
-                <span>Kohëzgjatja:</span>
-                <strong id="testDuration">—s</strong>
-              </li>
+              <li><span>Jitter:</span><strong id="jitterValue">— ms</strong></li>
+              <li><span>Humbje Pakete:</span><strong id="packetLoss">—%</strong></li>
+              <li><span>Kohëzgjatja:</span><strong id="testDuration">—s</strong></li>
             </div>
           </div>
 
-          <!-- Connection Info (shown after test) -->
-          <div
-            id="connectionInfo"
-            style="
-              display: none;
-              background: #f9fafb;
-              border-radius: 8px;
-              padding: 1rem;
-              margin-top: 0.5rem;
-              border: 1px solid #e5e7eb;
-            "
-          >
-            <div
-              style="
-                font-weight: 700;
-                font-size: 0.875rem;
-                color: #111827;
-                margin-bottom: 0.5rem;
-              "
-            >
-              📊 Informacioni i Lidhjes
-            </div>
+          <div id="connectionInfo" style="display:none;background:#f9fafb;border-radius:8px;padding:1rem;margin-top:.5rem;border:1px solid #e5e7eb;">
+            <div style="font-weight:700;font-size:.875rem;color:#111827;margin-bottom:.5rem;">📊 Informacioni i Lidhjes</div>
             <div class="list">
-              <li>
-                <span>IP Adresa:</span>
-                <strong id="ipAddress">—</strong>
-              </li>
-              <li>
-                <span>ISP:</span>
-                <strong id="isp">—</strong>
-              </li>
-              <li>
-                <span>Vendndodhja:</span>
-                <strong id="location">—</strong>
-              </li>
-              <li>
-                <span>Tipi i Lidhjes:</span>
-                <strong id="connectionType">—</strong>
-              </li>
+              <li><span>IP Adresa:</span><strong id="ipAddress">—</strong></li>
+              <li><span>ISP:</span><strong id="isp">—</strong></li>
+              <li><span>Vendndodhja:</span><strong id="location">—</strong></li>
+              <li><span>Tipi i Lidhjes:</span><strong id="connectionType">—</strong></li>
             </div>
           </div>
 
-          <button
-            class="btn primary"
-            id="btnSpeedTest"
-            aria-label="Fillo testin e shpejtësisë"
-          >
-            Fillo Testin
-          </button>
+          <button class="btn primary" id="btnSpeedTest">Fillo Testin</button>
 
-          <!-- Test History (shown after first test) -->
-          <div
-            id="historySection"
-            style="
-              display: none;
-              margin-top: 1rem;
-              padding-top: 1rem;
-              border-top: 1px solid #e5e7eb;
-            "
-          >
-            <div
-              style="
-                font-weight: 700;
-                font-size: 0.875rem;
-                color: #111827;
-                margin-bottom: 0.75rem;
-              "
-            >
-              📜 Historiku i Testeve
-            </div>
-            <div
-              id="historyList"
-              style="display: flex; flex-direction: column; gap: 0.5rem"
-            ></div>
+          <div id="historySection" style="display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid #e5e7eb;">
+            <div style="font-weight:700;font-size:.875rem;color:#111827;margin-bottom:.75rem;">📜 Historiku i Testeve</div>
+            <div id="historyList" style="display:flex;flex-direction:column;gap:.5rem"></div>
           </div>
         </article>
       </div>
     </section>
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-inner">
@@ -479,97 +444,176 @@
             <button type="submit">Subscribe</button>
           </form>
           <div class="footer-social">
-            <a
-              href="https://facebook.com/abissnet"
-              target="_blank"
-              aria-label="Facebook"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-                />
-              </svg>
+            <a href="https://facebook.com/abissnet" target="_blank" aria-label="Facebook">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </a>
-            <a
-              href="https://instagram.com/abissnet"
-              target="_blank"
-              aria-label="Instagram"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                />
-              </svg>
+            <a href="https://instagram.com/abissnet" target="_blank" aria-label="Instagram">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg>
             </a>
-            <a
-              href="https://youtube.com/@abissnet"
-              target="_blank"
-              aria-label="YouTube"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
-                />
-              </svg>
+            <a href="https://youtube.com/@abissnet" target="_blank" aria-label="YouTube">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
             </a>
           </div>
         </div>
       </div>
-      <!-- Partner logos row -->
-
-      <div class="footer-bottom">
-        © 2025 Abissnet. Të gjitha të drejtat e rezervuara.
-      </div>
+      <div class="footer-bottom">© 2025 Abissnet. Të gjitha të drejtat e rezervuara.</div>
     </footer>
-<script src="/assets/js/speedtest.js"></script>
-    <script src="/assets/js/toast.js"></script>
-    <script src="/assets/js/script.js"></script>
-    <!-- Back to Top Button -->
-     <script>
-      // Numri i WhatsApp (ndryshoje sipas nevojës)
-      const whatsappNumber = "+355695588569"; // vendos numrin e Abissnet pa +
 
-      // Merr të gjitha kartat e paketave
+    <!-- WhatsApp për paketat -->
+    <script>
+      const whatsappNumber = "+355695588569";
       document.querySelectorAll(".package-card").forEach((card) => {
         card.addEventListener("click", () => {
           const speed = card.querySelector(".package-speed").textContent.trim();
-          const message = encodeURIComponent(
-            `Përshëndetje Abissnet! Jam i interesuar për paketën ${speed} mbps.`
-          );
-          // Hap WhatsApp në versionin web ose celular
-          window.open(
-            `https://wa.me/${whatsappNumber}?text=${message}`,
-            "_blank"
-          );
+          const message = encodeURIComponent(`Përshëndetje Abissnet! Jam i interesuar për paketën ${speed} mbps.`);
+          window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
         });
       });
     </script>
+
+    <!-- JS i karuselit: autoplay, drag/swipe, keyboard, dots -->
+    <script>
+      (function(){
+        const viewport = document.getElementById('blogViewport');
+        const track    = document.getElementById('blogTrack');
+        const prevBtn  = document.getElementById('blogPrev');
+        const nextBtn  = document.getElementById('blogNext');
+        const dotsWrap = document.getElementById('blogDots');
+        const slides   = [...track.querySelectorAll('.slider-slide')];
+
+        const AUTOPLAY_MS = 5500;
+        let perView = 3;
+        let index = 0;
+        let timer = null;
+
+        function calcPerView(){
+          const w = window.innerWidth;
+          if (w >= 1200) return 3;
+          if (w >= 900)  return 2;
+          return 1;
+        }
+
+        function layout(){
+          perView = calcPerView();
+          const slideWidth = viewport.clientWidth / perView;
+          slides.forEach(s=>s.style.width = `${slideWidth}px`);
+          makeDots();
+          goTo(pageClamp(index));
+        }
+
+        function pages(){ return Math.ceil(slides.length / perView); }
+        function pageClamp(i){
+          const max = Math.max(0, slides.length - perView);
+          return Math.min(Math.max(i, 0), max);
+        }
+
+        function goTo(i){
+          index = pageClamp(i);
+          const slideWidth = slides[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap || 0);
+          const offset = index * slideWidth;
+          track.style.transform = `translateX(${-offset}px)`;
+          syncDots();
+          prevBtn.toggleAttribute('disabled', index === 0);
+          nextBtn.toggleAttribute('disabled', index >= slides.length - perView);
+        }
+
+        function next(){ goTo(index + perView); }
+        function prev(){ goTo(index - perView); }
+
+        function makeDots(){
+          dotsWrap.innerHTML = '';
+          for (let i = 0; i < pages(); i++){
+            const d = document.createElement('span');
+            d.className = 'slider-dot';
+            d.dataset.page = i;
+            dotsWrap.appendChild(d);
+          }
+        }
+        function syncDots(){
+          const p = Math.round(index / perView);
+          [...dotsWrap.children].forEach((dot, i)=>dot.classList.toggle('active', i===p));
+        }
+
+        // Clicks
+        nextBtn.addEventListener('click', ()=>{ stopAuto(); next(); startAuto(); });
+        prevBtn.addEventListener('click', ()=>{ stopAuto(); prev(); startAuto(); });
+        dotsWrap.addEventListener('click', (e)=>{
+          const dot = e.target.closest('.slider-dot');
+          if(!dot) return;
+          stopAuto();
+          goTo(Number(dot.dataset.page) * perView);
+          startAuto();
+        });
+
+        // Klik i gjithë kartës
+        slides.forEach(s=>{
+          s.addEventListener('click', e=>{
+            const href = s.dataset.href;
+            if(href) window.location.href = href;
+          });
+          s.addEventListener('keydown', e=>{
+            if(e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              const href = s.dataset.href;
+              if(href) window.location.href = href;
+            }
+          });
+        });
+
+        // Drag/Swipe
+        let startX=0, lastX=0, dragging=false;
+        viewport.addEventListener('pointerdown', (e)=>{
+          dragging=true; startX=e.clientX; lastX=startX; track.style.transition='none'; viewport.setPointerCapture(e.pointerId);
+        });
+        viewport.addEventListener('pointermove', (e)=>{
+          if(!dragging) return;
+          const dx=e.clientX-startX;
+          lastX=e.clientX;
+          const currentOffset = - (index * (slides[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap||0)));
+          track.style.transform = `translateX(${currentOffset + dx}px)`;
+        });
+        viewport.addEventListener('pointerup', (e)=>{
+          if(!dragging) return;
+          dragging=false; track.style.transition='';
+          const dx = lastX - startX;
+          const threshold = viewport.clientWidth * 0.12;
+          if (dx < -threshold) { stopAuto(); next(); startAuto(); }
+          else if (dx > threshold) { stopAuto(); prev(); startAuto(); }
+          else { goTo(index); }
+        });
+
+        // Keyboard
+        viewport.addEventListener('keydown', (e)=>{
+          if(e.key==='ArrowRight'){ stopAuto(); next(); startAuto(); }
+          if(e.key==='ArrowLeft'){  stopAuto(); prev(); startAuto(); }
+        });
+        viewport.setAttribute('tabindex','0');
+
+        // Autoplay
+        function startAuto(){ stopAuto(); timer = setInterval(()=>{
+          if(index >= slides.length - perView) index = -perView; // do wrap pa clonim
+          next();
+        }, AUTOPLAY_MS); }
+        function stopAuto(){ if(timer){ clearInterval(timer); timer=null; } }
+        viewport.addEventListener('mouseenter', stopAuto);
+        viewport.addEventListener('mouseleave', startAuto);
+
+        // Init
+        window.addEventListener('resize', layout);
+        layout(); startAuto();
+      })();
+    </script>
+
+    <!-- Back to Top -->
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-      >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M12 19V5M5 12l7-7 7 7" />
       </svg>
     </button>
+
+    <!-- Skriptet e tua -->
+    <script src="/assets/js/speedtest.js"></script>
+    <script src="/assets/js/toast.js"></script>
+    <script src="/assets/js/script.js"></script>
   </body>
 </html>
