@@ -28,7 +28,7 @@
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    #ff9800 50%,
+    #f68732 50%,
     transparent 100%
   );
   animation: fiberFlow 3s ease-in-out infinite;
@@ -83,7 +83,7 @@
   background: rgba(255, 152, 0, 0.1);
   border: 1px solid rgba(255, 152, 0, 0.3);
   border-radius: 50px;
-  color: #ff9800;
+  color: #f68732;
   font-size: 0.875rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -102,7 +102,7 @@
 
 .gradient-text {
   display: block;
-  background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%);
+  background: linear-gradient(135deg, #f68732 0%, #f68732 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -145,7 +145,7 @@
 .stat-number {
   font-size: 2rem;
   font-weight: 900;
-  color: #ff9800;
+  color: #f68732;
   font-family: "Orbitron", sans-serif;
   line-height: 1;
   margin-bottom: 0.5rem;
@@ -180,7 +180,7 @@
 }
 
 .btn-hero.primary {
-  background: linear-gradient(135deg, #ff9800, #ffc107);
+  background: linear-gradient(135deg, #f68732, #f68732);
   color: white;
   box-shadow: 0 4px 20px rgba(255, 152, 0, 0.4);
 }
@@ -239,7 +239,7 @@
   transform: translate(-50%, -50%);
   width: 150px;
   height: 150px;
-  border: 3px solid #ff9800;
+  border: 3px solid #f68732;
   border-radius: 50%;
   animation: ripple 2s ease-out infinite;
 }
@@ -280,9 +280,9 @@
   left: 50%;
   width: 8px;
   height: 8px;
-  background: #ff9800;
+  background: #f68732;
   border-radius: 50%;
-  box-shadow: 0 0 10px #ff9800;
+  box-shadow: 0 0 10px #f68732;
   animation: packetMove 2s ease-in-out infinite;
   animation-delay: var(--delay, 0s);
 }
@@ -369,7 +369,7 @@
 .feature-item:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 40px rgba(255, 152, 0, 0.25);
-  border-color: #ff9800;
+  border-color: #f68732;
 }
 
 .feature-item:hover::before {
@@ -421,7 +421,7 @@
 }
 
 .comparison-table thead {
-  background: linear-gradient(135deg, #ff9800, #ffc107);
+  background: linear-gradient(135deg, #f68732, #f68732);
 }
 
 .comparison-table th {
@@ -440,7 +440,7 @@
 }
 
 .comparison-table td strong {
-  color: #ff9800 !important;
+  color: #f68732 !important;
   font-size: 1.25rem;
   font-weight: 700;
 }
@@ -460,10 +460,11 @@
 /* Pricing Notes */
 .pricing-notes {
   background: #fff7ed !important;
-  border: 2px solid #ffb347;
+  border: 2px solid #f68732;
   border-radius: 20px;
-  padding: 2rem 2.5rem;
+  padding: 2rem 2.5rem ;
   margin-top: 2rem;
+ 
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -504,7 +505,7 @@
   justify-content: center;
   width: 24px;
   height: 24px;
-  background: #ff9800;
+  background: #f68732;
   color: white;
   border-radius: 50%;
   font-weight: 700;
@@ -556,13 +557,13 @@
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: #ff9800;
+  border-color: #f68732;
   box-shadow: 0 0 0 4px rgba(255, 152, 0, 0.1);
   outline: none;
 }
 
 .form-submit-btn {
-  background: linear-gradient(135deg, #ff9800, #ffc107);
+  background: linear-gradient(135deg, #f68732 , #f68732);
   color: white;
   border: none;
   border-radius: 50px;

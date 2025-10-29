@@ -1,7 +1,7 @@
 /* TV COMMERCIAL PAGE - MODERN STYLES */
 :root {
-  --tv-primary: #ff6b00;
-  --tv-primary-hover: #ff8533;
+  --tv-primary: #f68732;
+  --tv-primary-hover: #f68732;
   --tv-secondary: #3b82f6;
   --tv-dark-bg: #0f1419;
   --tv-dark-card: #1a1f2e;
@@ -545,7 +545,7 @@
 .benefit-number {
   font-size: 3rem;
   font-weight: 800;
-  color: rgba(255, 107, 0, 0.2);
+  color: #f68732;
   line-height: 1;
   margin-bottom: 1rem;
 }

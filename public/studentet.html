@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <title>Abissnet për Studentë – Internet i Shpejtë, IPTV & WiFi Falas</title>
+    <meta name="description" content="Paketat e Abissnet për studentë: internet i shpejtë, IPTV, WiFi falas në qytet, instalim falas dhe aplikacioni Abissnet për pagesa e suport." />
+    <link rel="stylesheet" href="assets/css/style-light.css" />
+    <style>
+      /* Shtesa të vogla për këtë faqe (nuk prish stilin ekzistues) */
+      .student-hero .hero-img{max-width:520px;bottom:0}
+      .pill.active-student{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}
+      .badge{display:inline-block;background:rgba(246,135,50,.1);border:1px solid var(--color-primary);color:var(--color-primary);padding:.25rem .6rem;border-radius:999px;font-weight:700;font-size:.8rem}
+      .table-wrap{overflow-x:auto;margin:0 auto;max-width:var(--max-width)}
+      .note{color:var(--color-gray-600);font-size:.9rem}
+      .checklist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem 1rem}
+      .checklist li{display:flex;align-items:center;gap:.5rem}
+      .checklist svg{color:var(--color-primary)}
+      @media(max-width:900px){.checklist{grid-template-columns:1fr}}
+    </style>
+  </head>
+  <body>
+     <!-- Header -->
+    <header class="header" id="siteHeader">
+      <div class="header-inner">
+        <div class="header-logo">
+          <a href="index.html">
+            <img src="/assets/img/abissnet-logo-dark.png" alt="Abissnet" height="40"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
+            <span style="display:none;font-style:italic;font-size:1.5rem;font-weight:700;color:#fff;">abissnet</span>
+          </a>
+        </div>
+
+        <nav class="header-nav">
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+              Internet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li><a class="dropdown-item" href="internet.html">Internet</a></li>
+              <li class="divider" role="separator"></li>
+              <li><a class="dropdown-item" href="internet&tv.html">Internet & TV</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+              Abissnet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li><a class="dropdown-item" href="ftonjemik.html">Fto nje Mik</a></li>
+              <li class="divider" role="separator"></li>
+              <li><a class="dropdown-item" href="wififalas.html">WiFi Falas</a></li>
+              <li><a class="dropdown-item" href="studentet.html">Benefite per Studentet</a></li>
+              <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
+              <li><a class="dropdown-item" href="puno-nga-shtepia.html">Puno nga Shtëpia</a></li>
+            </ul>
+          </div>
+
+          <a href="suport.html">Suport</a>
+          <a href="partner.html">Partnerët</a>
+          <a href="abonentet.html">Abonentët</a>
+          <a href="karriera.html">Karriera</a>
+          <a href="app.html">APP</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="header-btn outline" href="dyqanet.html">Harta Retail</a>
+          <a class="header-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+          <a class="header-btn primary" href="suport.html">Na Kontakto</a>
+        </div>
+
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              <a href="index.html" class="mobile-nav-link">Internet</a>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="internet-ne-shtepi.html">Internet</a>
+              <a href="abissnet.html">Internet & TV</a>
+            </div>
+          </div>
+
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Abissnet
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="ftonjemik.html">Fto nje Mik</a>
+              <a href="gaming.html">WiFi Falas</a>
+              <a href="puno-nga-shtepia.html">Benefite per Studentet</a>
+              <a href="stream.html">Streaming</a>
+              <a href="gaming.html">Gaming</a>
+              <a href="puno-nga-shtepia.html">Puno nga Shtëpia</a>
+            </div>
+          </div>
+
+          <a href="suport.html" class="mobile-nav-link">Suport</a>
+          <a href="partner.html" class="mobile-nav-link">Partnerët</a>
+          <a href="abonentet.html" class="mobile-nav-link">Abonentët</a>
+          <a href="karriera.html" class="mobile-nav-link">Karriera</a>
+          <a href="blog.html" class="mobile-nav-link">App</a>
+
+          <div class="mobile-actions">
+            <a class="mobile-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
+            <a class="mobile-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+            <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Sub Navigation -->
+    <div class="subnav" role="navigation" aria-label="Shërbime">
+      <div class="subnav-inner">
+        <a href="index.html" class="pill">Individ</a>
+        <a href="biznesi/index.html" class="pill">Biznes</a>
+        <span class="pill active-student">Studentë</span>
+      </div>
+    </div>
+
+    <!-- =============== MAIN =============== -->
+    <main>
+      <!-- HERO -->
+      <section class="wfh-hero student-hero">
+        <div class="wfh-hero-inner">
+          <h1 class="wfh-hero-title">Internet & IPTV për Studentë – shpejt, i qëndrueshëm, me kosto të ulët</h1>
+          <p class="wfh-hero-sub">Studime online, video-leksione, YouTube/Netflix 4K, sport & filma – pa stres, pa kufij trafiku.</p>
+          <a href="#paketat-student" class="wfh-cta-btn"><span class="cta-arrows">>>></span> Shiko Paketat Student</a>
+        </div>
+      </section>
+
+      <!-- PAKETAT STUDENT – INTERNET -->
+      <section class="packages-section" id="paketat-student">
+        <h2 class="packages-title">Paketa Internet për Studentë <span class="badge">Me kartë studenti</span></h2>
+        <div class="table-wrap">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Paketa</th>
+                <th>Çmimi Student</th>
+                <th>Shpejtësia</th>
+                <th>Përfshirë</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>STU 100</strong></td>
+                <td>— Lekë / muaj</td>
+                <td>100/100 Mbps</td>
+                <td>Instalim falas, Wi-Fi 6</td>
+              </tr>
+              <tr>
+                <td><strong>STU 300</strong></td>
+                <td>— Lekë / muaj</td>
+                <td>300/300 Mbps</td>
+                <td>Instalim falas, Wi-Fi 6</td>
+              </tr>
+              <tr style="background:rgba(246,135,50,.08)">
+                <td><strong>STU 1000</strong> 🔥</td>
+                <td>— Lekë / muaj</td>
+                <td>1000/1000 Mbps</td>
+                <td>Instalim falas, Wi-Fi 6</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note" style="text-align:center;margin-top:.5rem">
+          *Çmimet student do i vendosësh sipas politikës; kërkohet provë studenti (kartë/konos). Trafik i pakufizuar.
+        </p>
+      </section>
+
+      <!-- PAKETAT STUDENT – INTERNET + TV -->
+      <section class="packages-section" style="margin-top:var(--spacing-3xl)">
+        <h2 class="packages-title">Paketa Student – Internet + IPTV</h2>
+        <div class="table-wrap">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Pako</th>
+                <th>Internet</th>
+                <th>IPTV</th>
+                <th>Çmimi Student</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>STU 100 + TV</strong></td>
+                <td>100/100 Mbps</td>
+                <td>40+ kanale bazë</td>
+                <td>— Lekë / muaj</td>
+              </tr>
+              <tr>
+                <td><strong>STU 300 + TV</strong></td>
+                <td>300/300 Mbps</td>
+                <td>60+ kanale (përfshi film/seriale)</td>
+                <td>— Lekë / muaj</td>
+              </tr>
+              <tr style="background:rgba(246,135,50,.08)">
+                <td><strong>STU 1000 + TV</strong> 🔥</td>
+                <td>1000/1000 Mbps</td>
+                <td>80+ kanale (HD/4K ku disponohet)</td>
+                <td>— Lekë / muaj</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note" style="text-align:center;margin-top:.5rem">
+          *Dekoder IPTV sipas planit. Mund të përdoret edhe aplikacioni Abissnet TV në smart-TV/telefon (sipas disponueshmërisë).
+        </p>
+      </section>
+
+      <!-- PSE ABISSNET PËR STUDENTË -->
+      <section class="wfh-benefits" style="background:#fff">
+        <div class="wfh-benefits-container">
+          <h2 class="wfh-benefits-title">Pse funksionon për studentë?</h2>
+          <div class="wfh-benefits-grid">
+            <div class="wfh-benefit-card visible">
+              <div class="benefit-icon">⚡</div>
+              <h3>Stabilitet & Ping i ulët</h3>
+              <p>Leksione live, upload projekte, cloud – pa vonesa.</p>
+            </div>
+            <div class="wfh-benefit-card visible">
+              <div class="benefit-icon">📶</div>
+              <h3>Wi-Fi 6 i përfshirë</h3>
+              <p>Mbulim më i mirë në dhoma, bibliotekë, mini-dorme.</p>
+            </div>
+            <div class="wfh-benefit-card visible">
+              <div class="benefit-icon">🎬</div>
+              <h3>IPTV & 4K ready</h3>
+              <p>Filma/seriale/sporte në kohën e lirë, pa buffering.</p>
+            </div>
+            <div class="wfh-benefit-card visible">
+              <div class="benefit-icon">🆓</div>
+              <h3>WiFi Falas në qytet</h3>
+              <p>Hotspote publike Abissnet për navigim bazë kudo.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- APP + MJETE -->
+      <section class="stream-section soft" style="margin-top:var(--spacing-3xl)">
+        <div class="stream-section-inner">
+          <h3 class="stream-h3">Gjithçka menaxhohet nga Abissnet App</h3>
+          <p>Shiko faturat, paguaj online, hap tiketë suporti, bëj speedtest dhe merr njoftime push. Disponibël në iOS dhe Android.</p>
+          <div style="display:flex;gap:.5rem;justify-content:center;margin-top:.75rem">
+            <a class="hero-cta-btn" href="https://apps.apple.com/us/app/abissnet/id6745196422">▶ App Store</a>
+            <a class="hero-cta-btn" href="https://play.google.com/store/apps/details?id=com.abisnnet.al&hl=en&pli=1">▶ Google Play</a>
+          </div>
+          <div style="max-width:760px;margin:var(--spacing-xl) auto 0;">
+            <ul class="checklist">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Pagesë e shpejtë dhe historik faturash
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Njoftime për ndërhyrje/ndryshime në rrjet
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Speedtest i integruar
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Suport 24/7 nga aplikacioni
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="wfh-section soft" style="padding-top:var(--spacing-3xl);padding-bottom:var(--spacing-3xl)">
+        <div class="wfh-section-inner">
+          <h3 class="wfh-h3">Pyetje të shpeshta</h3>
+          <p><strong>Si përfitoj çmimin student?</strong> Prezanto kartën e studentit ose vërtetim aktiv gjatë aplikimit/kontratës.</p>
+          <p><strong>A ka kufi trafiku?</strong> Jo – paketat janë realisht pa kufi. Mund të aplikohet fair-use për abuzime.</p>
+          <p><strong>A mund të ndaj lidhjen me shokët e banesës?</strong> Po. Mund të përdorni të njëjtën lidhje; rekomandojmë paketat 300/1000 për disa pajisje.</p>
+          <p><strong>A ka IPTV në aplikacion?</strong> Po, sipas paketës. Mund ta shikoni në dekoder ose app të pajtueshëm.</p>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="features-cta" style="text-align:center">
+        <a href="suport.html" class="hero-cta-btn"><span class="cta-arrows">>>></span> Apliko si Student</a>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col brand">
+          <div class="footer-logo">Abissnet</div>
+          <ul>
+            <li><a href="abissnet.html">Kompania</a></li>
+            <li><a href="abissnet.html">Rreth Nesh</a></li>
+            <li><a href="partner.html">Partnerët</a></li>
+            <li><a href="karriera.html">Karriera</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Shërbime/Produkte</h3>
+          <ul>
+            <li><a href="internet-ne-shtepi.html">Fiber në Shtëpi</a></li>
+            <li><a href="puno-nga-shtepia.html">Korporata</a></li>
+            <li><a href="internet-ne-shtepi.html">Televizioni</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Më të Populluara</h3>
+          <ul>
+            <li><a href="#">Internet i Shpejtë</a></li>
+            <li><a href="#">Ofertat e Verës</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Shkruaj email-in tuaj" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="footer-social">
+            <a href="https://facebook.com/abissnet" target="_blank" aria-label="Facebook">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://instagram.com/abissnet" target="_blank" aria-label="Instagram">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg>
+            </a>
+            <a href="https://youtube.com/@abissnet" target="_blank" aria-label="YouTube">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 Abissnet. Të gjitha të drejtat e rezervuara.</div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/script.js"></script>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+  </body>
+</html>

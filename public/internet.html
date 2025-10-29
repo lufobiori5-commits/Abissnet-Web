@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <title>Abissnet – Internet në Shtëpi (FTTH)</title>
+    <meta name="description" content="Internet FTTH me shpejtësi të lartë, stabilitet dhe të dhëna të pakufizuara. Paketat 500 Mbps deri në 10G, Wi-Fi 6 i përfshirë, instalim falas, suport 24/7." />
+    <link rel="stylesheet" href="assets/css/style-light.css" />
+
+    <!-- Table styles (unchanged logic, brand-aware) -->
+    <style>
+      .pricing-section{max-width:var(--max-width);margin:80px auto;padding:0 var(--spacing-2xl)}
+      .pricing-section .packages-title{margin-bottom:var(--spacing-lg)}
+      .pricing-card{
+        background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+        padding:3px;border-radius:22px;margin:28px 0;box-shadow:var(--shadow-xl);overflow:hidden
+      }
+      .pricing-card>.inner{background:#fff;border-radius:20px;overflow:hidden}
+      .pricing-title{
+        margin:0;text-align:center;color:#0d0d0d;
+        padding:18px 22px;font-family:var(--font-primary);font-weight:900;letter-spacing:.02em
+      }
+      .pricing-scroll{overflow-x:auto}
+      .pricing-table{width:100%;min-width:920px;border-collapse:separate;border-spacing:0}
+      .pricing-table thead th{
+        background:linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+        color:#fff;font-weight:800;padding:14px 12px;text-align:center;border-right:1px solid rgba(255,255,255,.25)
+      }
+      .pricing-table thead th:first-child{border-top-left-radius:12px}
+      .pricing-table thead th:last-child{border-right:none;border-top-right-radius:12px}
+      .pricing-table tbody td{
+        background:#fff;padding:18px 16px;text-align:center;border-bottom:1px solid var(--color-gray-200);
+        font-weight:600;color:var(--color-gray-800)
+      }
+      .pricing-table tbody tr:nth-child(even) td{background:#fafafa}
+      .pricing-table tbody tr:last-child td{border-bottom:none}
+      .speed-col{
+        text-align:left;font-weight:900;color:var(--color-gray-900);
+        border-right:2px solid var(--color-primary);
+        background:linear-gradient(90deg, rgba(246,135,50,.06), transparent)
+      }
+      .pricing-note{ text-align:center;color:var(--color-gray-600);font-weight:600;margin-top:14px }
+      @media (max-width:900px){
+        .pricing-section{margin:48px auto}
+        .pricing-title{padding:14px}
+        .pricing-table{min-width:820px}
+      }
+    </style>
+
+    <!-- ==== Plans: 6-up modern cards (fixed height, smooth overlay, overflow-safe) ==== -->
+    <style>
+      .plans-section{
+        max-width: min(1600px, 96vw);
+        margin: var(--spacing-3xl) auto;
+        padding: 0 var(--spacing-2xl);
+      }
+
+      .plans{
+        display:grid;
+        grid-template-columns:repeat(6,1fr); /* 6 per row on wide screens */
+        gap:16px;
+        align-items:stretch;
+      }
+      @media (max-width:1400px){ .plans{ grid-template-columns:repeat(5,1fr) } }
+      @media (max-width:1200px){ .plans{ grid-template-columns:repeat(3,1fr) } }
+      @media (max-width:900px) { .plans{ grid-template-columns:repeat(2,1fr) } }
+      @media (max-width:600px) { .plans{ grid-template-columns:1fr } }
+
+      .plan{
+        position:relative; overflow:hidden; cursor:pointer;
+        background:#fff; border:1px solid var(--color-gray-200);
+        border-radius:20px; padding:12px !important;
+        height:230px; display:flex; flex-direction:column; gap:8px;
+        box-shadow:var(--shadow-md);
+        transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease, z-index .01s;
+        z-index:0;
+      }
+      .plan:hover,
+      .plan.open{ transform:translateY(-4px); box-shadow:var(--shadow-xl); border-color:var(--color-primary); z-index:3 }
+      .plan.best{ border:1.5px solid var(--color-primary); box-shadow:0 16px 48px rgba(246,135,50,.25) }
+
+      .plan-ring{
+        position:absolute; inset:-42% -25% auto auto; height:150px; width:150px; border-radius:50%;
+        background: radial-gradient(closest-side, rgba(246,135,50,.28), transparent 68%);
+        filter: blur(6px); pointer-events:none;
+      }
+
+      .plan-head{ display:flex; justify-content:flex-end }
+      .plan-badge{
+        display:inline-block; font-size:.68rem; font-weight:800; letter-spacing:.03em;
+        padding:.32rem .56rem; border-radius:999px;
+        background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light));
+        color:#fff; box-shadow:0 10px 26px rgba(246,135,50,.22)
+      }
+
+      .plan-body{ display:flex; flex-direction:column; gap:8px; height:100%; }
+      .plan-speed{
+        margin:8px 0 2px; display:flex; flex-direction:column; align-items:flex-start; gap:6px;
+      }
+      .plan-speed .num{
+        font-family:var(--font-primary); font-size:2.35rem; line-height:.9; font-weight:900; color:var(--color-gray-800)
+      }
+      .plan-speed small{font-weight:800; color:var(--color-gray-500); margin-top:2px}
+
+      .plan-foot{ margin-top:auto; display:flex }
+      .plan-choose{
+        background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light));
+        color:#fff; border:0; padding:.52rem .9rem; border-radius:12px; font-weight:900;
+        box-shadow:0 10px 26px rgba(246,135,50,.22); font-size:.92rem;
+      }
+
+      /* Overlay that can scroll if content is long; actions stay visible */
+      .plan-info{
+        position:absolute; inset:8px;
+        background:#fff; border:1px solid var(--color-gray-200); border-radius:16px;
+        box-shadow:var(--shadow-xl);
+        display:grid; grid-template-rows:auto 1fr auto; /* title | scroll | actions */
+        max-height:calc(100% - 16px);
+        padding:12px;
+        opacity:0; transform:translateY(6px); will-change:opacity, transform;
+        transition:opacity .16s ease, transform .16s ease;
+        pointer-events:none; z-index:5; overflow:hidden; min-height:0;
+      }
+      .plan:hover .plan-info,
+      .plan:focus-within .plan-info,
+      .plan.open .plan-info{ opacity:1; transform:none; pointer-events:auto }
+
+      .plan-name{ font-weight:900; margin:0; color:var(--color-gray-900); font-size:1rem }
+      .plan-scroll{ overflow:auto; min-height:0; padding-right:2px }  /* ensures scrolling area */
+      .plan-feats{ margin:6px 0 0; padding-left:18px }
+      .plan-feats li{ margin:2px 0; color:var(--color-gray-700); font-weight:600; font-size:.92rem }
+
+      .plan-info .actions{
+        margin-top:8px; display:flex; gap:8px; align-items:center;
+      }
+      .plan-details{ font-weight:800; color:var(--color-primary); text-decoration:none; white-space:nowrap }
+
+      /* better hover on low-precision devices */
+      @media (hover:none){
+        .plan{ transform:none !important }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ===== Header (unchanged) ===== -->
+    <header class="header" id="siteHeader">
+      <div class="header-inner">
+        <div class="header-logo">
+          <a href="index.html">
+            <img src="/assets/img/abissnet-logo-dark.png" alt="Abissnet" height="40"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
+            <span style="display:none;font-style:italic;font-size:1.5rem;font-weight:700;color:#fff;">abissnet</span>
+          </a>
+        </div>
+
+        <nav class="header-nav">
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+              Internet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li><a class="dropdown-item" href="internet.html">Internet</a></li>
+              <li class="divider" role="separator"></li>
+              <li><a class="dropdown-item" href="internet&tv.html">Internet & TV</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+              Abissnet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li><a class="dropdown-item" href="ftonjemik.html">Fto nje Mik</a></li>
+              <li class="divider" role="separator"></li>
+              <li><a class="dropdown-item" href="wififalas.html">WiFi Falas</a></li>
+              <li><a class="dropdown-item" href="studentet.html">Benefite per Studentet</a></li>
+              <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
+              <li><a class="dropdown-item" href="puno-nga-shtepia.html">Puno nga Shtëpia</a></li>
+            </ul>
+          </div>
+
+          <a href="suport.html">Suport</a>
+          <a href="partner.html">Partnerët</a>
+          <a href="abonentet.html">Abonentët</a>
+          <a href="karriera.html">Karriera</a>
+          <a href="app.html">APP</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="header-btn outline" href="dyqanet.html">Harta Retail</a>
+          <a class="header-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+          <a class="header-btn primary" href="suport.html">Na Kontakto</a>
+        </div>
+
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu">
+         <nav class="mobile-nav">
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              <a href="index.html" class="mobile-nav-link">Internet</a>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="internet-ne-shtepi.html">Internet</a>
+              <a href="internet&tv.html">Internet & TV</a>
+            </div>
+          </div>
+
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Abissnet
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="ftonjemik.html">Fto nje Mik</a>
+              <a href="gaming.html">WiFi Falas</a>
+              <a href="puno-nga-shtepia.html">Benefite per Studentet</a>
+              <a href="stream.html">Streaming</a>
+              <a href="gaming.html">Gaming</a>
+              <a href="puno-nga-shtepia.html">Puno nga Shtëpia</a>
+            </div>
+          </div>
+
+          <a href="suport.html" class="mobile-nav-link">Suport</a>
+          <a href="partner.html" class="mobile-nav-link">Partnerët</a>
+          <a href="abonentet.html" class="mobile-nav-link">Abonentët</a>
+          <a href="karriera.html" class="mobile-nav-link">Karriera</a>
+          <a href="blog.html" class="mobile-nav-link">App</a>
+
+          <div class="mobile-actions">
+            <a class="mobile-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
+            <a class="mobile-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+            <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
+          </div>
+        </nav>
+      
+      </div>
+    </header>
+
+    <!-- Sub Navigation -->
+    <div class="subnav" role="navigation" aria-label="Shërbime">
+      <div class="subnav-inner">
+        <a href="index.html" class="pill active">Individ</a>
+        <a href="biznesi/index.html" class="pill">Biznes</a>
+      </div>
+    </div>
+
+    <!-- ============ MAIN ============ -->
+    <main>
+      <!-- HERO -->
+      <section class="hero-section" id="home">
+        <div class="hero-inner">
+          <div class="hero-left">
+            <h1 class="hero-title">Internet në Shtëpi </h1>
+            <p class="hero-subtitle">Shpejtësi reale, ping i ulët, të dhëna pa kufi. Nga 500 Mbps deri në 10G.</p>
+            <ul class="hero-benefits">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Instalim <strong>falas</strong></span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Router <strong>Wi-Fi 6</strong> i përfshirë</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Suport <strong>24/7</strong></span>
+              </li>
+            </ul>
+            <div class="features-cta">
+              <a href="#paketat" class="hero-cta-btn"><span class="cta-arrows">>>></span> Shiko Paketat</a>
+            </div>
+          </div>
+          <div class="hero-right">
+            <img src="/assets/img/hero-home-fiber.png" alt="Fiber FTTH" class="hero-img"
+                 onerror="this.src='/assets/img/robot.png'"/>
+          </div>
+        </div>
+      </section>
+
+      <!-- OFFER BANNERS -->
+      <div class="offer-banner-carousel" aria-live="polite">
+        <div class="offer-banner active">🎉 Aktivizim FALAS këtë muaj</div>
+        <div class="offer-banner">⚡ Upgrade në shpejtësi më të lartë pa penalitete</div>
+        <div class="offer-banner">🛡️ Garanci stabiliteti & suport i dedikuar</div>
+      </div>
+      <br/><br/><br/>
+
+      <!-- PLAN CARDS (modern + 6-up) -->
+      <section class="plans-section" id="paketat">
+        <h2 class="packages-title">Zgjidh paketën e internetit</h2>
+        <div class="plans">
+
+          <!-- 300/30 -->
+          <article class="plan" data-d="300" data-u="30">
+            <div class="plan-ring"></div>
+            <header class="plan-head"><span class="plan-badge">FTTH</span></header>
+            <div class="plan-body">
+              <div class="plan-speed"><span class="num d">300</span><span class="num u">30</span><small>mbps</small></div>
+              <footer class="plan-foot"><button class="plan-choose">Zgjidh</button></footer>
+            </div>
+            <div class="plan-info" aria-hidden="true">
+              <h4 class="plan-name">300/30 Mbps</h4>
+              <div class="plan-scroll">
+                <ul class="plan-feats">
+                  <li>Instalim falas</li>
+                  <li>Wi-Fi 6 i përfshirë</li>
+                  <li>Suport 24/7</li>
+                  <li>Stabilitet shumë i mirë</li>
+                </ul>
+              </div>
+              <div class="actions">
+                <button class="plan-choose">Zgjidh</button>
+                <a href="#cmimet" class="plan-details">Shiko çmimet</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 500/50 -->
+          <article class="plan" data-d="500" data-u="50">
+            <div class="plan-ring"></div>
+            <header class="plan-head"><span class="plan-badge">FTTH</span></header>
+            <div class="plan-body">
+              <div class="plan-speed"><span class="num d">500</span><span class="num u">50</span><small>mbps</small></div>
+              <footer class="plan-foot"><button class="plan-choose">Zgjidh</button></footer>
+            </div>
+            <div class="plan-info" aria-hidden="true">
+              <h4 class="plan-name">500/50 Mbps</h4>
+              <div class="plan-scroll">
+                <ul class="plan-feats">
+                  <li>Perfekt për familje</li>
+                  <li>Streaming 4K pa stërngarkesë</li>
+                  <li>Gaming i qëndrueshëm</li>
+                  <li>Mbulim Wi-Fi shumë i mirë</li>
+                </ul>
+              </div>
+              <div class="actions">
+                <button class="plan-choose">Zgjidh</button>
+                <a href="#cmimet" class="plan-details">Shiko çmimet</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 1000/100 -->
+          <article class="plan" data-d="1000" data-u="100">
+            <div class="plan-ring"></div>
+            <header class="plan-head"><span class="plan-badge">FTTH</span></header>
+            <div class="plan-body">
+              <div class="plan-speed"><span class="num d">1000</span><span class="num u">100</span><small>mbps</small></div>
+              <footer class="plan-foot"><button class="plan-choose">Zgjidh</button></footer>
+            </div>
+            <div class="plan-info" aria-hidden="true">
+              <h4 class="plan-name">1000/100 Mbps</h4>
+              <div class="plan-scroll">
+                <ul class="plan-feats">
+                  <li>Telepunë + cloud</li>
+                  <li>Shkarkime të shpejta</li>
+                  <li>Shumë pajisje në Wi-Fi</li>
+                </ul>
+              </div>
+              <div class="actions">
+                <button class="plan-choose">Zgjidh</button>
+                <a href="#cmimet" class="plan-details">Shiko çmimet</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 1500/150 -->
+          <article class="plan" data-d="1500" data-u="150">
+            <div class="plan-ring"></div>
+            <header class="plan-head"><span class="plan-badge">FTTH</span></header>
+            <div class="plan-body">
+              <div class="plan-speed"><span class="num d">1500</span><span class="num u">150</span><small>mbps</small></div>
+              <footer class="plan-foot"><button class="plan-choose">Zgjidh</button></footer>
+            </div>
+            <div class="plan-info" aria-hidden="true">
+              <h4 class="plan-name">1500/150 Mbps</h4>
+              <div class="plan-scroll">
+                <ul class="plan-feats">
+                  <li>Studio + krijim përmbajtjeje</li>
+                  <li>Ngarkime shumë të shpejta</li>
+                  <li>Stabilitet premium</li>
+                </ul>
+              </div>
+              <div class="actions">
+                <button class="plan-choose">Zgjidh</button>
+                <a href="#cmimet" class="plan-details">Shiko çmimet</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2500/250 -->
+          <article class="plan" data-d="2500" data-u="250">
+            <div class="plan-ring"></div>
+            <header class="plan-head"><span class="plan-badge">FTTH</span></header>
+            <div class="plan-body">
+              <div class="plan-speed"><span class="num d">2500</span><span class="num u">250</span><small>mbps</small></div>
+              <footer class="plan-foot"><button class="plan-choose">Zgjidh</button></footer>
+            </div>
+            <div class="plan-info" aria-hidden="true">
+              <h4 class="plan-name">2500/250 Mbps</h4>
+              <div class="plan-scroll">
+                <ul class="plan-feats">
+                  <li>Familje të mëdha</li>
+                  <li>4K/8K pa stress</li>
+                  <li>Gaming pro</li>
+                </ul>
+              </div>
+              <div class="actions">
+                <button class="plan-choose">Zgjidh</button>
+                <a href="#cmimet" class="plan-details">Shiko çmimet</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 10G/1G (Recommended) -->
+          <article class="plan best" data-d="10G" data-u="1G">
+            <div class="plan-ring"></div>
+            <header class="plan-head"><span class="plan-badge">REKOMANDUAR</span></header>
+            <div class="plan-body">
+              <div class="plan-speed"><span class="num d">10G</span><span class="num u">1G</span><small>mbps</small></div>
+              <footer class="plan-foot"><button class="plan-choose">Zgjidh</button></footer>
+            </div>
+            <div class="plan-info" aria-hidden="true">
+              <h4 class="plan-name">10G / 1G</h4>
+              <div class="plan-scroll">
+                <ul class="plan-feats">
+                  <li>Low-latency heaven</li>
+                  <li>NAS/backup të shpejtë</li>
+                  <li>Gjithçka në shtëpi</li>
+                </ul>
+              </div>
+              <div class="actions">
+                <button class="plan-choose">Zgjidh</button>
+                <a href="#cmimet" class="plan-details">Shiko çmimet</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+        <div class="plans-cta">
+          <a href="dyqanet.html" class="hero-cta-btn"><span class="cta-arrows">>>></span> Verifiko mbulimin</a>
+        </div>
+      </section>
+
+      <!-- ===== ONLY THIS TABLE (Internet Packages) ===== -->
+      <section class="pricing-section" id="cmimet">
+        <div class="pricing-card">
+          <div class="inner">
+            <h3 class="pricing-title">Paketat Internet</h3>
+            <div class="pricing-scroll">
+              <table class="pricing-table" aria-label="Paketat Internet">
+                <thead>
+                  <tr>
+                    <th>Paketa</th>
+                    <th>Parapagim 12M</th>
+                    <th>Kontratë 12M</th>
+                    <th>Kontratë 24M</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td class="speed-col">300/30 Mbps</td><td>1,700 Lekë</td><td>1,500 Lekë</td><td>1,500 Lekë</td></tr>
+                  <tr><td class="speed-col">500/50 Mbps</td><td>2,000 Lekë</td><td>1,800 Lekë</td><td>1,800 Lekë</td></tr>
+                  <tr><td class="speed-col">1000/100 Mbps</td><td>2,500 Lekë</td><td>2,300 Lekë</td><td>2,300 Lekë</td></tr>
+                  <tr><td class="speed-col">1500/150 Mbps</td><td>2,800 Lekë</td><td>2,600 Lekë</td><td>2,600 Lekë</td></tr>
+                  <tr><td class="speed-col">2500/250 Mbps</td><td>3,300 Lekë</td><td>3,200 Lekë</td><td>3,200 Lekë</td></tr>
+                  <tr><td class="speed-col">10G / 1G Mpbs</td><td>8,000 Lekë</td><td>7,000 Lekë</td><td>7,000 Lekë</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <p class="pricing-note">* Çmimet e mësipërme kanë TVSH-në e përfshirë.</p>
+      </section>
+
+      <!-- Features (kept) -->
+      <section class="feature-tiles">
+        <div class="tiles">
+          <article class="tile">
+            <div class="tile-icon"><img src="/assets/img/feature-shpejte.png" alt="Shpejtësi"/></div>
+            <h3>Shpejtësi Reale</h3>
+            <p>FTTH i pastër. Gaming, 4K/8K, cloud – pa lag.</p>
+          </article>
+          <article class="tile">
+            <div class="tile-icon"><img src="/assets/img/feature-fiber.png" alt="Fiber"/></div>
+            <h3>Fiber Optike</h3>
+            <p>Rrjet me peering të mirë dhe stabilitet të lartë.</p>
+          </article>
+          <article class="tile">
+            <div class="tile-icon"><img src="/assets/img/feature-eksperienca.png" alt="Wi-Fi 6"/></div>
+            <h3>Wi-Fi 6 i përfshirë</h3>
+            <p>Mbulim i mirë në gjithë shtëpinë, më shumë pajisje.</p>
+          </article>
+          <article class="tile">
+            <div class="tile-icon"><img src="/assets/img/feature-support.png" alt="Suport"/></div>
+            <h3>Suport 24/7</h3>
+            <p>Agjentë realë, diagnostikim i shpejtë, zgjidhje.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- LAST CTA -->
+      <div class="features-cta" style="text-align:center">
+        <a href="tel:+35542000000" class="hero-cta-btn"><span class="cta-arrows">>>></span> Telefono Tani</a>
+      </div>
+    </main>
+
+    <!-- ===== Footer (unchanged) ===== -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col brand">
+          <div class="footer-logo">Abissnet</div>
+          <ul>
+            <li><a href="abissnet.html">Kompania</a></li>
+            <li><a href="abissnet.html">Rreth Nesh</a></li>
+            <li><a href="partner.html">Partnerët</a></li>
+            <li><a href="karriera.html">Karriera</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Shërbime/Produkte</h3>
+          <ul>
+            <li><a href="internet-ne-shtepi.html">Fiber në Shtëpi</a></li>
+            <li><a href="puno-nga-shtepia.html">Korporata</a></li>
+            <li><a href="internet-ne-shtepi.html">Televizioni</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Më të Populluara</h3>
+          <ul>
+            <li><a href="#">Instalim Falas</a></li>
+            <li><a href="#">Wi-Fi 6</a></li>
+            <li><a href="#">Support 24/7</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© Abissnet</div>
+    </footer>
+
+    <!-- WhatsApp + robust hover/touch logic -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const whatsappNumber = "+355695588569";
+        const isTouch = window.matchMedia('(hover: none)').matches;
+
+        // Desktop: open overlay on hover reliably
+        if (!isTouch) {
+          document.querySelectorAll('.plan').forEach(card => {
+            card.addEventListener('mouseenter', () => card.classList.add('open'));
+            card.addEventListener('mouseleave', () => card.classList.remove('open'));
+          });
+        } else {
+          // Touch: tap to toggle overlay
+          document.querySelectorAll('.plan').forEach(card => {
+            card.addEventListener('click', (e) => {
+              if (e.target.classList.contains('plan-choose') || e.target.closest('.plan-details')) return;
+              card.classList.toggle('open');
+            });
+          });
+        }
+
+        // WhatsApp handler — per kartë
+        document.querySelectorAll('.plan .plan-choose').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault(); e.stopPropagation();
+            const card = btn.closest('.plan');
+            const down = card.querySelector('.num.d')?.textContent.trim() || '';
+            const up   = card.querySelector('.num.u')?.textContent.trim() || '';
+            const label = `${down}/${up} Mbps`;
+            const message = encodeURIComponent(`Përshëndetje Abissnet! Jam i interesuar për paketën ${label}.`);
+            window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

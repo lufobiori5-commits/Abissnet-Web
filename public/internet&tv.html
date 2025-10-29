@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <title>Abissnet – Internet në Shtëpi (FTTH)</title>
+    <meta name="description" content="Internet FTTH me shpejtësi të lartë, stabilitet dhe të dhëna të pakufizuara. Paketat 500 Mbps deri në 10G, Wi-Fi 6 i përfshirë, instalim falas, suport 24/7." />
+    <link rel="stylesheet" href="assets/css/style-light.css" />
+
+    <!-- Pricing Tables – override to match project colors/styles -->
+    <style>
+      .pricing-section{max-width:var(--max-width);margin:80px auto;padding:0 var(--spacing-2xl)}
+      .pricing-section .packages-title{margin-bottom:var(--spacing-lg)}
+
+      .pricing-card{
+        background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+        padding:3px;border-radius:22px;margin:28px 0;box-shadow:var(--shadow-xl);overflow:hidden
+      }
+      .pricing-card > .inner{background:#fff;border-radius:20px;overflow:hidden}
+      .pricing-title{
+        margin:0;text-align:center;color:#050505;
+        padding:18px 22px;font-family:var(--font-primary);font-weight:900;letter-spacing:.02em
+      }
+      .pricing-title .badge{margin-right:8px}
+      .pricing-scroll{overflow-x:auto}
+      .pricing-table{
+        width:100%;min-width:920px;border-collapse:separate;border-spacing:0
+      }
+      .pricing-table thead th{
+        background:linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+        color:#fff;font-weight:800;padding:14px 12px;text-align:center;
+        border-right:1px solid rgba(255,255,255,.25)
+      }
+      .pricing-table thead th:first-child{border-top-left-radius:12px}
+      .pricing-table thead th:last-child{border-right:none;border-top-right-radius:12px}
+
+      .pricing-table .sub th{
+        background:rgba(0,0,0,.12);color:#fff;font-weight:700;padding:10px 12px
+      }
+
+      .pricing-table tbody td{
+        background:#fff;padding:14px 12px;text-align:center;
+        border-bottom:1px solid var(--color-gray-200);font-weight:600;color:var(--color-gray-800)
+      }
+      .pricing-table tbody tr:nth-child(even) td{background:#fafafa}
+      .pricing-table tbody tr:last-child td{border-bottom:none}
+
+      .speed-col{
+        text-align:left;font-weight:900;color:var(--color-primary);
+        border-right:2px solid var(--color-primary);background:linear-gradient(90deg, rgba(246,135,50,.06), transparent)
+      }
+
+      /* small note box */
+      .pricing-note{
+        background:linear-gradient(135deg,#fff,#f8f8f8);
+        border-left:4px solid var(--color-primary);padding:16px 18px;border-radius:12px;
+        color:var(--color-gray-700);font-weight:600;margin-top:14px
+      }
+
+      /* mobile */
+      @media (max-width:900px){
+        .pricing-section{margin:48px auto}
+        .pricing-title{padding:14px}
+        .pricing-table{min-width:820px}
+      }
+    </style>
+  </head>
+  <body>
+   <!-- Header -->
+    <header class="header" id="siteHeader">
+      <div class="header-inner">
+        <div class="header-logo">
+          <a href="index.html">
+            <img src="/assets/img/abissnet-logo-dark.png" alt="Abissnet" height="40"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
+            <span style="display:none;font-style:italic;font-size:1.5rem;font-weight:700;color:#fff;">abissnet</span>
+          </a>
+        </div>
+
+        <nav class="header-nav">
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+              Internet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li><a class="dropdown-item" href="internet.html">Internet</a></li>
+              <li class="divider" role="separator"></li>
+              <li><a class="dropdown-item" href="internet&tv.html">Internet & TV</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+              Abissnet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li><a class="dropdown-item" href="ftonjemik.html">Fto nje Mik</a></li>
+              <li class="divider" role="separator"></li>
+              <li><a class="dropdown-item" href="wififalas.html">WiFi Falas</a></li>
+              <li><a class="dropdown-item" href="studentet.html">Benefite per Studentet</a></li>
+              <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
+              <li><a class="dropdown-item" href="puno-nga-shtepia.html">Puno nga Shtëpia</a></li>
+            </ul>
+          </div>
+
+          <a href="suport.html">Suport</a>
+          <a href="partner.html">Partnerët</a>
+          <a href="abonentet.html">Abonentët</a>
+          <a href="karriera.html">Karriera</a>
+          <a href="app.html">APP</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="header-btn outline" href="dyqanet.html">Harta Retail</a>
+          <a class="header-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+          <a class="header-btn primary" href="suport.html">Na Kontakto</a>
+        </div>
+
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              <a href="index.html" class="mobile-nav-link">Internet</a>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="internet-ne-shtepi.html">Internet</a>
+              <a href="abissnet.html">Internet & TV</a>
+            </div>
+          </div>
+
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Abissnet
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="ftonjemik.html">Fto nje Mik</a>
+              <a href="gaming.html">WiFi Falas</a>
+              <a href="puno-nga-shtepia.html">Benefite per Studentet</a>
+              <a href="stream.html">Streaming</a>
+              <a href="gaming.html">Gaming</a>
+              <a href="puno-nga-shtepia.html">Puno nga Shtëpia</a>
+            </div>
+          </div>
+
+          <a href="suport.html" class="mobile-nav-link">Suport</a>
+          <a href="partner.html" class="mobile-nav-link">Partnerët</a>
+          <a href="abonentet.html" class="mobile-nav-link">Abonentët</a>
+          <a href="karriera.html" class="mobile-nav-link">Karriera</a>
+          <a href="blog.html" class="mobile-nav-link">App</a>
+
+          <div class="mobile-actions">
+            <a class="mobile-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
+            <a class="mobile-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+            <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Sub Navigation -->
+    <div class="subnav" role="navigation" aria-label="Shërbime">
+      <div class="subnav-inner">
+        <a href="index.html" class="pill active">Individ</a>
+        <a href="biznesi/index.html" class="pill">Biznes</a>
+      </div>
+    </div>
+
+    <!-- ============ MAIN ============ -->
+    <main>
+      <!-- HERO -->
+      <section class="hero-section" id="home">
+        <div class="hero-inner">
+          <div class="hero-left">
+            <h1 class="hero-title">Internet & TV në Shtëpi</h1>
+            <p class="hero-subtitle">Shpejtësi reale, ping i ulët, të dhëna pa kufi. Nga 500 Mbps deri në 10G.</p>
+            <ul class="hero-benefits">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Instalim <strong>falas</strong></span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Router <strong>Wi-Fi 6</strong> i përfshirë</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Suport <strong>24/7</strong></span>
+              </li>
+            </ul>
+            <div class="features-cta">
+              <a href="#paketat" class="hero-cta-btn"><span class="cta-arrows">>>></span> Shiko Paketat</a>
+            </div>
+          </div>
+          <div class="hero-right">
+            <img src="/assets/img/hero-home-fiber.png" alt="Fiber FTTH" class="hero-img"
+                 onerror="this.src='/assets/img/robot.png'"/>
+          </div>
+        </div>
+      </section>
+
+      <!-- OFFER BANNERS -->
+      <div class="offer-banner-carousel" aria-live="polite">
+        <div class="offer-banner active">🎉 Aktivizim FALAS këtë muaj</div>
+        <div class="offer-banner">⚡ Upgrade në shpejtësi më të lartë pa penalitete</div>
+        <div class="offer-banner">🛡️ Garanci stabiliteti & suport i dedikuar</div>
+      </div>
+      <br/><br/><br/>
+
+     <!-- PLAN CARDS (modern + smaller) -->
+      <section class="plans-section" id="paketat">
+        <h2 class="packages-title">Zgjidh paketën e internetit</h2>
+        <div class="plans">
+          
+          <article class="plan" data-d="500" data-u="50">
+            <div class="plan-ring"></div>
+            <header class="plan-head"><span class="plan-badge">FTTH</span></header>
+            <div class="plan-speed"><span class="num d">500</span><span class="num u">50</span><small>mbps</small></div>
+           
+            <footer class="plan-foot"><button class="plan-choose">Zgjidh</button></footer>
+          </article>
+
+          <article class="plan" data-d="1000" data-u="100">
+            <div class="plan-ring"></div>
+            <header class="plan-head"><span class="plan-badge">FTTH</span></header>
+            <div class="plan-speed"><span class="num d">1000</span><span class="slash"></span><span class="num u">100</span><small>mbps</small></div>
+           
+            <footer class="plan-foot"><button class="plan-choose">Zgjidh</button></footer>
+          </article>
+
+          <article class="plan" data-d="1500" data-u="150">
+            <div class="plan-ring"></div>
+            <header class="plan-head"><span class="plan-badge">FTTH</span></header>
+            <div class="plan-speed"><span class="num d">1500</span><span class="slash"></span><span class="num u">150</span><small>mbps</small></div>
+           
+            <footer class="plan-foot"><button class="plan-choose">Zgjidh</button></footer>
+          </article>
+
+          <article class="plan" data-d="2500" data-u="250">
+            <div class="plan-ring"></div>
+            <header class="plan-head"><span class="plan-badge">FTTH</span></header>
+            <div class="plan-speed"><span class="num d">2500</span><span class="slash"></span><span class="num u">250</span><small>mbps</small></div>
+            
+            <footer class="plan-foot"><button class="plan-choose">Zgjidh</button></footer>
+          </article>
+
+          <article class="plan best" data-d="10G" data-u="1G">
+            <div class="plan-ring"></div>
+            <header class="plan-head"><span class="plan-badge">REKOMANDUAR</span></header>
+            <div class="plan-speed"><span class="num d">10G</span><span class="slash"></span><span class="num u">1G</span><small>mbps</small></div>
+          
+            <footer class="plan-foot"><button class="plan-choose">Zgjidh</button></footer>
+          </article>
+        </div>
+        <div class="plans-cta">
+          <a href="dyqanet.html" class="hero-cta-btn"><span class="cta-arrows">>>></span> Verifiko mbulimin</a>
+        </div>
+      </section>
+
+
+      <!-- ======== PRICING TABLES (3 blocks like screenshot) ======== -->
+      <section class="pricing-section">
+
+        <!-- Table 1: Tring -->
+        <div class="pricing-card">
+          <div class="inner">
+            <h3 class="pricing-title"> Paketat me Tring</h3>
+            <div class="pricing-scroll">
+              <table class="pricing-table">
+                <thead>
+                  <tr>
+                    <th>Paketat</th>
+                    <th colspan="3">Tring Bazë</th>
+                    <th colspan="3">Tring Bazë + Sporte</th>
+                    <th colspan="3">Tring Plotë</th>
+                  </tr>
+                  <tr class="sub">
+                    <th></th>
+                    <th>P 12M</th><th>K 12M</th><th>K 24M</th>
+                    <th>P 12M</th><th>K 12M</th><th>K 24M</th>
+                    <th>P 12M</th><th>K 12M</th><th>K 24M</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="speed-col">300/30 Mbps</td>
+                    <td>2,250</td><td>2,050</td><td>2,050</td>
+                    <td>2,550</td><td>2,350</td><td>2,350</td>
+                    <td>2,800</td><td>2,600</td><td>2,600</td>
+                  </tr>
+                    
+                    
+                    
+                    
+                    
+                    <td class="speed-col">500/50 Mbps</td>
+                    <td>2,550</td><td>2,350</td><td>2,350</td>
+                    <td>2,850</td><td>2,650</td><td>2,650</td>
+                    <td>3,100</td><td>2,900</td><td>2,900</td>
+                  </tr>
+                  <tr>
+                    <td class="speed-col">1000/100 Mbps</td>
+                    <td>3,050</td><td>2,850</td><td>2,850</td>
+                    <td>3,350</td><td>3,150</td><td>3,150</td>
+                    <td>3,600</td><td>3,400</td><td>3,400</td>
+                  </tr>
+                  <tr>
+                    <td class="speed-col">1500/150 Mbps</td>
+                    <td>3,650</td><td>3,450</td><td>3,450</td>
+                    <td>3,350</td><td>3,150</td><td>3,150</td>
+                    <td>3,900</td><td>3,700</td><td>3,700</td>
+                  </tr>
+                  <tr>
+                    <td class="speed-col">2500/250 Mbps</td>
+                    <td>3,850</td><td>3,750</td><td>3,750</td>
+                    <td>4,150</td><td>4,050</td><td>4,050</td>
+                    <td>4,400</td><td>4,300</td><td>4,300</td>
+                  </tr>
+                  <tr>
+                    <td class="speed-col">10G / 1G</td>
+                    <td>8,550</td><td>7,550</td><td>7,550</td>
+                    <td>8,850</td><td>7,850</td><td>7,850</td>
+                    <td>9,100</td><td>8,100</td><td>8,100</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+          </div>
+        </div>
+<p>* Çmimet përfshijnë TVSH. P = Pagesë / K = Kontratë.</p>
+        <!-- Table 2: Digitalb -->
+        <div class="pricing-card">
+          <div class="inner">
+            <h3 class="pricing-title"> Paketat me Digitalb</h3>
+            <div class="pricing-scroll">
+              <table class="pricing-table">
+                <thead>
+                  <tr>
+                    <th>Paketat</th>
+                    <th colspan="3">Digitalb Familjare</th>
+                    <th colspan="3">Digitalb Premium</th>
+                  </tr>
+                  <tr class="sub">
+                    <th></th>
+                    <th>P 12M</th><th>K 12M</th><th>K 24M</th>
+                    <th>P 12M</th><th>K 12M</th><th>K 24M</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    
+                      <td class="speed-col">300/00 Mbps</td>
+                    <td>2,700</td><td>2,400</td><td>2,500</td>
+                    <td>3,750</td><td>3,500</td><td>3,550</td>
+                  </tr>
+                    
+                    
+                    <td class="speed-col">500/50 Mbps</td>
+                    <td>3,000</td><td>2,700</td><td>2,800</td>
+                    <td>4,050</td><td>3,800</td><td>3,850</td>
+                  </tr>
+                  <tr>
+                    <td class="speed-col">1000/100 Mbps</td>
+                    <td>3,500</td><td>3,200</td><td>3,300</td>
+                    <td>4,550</td><td>4,300</td><td>4,350</td>
+                  </tr>
+                  <tr>
+                    <td class="speed-col">1500/150 Mbps</td>
+                    <td>3,800</td><td>3,500</td><td>3,600</td>
+                    <td>4,850</td><td>4,600</td><td>4,650</td>
+                  </tr>
+                  <tr>
+                    <td class="speed-col">2500/250 Mbps</td>
+                    <td>4,300</td><td>4,100</td><td>4,200</td>
+                    <td>5,350</td><td>5,200</td><td>5,250</td>
+                  </tr>
+                  <tr>
+                    <td class="speed-col">10G / 1G</td>
+                    <td>9,000</td><td>7,900</td><td>8,000</td>
+                    <td>10,050</td><td>9,000</td><td>9,050</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          
+          </div>
+        </div>
+        <p>* Çmimet përfshijnë TVSH. P = Pagesë / K = Kontratë.</p>
+        <!-- Table 3: Pajisje & Instalimi -->
+        <div class="pricing-card">
+          <div class="inner">
+            <h3 class="pricing-title"> Çmimet e Pajisjeve dhe Instalimit</h3>
+            <div class="pricing-scroll">
+              <table class="pricing-table">
+                <thead>
+                  <tr>
+                    <th>Pajisje</th>
+                    <th>Parapagim 12M</th>
+                    <th>Kontratë 12M</th>
+                    <th>Kontratë 24M</th>
+                  <th>Çmimi me vlere te plote</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="speed-col">ZTE ZXHN F6600P </td>
+                    <td>4,000 Lekë</td>
+                    <td>5,000 Lekë</td>
+                  <td>4,000 Lekë</td>
+                    <td>8,000 Lekë</td>
+                  </tr>
+                  <tr>
+                    <td class="speed-col">ZTE F8648P </td>
+                    <td>4,500 Lekë</td>
+                    <td>6,000 Lekë</td>
+                    <td>4,500 Lekë</td>
+                    <td>12,000 Lekë</td>
+                  </tr>
+                  <tr>
+                    <td class="speed-col">ZTE F600</td>
+                    <td>1,000 lekë</td>
+                    <td>1,500 Lekë</td>
+                    <td>1,000 Lekë</td>
+                  <td>2,000 Lekë</td>
+                  </tr>
+                  <tr>
+                    <td class="speed-col">More TV STB</td>
+                    <td>1,500 Lekë</td>
+                    <td>2,500 Lekë</td>
+                    <td>1,500 Lekë</td>
+                    <td>3,500 Lekë</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+         
+          </div>
+        </div>
+<p>* Çmimet dhe kushtet mund të ndryshojnë sipas fushatave / zonës së mbulimit.</p>
+      <p>* Produktet kanë te përfshirë Internet + TV</p>
+</section>
+
+      <!-- Feature tiles (kept) -->
+      <section class="feature-tiles">
+        <div class="tiles">
+          <article class="tile">
+            <div class="tile-icon"><img src="/assets/img/feature-shpejte.png" alt="Shpejtësi"/></div>
+            <h3>Shpejtësi Reale</h3>
+            <p>FTTH i pastër. Gaming, 4K/8K, cloud – pa lag.</p>
+          </article>
+          <article class="tile">
+            <div class="tile-icon"><img src="/assets/img/feature-fiber.png" alt="Fiber"/></div>
+            <h3>Fiber Optike</h3>
+            <p>Rrjet me peering të mirë dhe stabilitet të lartë.</p>
+          </article>
+          <article class="tile">
+            <div class="tile-icon"><img src="/assets/img/feature-eksperienca.png" alt="Wi-Fi 6"/></div>
+            <h3>Wi-Fi 6 i përfshirë</h3>
+            <p>Mbulim i mirë në gjithë shtëpinë, më shumë pajisje.</p>
+          </article>
+          <article class="tile">
+            <div class="tile-icon"><img src="/assets/img/feature-support.png" alt="Suport"/></div>
+            <h3>Suport 24/7</h3>
+            <p>Agjentë realë, diagnostikim i shpejtë, zgjidhje.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- LAST CTA -->
+      <div class="features-cta" style="text-align:center">
+        <a href="tel:+35542000000" class="hero-cta-btn"><span class="cta-arrows">>>></span> Telefono Tani</a>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col brand">
+          <div class="footer-logo">Abissnet</div>
+          <ul>
+            <li><a href="abissnet.html">Kompania</a></li>
+            <li><a href="abissnet.html">Rreth Nesh</a></li>
+            <li><a href="partner.html">Partnerët</a></li>
+            <li><a href="karriera.html">Karriera</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Shërbime/Produkte</h3>
+          <ul>
+            <li><a href="internet-ne-shtepi.html">Fiber në Shtëpi</a></li>
+            <li><a href="puno-nga-shtepia.html">Korporata</a></li>
+            <li><a href="internet-ne-shtepi.html">Televizioni</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Më të Populluara</h3>
+          <ul>
+            <li><a href="#">Instalim Falas</a></li>
+            <li><a href="#">Wi-Fi 6</a></li>
+            <li><a href="#">Support 24/7</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© Abissnet</div>
+    </footer>
+      <!-- WhatsApp për paketat -->
+    <script>
+      const whatsappNumber = "+355695588569";
+      document.querySelectorAll(".plans-section").forEach((card) => {
+        card.addEventListener("click", () => {
+          const speed = card.querySelector(".plan-speed").textContent.trim();
+          const message = encodeURIComponent(`Përshëndetje Abissnet! Jam i interesuar për paketën ${speed} mbps.`);
+          window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+        });
+      });
+    </script>
+  
+  
+  
+  
+  </body>
+</html>

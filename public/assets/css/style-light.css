@@ -569,7 +569,7 @@ button {
   filter: drop-shadow(0 30px 60px rgba(62, 58, 57, 0.15));
   animation: fadeInRight 1s ease-out 0.3s backwards;
   position: relative;
-  bottom: -50px;
+  bottom: 64px;
 }
 
 /* ========================================
@@ -718,6 +718,7 @@ button {
   );
   color: var(--color-white);
   padding: 1rem 2.5rem;
+  margin-top: var(--spacing-lg);
   border-radius: 50px;
   font-size: 1.1rem;
   font-weight: 700;
@@ -5889,3 +5890,180 @@ ACCESSIBILITY
   color: #4b5563;
   line-height: 1.6;
 }
+
+
+
+
+
+/* ===== Plans Modern ===== */
+.plans-section{max-width:var(--max-width);margin:var(--spacing-3xl) auto;padding:0 var(--spacing-2xl)}
+.plans{display:grid;grid-template-columns:repeat(5,1fr);gap:24px}
+@media (max-width:1200px){.plans{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:900px){.plans{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.plans{grid-template-columns:1fr}}
+
+.plan{
+  position:relative;overflow:hidden;
+  background:rgba(255,255,255,.9);
+  border:1px solid var(--color-gray-200);
+  border-radius:22px; padding: 14px 14px 12px !important;
+  box-shadow:var(--shadow-md);
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  cursor:pointer;
+}
+.plan:hover{ transform: translateY(-6px); box-shadow: var(--shadow-xl); border-color: var(--color-primary) }
+.plan.best{ border:1.5px solid var(--color-primary); box-shadow: var(--shadow-orange-lg) }
+.plan-ring{
+  position:absolute; inset:-40% -20% auto auto; height:180px; width:180px; border-radius:50%;
+  background: radial-gradient(closest-side, rgba(246,135,50,.35), transparent 65%);
+  filter: blur(6px); pointer-events:none;
+}
+.plan-head{display:flex;justify-content:flex-end}
+.plan-badge{
+  display:inline-block; font-size:.7rem; font-weight:800; letter-spacing:.03em;
+  padding:.35rem .6rem; border-radius:999px;
+  background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light));
+  color:#fff; box-shadow:var(--shadow-orange)
+}
+.plan-speed{
+  margin:18px 0 10px; display:flex; align-items:flex-end; gap:6px; flex-wrap:wrap
+}
+/* Force 500 on its own line; 50 + mbps stay together */
+.plan-speed{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 6px;                 /* adjust spacing between 50 and mbps */
+}
+
+.plan-speed .d{            /* the first number (500) */
+  flex: 0 0 100%;          /* full width -> new line */
+  line-height: .9;
+}
+
+.plan-speed .num {
+  font-family: "Orbitron", sans-serif;   /* same font family as Abissnet branding */
+  font-weight: 900;                      /* heavy, like in the screenshot */
+  font-size: 3.5rem;                     /* increase for that bold visual impact */
+  line-height: 0.9;                      /* keeps 500 and 50 stacked tightly */
+  color: var(--color-gray-800);          /* strong dark text */
+  display: block;                        /* ensures each number is on its own line */
+  text-transform: none;
+}
+
+/* Adjust 'mbps' positioning and spacing */
+.plan-speed small {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--color-gray-600);
+  margin-top: 0.3rem;
+  display: inline-block;
+  letter-spacing: 0.02em;
+}
+.plan-meta{list-style:none; padding:0; margin:8px 0 0; color:var(--color-gray-600); font-size:.95rem; display:flex; flex-direction:column; gap:6px}
+.plan-foot{margin-top:14px; display:flex; justify-content:flex-start}
+.plan-choose{
+  background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light));
+  color:#fff; border:0; padding:.6rem 1rem; border-radius:14px; font-weight:800; box-shadow:var(--shadow-orange);
+}
+.plan.active{ outline:3px solid rgba(246,135,50,.25) }
+
+/* CTA */
+.plans-cta{margin-top:22px; text-align:center}
+
+/* ===== Feature Tiles Modern ===== */
+.feature-tiles{max-width:var(--max-width); margin:var(--spacing-3xl) auto; padding: 0 var(--spacing-2xl)}
+.tiles{display:grid; grid-template-columns:repeat(4,1fr); gap:20px}
+@media (max-width:1000px){ .tiles{ grid-template-columns:repeat(2,1fr)} }
+@media (max-width:600px){ .tiles{ grid-template-columns:1fr } }
+
+.tile{
+  background:#fff; border:1px solid var(--color-gray-200); border-radius:18px; padding:20px;
+  box-shadow: var(--shadow-sm); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; text-align:center
+}
+.tile:hover{ transform: translateY(-5px); box-shadow: var(--shadow-xl); border-color: var(--color-primary) }
+.tile-icon{
+  width:64px; height:64px; margin:0 auto 10px; display:grid; place-items:center; border-radius:999px;
+  background: radial-gradient(closest-side, rgba(246,135,50,.15), transparent);
+  border:1px solid rgba(246,135,50,.25)
+}
+.tile-icon img{width:36px; height:36px; object-fit:contain}
+.tile h3{font-size:1.05rem; margin:6px 0 6px}
+.tile p{color:var(--color-gray-600); font-size:.92rem; line-height:1.5}
+
+
+
+
+/* === Extra benefits chips (for Abissnet App / Abissnet TV) === */
+.micro-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(220px,1fr));
+  gap:16px;
+  align-items:stretch;
+  margin-top:16px;
+}
+
+.chipx{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 16px;
+  background:#fff;
+  border:1px solid var(--color-gray-200);
+  border-radius:9999px;
+  font-weight:600;
+  color:var(--color-gray-800);
+  box-shadow:0 4px 10px rgba(0,0,0,0.04);
+  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease, background-color .15s ease;
+}
+.chipx svg{
+  width:18px; height:18px;
+  stroke: currentColor;
+  opacity:.8;
+}
+.chipx:hover{
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 18px rgba(246,135,50,.16);
+}
+
+/* small “KPI” cards under the chips */
+.stats-strip{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(180px,1fr));
+  gap:14px;
+  margin-top:18px;
+}
+.statx{
+  background:#fff;
+  border:1px solid var(--color-gray-200);
+  border-radius:14px;
+  padding:16px;
+  text-align:center;
+  box-shadow: var(--dry-shadow, 0 4px 10px rgba(0,0,0,.04));
+}
+.statx .big{
+  font-family: var(--font-primary);
+  font-size:1.6rem;
+  font-weight:900;
+  color: var(--color-primary);
+  line-height:1;
+}
+.note-muted{ color:var(--color-gray-600); font-size:.9rem }
+
+/* tighten spacing under “Përfitimet …” titles if you see a big gap */
+.wfh-benefits .wfh-benefits-title{ margin-bottom: 1rem; }
+
+/* responsive tweaks */
+@media (max-width: 1100px){
+  .micro-grid{ grid-template-columns:repeat(3,minmax(220px,1fr)); }
+}
+@media (max-width: 900px){
+  .micro-grid{ grid-template-columns:repeat(2,minmax(200px,1fr)); }
+  .stats-strip{ grid-template-columns:1fr; }
+}
+@media (max-width: 520px){
+  .micro-grid{ grid-template-columns:1fr; }
+}
+

@@ -4,8 +4,8 @@
    =================================== */
 
 :root {
-  --colo-primary: #ff6b00;
-  --colo-primary-hover: #ff8533;
+  --colo-primary: #f68732;
+  --colo-primary-hover: #f68732;
   --colo-secondary: #3b82f6;
   --colo-dark-bg: #0f1419;
   --colo-dark-card: #1a1f2e;
@@ -344,7 +344,7 @@
 }
 
 .feature-icon.orange {
-  background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+  background: linear-gradient(135deg, #f68732 0%, #f68732 100%);
 }
 
 .feature-icon.blue {
@@ -444,7 +444,7 @@
 .benefit-number {
   font-size: 3rem;
   font-weight: 800;
-  color: rgba(255, 107, 0, 0.2);
+  color: #f68732;
   line-height: 1;
   margin-bottom: 1rem;
 }

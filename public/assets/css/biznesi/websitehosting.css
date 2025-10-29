@@ -43,9 +43,9 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    #ff9800 20%,
-    #ffc107 50%,
-    #ff9800 80%,
+    #f68732 20%,
+    #f68732 50%,
+    #f68732 80%,
     transparent 100%
   );
   animation: serverPulse 4s ease-in-out infinite;
@@ -115,7 +115,7 @@
   background: rgba(255, 152, 0, 0.1);
   border: 1px solid rgba(255, 152, 0, 0.3);
   border-radius: 50px;
-  color: #ffc107;
+  color: #f68732;
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -138,7 +138,7 @@
 
 .gradient-text {
   display: block;
-  background: linear-gradient(135deg, #ff9800 0%, #ffc107 50%, #ffb347 100%);
+  background: linear-gradient(135deg, #f68732 0%, #f68732 50%, #f68732 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -196,7 +196,7 @@
 .stat-number {
   font-size: clamp(1.5rem, 3vw, 1rem);
   font-weight: 700;
-  color: #ff9800;
+  color: #f68732;
   margin-bottom: 0.5rem;
   line-height: 1;
   font-family: "Orbitron", sans-serif;
@@ -235,13 +235,13 @@
 }
 
 .btn-hero.primary {
-  background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%);
+  background: linear-gradient(135deg, #f68732 0%, #f68732 100%);
   color: #fff;
   box-shadow: 0 4px 20px rgba(255, 152, 0, 0.4);
 }
 
 .btn-hero.primary:hover {
-  background: linear-gradient(135deg, #f57c00 0%, #ff9800 100%);
+  background: linear-gradient(135deg, #f68732 0%, #f68732 100%);
   box-shadow: 0 6px 30px rgba(255, 152, 0, 0.6);
   transform: translateY(-2px);
 }
@@ -303,7 +303,7 @@
   right: 2rem;
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%);
+  background: linear-gradient(135deg, #f68732 0%, #f68732 100%);
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -324,7 +324,7 @@
 }
 
 .back-to-top:hover {
-  background: linear-gradient(135deg, #f57c00 0%, #ff9800 100%);
+  background: linear-gradient(135deg, #f68732 0%, #f68732 100%);
   transform: translateY(-3px);
   box-shadow: 0 6px 30px rgba(255, 152, 0, 0.6);
 }
@@ -355,14 +355,14 @@
   transition: all 0.3s ease;
   cursor: pointer;
   border: none;
-  background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%);
+  background: linear-gradient(135deg, #f68732 0%, #f68732 100%);
   color: #fff;
   box-shadow: 0 4px 20px rgba(255, 152, 0, 0.4);
   margin-top: 1rem;
 }
 
 .form-submit-btn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #f57c00 0%, #ff9800 100%);
+  background: linear-gradient(135deg, #f68732 0%, #f68732 100%);
   box-shadow: 0 6px 30px rgba(255, 152, 0, 0.6);
   transform: translateY(-2px);
 }
@@ -376,7 +376,7 @@
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: #ff9800;
+  border-color: #f68732;
   box-shadow: 0 0 0 4px rgba(255, 152, 0, 0.1);
   outline: none;
 }
@@ -449,7 +449,7 @@
 .feature-item:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 40px rgba(255, 152, 0, 0.25);
-  border-color: #ff9800;
+  border-color: #f68732;
 }
 
 .feature-item:hover::before {
@@ -510,7 +510,7 @@
 }
 
 .comparison-table thead {
-  background: linear-gradient(135deg, #ff9800, #ffc107);
+  background: linear-gradient(135deg, #f68732, #f68732);
 }
 
 .comparison-table th {
@@ -714,8 +714,8 @@
 
   .gradient-text {
     animation: none;
-    background: #ff9800;
-    -webkit-text-fill-color: #ff9800;
+    background: #f68732;
+    -webkit-text-fill-color: #f68732;
   }
 }
 

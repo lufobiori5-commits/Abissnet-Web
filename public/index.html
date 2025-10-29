@@ -112,9 +112,9 @@
               Internet <span class="chev">▾</span>
             </button>
             <ul class="dropdown-panel" role="menu">
-              <li><a class="dropdown-item" href="internet-ne-shtepi.html">Internet</a></li>
+              <li><a class="dropdown-item" href="internet.html">Internet</a></li>
               <li class="divider" role="separator"></li>
-              <li><a class="dropdown-item" href="abissnet.html">Internet & TV</a></li>
+              <li><a class="dropdown-item" href="internet&tv.html">Internet & TV</a></li>
             </ul>
           </div>
 
@@ -123,10 +123,10 @@
               Abissnet <span class="chev">▾</span>
             </button>
             <ul class="dropdown-panel" role="menu">
-              <li><a class="dropdown-item" href="internet-ne-shtepi.html">Fto nje Mik</a></li>
+              <li><a class="dropdown-item" href="ftonjemik.html">Fto nje Mik</a></li>
               <li class="divider" role="separator"></li>
-              <li><a class="dropdown-item" href="abissnet.html">WiFi Falas</a></li>
-              <li><a class="dropdown-item" href="stream.html">Benefite per Studentet</a></li>
+              <li><a class="dropdown-item" href="wififalas.html">WiFi Falas</a></li>
+              <li><a class="dropdown-item" href="studentet.html">Benefite per Studentet</a></li>
               <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
               <li><a class="dropdown-item" href="puno-nga-shtepia.html">Puno nga Shtëpia</a></li>
             </ul>
@@ -136,7 +136,7 @@
           <a href="partner.html">Partnerët</a>
           <a href="abonentet.html">Abonentët</a>
           <a href="karriera.html">Karriera</a>
-          <a href="blog.html">APP</a>
+          <a href="app.html">APP</a>
         </nav>
 
         <div class="header-actions">
@@ -173,7 +173,7 @@
               </svg>
             </button>
             <div class="mobile-dropdown-content">
-              <a href="stream.html">Fto nje Mik</a>
+              <a href="ftonjemik.html">Fto nje Mik</a>
               <a href="gaming.html">WiFi Falas</a>
               <a href="puno-nga-shtepia.html">Benefite per Studentet</a>
               <a href="stream.html">Streaming</a>
@@ -215,17 +215,55 @@
       </div>
     </section>
 
-    <!-- Paketat -->
-    <section class="packages-section" id="paketat">
-      <h2 class="packages-title">Zgjidh një nga paketat e internetit!</h2>
-      <div class="package-grid">
-        <div class="package-card"><div class="package-speed">500  / 50</div><div class="package-label">mbps</div></div>
-        <div class="package-card"><div class="package-speed">1000 / 100</div><div class="package-label">mbps</div></div>
-        <div class="package-card"><div class="package-speed">1500  / 150</div><div class="package-label">mbps</div></div>
-        <div class="package-card"><div class="package-speed">2500  / 250</div><div class="package-label">mbps</div></div>
-        <div class="package-card special"><div class="package-speed">10G / 1G</div></div>
-      </div>
-    </section>
+<!-- PLAN CARDS (modern + smaller) -->
+      <section class="plans-section" id="paketat">
+        <h2 class="packages-title">Zgjidh paketën e internetit</h2>
+        <div class="plans">
+          
+          <article class="plan" data-d="500" data-u="50">
+            <div class="plan-ring"></div>
+            <header class="plan-head"><span class="plan-badge">FTTH</span></header>
+            <div class="plan-speed"><span class="num d">500</span><span class="num u">50</span><small>mbps</small></div>
+           
+            <footer class="plan-foot"><button class="plan-choose">Zgjidh</button></footer>
+          </article>
+
+          <article class="plan" data-d="1000" data-u="100">
+            <div class="plan-ring"></div>
+            <header class="plan-head"><span class="plan-badge">FTTH</span></header>
+            <div class="plan-speed"><span class="num d">1000</span><span class="slash"></span><span class="num u">100</span><small>mbps</small></div>
+           
+            <footer class="plan-foot"><button class="plan-choose">Zgjidh</button></footer>
+          </article>
+
+          <article class="plan" data-d="1500" data-u="150">
+            <div class="plan-ring"></div>
+            <header class="plan-head"><span class="plan-badge">FTTH</span></header>
+            <div class="plan-speed"><span class="num d">1500</span><span class="slash"></span><span class="num u">150</span><small>mbps</small></div>
+           
+            <footer class="plan-foot"><button class="plan-choose">Zgjidh</button></footer>
+          </article>
+
+          <article class="plan" data-d="2500" data-u="250">
+            <div class="plan-ring"></div>
+            <header class="plan-head"><span class="plan-badge">FTTH</span></header>
+            <div class="plan-speed"><span class="num d">2500</span><span class="slash"></span><span class="num u">250</span><small>mbps</small></div>
+            
+            <footer class="plan-foot"><button class="plan-choose">Zgjidh</button></footer>
+          </article>
+
+          <article class="plan best" data-d="10G" data-u="1G">
+            <div class="plan-ring"></div>
+            <header class="plan-head"><span class="plan-badge">REKOMANDUAR</span></header>
+            <div class="plan-speed"><span class="num d">10G</span><span class="slash"></span><span class="num u">1G</span><small>mbps</small></div>
+          
+            <footer class="plan-foot"><button class="plan-choose">Zgjidh</button></footer>
+          </article>
+        </div>
+        <div class="plans-cta">
+          <a href="dyqanet.html" class="hero-cta-btn"><span class="cta-arrows">>>></span> Verifiko mbulimin</a>
+        </div>
+      </section>
 
     <!-- Banner ofertash -->
     <div class="offer-banner-carousel">
@@ -462,9 +500,9 @@
     <!-- WhatsApp për paketat -->
     <script>
       const whatsappNumber = "+355695588569";
-      document.querySelectorAll(".package-card").forEach((card) => {
+      document.querySelectorAll(".plans-section").forEach((card) => {
         card.addEventListener("click", () => {
-          const speed = card.querySelector(".package-speed").textContent.trim();
+          const speed = card.querySelector(".plan-speed").textContent.trim();
           const message = encodeURIComponent(`Përshëndetje Abissnet! Jam i interesuar për paketën ${speed} mbps.`);
           window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
         });

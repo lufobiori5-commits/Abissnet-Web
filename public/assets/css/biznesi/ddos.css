@@ -4,10 +4,10 @@
    =================================== */
 
 :root {
-  --ddos-primary: #ff6b00;
-  --ddos-primary-hover: #ff8533;
+  --ddos-primary: #f68732;
+  --ddos-primary-hover: #f68732;
   --ddos-secondary: #3b82f6;
-  --ddos-orange: #ff6b00;
+  --ddos-orange: #f68732;
   --ddos-dark-bg: #0f1419;
   --ddos-dark-card: #1a1f2e;
   --ddos-dark-lighter: #252b3b;

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon"/>
+    <title>Abissnet - Fto një Mik</title>
+    <meta name="description" content="Fto një mik në Abissnet dhe merrni shpërblime të dy: deri në 1 muaj internet falas. Kopjo linkun tënd të referimit ose nomino mikun nga formulari."/>
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style-light.css" />
+    <style>
+      /* Shtesa të vogla për komponentët e faqes së referimit (respektojnë paletën ekzistuese) */
+      .refer-panel{
+        max-width: var(--max-width);
+        margin: var(--spacing-3xl) auto;
+        padding: var(--spacing-2xl);
+        background: var(--color-white);
+        border:1px solid var(--color-gray-200);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-xl);
+      }
+      .refer-grid{
+        display:grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: var(--spacing-2xl);
+      }
+      .refer-box{
+        background: var(--color-gray-50);
+        border:1px solid var(--color-gray-200);
+        border-radius: var(--radius-lg);
+        padding: var(--spacing-xl);
+      }
+      .refer-label{font-weight:700;color:var(--color-gray-800);margin-bottom:.5rem;display:block}
+      .refer-input{
+        width:100%;padding:var(--spacing-md);
+        border:2px solid var(--color-gray-300);border-radius:var(--radius-md);
+        background:#fff;font-size:var(--font-size-base);
+      }
+      .refer-row{display:flex;gap:var(--spacing-md);flex-wrap:wrap;margin-top:var(--spacing-md)}
+      .btn-chip{
+        display:inline-flex;align-items:center;gap:.5rem;
+        padding:.7rem 1rem;border-radius:999px;border:1px solid var(--color-gray-300);
+        background:#fff;cursor:pointer;transition:all .2s ease;font-weight:700
+      }
+      .btn-chip:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--color-primary)}
+      .muted-sm{color:var(--color-gray-500);font-size:.9rem}
+      .steps{
+        max-width: var(--max-width);margin: var(--spacing-3xl) auto; padding: 0 var(--spacing-2xl);
+        display:grid;grid-template-columns:repeat(3,1fr);gap:var(--spacing-xl)
+      }
+      .step-card{
+        background:var(--color-white);border:1px solid var(--color-gray-200);border-radius:var(--radius-lg);
+        padding:var(--spacing-2xl);box-shadow:var(--shadow-md);transition:transform .2s ease
+      }
+      .step-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl);border-color:var(--color-primary)}
+      .step-num{
+        width:42px;height:42px;border-radius:999px;display:grid;place-items:center;
+        background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light));
+        color:#fff;font-weight:900;margin-bottom:var(--spacing-md)
+      }
+      .legal{
+        max-width: var(--max-width);margin: var(--spacing-3xl) auto; padding: var(--spacing-2xl);
+        background:var(--color-white);border:1px solid var(--color-gray-200);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)
+      }
+      @media (max-width: 900px){
+        .refer-grid{grid-template-columns: 1fr}
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="siteHeader">
+      <div class="header-inner">
+        <div class="header-logo">
+          <a href="index.html">
+            <img src="/assets/img/abissnet-logo-dark.png" alt="Abissnet" height="40"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
+            <span style="display:none;font-style:italic;font-size:1.5rem;font-weight:700;color:#fff;">abissnet</span>
+          </a>
+        </div>
+
+        <nav class="header-nav">
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+              Internet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li><a class="dropdown-item" href="internet.html">Internet</a></li>
+              <li class="divider" role="separator"></li>
+              <li><a class="dropdown-item" href="internet&tv.html">Internet & TV</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+              Abissnet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li><a class="dropdown-item" href="ftonjemik.html">Fto nje Mik</a></li>
+              <li class="divider" role="separator"></li>
+              <li><a class="dropdown-item" href="wififalas.html">WiFi Falas</a></li>
+              <li><a class="dropdown-item" href="studentet.html">Benefite per Studentet</a></li>
+              <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
+              <li><a class="dropdown-item" href="puno-nga-shtepia.html">Puno nga Shtëpia</a></li>
+            </ul>
+          </div>
+
+          <a href="suport.html">Suport</a>
+          <a href="partner.html">Partnerët</a>
+          <a href="abonentet.html">Abonentët</a>
+          <a href="karriera.html">Karriera</a>
+          <a href="app.html">APP</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="header-btn outline" href="dyqanet.html">Harta Retail</a>
+          <a class="header-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+          <a class="header-btn primary" href="suport.html">Na Kontakto</a>
+        </div>
+
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              <a href="index.html" class="mobile-nav-link">Internet</a>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="internet-ne-shtepi.html">Internet</a>
+              <a href="abissnet.html">Internet & TV</a>
+            </div>
+          </div>
+
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Abissnet
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="ftonjemik.html">Fto nje Mik</a>
+              <a href="gaming.html">WiFi Falas</a>
+              <a href="puno-nga-shtepia.html">Benefite per Studentet</a>
+              <a href="stream.html">Streaming</a>
+              <a href="gaming.html">Gaming</a>
+              <a href="puno-nga-shtepia.html">Puno nga Shtëpia</a>
+            </div>
+          </div>
+
+          <a href="suport.html" class="mobile-nav-link">Suport</a>
+          <a href="partner.html" class="mobile-nav-link">Partnerët</a>
+          <a href="abonentet.html" class="mobile-nav-link">Abonentët</a>
+          <a href="karriera.html" class="mobile-nav-link">Karriera</a>
+          <a href="blog.html" class="mobile-nav-link">App</a>
+
+          <div class="mobile-actions">
+            <a class="mobile-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
+            <a class="mobile-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+            <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- Sub Navigation -->
+    <div class="subnav" role="navigation" aria-label="Shërbime">
+      <div class="subnav-inner">
+        <a href="index.html" class="pill">Individ</a>
+        <a href="biznesi/index.html" class="pill">Biznes</a>
+      </div>
+    </div>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main>
+      <!-- HERO -->
+      <section class="hero-section" id="home">
+        <div class="hero-inner">
+          <div class="hero-left">
+            <h1 class="hero-title">Fto një Mik</h1>
+            <p class="hero-subtitle">Merr shpërblime ti & miku yt kur aktivizoni Abissnet.</p>
+            <ul class="hero-benefits">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>1 muaj internet falas</strong> për ty kur miku aktivizon</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>50% ulje</strong> për mikun në muajin e parë</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Refero <strong>pa limit</strong> – grumbullo përfitime</span>
+              </li>
+            </ul>
+          </div>
+          <div class="hero-right">
+            <img src="/assets/img/hero-home-fiber.png" alt="Abissnet Refer a Friend" class="hero-img" loading="eager" />
+          </div>
+        </div>
+      </section>
+
+      <!-- BENEFITS (reuse features-section) -->
+      <section class="features-section" style="margin-top:37px">
+        <div class="feature-card visible">
+          <div class="feature-icon"><img src="/assets/img/feature-eksperienca.png" alt="Reward"/></div>
+          <h3 class="feature-title">Shpërblim i Qartë</h3>
+          <p class="feature-desc">Ti: 1 muaj falas. Miku: 50% ulje muajin e parë. Zbatohet për çdo aktivizim të ri FTTH.</p>
+        </div>
+        <div class="feature-card visible">
+          <div class="feature-icon"><img src="/assets/img/feature-support.png" alt="Tracking"/></div>
+          <h3 class="feature-title">Gjurmim Statusi</h3>
+          <p class="feature-desc">Ne të njoftojmë me email/push kur porosia e mikut kalon në aktiv.</p>
+        </div>
+        <div class="feature-card visible">
+          <div class="feature-icon"><img src="/assets/img/feature-shpejte.png" alt="Share"/></div>
+          <h3 class="feature-title">Shpërnda Me 1 Klik</h3>
+          <p class="feature-desc">Kopjo linkun, dërgo në WhatsApp/Telegram ose nomino mikun nga formulari.</p>
+        </div>
+        <div class="feature-card visible">
+          <div class="feature-icon"><img src="/assets/img/feature-fiber.png" alt="Fair"/></div>
+          <h3 class="feature-title">Rregulla të Thjeshta</h3>
+          <p class="feature-desc">Vlen për adresat pa shërbim aktiv. Shpërblimi llogaritet sapo miku të dalë “Aktiv”.</p>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="steps" aria-labelledby="steps-title">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h4 id="steps-title">Krijo/Verifiko kodin tënd</h4>
+          <p class="muted-sm">Vendos një kod referimi dhe gjenero linkun unik.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h4>Shpërnda te miku</h4>
+          <p class="muted-sm">Dërgo linkun në WhatsApp/Telegram ose nominoje nga formulari.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h4>Merr shpërblimin</h4>
+          <p class="muted-sm">Sapo të aktivizohet shërbimi i mikut, kreditohet muaji yt falas.</p>
+        </div>
+      </section>
+
+      <!-- REFER PANEL -->
+      <section class="refer-panel" id="referimi">
+        <div class="refer-grid">
+          <!-- Link Generator -->
+          <div class="refer-box">
+            <label class="refer-label">Kodi yt i referimit</label>
+            <input id="refCode" class="refer-input" type="text" maxlength="20" placeholder="p.sh. ABISS123" />
+            <p class="muted-sm">Mund të përdorësh inicialet ose një pseudonim unik. Do ruhet lokalisht në pajisjen tënde.</p>
+
+            <label class="refer-label" style="margin-top:1rem;">Linku yt</label>
+            <input id="refLink" class="refer-input" type="text" readonly value="" />
+            <div class="refer-row">
+              <button id="btnCopy" class="btn-chip">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                Kopjo Linkun
+              </button>
+              <button id="btnWa" class="btn-chip">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.57 2 2.12 6.45 2.12 11.92c0 2.1.66 4.04 1.79 5.64L2 22l4.6-1.81c1.56 1.02 3.42 1.62 5.44 1.62 5.47 0 9.92-4.45 9.92-9.92C21.96 6.45 17.51 2 12.04 2zm5.76 14.24c-.24.67-1.38 1.28-1.9 1.33-.48.05-1.08.07-1.74-.11-.4-.12-.92-.3-1.59-.58-2.79-1.21-4.6-4.17-4.74-4.37-.14-.19-1.13-1.5-1.13-2.86 0-1.36.71-2.02.96-2.29.24-.26.64-.38 1.02-.38.12 0 .22 0 .32.01.28.01.43.03.62.48.24.57.83 1.98.9 2.12.07.14.12.31.02.5-.1.19-.15.3-.3.47-.15.17-.32.39-.46.53-.15.15-.3.31-.13.61.17.3.75 1.23 1.62 2 .94.84 1.73 1.1 2.04 1.23.31.13.49.11.67-.07.19-.19.77-.9.97-1.21.2-.31.41-.26.68-.16.28.09 1.77.83 2.08.98.31.15.52.23.6.36.08.13.08.75-.16 1.42z"/></svg>
+                Dërgo në WhatsApp
+              </button>
+              <button id="btnTg" class="btn-chip">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9.04 15.53l-.38 5.35c.54 0 .77-.23 1.05-.51l2.52-2.43 5.22 3.83c.96.53 1.64.25 1.9-.89l3.45-16.13c.35-1.62-.59-2.25-1.63-1.85L2.05 10.12c-1.56.61-1.54 1.49-.27 1.89l5.34 1.67L18.8 6.36c.63-.41 1.2-.18.73.23"/></svg>
+                Telegram
+              </button>
+              <button id="btnMail" class="btn-chip">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+                Email
+              </button>
+            </div>
+          </div>
+
+          <!-- Nominate Friend -->
+          <div class="refer-box">
+            <h3 class="feature-title" style="margin-bottom:.5rem;">Nomino mikun</h3>
+            <p class="muted-sm">Na lër kontaktin e mikut dhe ne do ta telefonojmë për aktivizim.</p>
+            <form id="nominate-form" class="contact-form" style="margin-top:1rem;">
+              <div class="form-group">
+                <label class="refer-label" for="yourName">Emri yt</label>
+                <input id="yourName" class="refer-input" type="text" placeholder="Emri yt" required />
+              </div>
+              <div class="form-group">
+                <label class="refer-label" for="friendName">Emri i mikut</label>
+                <input id="friendName" class="refer-input" type="text" placeholder="p.sh. Ardit Kola" required />
+              </div>
+              <div class="form-group">
+                <label class="refer-label" for="friendPhone">Telefoni i mikut</label>
+                <input id="friendPhone" class="refer-input" type="tel" placeholder="+355 6X XXX XXXX" required />
+              </div>
+              <div class="form-group">
+                <label class="refer-label" for="city">Qyteti</label>
+                <input id="city" class="refer-input" type="text" placeholder="p.sh. Tiranë" />
+              </div>
+              <div class="form-group">
+                <label class="refer-label" for="notes">Shënim (opsionale)</label>
+                <textarea id="notes" class="refer-input" rows="3" placeholder="Orari i preferuar, adresa, etj."></textarea>
+              </div>
+              <button class="form-submit-btn" type="submit">Dërgo nominimin</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ / Info -->
+      <section class="wfh-section soft" style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);">
+        <div class="wfh-section-inner">
+          <h3 class="wfh-h3">Pyetje të shpeshta</h3>
+          <p><strong>Kur llogaritet shpërblimi?</strong> Pasi shërbimi i mikut të aktivizohet dhe të kalojë faturimi i parë.</p>
+          <p><strong>A mund të referoj disa miq?</strong> Po. Për çdo aktivizim të ri kreditohet një muaj falas për ty.</p>
+          <p><strong>Miku im ka pasur Abissnet më parë?</strong> Programi vlen për adresa pa shërbim aktiv në 90 ditët e fundit.</p>
+        </div>
+      </section>
+
+      <!-- Terms -->
+      <section class="legal" aria-labelledby="terms-title">
+        <h3 id="terms-title" style="margin-bottom:.75rem;">Kushtet kryesore</h3>
+        <ul style="padding-left:1.2rem; line-height:1.8;">
+          <li>Shpërblimet zbatohen për shërbime FTTH të aktivizuara në rrjetin Abissnet.</li>
+          <li>Ulja 50% për mikun jepet në faturën e parë; muaji falas për referuesin kreditohet në llogari.</li>
+          <li>Abissnet mund të verifikojë vlefshmërinë e referimit (adresë pa shërbim aktiv 90 ditë).</li>
+          <li>Programi nuk kombinohet me fushata të tjera specifike nëse nuk përcaktohet ndryshe.</li>
+        </ul>
+      </section>
+
+      <!-- CTA përfundimtare -->
+      <div class="features-cta" style="text-align:center;">
+        <a href="#referimi" class="hero-cta-btn"><span class="cta-arrows">>>></span> Gjej Linkun & Fto Tani</a>
+      </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col brand">
+          <div class="footer-logo">Abissnet</div>
+          <ul>
+            <li><a href="abissnet.html">Kompania</a></li>
+            <li><a href="abissnet.html">Rreth Nesh</a></li>
+            <li><a href="partner.html">Partnerët</a></li>
+            <li><a href="karriera.html">Karriera</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Shërbime/Produkte</h3>
+          <ul>
+            <li><a href="internet-ne-shtepi.html">Fiber në Shtëpi</a></li>
+            <li><a href="puno-nga-shtepia.html">Korporata</a></li>
+            <li><a href="internet-ne-shtepi.html">Televizioni</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Më të Populluara</h3>
+          <ul>
+            <li><a href="#">Internet i Shpejtë</a></li>
+            <li><a href="#">Ofertat e Verës</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Shkruaj email-in tuaj" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="footer-social">
+            <a href="https://facebook.com/abissnet" target="_blank" aria-label="Facebook">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://instagram.com/abissnet" target="_blank" aria-label="Instagram">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://youtube.com/@abissnet" target="_blank" aria-label="YouTube">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 Abissnet. Të gjitha të drejtat e rezervuara.</div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/script.js"></script>
+
+    <!-- Refer-a-Friend logic -->
+    <script>
+      (function(){
+        const refCodeEl = document.getElementById('refCode');
+        const refLinkEl = document.getElementById('refLink');
+        const params = new URLSearchParams(window.location.search);
+        const saved   = localStorage.getItem('abiss_ref_code');
+        const initial = params.get('ref') || saved || ('AB' + Math.random().toString(36).substring(2,8).toUpperCase());
+        refCodeEl.value = initial;
+
+        function buildLink(){
+          const code = (refCodeEl.value || '').trim();
+          const origin = window.location.origin || (window.location.protocol + '//' + window.location.host);
+          const link = origin + '/signup.html?ref=' + encodeURIComponent(code);
+          refLinkEl.value = link;
+          localStorage.setItem('abiss_ref_code', code);
+          return link;
+        }
+        buildLink();
+        refCodeEl.addEventListener('input', buildLink);
+
+        // Actions
+        const copy = async () => {
+          const link = buildLink();
+          try{
+            await navigator.clipboard.writeText(link);
+            flash('Linku u kopjua!');
+          }catch(e){
+            refLinkEl.select(); document.execCommand('copy'); flash('Linku u kopjua!');
+          }
+        };
+        const flash = (msg) => {
+          const n = document.createElement('div');
+          n.className = 'toast toast-success show';
+          n.innerHTML = '<div class="toast-content"><div class="toast-icon">✓</div><div class="toast-message">'+msg+'</div></div><div class="toast-progress" style="animation-duration: 2.5s;"></div>';
+          document.body.appendChild(n);
+          setTimeout(()=>{ n.classList.remove('show'); n.remove(); }, 2500);
+        };
+
+        document.getElementById('btnCopy').addEventListener('click', copy);
+        document.getElementById('btnWa').addEventListener('click', ()=>{
+          const link = buildLink();
+          const text = encodeURIComponent('Përshëndetje! Po të rekomandoj Abissnet. Regjistrohu këtu: ' + link);
+          window.open('https://wa.me/?text=' + text, '_blank');
+        });
+        document.getElementById('btnTg').addEventListener('click', ()=>{
+          const link = buildLink();
+          const text = encodeURIComponent('Abissnet – internet fiber. Linku im: ' + link);
+          window.open('https://t.me/share/url?url=' + encodeURIComponent(link) + '&text=' + text, '_blank');
+        });
+        document.getElementById('btnMail').addEventListener('click', ()=>{
+          const link = buildLink();
+          const subject = encodeURIComponent('Ftesë për Abissnet');
+          const body = encodeURIComponent('Hej! Unë përdor Abissnet dhe jam super i kënaqur. Nëse regjistrohesh nga ky link, ke 50% ulje muajin e parë:\n\n' + link);
+          window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
+        });
+
+        // Nominate submit (demo)
+        document.getElementById('nominate-form').addEventListener('submit', (e)=>{
+          e.preventDefault();
+          // Këtu lidhe API-n tuaj – për demo thjesht njoftim
+          flash('Nomimi u dërgua. Do e kontaktojmë mikun së shpejti.');
+          e.target.reset();
+        });
+      })();
+    </script>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+  </body>
+</html>

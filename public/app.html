@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <title>Abissnet App — Menaxho abonimin nga telefoni</title>
+
+    <!-- Your main stylesheet -->
+    <link rel="stylesheet" href="assets/css/style-light.css" />
+
+    <!-- Page-scoped styles (namespaced: appx-) -->
+    <style>
+      :root{
+        --appx-brand:#f07a00; --appx-brand-2:#ff9c3a;
+        --appx-ink:#121317; --appx-muted:#616874;
+        --appx-card:#ffffffcc; --appx-stroke:rgba(0,0,0,.08);
+        --appx-radius:18px; --appx-radius-lg:22px;
+        --appx-shadow:0 12px 32px rgba(0,0,0,.12);
+        --appx-container:1200px;
+      }
+      .appx-container{max-width:var(--appx-container);margin:0 auto;padding:0 20px}
+      .appx-btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;
+        font-weight:700;border:1px solid var(--appx-stroke);background:var(--appx-card);
+        backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:var(--appx-shadow);
+        transition:transform .2s ease, box-shadow .2s ease}
+      .appx-btn:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(0,0,0,.16)}
+      .appx-btn.primary{background:linear-gradient(122deg,var(--appx-brand),var(--appx-brand-2));color:#fff;border-color:transparent}
+      .appx-pill{display:inline-block;padding:8px 12px;border-radius:999px;border:1px dashed var(--appx-stroke);background:rgba(240,122,0,.08);font-size:.92rem}
+
+      /* ===== HERO ===== */
+      .appx-hero{position:relative;isolation:isolate;padding:64px 0 28px;color:var(--appx-ink);
+        background:
+          radial-gradient(900px 280px at 12% -120px, rgba(240,122,0,.20), transparent 60%),
+          radial-gradient(1000px 300px at 90% -160px, rgba(255,156,58,.18), transparent 60%),
+          linear-gradient(180deg,#fff,#fff);}
+      .appx-hero:before{content:"";position:absolute;inset:-40px -10px -40px;z-index:-1;
+        background:conic-gradient(from 190deg at 10% 10%, rgba(240,122,0,.25), transparent 25%),
+                   conic-gradient(from -20deg at 90% 0%, rgba(240,122,0,.18), transparent 30%);
+        filter:blur(42px);opacity:.45;}
+      .appx-hero-grid{display:grid;gap:28px;grid-template-columns:1.15fr 1fr;align-items:center}
+      @media (max-width:980px){.appx-hero-grid{grid-template-columns:1fr}}
+      .appx-hero h1{font-family:Orbitron,system-ui,sans-serif;font-size:clamp(34px,4.2vw,54px);line-height:1.06;margin:0 0 12px}
+      .appx-hero .sub{color:var(--appx-muted);font-size:1.05rem;margin:0 0 16px}
+      .appx-cta{display:flex;gap:12px;flex-wrap:wrap}
+      .appx-hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+
+      /* Phone mock */
+      .appx-mock{justify-self:end}
+      .appx-phone{width:min(420px,95%);aspect-ratio:9/19;border-radius:32px;padding:10px;background:linear-gradient(135deg,#fff,#f4f6fa);
+        border:1px solid var(--appx-stroke);box-shadow:var(--appx-shadow);position:relative;overflow:hidden}
+      .appx-phone:before{content:"";position:absolute;left:50%;top:8px;transform:translateX(-50%);width:34%;height:6px;border-radius:20px;background:#000;opacity:.18}
+      .appx-screen{width:100%;height:100%;border-radius:24px;overflow:hidden;background:#000;display:grid;place-items:center}
+      .appx-screen img{width:100%;height:100%;object-fit:cover}
+
+      /* ===== Sections ===== */
+      .appx-section{padding:44px 0}
+      .appx-sec-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:18px}
+      .appx-h2{font-family:Orbitron,system-ui,sans-serif;font-size:clamp(22px,2.5vw,32px);margin:0}
+
+      /* Lanes — perfectly symmetric */
+      .appx-lanes{display:grid;gap:16px}
+      @media (min-width:1200px){.appx-lanes{grid-template-columns:repeat(4,1fr)}}
+      @media (min-width:900px) and (max-width:1199px){.appx-lanes{grid-template-columns:repeat(3,1fr)}}
+      @media (min-width:600px) and (max-width:899px){.appx-lanes{grid-template-columns:repeat(2,1fr)}}
+      @media (max-width:599px){.appx-lanes{grid-template-columns:1fr}}
+      .appx-card{display:flex;flex-direction:column;justify-content:flex-start;gap:8px;min-height:180px;
+        border-radius:var(--appx-radius);padding:18px 16px;
+        background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,.82));
+        border:1px solid var(--appx-stroke);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:var(--appx-shadow);
+        transition:transform .2s ease, box-shadow .2s ease}
+      .appx-card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.16)}
+      .appx-ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--appx-brand),var(--appx-brand-2));color:#fff}
+      .appx-card h3{margin:6px 0 6px;font-weight:800}
+      .appx-card p{margin:0;color:var(--appx-muted)}
+
+      /* Shots rail */
+      .appx-shots{border-radius:var(--appx-radius-lg);border:1px solid var(--appx-stroke);background:var(--appx-card);padding:14px}
+      .appx-rail{display:flex;gap:12px;overflow:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+      .appx-shot{flex:0 0 280px;aspect-ratio:9/19;border-radius:18px;overflow:hidden;scroll-snap-align:start;border:1px solid var(--appx-stroke);background:#000}
+      .appx-shot img{width:100%;height:100%;object-fit:cover}
+      .appx-rail::-webkit-scrollbar{height:8px}.appx-rail::-webkit-scrollbar-thumb{background:var(--appx-stroke);border-radius:20px}
+
+      /* Reveal */
+      .appx-reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease, transform .5s ease}
+      .appx-reveal.in{opacity:1;transform:none}
+      @media(prefers-reduced-motion:reduce){.appx-reveal{transition:none}}
+    </style>
+  </head>
+
+  <body>
+    <!-- ====== HEADER (kept exactly from your front page) ====== -->
+    <header class="header" id="siteHeader">
+      <div class="header-inner">
+        <div class="header-logo">
+          <a href="index.html">
+            <img src="/assets/img/abissnet-logo-dark.png" alt="Abissnet" height="40"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
+            <span style="display:none;font-style:italic;font-size:1.5rem;font-weight:700;color:#fff;">abissnet</span>
+          </a>
+        </div>
+
+        <nav class="header-nav">
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+              Internet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li><a class="dropdown-item" href="internet.html">Internet</a></li>
+              <li class="divider" role="separator"></li>
+              <li><a class="dropdown-item" href="internet&tv.html">Internet & TV</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+              Abissnet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li><a class="dropdown-item" href="ftonjemik.html">Fto nje Mik</a></li>
+              <li class="divider" role="separator"></li>
+              <li><a class="dropdown-item" href="wififalas.html">WiFi Falas</a></li>
+              <li><a class="dropdown-item" href="studentet.html">Benefite per Studentet</a></li>
+              <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
+              <li><a class="dropdown-item" href="puno-nga-shtepia.html">Puno nga Shtëpia</a></li>
+            </ul>
+          </div>
+
+          <a href="suport.html">Suport</a>
+          <a href="partner.html">Partnerët</a>
+          <a href="abonentet.html">Abonentët</a>
+          <a href="karriera.html">Karriera</a>
+          <a href="app.html">APP</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="header-btn outline" href="dyqanet.html">Harta Retail</a>
+          <a class="header-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+          <a class="header-btn primary" href="suport.html">Na Kontakto</a>
+        </div>
+
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              <a href="index.html" class="mobile-nav-link">Internet</a>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="internet-ne-shtepi.html">Internet</a>
+              <a href="abissnet.html">Internet & TV</a>
+            </div>
+          </div>
+
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Abissnet
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="ftonjemik.html">Fto nje Mik</a>
+              <a href="gaming.html">WiFi Falas</a>
+              <a href="puno-nga-shtepia.html">Benefite per Studentet</a>
+              <a href="stream.html">Streaming</a>
+              <a href="gaming.html">Gaming</a>
+              <a href="puno-nga-shtepia.html">Puno nga Shtëpia</a>
+            </div>
+          </div>
+
+          <a href="suport.html" class="mobile-nav-link">Suport</a>
+          <a href="partner.html" class="mobile-nav-link">Partnerët</a>
+          <a href="abonentet.html" class="mobile-nav-link">Abonentët</a>
+          <a href="karriera.html" class="mobile-nav-link">Karriera</a>
+          <a href="blog.html" class="mobile-nav-link">App</a>
+
+          <div class="mobile-actions">
+            <a class="mobile-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
+            <a class="mobile-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+            <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Subnav -->
+    <div class="subnav" role="navigation" aria-label="Shërbime">
+      <div class="subnav-inner">
+        <a href="index.html" class="pill active">Individ</a>
+        <a href="biznesi/index.html" class="pill">Biznes</a>
+      </div>
+    </div>
+
+    <!-- ================= MAIN ================= -->
+    <main>
+
+      <!-- HERO (Abissnet App) -->
+      <section class="appx-hero">
+        <div class="appx-container appx-hero-grid">
+          <div>
+            <h1>Menaxho abonimin tënd. Shpejt. I sigurt. 24/7.</h1>
+            <p class="sub">Paguaj faturat, merr njoftime inteligjente, hap tiketë dhe ndrysho paketën — të gjitha nga telefoni.</p>
+            <div class="appx-cta">
+              <a class="appx-btn primary" id="appx-ios-1">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17 7c-2 0-3-1-5-1S9 7 7 7c-2 0-3-1-3-1v10s1 1 3 1 3-1 5-1 3 1 5 1 3-1 3-1V6s-1 1-3 1Z"/></svg>
+                Shkarko për iOS
+              </a>
+              <a class="appx-btn" id="appx-android-1">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 4l13 8-13 8V4zm14 8l4-2v6l-4-2v-2z"/></svg>
+                Shkarko për Android
+              </a>
+              <span class="appx-pill">Login biometrik • MFA • 🇦🇱/🇬🇧</span>
+            </div>
+            <div class="appx-hero-badges" style="margin-top:10px">
+              <span class="appx-pill">Pagesa 1-Click</span>
+              <span class="appx-pill">Njoftime push</span>
+              <span class="appx-pill">Menaxhim shërbimesh</span>
+              <span class="appx-pill">Suport i shpejtë</span>
+            </div>
+          </div>
+
+          <div class="appx-mock appx-reveal">
+            <div class="appx-phone">
+              <div class="appx-screen">
+                <img src="assets/img/AbissnetAPP.png" alt="Pamje nga Abissnet App"
+                     onerror="this.style.display='none'">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES (Abissnet App) — SYMMETRIC ROW -->
+      <section class="appx-section">
+        <div class="appx-container">
+          <div class="appx-sec-head">
+            <h2 class="appx-h2">Çfarë bën aplikacioni më mirë</h2>
+            <span class="appx-pill">Fiber-grade UX</span>
+          </div>
+
+          <div class="appx-lanes">
+            <article class="appx-card appx-reveal">
+              <div class="appx-ico">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 7h8M8 11h5M8 15h8"/>
+                </svg>
+              </div>
+              <h3>Pagesa & Faturat 1-Click</h3>
+              <p>Shiko historikun, shkarko PDF dhe paguaj në sekondë me karta të ruajtura.</p>
+            </article>
+
+            <article class="appx-card appx-reveal">
+              <div class="appx-ico">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22a10 10 0 1 1 10-10"/><path d="M12 6v6l3 2"/>
+                </svg>
+              </div>
+              <h3>Njoftime Inteligjente</h3>
+              <p>Alerts për fatura, ndërhyrje në rrjet dhe status shërbimi.</p>
+            </article>
+
+            <article class="appx-card appx-reveal">
+              <div class="appx-ico">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/>
+                </svg>
+              </div>
+              <h3>Menaxhim Shërbimesh</h3>
+              <p>Ndrysho paketë, aktivizo opsione shtesë dhe kontrollo pajisjet e lidhura.</p>
+            </article>
+
+            <article class="appx-card appx-reveal">
+              <div class="appx-ico">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <h3>Suport i Shpejtë</h3>
+              <p>Hap tiketë me foto/video dhe ndiq përgjigjet në kohë reale.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREENSHOTS (Abissnet App) -->
+        <section class="appx-section" style="padding-bottom:56px">
+        <div class="appx-container">
+          <div class="appx-sec-head">
+            <h2 class="appx-h2">Pamje nga Abissnet TV</h2>
+            <span class="appx-pill">Scroll →</span>
+          </div>
+          <div class="appx-shots appx-reveal">
+            <div class="appx-rail">
+              <div class="appx-shot"><img src="assets/img/tv-1.png" alt="TV Screenshot 1" onerror="this.parentElement.style.background='#111'"></div>
+              <div class="appx-shot"><img src="assets/img/tv-2.png" alt="TV Screenshot 2" onerror="this.parentElement.style.background='#111'"></div>
+              <div class="appx-shot"><img src="assets/img/tv-3.png" alt="TV Screenshot 3" onerror="this.parentElement.style.background='#111'"></div>
+              <div class="appx-shot"><img src="assets/img/tv-4.png" alt="TV Screenshot 4" onerror="this.parentElement.style.background='#111'"></div>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;justify-content:center;margin-top:12px">
+            <a class="appx-btn primary" id="iptv-ios-2">App Store</a>
+            <a class="appx-btn" id="iptv-android-2">Google Play</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= IPTV APP (NEW, same style) ================= -->
+      <section class="appx-hero" style="padding:56px 0 28px;background:
+        radial-gradient(900px 280px at 88% -120px, rgba(240,122,0,.18), transparent 60%),
+        radial-gradient(1000px 300px at 10% -160px, rgba(255,156,58,.16), transparent 60%),
+        linear-gradient(180deg,#fff,#fff);">
+        <div class="appx-container appx-hero-grid">
+          <div>
+            <h1>Shiko TV kudo me <span style="background:linear-gradient(90deg,var(--appx-brand),var(--appx-brand-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Abissnet TV</span></h1>
+            <p class="sub">IPTV moderne: Live TV, EPG, Catch-up, VOD, Kids Mode dhe Cast në TV. Një aplikacion, çdo ekran.</p>
+            <div class="appx-cta">
+              <a class="appx-btn primary" id="iptv-ios-1">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17 7c-2 0-3-1-5-1S9 7 7 7c-2 0-3-1-3-1v10s1 1 3 1 3-1 5-1 3 1 5 1 3-1 3-1V6s-1 1-3 1Z"/></svg>
+                iOS
+              </a>
+              <a class="appx-btn" id="iptv-android-1">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 4l13 8-13 8V4zm14 8l4-2v6l-4-2v-2z"/></svg>
+                Android
+              </a>
+              <span class="appx-pill">Chromecast • AirPlay • 4K Ready</span>
+            </div>
+          </div>
+
+          <div class="appx-mock appx-reveal">
+            <div class="appx-phone">
+              <div class="appx-screen">
+                <img src="assets/img/AbissnetIPTV.png" alt="Pamje nga Abissnet TV" onerror="this.style.display='none'">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- IPTV FEATURES — SYMMETRIC ROW -->
+      <section class="appx-section">
+        <div class="appx-container">
+          <div class="appx-sec-head">
+            <h2 class="appx-h2">Përfitimet e Abissnet TV</h2>
+            <span class="appx-pill">TV që ndjek ritmin tënd</span>
+          </div>
+
+          <div class="appx-lanes">
+            <article class="appx-card appx-reveal">
+              <div class="appx-ico">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/>
+                </svg>
+              </div>
+              <h3>Live TV & EPG</h3>
+              <p>Qindra kanale me programacion të plotë dhe kërkim të shpejtë.</p>
+            </article>
+
+            <article class="appx-card appx-reveal">
+              <div class="appx-ico">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <h3>Catch-up & Pauzë</h3>
+              <p>Rikthehu mbrapa deri në 7 ditë (kur disponohet) dhe vazhdo ku e le.</p>
+            </article>
+
+            <article class="appx-card appx-reveal">
+              <div class="appx-ico">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-6"/>
+                </svg>
+              </div>
+              <h3>Multi-screen & Cast</h3>
+              <p>Telefon, tablet, Smart TV, dekoder + Cast (Chromecast/AirPlay).</p>
+            </article>
+
+            <article class="appx-card appx-reveal">
+              <div class="appx-ico">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="7" r="4"/><path d="M17 11v7"/><path d="M21 11v7"/><path d="M3 22v-2a4 4 0 0 1 4-4h4"/>
+                </svg>
+              </div>
+              <h3>Kids Mode & PIN</h3>
+              <p>Profile për fëmijë, filtrime sipas moshës dhe kontroll prindëror.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- IPTV SCREENSHOTS -->
+      <section class="appx-section" style="padding-bottom:56px">
+        <div class="appx-container">
+          <div class="appx-sec-head">
+            <h2 class="appx-h2">Pamje nga Abissnet TV</h2>
+            <span class="appx-pill">Scroll →</span>
+          </div>
+          <div class="appx-shots appx-reveal">
+            <div class="appx-rail">
+              <div class="appx-shot"><img src="assets/img/tv-1.png" alt="TV Screenshot 1" onerror="this.parentElement.style.background='#111'"></div>
+              <div class="appx-shot"><img src="assets/img/tv-2.png" alt="TV Screenshot 2" onerror="this.parentElement.style.background='#111'"></div>
+              <div class="appx-shot"><img src="assets/img/tv-3.png" alt="TV Screenshot 3" onerror="this.parentElement.style.background='#111'"></div>
+              <div class="appx-shot"><img src="assets/img/tv-4.png" alt="TV Screenshot 4" onerror="this.parentElement.style.background='#111'"></div>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;justify-content:center;margin-top:12px">
+            <a class="appx-btn primary" id="iptv-ios-2">App Store</a>
+            <a class="appx-btn" id="iptv-android-2">Google Play</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ====== FOOTER (kept) ====== -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col brand">
+          <div class="footer-logo">Abissnet</div>
+          <ul>
+            <li><a href="abissnet.html">Kompania</a></li>
+            <li><a href="abissnet.html">Rreth Nesh</a></li>
+            <li><a href="partner.html">Partnerët</a></li>
+            <li><a href="karriera.html">Karriera</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Shërbime/Produkte</h3>
+          <ul>
+            <li><a href="internet-ne-shtepi.html">Fiber në Shtëpi</a></li>
+            <li><a href="puno-nga-shtepia.html">Korporata</a></li>
+            <li><a href="internet-ne-shtepi.html">Televizioni</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Më të Populluara</h3>
+          <ul>
+            <li><a href="#">Internet i Shpejtë</a></li>
+            <li><a href="#">Ofertat e Verës</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Shkruaj email-in tuaj" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="footer-social">
+            <a href="https://facebook.com/abissnet" target="_blank" aria-label="Facebook">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://instagram.com/abissnet" target="_blank" aria-label="Instagram">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg>
+            </a>
+            <a href="https://youtube.com/@abissnet" target="_blank" aria-label="YouTube">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 Abissnet. Të gjitha të drejtat e rezervuara.</div>
+    </footer>
+
+    <!-- ===== JS: links + reveal ===== -->
+    <script>
+      // Vendos URL-të reale
+      const ABISSNET_IOS_URL     = "https://apps.apple.com/us/app/abissnet/id6745196422";
+      const ABISSNET_ANDROID_URL = "https://play.google.com/store/apps/details?id=com.abisnnet.al&hl=sq"; // verifiko ID
+      const IPTV_IOS_URL         = "https://apps.apple.com/al/app/abissnet-tv/idXXXXXXXXX"; // vendos real
+      const IPTV_ANDROID_URL     = "https://play.google.com/store/apps/details?id=al.abissnet.tv";
+
+      ["appx-ios-1","appx-ios-2"].forEach(id=>{ const a=document.getElementById(id); if(a) a.href=ABISSNET_IOS_URL||"#"; });
+      ["appx-android-1","appx-android-2"].forEach(id=>{ const a=document.getElementById(id); if(a) a.href=ABISSNET_ANDROID_URL||"#"; });
+      ["iptv-ios-1","iptv-ios-2"].forEach(id=>{ const a=document.getElementById(id); if(a) a.href=IPTV_IOS_URL||"#"; });
+      ["iptv-android-1","iptv-android-2"].forEach(id=>{ const a=document.getElementById(id); if(a) a.href=IPTV_ANDROID_URL||"#"; });
+
+      // Reveal on scroll
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+      }, {threshold:.15});
+      document.querySelectorAll('.appx-reveal').forEach(el=>io.observe(el));
+    </script>
+
+    <!-- Keep your global script -->
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>
