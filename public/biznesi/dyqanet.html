@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Abissnet - Dyqanet & Pikat e Shërbimit</title>
+    <meta
+      name="description"
+      content="Gjej dyqanin më të afërt Abissnet për shërbim dhe pagesë fature në të gjithë Shqipërinë."
+    />
+
+    <!-- Stilet kryesore të sajtit -->
+    <link rel="stylesheet" href="assets/css/style-light.css" />
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
+    />
+  </head>
+  <body>
+  <!-- Header -->
+    <header class="header" id="siteHeader">
+      <div class="header-inner">
+        <div class="header-logo">
+          <a href="index.html">
+            <img src="/assets/img/abissnet-logo-dark.png" alt="Abissnet" height="40"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
+            <span style="display:none;font-style:italic;font-size:1.5rem;font-weight:700;color:#fff;">abissnet</span>
+          </a>
+        </div>
+
+        <nav class="header-nav">
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+              Internet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li><a class="dropdown-item" href="internet.html">Internet</a></li>
+              <li class="divider" role="separator"></li>
+              <li><a class="dropdown-item" href="internet&tv.html">Internet & TV</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+              Abissnet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li><a class="dropdown-item" href="ftonjemik.html">Fto nje Mik</a></li>
+              <li class="divider" role="separator"></li>
+              <li><a class="dropdown-item" href="wififalas.html">WiFi Falas</a></li>
+              <li><a class="dropdown-item" href="studentet.html">Benefite per Studentet</a></li>
+              <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
+              <li><a class="dropdown-item" href="puno-nga-shtepia.html">Puno nga Shtëpia</a></li>
+            </ul>
+          </div>
+
+          <a href="suport.html">Suport</a>
+          <a href="partner.html">Partnerët</a>
+          <a href="abonentet.html">Abonentët</a>
+          <a href="karriera.html">Karriera</a>
+          <a href="app.html">APP</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="header-btn outline" href="dyqanet.html">Harta Retail</a>
+          <a class="header-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+          <a class="header-btn primary" href="suport.html">Na Kontakto</a>
+        </div>
+
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              <a href="index.html" class="mobile-nav-link">Internet</a>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="internet-ne-shtepi.html">Internet</a>
+              <a href="abissnet.html">Internet & TV</a>
+            </div>
+          </div>
+
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Abissnet
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="ftonjemik.html">Fto nje Mik</a>
+              <a href="gaming.html">WiFi Falas</a>
+              <a href="puno-nga-shtepia.html">Benefite per Studentet</a>
+              <a href="stream.html">Streaming</a>
+              <a href="gaming.html">Gaming</a>
+              <a href="puno-nga-shtepia.html">Puno nga Shtëpia</a>
+            </div>
+          </div>
+
+          <a href="suport.html" class="mobile-nav-link">Suport</a>
+          <a href="partner.html" class="mobile-nav-link">Partnerët</a>
+          <a href="abonentet.html" class="mobile-nav-link">Abonentët</a>
+          <a href="karriera.html" class="mobile-nav-link">Karriera</a>
+          <a href="blog.html" class="mobile-nav-link">App</a>
+
+          <div class="mobile-actions">
+            <a class="mobile-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
+            <a class="mobile-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+            <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- SUBNAV -->
+    <div class="subnav" role="navigation" aria-label="Filtro sipas qytetit">
+      <div class="subnav-inner">
+        <span class="pill active">Të gjitha</span>
+        <span class="pill">Tiranë</span>
+        <span class="pill">Durrës</span>
+        <span class="pill">Shkodër</span>
+        
+        <span class="pill">Elbasan</span>
+        <span class="pill">Fier</span>
+        <span class="pill">Korçë</span>
+      
+      </div>
+    </div>
+
+    <!-- ================ HERO ================== -->
+    <section class="hero-section">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h1 class="hero-title hero-title-stores">
+            Dyqanet & Pikat e Shërbimit Abissnet
+          </h1>
+          <p class="hero-subtitle">
+            Gjej pikën më të afërt për shërbim apo pagesë fature.
+          </p>
+        </div>
+        <div class="hero-right">
+          <img
+            class="hero-img"
+            src="/assets/img/shops.png"
+            alt="Dyqanet Abissnet"
+            onerror="this.style.display='none'"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== MAP SECTION ============== -->
+    <main class="stores-section stores-map-only">
+      <div class="stores-map-wrap">
+        <!-- Search & Filter Overlay -->
+        <div class="stores-overlay">
+          <input
+            id="storeSearch"
+            class="search"
+            type="search"
+            placeholder="Kërko qytet/adresë..."
+            aria-label="Kërko dyqane"
+          />
+          <select
+            id="cityFilter"
+            class="select"
+            aria-label="Filtro sipas qytetit"
+          >
+            <option value="">Të gjitha qytetet</option>
+            <option>Tiranë</option>
+            <option>Durrës</option>
+            <option>Shkodër</option>
+            <option>Elbasan</option>
+            <option>Fier</option>
+            <option>Korçë</option>
+            
+          </select>
+        </div>
+
+        <!-- Map Container -->
+        <div id="stores-map" aria-label="Harta e dyqaneve Abissnet"></div>
+      </div>
+    </main>
+
+    <!-- ============== CONTACT SECTION ============== -->
+    <section class="contact-section" id="kontakto">
+      <div class="contact-container">
+        <div class="contact-header">
+          <h2 class="contact-title">Na Kontakto</h2>
+          <p class="contact-subtitle">
+            Për çdo pyetje ose kërkesë, na shkruaj!
+          </p>
+        </div>
+        <form class="contact-form" id="contact-form-stores">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="emri">Emri & Mbiemri *</label>
+              <input
+                id="emri"
+                name="emri"
+                type="text"
+                placeholder="p.sh. Arlind Hoxha"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="telefoni">Telefoni *</label>
+              <input
+                id="telefoni"
+                name="telefoni"
+                type="tel"
+                placeholder="+355 69 123 4567"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="mesazhi">Mesazhi *</label>
+            <textarea
+              id="mesazhi"
+              name="mesazhi"
+              placeholder="Shkruani mesazhin tuaj këtu..."
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <button class="form-submit-btn" type="submit">Dërgo Mesazhin</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============== FOOTER ============== -->
+   <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col brand">
+          <div class="footer-logo">Abissnet</div>
+          <ul>
+            <li><a href="abissnet.html">Rreth Abissnet</a></li>
+            <li><a href="karriera.html">Karriera</a></li>
+            <li><a href="informacioniligjor.html">Informacion Ligjor</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Shërbime/Produkte</h3>
+          <ul>
+            <li><a href="suport.html">Suport</a></li>
+            <li><a href="dyqanet.html">Dyqanet</a></li>
+            <li><a href="internet-ne-shtepi.html">Pse Abissnet</a></li>
+          <li><a href="ftonjemik.html">Refero Nje Mik</a></li>
+          <li><a href="#">Llogaritë Bankare</a></li>
+          
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Më të Populluara</h3>
+          <ul>
+            <li><a href="tarifat.html">Tarifat</a></li>
+            <li><a href="abonentet.html">Abonohu</a></li>
+           <li><a href="https://pay.abissnet.al/">Paguaj Faturen</a></li>
+           <li><a href="internet&tv.html">Ofertat Internet</a></li>
+           <li><a href="#">Speed Test</a></li>
+           <li><a href="#">Si Të Paguaj</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Shkruaj email-in tuaj" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="footer-social">
+            <a href="https://facebook.com/abissnet" target="_blank" aria-label="Facebook">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://instagram.com/abissnet" target="_blank" aria-label="Instagram">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg>
+            </a>
+            <a href="https://youtube.com/@abissnet" target="_blank" aria-label="YouTube">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 Abissnet. Të gjitha të drejtat e rezervuara.</div>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+    <!-- Global Scripts -->
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/stores.js"></script>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+  </body>
+</html>

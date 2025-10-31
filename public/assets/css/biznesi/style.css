@@ -1,4 +1,59 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@font-face {
+  font-family: "Nexa";
+  src: url("../../fonts/nexa/Nexa-Trial-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nexa";
+  src: url("../../fonts/nexa/Nexa-Trial-Heavy.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nexa";
+  src: url("../../fonts/nexa/Nexa-Trial-ExtraBold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nexa";
+  src: url("../../fonts/nexa/Nexa-Trial-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nexa";
+  src: url("../../fonts/nexa/Nexa-Trial-Book.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nexa";
+  src: url("../../fonts/nexa/Nexa-Trial-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nexa";
+  src: url("../../fonts/nexa/Nexa-Trial-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nexa";
+  src: url("../../fonts/nexa/Nexa-Trial-Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* ========================================
    MODERN CSS RESET & BASE STYLES
@@ -71,8 +126,8 @@
   --max-width: 1400px;
 
   /* Typography - Font Families */
-  --font-primary: "Orbitron", sans-serif;
-  --font-secondary: "Poppins", sans-serif;
+  --font-primary: "Nexa", sans-serif;
+  --font-secondary: "Nexa", sans-serif;
   --font-fallback: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 
   /* Typography - Font Sizes */
@@ -566,7 +621,7 @@ button {
 }
 
 .white {
-  color: white !important;
+  color: white;
 }
 
 /* ========================================
@@ -6078,4 +6133,105 @@ textarea:focus-visible,
 select:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
+}
+
+
+/* === Services (Biznes) === */
+.services-section{
+  max-width: var(--max-width);
+  margin: var(--spacing-3xl) auto;
+  padding: 0 var(--spacing-2xl);
+}
+.services-head{ text-align:center; margin-bottom: var(--spacing-2xl); }
+.services-title{
+  font-family: var(--font-primary);
+  font-weight: 900;
+  letter-spacing: -.02em;
+  font-size: var(--font-size-4xl);
+  color: #f68732;
+}
+.services-sub{
+  color: white;
+  margin-top: .35rem;
+  font-size: var(--font-size-base);
+}
+
+/* grid */
+.services-grid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(240px,1fr));
+  gap: var(--spacing-xl);
+}
+@media (max-width: 1200px){
+  .services-grid{ grid-template-columns: repeat(3, minmax(220px,1fr)); }
+}
+@media (max-width: 900px){
+  .services-grid{ grid-template-columns: repeat(2, minmax(220px,1fr)); }
+}
+@media (max-width: 600px){
+  .services-grid{ grid-template-columns: 1fr; }
+}
+
+/* card */
+.service-card{
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  display: flex; flex-direction: column; gap: .65rem;
+  min-height: 220px;
+}
+.service-card:hover{
+  transform: translateY(-6px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-xl);
+}
+
+/* icon */
+.svc-icon{
+  width: 54px; height: 54px;
+  display:grid; place-items:center;
+  border-radius: 14px;
+  background:
+    radial-gradient(closest-side, rgba(246,135,50,.15), transparent 65%),
+    linear-gradient(135deg, rgba(246,135,50,.08), rgba(255,255,255,.9));
+  border: 1px solid rgba(246,135,50,.25);
+  color: var(--color-primary);
+}
+.svc-icon svg{ width:28px; height:28px; fill: currentColor; }
+
+/* text */
+.svc-title{
+  font-family: var(--font-primary);
+  font-weight: 800;
+  color: var(--color-gray-800);
+  font-size: 1.15rem;
+  margin: .25rem 0 0;
+}
+.svc-desc{
+  color: var(--color-gray-600);
+  font-size: .95rem;
+  line-height: 1.55;
+  flex: 1;
+}
+
+/* CTA */
+.svc-cta{
+  align-self: flex-start;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--color-gray-800);
+  border: 2px solid var(--color-gray-800);
+  border-radius: 12px;
+  padding: .55rem .9rem;
+  transition: background .2s ease, color .2s ease, transform .2s ease, border-color .2s ease;
+}
+.service-card:hover .svc-cta{
+  border-color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: #fff;
+  transform: translateY(-1px);
 }

@@ -133,7 +133,7 @@
   margin-bottom: 1.5rem;
   color: #fff;
   animation: fadeInUp 0.8s ease-out 0.2s both;
-  font-family: "Orbitron", sans-serif;
+  font-family: var(--font-primary);
 }
 
 .gradient-text {

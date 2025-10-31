@@ -229,8 +229,11 @@ window.addEventListener(
 
 // ========== HAMBURGER MENU FUNCTIONALITY ==========
 function initHamburgerMenu() {
-  const hamburger = document.getElementById("hamburger-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
+  // Be tolerant to different IDs used across pages
+  const hamburger = document.getElementById("hamburger-btn") || document.querySelector(".hamburger-menu");
+  const mobileMenu =
+    document.getElementById("mobile-menu") ||
+    document.querySelector("#mobile-menu, .mobile-menu, [id^=\"mobile-menu\"]");
 
   if (!hamburger || !mobileMenu) return;
 

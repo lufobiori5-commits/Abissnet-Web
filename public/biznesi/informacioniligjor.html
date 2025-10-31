@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <title>Dokumente Zyrtare - Abissnet</title>
+    <link rel="stylesheet" href="assets/css/style-light.css" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="siteHeader">
+        <div class="header-inner">
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="/assets/img/abissnet-logo-dark.png" alt="Abissnet" height="40"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
+                    <span style="display:none;font-style:italic;font-size:1.5rem;font-weight:700;color:#fff;">abissnet</span>
+                </a>
+            </div>
+
+            <nav class="header-nav">
+                <div class="nav-dropdown" data-dropdown>
+                    <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+                        Internet <span class="chev">▾</span>
+                    </button>
+                    <ul class="dropdown-panel" role="menu">
+                        <li><a class="dropdown-item" href="internet.html">Internet</a></li>
+                        <li class="divider" role="separator"></li>
+                        <li><a class="dropdown-item" href="internet&tv.html">Internet & TV</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-dropdown" data-dropdown>
+                    <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+                        Abissnet <span class="chev">▾</span>
+                    </button>
+                    <ul class="dropdown-panel" role="menu">
+                        <li><a class="dropdown-item" href="ftonjemik.html">Fto nje Mik</a></li>
+                        <li class="divider" role="separator"></li>
+                        <li><a class="dropdown-item" href="wififalas.html">WiFi Falas</a></li>
+                        <li><a class="dropdown-item" href="studentet.html">Benefite per Studentet</a></li>
+                        <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
+                        <li><a class="dropdown-item" href="puno-nga-shtepia.html">Puno nga Shtëpia</a></li>
+                    </ul>
+                </div>
+
+                <a href="suport.html">Suport</a>
+                <a href="partner.html">Partnerët</a>
+                <a href="abonentet.html">Abonentët</a>
+                <a href="karriera.html">Karriera</a>
+                <a href="app.html">APP</a>
+            </nav>
+
+            <div class="header-actions">
+                <a class="header-btn outline" href="dyqanet.html">Harta Retail</a>
+                <a class="header-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+                <a class="header-btn primary" href="suport.html">Na Kontakto</a>
+            </div>
+
+            <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+                <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <nav class="mobile-nav">
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+                        <a href="index.html" class="mobile-nav-link">Internet</a>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content">
+                        <a href="internet-ne-shtepi.html">Internet</a>
+                        <a href="abissnet.html">Internet & TV</a>
+                    </div>
+                </div>
+
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+                        Abissnet
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content">
+                        <a href="ftonjemik.html">Fto nje Mik</a>
+                        <a href="gaming.html">WiFi Falas</a>
+                        <a href="puno-nga-shtepia.html">Benefite per Studentet</a>
+                        <a href="stream.html">Streaming</a>
+                        <a href="gaming.html">Gaming</a>
+                        <a href="puno-nga-shtepia.html">Puno nga Shtëpia</a>
+                    </div>
+                </div>
+
+                <a href="suport.html" class="mobile-nav-link">Suport</a>
+                <a href="partner.html" class="mobile-nav-link">Partnerët</a>
+                <a href="abonentet.html" class="mobile-nav-link">Abonentët</a>
+                <a href="karriera.html" class="mobile-nav-link">Karriera</a>
+                <a href="blog.html" class="mobile-nav-link">App</a>
+
+                <div class="mobile-actions">
+                    <a class="mobile-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
+                    <a class="mobile-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+                    <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="subnav" role="navigation" aria-label="Shërbime">
+        <div class="subnav-inner">
+            <a href="index.html" class="pill">Individ</a>
+            <a href="biznesi/index.html" class="pill">Biznes</a>
+            <a href="dokumente.html" class="pill active">Dokumente</a>
+        </div>
+    </div>
+
+    <!-- Hero Section (Compact) -->
+    <section class="hero-section" id="home">
+        <div class="hero-inner">
+            <div class="hero-left">
+                <h1 class="hero-title">Dokumente Zyrtare</h1>
+                <p class="hero-subtitle">Klikoni dokumentat më poshtë për t'i bërë download.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents Section -->
+    <section class="docs-section">
+        <div class="docs-head">
+            <h2 class="docs-title">Klikoni dokumentat më poshtë për t'i bërë download</h2>
+            <p class="docs-sub">Termat e shërbimit, politika privatësie, kontrata abonimi, çmimore, etj.</p>
+        </div>
+
+        <div class="docs-controls">
+            <input 
+                type="search" 
+                class="docs-search" 
+                placeholder="Kërko (p.sh. "privatësia", "kontratë", "çmiimore")..." 
+                id="docSearch"
+            />
+        </div>
+
+        <div class="docs-grid" id="docsGrid">
+            <!-- Card 1: Termat dhe Kushtet e Shërbimit -->
+            <article class="doc-card">
+                <div class="doc-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                </div>
+                <div class="doc-body">
+                    <h3 class="doc-title">Termat dhe Kushtet e Shërbimit</h3>
+                    <div class="doc-meta">
+                        <span>PDF · 1.2 MB</span>
+                        <span>Përditësuar: 10/2025</span>
+                    </div>
+                    <div class="doc-tags">
+                        <span class="tag">Ligjore</span>
+                        <span class="tag">Shërbime</span>
+                    </div>
+                    <div class="doc-actions">
+                        <a href="#" class="btn primary" download>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Shkarko
+                        </a>
+                        <a href="#" class="btn ghost">Hap</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2: Treguesi i cilësise të telefonise -->
+            <article class="doc-card">
+                <div class="doc-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                </div>
+                <div class="doc-body">
+                    <h3 class="doc-title">Treguesi i cilësise te telefonise</h3>
+                    <div class="doc-meta">
+                        <span>PDF · 980 KB</span>
+                        <span>Përditësuar: 09/2025</span>
+                    </div>
+                    <div class="doc-tags">
+                        <span class="tag">Privatësi</span>
+                        <span class="tag">GDPR</span>
+                    </div>
+                    <div class="doc-actions">
+                        <a href="#" class="btn primary" download>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Shkarko
+                        </a>
+                        <a href="#" class="btn ghost">Hap</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3: Aneks Kontrate Tip -->
+            <article class="doc-card">
+                <div class="doc-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="12" y1="18" x2="12" y2="12"></line>
+                        <line x1="9" y1="15" x2="15" y2="15"></line>
+                    </svg>
+                </div>
+                <div class="doc-body">
+                    <h3 class="doc-title">Aneks Kontrate Tip</h3>
+                    <div class="doc-meta">
+                        <span>PDF · 1.8 MB</span>
+                        <span>Përditësuar: 08/2025</span>
+                    </div>
+                    <div class="doc-tags">
+                        <span class="tag">Kontrata</span>
+                    </div>
+                    <div class="doc-actions">
+                        <a href="#" class="btn primary" download>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Shkarko
+                        </a>
+                        <a href="#" class="btn ghost">Hap</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4: Formular ankese per pajtimtarin -->
+            <article class="doc-card">
+                <div class="doc-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <path d="M9 15h6"></path>
+                        <path d="M12 18v-6"></path>
+                    </svg>
+                </div>
+                <div class="doc-body">
+                    <h3 class="doc-title">Formular ankese per pajtimtarin</h3>
+                    <div class="doc-meta">
+                        <span>PDF · 740 KB</span>
+                        <span>Përditësuar: 10/2025</span>
+                    </div>
+                    <div class="doc-tags">
+                        <span class="tag">Çmimore</span>
+                        <span class="tag">Informim</span>
+                    </div>
+                    <div class="doc-actions">
+                        <a href="#" class="btn primary" download>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Shkarko
+                        </a>
+                        <a href="#" class="btn ghost">Hap</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 5: Kontrata TIP dhe Udhëzuesi për zgjidhjen e ankesave -->
+            <article class="doc-card">
+                <div class="doc-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <circle cx="12" cy="13" r="2"></circle>
+                        <path d="M12 10.3V9"></path>
+                        <path d="M12 17v-1.3"></path>
+                    </svg>
+                </div>
+                <div class="doc-body">
+                    <h3 class="doc-title">Kontrata TIP dhe Udhëzuesi për zgjidhjen e ankesave</h3>
+                    <div class="doc-meta">
+                        <span>PDF · 320 KB</span>
+                        <span>Përditësuar: 07/2025</span>
+                    </div>
+                    <div class="doc-tags">
+                        <span class="tag">Formular</span>
+                    </div>
+                    <div class="doc-actions">
+                        <a href="#" class="btn primary" download>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Shkarko
+                        </a>
+                        <a href="#" class="btn ghost">Hap</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 6: Manual perdorimi per MoreTv -->
+            <article class="doc-card">
+                <div class="doc-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 3h-8"></path>
+                        <line x1="12" y1="3" x2="12" y2="7"></line>
+                    </svg>
+                </div>
+                <div class="doc-body">
+                    <h3 class="doc-title">Manual perdorimi per MoreTv</h3>
+                    <div class="doc-meta">
+                        <span>PDF · 320 KB</span>
+                        <span>Përditësuar: 07/2025</span>
+                    </div>
+                    <div class="doc-tags">
+                        <span class="tag">Formular</span>
+                    </div>
+                    <div class="doc-actions">
+                        <a href="#" class="btn primary" download>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Shkarko
+                        </a>
+                        <a href="#" class="btn ghost">Hap</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 7: /Portabiliteti i numrit -->
+            <article class="doc-card">
+                <div class="doc-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                </div>
+                <div class="doc-body">
+                    <h3 class="doc-title">/Portabiliteti i numrit</h3>
+                    <div class="doc-meta">
+                        <span>PDF · 320 KB</span>
+                        <span>Përditësuar: 07/2025</span>
+                    </div>
+                    <div class="doc-tags">
+                        <span class="tag">Formular</span>
+                    </div>
+                    <div class="doc-actions">
+                        <a href="#" class="btn primary" download>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Shkarko
+                        </a>
+                        <a href="#" class="btn ghost">Hap</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 8: Procedura per zgjidhjen e ankesave -->
+            <article class="doc-card">
+                <div class="doc-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <path d="M10 9h-.01"></path>
+                    </svg>
+                </div>
+                <div class="doc-body">
+                    <h3 class="doc-title">Procedura per zgjidhjen e ankesave</h3>
+                    <div class="doc-meta">
+                        <span>PDF · 320 KB</span>
+                        <span>Përditësuar: 07/2025</span>
+                    </div>
+                    <div class="doc-tags">
+                        <span class="tag">Formular</span>
+                    </div>
+                    <div class="doc-actions">
+                        <a href="#" class="btn primary" download>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Shkarko
+                        </a>
+                        <a href="#" class="btn ghost">Hap</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="docs-empty" id="docsEmpty">
+            <p>Asnjë dokument nuk u gjet me këtë kërkim.</p>
+        </div>
+    </section>
+
+     <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col brand">
+          <div class="footer-logo">Abissnet</div>
+          <ul>
+            <li><a href="abissnet.html">Rreth Abissnet</a></li>
+            <li><a href="karriera.html">Karriera</a></li>
+            <li><a href="informacioniligjor.html">Informacion Ligjor</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Shërbime/Produkte</h3>
+          <ul>
+            <li><a href="suport.html">Suport</a></li>
+            <li><a href="dyqanet.html">Dyqanet</a></li>
+            <li><a href="internet-ne-shtepi.html">Pse Abissnet</a></li>
+          <li><a href="ftonjemik.html">Refero Nje Mik</a></li>
+          <li><a href="#">Llogaritë Bankare</a></li>
+          
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Më të Populluara</h3>
+          <ul>
+            <li><a href="tarifat.html">Tarifat</a></li>
+            <li><a href="abonentet.html">Abonohu</a></li>
+           <li><a href="https://pay.abissnet.al/">Paguaj Faturen</a></li>
+           <li><a href="internet&tv.html">Ofertat Internet</a></li>
+           <li><a href="#">Speed Test</a></li>
+           <li><a href="sitepaguaj.html">Si Të Paguaj</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Shkruaj email-in tuaj" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="footer-social">
+            <a href="https://facebook.com/abissnet" target="_blank" aria-label="Facebook">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://instagram.com/abissnet" target="_blank" aria-label="Instagram">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg>
+            </a>
+            <a href="https://youtube.com/@abissnet" target="_blank" aria-label="YouTube">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 Abissnet. Të gjitha të drejtat e rezervuara.</div>
+    </footer>

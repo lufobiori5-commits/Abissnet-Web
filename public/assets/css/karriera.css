@@ -159,7 +159,7 @@
   font-weight: 800;
   color: var(--color-gray-900, #23262b);
   line-height: 1.3;
-  font-family: var(--font-primary, "Orbitron", sans-serif);
+  font-family: var(--font-primary, "Nexa", sans-serif);
 }
 
 /* Job Meta (Tags) */

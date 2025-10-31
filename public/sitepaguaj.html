@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <title>Si të Paguaj – Abissnet</title>
+
+    <!-- CSS kryesor (si te index) -->
+    <link rel="stylesheet" href="assets/css/style-light.css" />
+    <link rel="stylesheet" href="../assets/css/biznesi/speedtest.css" />
+
+    <!-- Shtesa stilimi vetëm për këtë faqe -->
+    <style>
+      .pay-section { background: var(--color-bg-darker); }
+      .pay-inner   { max-width: var(); } /* placeholder to avoid CSS error */
+    </style>
+    <style>
+      :root { --vip-orange:#F68732; }
+
+      /* HERO i shkurtër */
+      .hero-section--short{
+        min-height:auto;
+        padding-bottom: var(--spacing-xl);
+        background:
+          radial-gradient(1200px 600px at 80% -10%, rgba(246,135,50,.12), transparent 55%),
+          radial-gradient(900px 500px  at 10% 120%, rgba(246,135,50,.08), transparent 60%),
+          linear-gradient(180deg, #2b2f35 0%, #15181c 60%, #101214 100%);
+      }
+      .hero-section--short .hero-inner{ align-items:center; }
+      .hero-section--short .hero-left{ padding-top:0; }
+      .hero-section--short .hero-title{ margin-bottom:.5rem; }
+      .hero-section--short .hero-subtitle{ color:rgba(255,255,255,.9); margin:0; }
+
+      /* CTA horizontale */
+      .pay-cta{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin: var(--spacing-2xl) 0; }
+      .pay-cta .cta{
+        display:inline-flex; align-items:center; gap:.6rem;
+        background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+        color:#fff; padding: .9rem 1.4rem; border-radius:14px; font-weight:800; text-decoration:none;
+        box-shadow: var(--shadow-orange);
+        transition: transform .15s ease, box-shadow .15s ease;
+      }
+      .pay-cta .cta:hover{ transform: translateY(-2px); box-shadow: var(--shadow-orange-lg); }
+      .pay-cta .ghost{
+        background:#fff; color: var(--color-gray-800); border:1px solid var(--color-gray-300);
+      }
+      .pay-cta .ghost:hover{ border-color: var(--color-primary); color: var(--color-primary); box-shadow: 0 8px 18px rgba(246,135,50,.16); }
+
+      /* Timeline (përdor .timeline CSS ekzistuese nga stilet e tua) */
+      .steps-wrap{ max-width: var(--max-width); margin:0 auto; padding:0 var(--spacing-2xl) var(--spacing-3xl); }
+      .steps-head{ text-align:center; margin: var(--spacing-2xl) 0 var(--spacing-xl); }
+      .steps-head h2{
+        color:#fff; font-family:var(--font-primary); font-weight:900; letter-spacing:.01em;
+        background:linear-gradient(135deg,#F68732 0, var(--color-primary) 100%);
+        -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+      }
+      .timeline .timeline-year{ background: var(--color-primary); }
+      .timeline .timeline-content h4{ color:#070707; }
+      .timeline .timeline-content p{ color: black; }
+
+      /* Metodat e pagesës – përdor .feature-grid bazë */
+      .pay-methods{ background:#23262b; padding: var(--spacing-3xl) var(--spacing-2xl); }
+      .pay-methods .feature-grid{ grid-template-columns: repeat(2, 1fr); }
+      @media (max-width:900px){ .pay-methods .feature-grid{ grid-template-columns:1fr; } }
+      .pay-methods .feature-item{ background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.12); }
+      .pay-methods .feature-item h4{ color:#fff; }
+      .pay-methods .feature-item p{ color:#EAECEF; }
+      .pay-methods .feature-icon{ background: radial-gradient(closest-side, rgba(246,135,50,.15),); border-color: rgba(246,135,50,.25); }
+
+      /* Info box (përdor .warning-box/.info-box por me ngjyra brand) */
+      .guard-rail{ max-width:900px; margin: var(--spacing-3xl) auto; padding: 0 var(--spacing-2xl); }
+      .guard-rail .warning-box, .guard-rail .info-box{ margin:0; }
+
+      /* Stats strip (përdor .stats-strip ekzistuese) */
+      .pay-stats{ max-width: var(--max-width); margin: var(--spacing-3xl) auto; padding: 0 var(--spacing-2xl); }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header (si te index) -->
+    <header class="header" id="siteHeader">
+      <div class="header-inner">
+        <div class="header-logo">
+          <a href="index.html">
+            <img src="assets/img/abissnet-logo-dark.png" alt="Abissnet" height="40"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
+            <span style="display:none;font-style:italic;font-size:1.5rem;font-weight:700;color:#fff;">abissnet</span>
+          </a>
+        </div>
+
+        <nav class="header-nav">
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+              Internet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li><a class="dropdown-item" href="internet.html">Internet</a></li>
+              <li class="divider" role="separator"></li>
+              <li><a class="dropdown-item" href="internet&tv.html">Internet &amp; TV</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+              Abissnet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li><a class="dropdown-item" href="ftonjemik.html">Fto një Mik</a></li>
+              <li class="divider" role="separator"></li>
+              <li><a class="dropdown-item" href="wififalas.html">WiFi Falas</a></li>
+              <li><a class="dropdown-item" href="studentet.html">Benefite për Studentët</a></li>
+              <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
+              <li><a class="dropdown-item" href="puno-nga-shtepia.html">Puno nga Shtëpia</a></li>
+            </ul>
+          </div>
+
+          <a href="suport.html">Suport</a>
+          <a href="partner.html">Partnerët</a>
+          <a href="abonentet.html">Abonentët</a>
+          <a href="tv.html">TV</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="header-btn outline" href="dyqanet.html">Harta Retail</a>
+          <a class="header-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+          <a class="header-btn primary" href="suport.html">Na Kontakto</a>
+        </div>
+
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+          <a href="index.html" class="mobile-nav-link">Internet</a>
+
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Abissnet
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="ftonjemik.html">Fto një Mik</a>
+              <a href="wififalas.html">WiFi Falas</a>
+              <a href="studentet.html">Benefite për Studentet</a>
+              <a href="stream.html">Streaming</a>
+              <a href="gaming.html">Gaming</a>
+              <a href="puno-nga-shtepia.html">Puno nga Shtëpia</a>
+            </div>
+          </div>
+
+          <a href="suport.html" class="mobile-nav-link">Suport</a>
+          <a href="partner.html" class="mobile-nav-link">Partnerët</a>
+          <a href="abonentet.html" class="mobile-nav-link">Abonentët</a>
+          <a href="tv.html" class="mobile-nav-link">TV</a>
+
+          <div class="mobile-actions">
+            <a class="mobile-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
+            <a class="mobile-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+            <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Sub Navigation -->
+    <div class="subnav" role="navigation" aria-label="Shërbime">
+      <div class="subnav-inner">
+        <a href="index.html" class="pill">Individ</a>
+        <a href="biznesi/index.html" class="pill">Biznes</a>
+        <a href="si-te-paguaj.html" class="lib-link pill active">Si të Paguaj</a>
+      </div>
+    </div>
+
+    <!-- HERO (shkurt) -->
+    <section class="hero-section hero-section--short">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h1 class="hero-title">Si të paguash në Abissnet</h1>
+          <p class="hero-subtitle">Zgjidh mënyrën më të përshtatshme: “Paguaj Tani”, llogaria e Abonentit, ose bankë / dyqan. E shpejtë, e thjeshtë, 24/7.</p>
+
+          <div class="pay-cta" role="group" aria-label="Zgjidh mënyrën e pagesës">
+            <a class="cta" href="https://pay.abissnet.al/" target="_blank" rel="noopener">💳 Paguaj Tani</a>
+            <a class="cta" href="abonentet.html">🔐 Hyr te “Abonentët”</a>
+            <a class="cta ghost" href="abonentet.html#regjistrohu">➕ Krijo llogari</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <img src="assets/img/robot.png" alt="Pagesë online me siguri" class="hero-img" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Hapat -->
+    <section class="steps-wrap">
+      <div class="steps-head">
+        <h2>Hapat për të paguar online</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-year">Hapi 1</span>
+          <div class="timeline-content">
+            <h4>Krijo llogari ose Hyr te “Abonentët”</h4>
+            <p>Shko te <strong>Abonentët</strong> (<a href="abonentet.html">abonentet.html</a>). Nëse nuk ke llogari, klik “Krijo llogari” dhe verifiko emailin/telefonin.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-year">Hapi 2</span>
+          <div class="timeline-content">
+            <h4>Hap seksionin “Faturat e mia”</h4>
+            <p>Shiko faturat e prapambetura dhe ato të sapodalë. Zgjidh faturën që do të paguash dhe kontrollo detajet përpara se të vazhdosh.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-year">Hapi 3</span>
+          <div class="timeline-content">
+            <h4>Zgjidh metodën e pagesës</h4>
+            <p>Paguaj me <strong>kartë bankare (Visa/Mastercard)</strong>, bëj <strong>transfer bankare</strong> (me referencë), ose zgjidh <strong>autopagesën</strong> mujore.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-year">Hapi 4</span>
+          <div class="timeline-content">
+            <h4>Konfirmo &amp; shkarko faturën</h4>
+            <p>Pasi pagesa të jetë konfirmuar, do të marrësh njoftim dhe mund të <strong>shkarkosh faturën</strong> nga historiku i pagesave.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metodat e pagesës -->
+    <section class="pay-methods">
+      <div class="steps-head">
+        <h2>Metodat e pagesës</h2>
+        <p style="color: white;">Të gjitha në përputhje me standardet e sigurisë (3-D Secure / PCI-DSS). Zgjidh atë që të përshtatet më shumë.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-item">
+          <div class="feature-icon">💳</div>
+          <h4>Kartë Debiti / Krediti</h4>
+          <p>Paguaj menjëherë me Visa / Mastercard. Transaksioni kryhet përmes portës sonë të pagesave dhe faturën e ke menjëherë.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">🏦</div>
+          <h4>Transfertë bankare (IBAN)</h4>
+          <p>Transfero shumën me referencën e faturës. Fondet pasqyrohen pas konfirmimit të bankës (zakonisht brenda 1–2 ditësh pune). <a href="llogarite-bankare.html">Shiko llogaritë tona bankare</a>.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">🔁</div>
+          <h4>Autopagesë mujore</h4>
+          <p>Aktivo rimbushje automatike nga karta ose urdhër pagesë periodik në bankën tënde. S’harrohet kurrë afati.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">🏬</div>
+          <h4>Pagesë në dyqan</h4>
+          <p>Paguaj në një nga degët tona me kartë ose cash. Gjej pikën më të afërt: <a href="dyqanet.html">Harta e dyqaneve</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info / Security tips -->
+    <div class="guard-rail">
+      <div class="warning-box">
+        <h4>Kujdes me sigurinë e pagesave</h4>
+        <ul>
+          <li>Mos ndaj PIN / OTP me askënd, as në telefon.</li>
+          <li>Kontrollo gjithmonë që je në domenin tonë zyrtar (<strong>abissnet.al</strong> / <strong>pay.abissnet.al</strong>).</li>
+          <li>Nëse sheh një pagesë të dyshimtë, njofto menjëherë <a href="suport.html">supportin</a>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Disa tregues të shpejtësisë së shërbimit -->
+    <section class="pay-stats">
+      <div class="stats-strip">
+        <div class="statx">
+          <div class="big">⏱️ ~30 sek</div>
+          <div class="note-muted">Koha mesatare e pagesës me kartë</div>
+        </div>
+        <div class="statx">
+          <div class="big">24/7</div>
+          <div class="note-muted">Disponueshmëri e portalit të pagesave</div>
+        </div>
+        <div class="big statx">
+          <div class="big">+99.9%</div>
+          <div class="note-muted">Uptime i shërbimit</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col brand">
+          <div class="footer-logo">Abissnet</div>
+          <ul>
+            <li><a href="abissnet.html">Rreth Abissnet</a></li>
+            <li><a href="karriera.html">Karriera</a></li>
+            <li><a href="informacioniligjor.html">Informacion Ligjor</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Shërbime/Produkte</h3>
+          <ul>
+            <li><a href="suport.html">Suport</a></li>
+            <li><a href="dyqanet.html">Dyqanet</a></li>
+            <li><a href="internet-ne-shtepi.html">Pse Abissnet</a></li>
+          <li><a href="ftonjemik.html">Refero Nje Mik</a></li>
+          <li><a href="#">Llogaritë Bankare</a></li>
+          
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Më të Populluara</h3>
+          <ul>
+            <li><a href="tarifat.html">Tarifat</a></li>
+            <li><a href="abonentet.html">Abonohu</a></li>
+           <li><a href="https://pay.abissnet.al/">Paguaj Faturen</a></li>
+           <li><a href="internet&tv.html">Ofertat Internet</a></li>
+           <li><a href="#">Speed Test</a></li>
+           <li><a href="#">Si Të Paguaj</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Shkruaj email-in tuaj" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="footer-social">
+            <a href="https://facebook.com/abissnet" target="_blank" aria-label="Facebook">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://instagram.com/abissnet" target="_blank" aria-label="Instagram">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg>
+            </a>
+            <a href="https://youtube.com/@abissnet" target="_blank" aria-label="YouTube">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 Abissnet. Të gjitha të drejtat e rezervuara.</div>
+    </footer>
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg
+        width="24" height="24" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+
+    <!-- Skripti i përgjithshëm i sajtit (si te index) -->
+    <script src="assets/js/toast.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
