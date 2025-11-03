@@ -14,7 +14,7 @@
 /* ========================================
    CARDS
    ======================================== */
-.card {
+.card-speedtest {
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -426,7 +426,7 @@ a.sr-only:focus {
 }
 
 @media (max-width: 480px) {
-  .card {
+  .card-speedtest {
     padding: 1rem;
   }
 

@@ -14,10 +14,10 @@
 /* ========================================
    CARDS
    ======================================== */
-.card {
+.card-speedtest {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgba(233, 8, 8, 0.08);
   border: 1px solid #e5e7eb;
   padding: 1.5rem;
   display: flex;
@@ -426,7 +426,7 @@ a.sr-only:focus {
 }
 
 @media (max-width: 480px) {
-  .card {
+  .card-speedtest {
     padding: 1rem;
   }
 

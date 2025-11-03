@@ -827,6 +827,30 @@ button {
     background: #fff;
 }
 
+/* ===== Pricing Cards (scoped) ===== */
+.pacards{ max-width: var(--max-width); margin: var(--spacing-3xl) auto; padding: 0 var(--spacing-2xl); }
+.pacards__head{ text-align:center; margin-bottom: var(--spacing-xl); }
+.pacards__title{ font-family: var(--font-primary); font-weight: 900; letter-spacing: -.02em; font-size: var(--font-size-4xl); color: #f68732; margin-bottom: .35rem; }
+.pacards__note{ color: #b8bec8; font-size: .9rem; }
+.pacards__grid{ display:grid; grid-template-columns: repeat(3, minmax(280px,1fr)); gap: var(--spacing-xl); }
+@media (max-width: 1200px){ .pacards__grid{ grid-template-columns: repeat(2, minmax(260px,1fr)); } }
+@media (max-width: 720px){ .pacards__grid{ grid-template-columns: 1fr; } }
+.pacard{ position:relative; background: #161a20; border: 1px solid #2a2f37; border-radius: 18px; box-shadow: 0 10px 24px rgba(0,0,0,.25); overflow:hidden; display:flex; flex-direction:column; }
+.pacard--highlight{ outline: 2px solid var(--color-primary); box-shadow: 0 16px 40px rgba(246,135,50,.22); }
+.pacard__header{ padding: 18px 18px 8px; display:flex; align-items:center; gap:10px; justify-content:space-between; }
+.pacard__plan{ color:#fff; font-family: var(--font-primary); font-weight: 900; font-size: 1.4rem; letter-spacing:-.01em; }
+.pacard__plan span{ font-weight:700; opacity:.7; font-size:.9rem; margin-left:.25rem; }
+.pacard__ribbon{ background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); color:#fff; font-weight:800; font-size:.75rem; padding:6px 10px; border-radius:999px; }
+.pacard__prices{ list-style:none; margin: 6px 0 10px; padding: 0 16px 0 16px; display:flex; flex-direction:column; gap:10px; }
+.pacard__prices li{ display:flex; align-items:center; justify-content:space-between; background:#0f1217; border:1px solid #242a33; border-radius:12px; padding:10px 12px; }
+.pacard__badge{ background:#1b2028; color:#cbd1d9; border:1px solid #2b313b; font-weight:700; font-size:.82rem; padding:6px 10px; border-radius:999px; }
+.pacard__price{ font-weight:900; color:#fff; letter-spacing:.2px; }
+.pacard__foot{ padding: 14px 16px 18px; }
+.pacard__cta{ display:inline-block; color:#e7ebf2; font-weight:800; border:2px solid #e7ebf2; border-radius:14px; padding:10px 14px; transition: all .2s ease; text-decoration:none; }
+.pacard__cta:hover{ transform: translateY(-1px); border-color: var(--color-primary); color:#fff; background: linear-gradient(135deg,var(--color-primary),var(--color-primary-light)); }
+.pacard__cta--solid{ background: linear-gradient(135deg,var(--color-primary),var(--color-primary-light)); color:#fff; border-color: transparent; box-shadow: 0 10px 20px rgba(246,135,50,.22); }
+.pacard__cta--solid:hover{ box-shadow: 0 16px 30px rgba(246,135,50,.3); }
+
 /* ================= FEATURE TILES (shared by internet and internet&tv) ================= */
 .feature-tiles {
   max-width: var(--max-width);
@@ -933,13 +957,15 @@ button {
 /* Face 1 - Top Face (Speed Numbers) */
 .container .card .face.face1 {
     top: 0;
-    background: #444;
+    background: #f68732;
+    display: flex
+;;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
     transform: translateY(100px);
-    border-radius: 10px 10px 0 0;
+    border-radius: 11px 11px 11px 11px;
 }
 
 .container .card:hover .face.face1 {
@@ -950,8 +976,8 @@ button {
 
 /* Face 1 Content */
 .container .card .face.face1 .content {
-    opacity: 0.3;
-    transition: opacity 0.5s ease;
+
+    transition: opacity 0.1s ease;
     text-align: center;
     width: 100%;
 }
@@ -982,7 +1008,7 @@ button {
     box-sizing: border-box;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
     transform: translateY(-100px);
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px 10px 10px 10px;
 }
 
 .container .card:hover .face.face2 {
