@@ -1,0 +1,16 @@
+/* ========================================
+   STYLE.CSS - Master Stylesheet
+   Imports all modular CSS files in correct order
+   ======================================== */
+
+/* 1. Foundation - Variables, reset, base styles */
+@import url("individi/main.css");
+
+/* 2. Components - Reusable UI components */
+@import url("individi/components.css");
+
+/* 3. Page Specific - Homepage styles */
+@import url("individi/puno-nga-shtepia/puno-nga-shtepia.css");
+
+/* 4. Responsive - All media queries */
+@import url("individi/responsive.css");

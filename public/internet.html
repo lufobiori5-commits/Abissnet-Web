@@ -3,181 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
     <title>Abissnet – Internet në Shtëpi (FTTH)</title>
-    <meta name="description" content="Internet FTTH me shpejtësi të lartë, stabilitet dhe të dhëna të pakufizuara. Paketat 500 Mbps deri në 10G, Wi-Fi 6 i përfshirë, instalim falas, suport 24/7." />
-    <link rel="stylesheet" href="assets/css/style-light.css" />
-
-    <!-- Table styles (unchanged logic, brand-aware) -->
-    <style>
-      .pricing-section{max-width:var(--max-width);margin:80px auto;padding:0 var(--spacing-2xl)}
-      .pricing-section .packages-title{margin-bottom:var(--spacing-lg)}
-      .pricing-card{
-        background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
-        padding:3px;border-radius:22px;margin:28px 0;box-shadow:var(--shadow-xl);overflow:hidden
-      }
-      .pricing-card>.inner{background:#fff;border-radius:20px;overflow:hidden}
-      .pricing-title{
-        margin:0;text-align:center;color:#0d0d0d;
-        padding:18px 22px;font-family:var(--font-primary);font-weight:900;letter-spacing:.02em
-      }
-      .pricing-scroll{overflow-x:auto}
-      .pricing-table{width:100%;min-width:920px;border-collapse:separate;border-spacing:0}
-      .pricing-table thead th{
-        background:linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
-        color:#fff;font-weight:800;padding:14px 12px;text-align:center;border-right:1px solid rgba(255,255,255,.25)
-      }
-      .pricing-table thead th:first-child{border-top-left-radius:12px}
-      .pricing-table thead th:last-child{border-right:none;border-top-right-radius:12px}
-      .pricing-table tbody td{
-        background:#fff;padding:18px 16px;text-align:center;border-bottom:1px solid var(--color-gray-200);
-        font-weight:600;color:var(--color-gray-800)
-      }
-      .pricing-table tbody tr:nth-child(even) td{background:#fafafa}
-      .pricing-table tbody tr:last-child td{border-bottom:none}
-      .speed-col{
-        text-align:left;font-weight:900;color:var(--color-gray-900);
-        border-right:2px solid var(--color-primary);
-        background:linear-gradient(90deg, rgba(246,135,50,.06), transparent)
-      }
-      .pricing-note{ text-align:center;color:var(--color-gray-600);font-weight:600;margin-top:14px }
-      @media (max-width:900px){
-        .pricing-section{margin:48px auto}
-        .pricing-title{padding:14px}
-        .pricing-table{min-width:820px}
-      }
-    </style>
-
-    <!-- ==== Plans: 6-up modern cards (fixed height, smooth overlay, overflow-safe) ==== -->
-    <style>
-      .plans-section{
-        max-width: min(1600px, 96vw);
-        margin: var(--spacing-3xl) auto;
-        padding: 0 var(--spacing-2xl);
-      }
-
-      .plans{
-        display:grid;
-        grid-template-columns:repeat(6,1fr); /* 6 per row on wide screens */
-        gap:16px;
-        align-items:stretch;
-      }
-      @media (max-width:1400px){ .plans{ grid-template-columns:repeat(5,1fr) } }
-      @media (max-width:1200px){ .plans{ grid-template-columns:repeat(3,1fr) } }
-      @media (max-width:900px) { .plans{ grid-template-columns:repeat(2,1fr) } }
-      @media (max-width:600px) { .plans{ grid-template-columns:1fr } }
-
-      .plan{
-        position:relative; overflow:hidden; cursor:pointer;
-        background:#fff; border:1px solid var(--color-gray-200);
-        border-radius:20px; padding:12px !important;
-        height:230px; display:flex; flex-direction:column; gap:8px;
-        box-shadow:var(--shadow-md);
-        transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease, z-index .01s;
-        z-index:0;
-      }
-      .plan:hover,
-      .plan.open{ transform:translateY(-4px); box-shadow:var(--shadow-xl); border-color:var(--color-primary); z-index:3 }
-      .plan.best{ border:1.5px solid var(--color-primary); box-shadow:0 16px 48px rgba(246,135,50,.25) }
-
-      .plan-ring{
-        position:absolute; inset:-42% -25% auto auto; height:150px; width:150px; border-radius:50%;
-        background: radial-gradient(closest-side, rgba(246,135,50,.28), transparent 68%);
-        filter: blur(6px); pointer-events:none;
-      }
-
-      .plan-head{ display:flex; justify-content:flex-end }
-      .plan-badge{
-        display:inline-block; font-size:.68rem; font-weight:800; letter-spacing:.03em;
-        padding:.32rem .56rem; border-radius:999px;
-        background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light));
-        color:#fff; box-shadow:0 10px 26px rgba(246,135,50,.22)
-      }
-
-      .plan-body{ display:flex; flex-direction:column; gap:8px; height:100%; }
-      .plan-speed{
-        margin:8px 0 2px; display:flex; flex-direction:column; align-items:flex-start; gap:6px;
-      }
-      .plan-speed .num{
-        font-family:var(--font-primary); font-size:2.35rem; line-height:.9; font-weight:900; color:var(--color-gray-800)
-      }
-      .plan-speed small{font-weight:800; color:var(--color-gray-500); margin-top:2px}
-
-      .plan-foot{ margin-top:auto; display:flex }
-      .plan-choose{
-        background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light));
-        color:#fff; border:0; padding:.52rem .9rem; border-radius:12px; font-weight:900;
-        box-shadow:0 10px 26px rgba(246,135,50,.22); font-size:.92rem;
-      }
-
-      /* Overlay that can scroll if content is long; actions stay visible */
-      .plan-info{
-        position:absolute; inset:8px;
-        background:#fff; border:1px solid var(--color-gray-200); border-radius:16px;
-        box-shadow:var(--shadow-xl);
-        display:grid; grid-template-rows:auto 1fr auto; /* title | scroll | actions */
-        max-height:calc(100% - 16px);
-        padding:12px;
-        opacity:0; transform:translateY(6px); will-change:opacity, transform;
-        transition:opacity .16s ease, transform .16s ease;
-        pointer-events:none; z-index:5; overflow:hidden; min-height:0;
-      }
-      .plan:hover .plan-info,
-      .plan:focus-within .plan-info,
-      .plan.open .plan-info{ opacity:1; transform:none; pointer-events:auto }
-
-      .plan-name{ font-weight:900; margin:0; color:var(--color-gray-900); font-size:1rem }
-      .plan-scroll{ overflow:auto; min-height:0; padding-right:2px }  /* ensures scrolling area */
-      .plan-feats{ margin:6px 0 0; padding-left:18px }
-      .plan-feats li{ margin:2px 0; color:var(--color-gray-700); font-weight:600; font-size:.92rem }
-
-      .plan-info .actions{
-        margin-top:8px; display:flex; gap:8px; align-items:center;
-      }
-      .plan-details{ font-weight:800; color:var(--color-primary); text-decoration:none; white-space:nowrap }
-
-      /* better hover on low-precision devices */
-      @media (hover:none){
-        .plan{ transform:none !important }
-      }
-    </style>
+    <meta
+      name="description"
+      content="Internet FTTH me shpejtësi të lartë, stabilitet dhe të dhëna të pakufizuara. Paketat 500 Mbps deri në 10G, Wi-Fi 6 i përfshirë, instalim falas, suport 24/7."
+    />
+    <link rel="stylesheet" href="assets/css/individed-internet-style.css" />
   </head>
 
   <body>
-    <!-- ===== Header (unchanged) ===== -->
+    <!-- Header -->
     <header class="header" id="siteHeader">
       <div class="header-inner">
         <div class="header-logo">
           <a href="index.html">
-            <img src="/assets/img/abissnet-logo-dark.png" alt="Abissnet" height="40"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
-            <span style="display:none;font-style:italic;font-size:1.5rem;font-weight:700;color:#fff;">abissnet</span>
+            <img
+              src="assets/img/abissnet-logo-dark.png"
+              alt="Abissnet"
+              height="40"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <span
+              style="
+                display: none;
+                font-style: italic;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #fff;
+              "
+              >abissnet</span
+            >
           </a>
         </div>
 
         <nav class="header-nav">
           <div class="nav-dropdown" data-dropdown>
-            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
               Internet <span class="chev">▾</span>
             </button>
             <ul class="dropdown-panel" role="menu">
-              <li><a class="dropdown-item" href="internet.html">Internet</a></li>
+              <li>
+                <a class="dropdown-item" href="internet.html">Internet</a>
+              </li>
               <li class="divider" role="separator"></li>
-              <li><a class="dropdown-item" href="internet&tv.html">Internet & TV</a></li>
+              <li>
+                <a class="dropdown-item" href="internet-tv.html"
+                  >Internet & TV</a
+                >
+              </li>
             </ul>
           </div>
 
           <div class="nav-dropdown" data-dropdown>
-            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
               Abissnet <span class="chev">▾</span>
             </button>
             <ul class="dropdown-panel" role="menu">
-              <li><a class="dropdown-item" href="ftonjemik.html">Fto nje Mik</a></li>
+              <li>
+                <a class="dropdown-item" href="ftonjemik.html">Fto nje Mik</a>
+              </li>
               <li class="divider" role="separator"></li>
-              <li><a class="dropdown-item" href="wififalas.html">WiFi Falas</a></li>
-              <li><a class="dropdown-item" href="studentet.html">Benefite per Studentet</a></li>
+              <li>
+                <a class="dropdown-item" href="wififalas.html">WiFi Falas</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="studentet.html"
+                  >Benefite per Studentet</a
+                >
+              </li>
               <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
-              <li><a class="dropdown-item" href="puno-nga-shtepia.html">Puno nga Shtëpia</a></li>
+              <li>
+                <a class="dropdown-item" href="puno-nga-shtepia.html"
+                  >Puno nga Shtëpia</a
+                >
+              </li>
             </ul>
           </div>
 
@@ -190,41 +104,64 @@
 
         <div class="header-actions">
           <a class="header-btn outline" href="dyqanet.html">Harta Retail</a>
-          <a class="header-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+          <a class="header-btn outline" href="https://pay.abissnet.al/"
+            >Paguaj Tani</a
+          >
           <a class="header-btn primary" href="suport.html">Na Kontakto</a>
         </div>
 
-        <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
-          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+        <button
+          class="hamburger-menu"
+          id="hamburger-btn"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span
+          ><span class="hamburger-line"></span
+          ><span class="hamburger-line"></span>
         </button>
       </div>
 
       <div class="mobile-menu" id="mobile-menu">
-         <nav class="mobile-nav">
+        <nav class="mobile-nav">
           <div class="mobile-dropdown">
             <button class="mobile-dropdown-toggle" data-mobile-dropdown>
-              <a href="index.html" class="mobile-nav-link">Internet</a>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              Internet
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
             <div class="mobile-dropdown-content">
-              <a href="internet-ne-shtepi.html">Internet</a>
-              <a href="internet&tv.html">Internet & TV</a>
+              <a href="internet.html">Internet</a>
+              <a href="internet-tv.html">Internet & TV</a>
             </div>
           </div>
 
           <div class="mobile-dropdown">
             <button class="mobile-dropdown-toggle" data-mobile-dropdown>
               Abissnet
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
             <div class="mobile-dropdown-content">
               <a href="ftonjemik.html">Fto nje Mik</a>
-              <a href="gaming.html">WiFi Falas</a>
-              <a href="puno-nga-shtepia.html">Benefite per Studentet</a>
+              <a href="wififalas.html">WiFi Falas</a>
+              <a href="studentet.html">Benefite per Studentet</a>
               <a href="stream.html">Streaming</a>
               <a href="gaming.html">Gaming</a>
               <a href="puno-nga-shtepia.html">Puno nga Shtëpia</a>
@@ -235,15 +172,18 @@
           <a href="partner.html" class="mobile-nav-link">Partnerët</a>
           <a href="abonentet.html" class="mobile-nav-link">Abonentët</a>
           <a href="karriera.html" class="mobile-nav-link">Karriera</a>
-          <a href="blog.html" class="mobile-nav-link">App</a>
+          <a href="app.html" class="mobile-nav-link">App</a>
 
           <div class="mobile-actions">
-            <a class="mobile-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
-            <a class="mobile-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+            <a class="mobile-btn outline" href="dyqanet.html"
+              >Harta e Mbulimit</a
+            >
+            <a class="mobile-btn outline" href="https://pay.abissnet.al/"
+              >Paguaj Tani</a
+            >
             <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
           </div>
         </nav>
-      
       </div>
     </header>
 
@@ -257,173 +197,412 @@
 
     <!-- ============ MAIN ============ -->
     <main>
-      <!-- HERO -->
+      <!-- HERO with improved layout -->
       <section class="hero-section" id="home">
         <div class="hero-inner">
           <div class="hero-left">
-            <h1 class="hero-title">Internet në Shtëpi </h1>
-            <p class="hero-subtitle">Shpejtësi reale, ping i ulët, të dhëna pa kufi. Nga 500 Mbps deri në 10G.</p>
+            <h1 class="hero-title">Internet në Shtëpi</h1>
+            <p class="hero-subtitle">
+              Shpejtësi reale, ping i ulët, të dhëna pa kufi. Nga 500 Mbps deri
+              në 10G.
+            </p>
             <ul class="hero-benefits">
               <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                >
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
                 <span>Instalim <strong>falas</strong></span>
               </li>
               <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                >
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
                 <span>Router <strong>Wi-Fi 6</strong> i përfshirë</span>
               </li>
               <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                >
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
                 <span>Suport <strong>24/7</strong></span>
               </li>
             </ul>
             <div class="features-cta">
-              <a href="#paketat" class="hero-cta-btn"><span class="cta-arrows">>>></span> Shiko Paketat</a>
+              <a href="#paketat" class="hero-cta-btn"
+                ><span class="cta-arrows">>>></span> Shiko Paketat</a
+              >
             </div>
           </div>
           <div class="hero-right">
-            <img src="/assets/img/hero-home-fiber.png" alt="Fiber FTTH" class="hero-img"
-                 onerror="this.src='/assets/img/robot.png'"/>
+            <img
+              src="/assets/img/hero-home-fiber.png"
+              alt="Fiber FTTH"
+              class="hero-img"
+              onerror="this.src='/assets/img/robot.png'"
+            />
           </div>
         </div>
       </section>
 
-      <!-- OFFER BANNERS -->
+      <!-- OFFER BANNERS with better spacing -->
       <div class="offer-banner-carousel" aria-live="polite">
         <div class="offer-banner active">🎉 Aktivizim FALAS këtë muaj</div>
-        <div class="offer-banner">⚡ Upgrade në shpejtësi më të lartë pa penalitete</div>
-        <div class="offer-banner">🛡️ Garanci stabiliteti & suport i dedikuar</div>
+        <div class="offer-banner">
+          ⚡ Upgrade në shpejtësi më të lartë pa penalitete
+        </div>
+        <div class="offer-banner">
+          🛡️ Garanci stabiliteti & suport i dedikuar
+        </div>
       </div>
-      <br/><br/><br/>
 
-    <!-- Features Section -->
-<!-- PRICING CARDS — scoped -->
-<section class="pacards" id="paketat-cards">
-  <div class="pacards__head">
-    <h2 class="pacards__title">Paketat Internet</h2>
-    <p class="pacards__note">* Çmimet e mësipërme kanë TVSH-në e përfshirë.</p>
-  </div>
-  <div class="pacards__grid">
-    <!-- 300/30 -->
-    <article class="pacard">
-      <header class="pacard__header">
-        <h3 class="pacard__plan">300/30 <span>Mbps</span></h3>
-      </header>
-      <ul class="pacard__prices">
-        <li>
-          <div class="pacard__badge">Parapagim 12M</div>
-          <div class="pacard__price">1,700 Lekë</div>
-        </li>
-        <li>
-          <div class="pacard__badge">Kontratë 12M</div>
-          <div class="pacard__price">1,500 Lekë</div>
-        </li>
-        <li>
-          <div class="pacard__badge">Kontratë 24M</div>
-          <div class="pacard__price">1,500 Lekë</div>
-        </li>
-      </ul>
-      <footer class="pacard__foot">
-        <a href="suport.html#oferta" class="pacard__cta">Merr ofertë</a>
-      </footer>
-    </article>
-    <!-- 500/50 -->
-    <article class="pacard">
-      <header class="pacard__header">
-        <h3 class="pacard__plan">500/50 <span>Mbps</span></h3>
-      </header>
-      <ul class="pacard__prices">
-        <li><div class="pacard__badge">Parapagim 12M</div><div class="pacard__price">2,000 Lekë</div></li>
-        <li><div class="pacard__badge">Kontratë 12M</div><div class="pacard__price">1,800 Lekë</div></li>
-        <li><div class="pacard__badge">Kontratë 24M</div><div class="pacard__price">1,800 Lekë</div></li>
-      </ul>
-      <footer class="pacard__foot"><a href="suport.html#oferta" class="pacard__cta">Merr ofertë</a></footer>
-    </article>
-    <!-- 1000/100 -->
-    <article class="pacard">
-      <header class="pacard__header">
-        <h3 class="pacard__plan">1000/100 <span>Mbps</span></h3>
-      </header>
-      <ul class="pacard__prices">
-        <li><div class="pacard__badge">Parapagim 12M</div><div class="pacard__price">2,500 Lekë</div></li>
-        <li><div class="pacard__badge">Kontratë 12M</div><div class="pacard__price">2,300 Lekë</div></li>
-        <li><div class="pacard__badge">Kontratë 24M</div><div class="pacard__price">2,300 Lekë</div></li>
-      </ul>
-      <footer class="pacard__foot"><a href="suport.html#oferta" class="pacard__cta">Merr ofertë</a></footer>
-    </article>
-    <!-- 1500/150 -->
-    <article class="pacard">
-      <header class="pacard__header">
-        <h3 class="pacard__plan">1500/150 <span>Mbps</span></h3>
-      </header>
-      <ul class="pacard__prices">
-        <li><div class="pacard__badge">Parapagim 12M</div><div class="pacard__price">2,800 Lekë</div></li>
-        <li><div class="pacard__badge">Kontratë 12M</div><div class="pacard__price">2,600 Lekë</div></li>
-        <li><div class="pacard__badge">Kontratë 24M</div><div class="pacard__price">2,600 Lekë</div></li>
-      </ul>
-      <footer class="pacard__foot"><a href="suport.html#oferta" class="pacard__cta">Merr ofertë</a></footer>
-    </article>
-    <!-- 2500/250 -->
-    <article class="pacard">
-      <header class="pacard__header">
-        <h3 class="pacard__plan">2500/250 <span>Mbps</span></h3>
-      </header>
-      <ul class="pacard__prices">
-        <li><div class="pacard__badge">Parapagim 12M</div><div class="pacard__price">3,300 Lekë</div></li>
-        <li><div class="pacard__badge">Kontratë 12M</div><div class="pacard__price">3,200 Lekë</div></li>
-        <li><div class="pacard__badge">Kontratë 24M</div><div class="pacard__price">3,200 Lekë</div></li>
-      </ul>
-      <footer class="pacard__foot"><a href="suport.html#oferta" class="pacard__cta">Merr ofertë</a></footer>
-    </article>
-    <!-- 10G / 1G -->
-    <article class="pacard pacard--highlight">
-      <header class="pacard__header">
-        <h3 class="pacard__plan">10G / 1G <span>Mbps</span></h3>
-        <span class="pacard__ribbon">Rekomanduar</span>
-      </header>
-      <ul class="pacard__prices">
-        <li><div class="pacard__badge">Parapagim 12M</div><div class="pacard__price">8,000 Lekë</div></li>
-        <li><div class="pacard__badge">Kontratë 12M</div><div class="pacard__price">7,000 Lekë</div></li>
-        <li><div class="pacard__badge">Kontratë 24M</div><div class="pacard__price">7,000 Lekë</div></li>
-      </ul>
-      <footer class="pacard__foot"><a href="suport.html#oferta" class="pacard__cta pacard__cta--solid">Merr ofertë</a></footer>
-    </article>
-  </div>
-</section>
+      <!-- NEW: Stats Section for credibility -->
+      <section class="stats-section">
+        <div class="stats-container">
+          <div class="stat-item">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-number">99.9%</div>
+            <div class="stat-label">Uptime</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">👥</div>
+            <div class="stat-number">500K+</div>
+            <div class="stat-label">Klientë</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">🏆</div>
+            <div class="stat-number">#1</div>
+            <div class="stat-label">Në Shqipëri</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">🌐</div>
+            <div class="stat-number">10G</div>
+            <div class="stat-label">Shpejtësi Max</div>
+          </div>
+        </div>
+      </section>
 
-      <!-- Features (kept) -->
+      <!-- PRICING CARDS with improved visual hierarchy -->
+      <section class="pacards" id="paketat-cards">
+        <div class="pacards__head">
+          <h2 class="pacards__title">Zgjidh Paketën Tënde</h2>
+          <p class="pacards__subtitle">
+            Çdo paketë përfshin instalim falas, Wi-Fi 6, dhe suport 24/7
+          </p>
+        </div>
+
+        <div class="pacards__grid">
+          <!-- 300/30 -->
+          <article class="pacard">
+            <header class="pacard__header">
+              <h3 class="pacard__plan">300/30 <span>Mbps</span></h3>
+            </header>
+            <ul class="pacard__prices">
+              <li>
+                <div class="pacard__badge">Parapagim 12M</div>
+                <div class="pacard__price">1,700 Lekë</div>
+              </li>
+              <li>
+                <div class="pacard__badge">Kontratë 12M</div>
+                <div class="pacard__price">1,500 Lekë</div>
+              </li>
+              <li>
+                <div class="pacard__badge">Kontratë 24M</div>
+                <div class="pacard__price">1,500 Lekë</div>
+              </li>
+            </ul>
+            <footer class="pacard__foot">
+              <a href="suport.html#oferta" class="pacard__cta">Merr ofertë</a>
+            </footer>
+          </article>
+
+          <!-- 500/50 -->
+          <article class="pacard">
+            <header class="pacard__header">
+              <h3 class="pacard__plan">500/50 <span>Mbps</span></h3>
+            </header>
+            <ul class="pacard__prices">
+              <li>
+                <div class="pacard__badge">Parapagim 12M</div>
+                <div class="pacard__price">2,000 Lekë</div>
+              </li>
+              <li>
+                <div class="pacard__badge">Kontratë 12M</div>
+                <div class="pacard__price">1,800 Lekë</div>
+              </li>
+              <li>
+                <div class="pacard__badge">Kontratë 24M</div>
+                <div class="pacard__price">1,800 Lekë</div>
+              </li>
+            </ul>
+            <footer class="pacard__foot">
+              <a href="suport.html#oferta" class="pacard__cta">Merr ofertë</a>
+            </footer>
+          </article>
+
+          <!-- 1000/100 - MOST POPULAR -->
+          <article class="pacard pacard--highlight">
+            <header class="pacard__header">
+              <h3 class="pacard__plan">1000/100 <span>Mbps</span></h3>
+              <span class="pacard__ribbon">Më i Populluari</span>
+            </header>
+            <ul class="pacard__prices">
+              <li>
+                <div class="pacard__badge">Parapagim 12M</div>
+                <div class="pacard__price">2,500 Lekë</div>
+              </li>
+              <li>
+                <div class="pacard__badge">Kontratë 12M</div>
+                <div class="pacard__price">2,300 Lekë</div>
+              </li>
+              <li>
+                <div class="pacard__badge">Kontratë 24M</div>
+                <div class="pacard__price">2,300 Lekë</div>
+              </li>
+            </ul>
+            <footer class="pacard__foot">
+              <a
+                href="suport.html#oferta"
+                class="pacard__cta pacard__cta--solid"
+                >Merr ofertë</a
+              >
+            </footer>
+          </article>
+
+          <!-- 1500/150 -->
+          <article class="pacard">
+            <header class="pacard__header">
+              <h3 class="pacard__plan">1500/150 <span>Mbps</span></h3>
+            </header>
+            <ul class="pacard__prices">
+              <li>
+                <div class="pacard__badge">Parapagim 12M</div>
+                <div class="pacard__price">2,800 Lekë</div>
+              </li>
+              <li>
+                <div class="pacard__badge">Kontratë 12M</div>
+                <div class="pacard__price">2,600 Lekë</div>
+              </li>
+              <li>
+                <div class="pacard__badge">Kontratë 24M</div>
+                <div class="pacard__price">2,600 Lekë</div>
+              </li>
+            </ul>
+            <footer class="pacard__foot">
+              <a href="suport.html#oferta" class="pacard__cta">Merr ofertë</a>
+            </footer>
+          </article>
+
+          <!-- 2500/250 -->
+          <article class="pacard">
+            <header class="pacard__header">
+              <h3 class="pacard__plan">2500/250 <span>Mbps</span></h3>
+            </header>
+            <ul class="pacard__prices">
+              <li>
+                <div class="pacard__badge">Parapagim 12M</div>
+                <div class="pacard__price">3,300 Lekë</div>
+              </li>
+              <li>
+                <div class="pacard__badge">Kontratë 12M</div>
+                <div class="pacard__price">3,200 Lekë</div>
+              </li>
+              <li>
+                <div class="pacard__badge">Kontratë 24M</div>
+                <div class="pacard__price">3,200 Lekë</div>
+              </li>
+            </ul>
+            <footer class="pacard__foot">
+              <a href="suport.html#oferta" class="pacard__cta">Merr ofertë</a>
+            </footer>
+          </article>
+
+          <!-- 10G / 1G - PREMIUM -->
+          <article class="pacard pacard--premium">
+            <header class="pacard__header">
+              <h3 class="pacard__plan">10G / 1G <span>Mbps</span></h3>
+              <span class="pacard__ribbon">Premium</span>
+            </header>
+            <ul class="pacard__prices">
+              <li>
+                <div class="pacard__badge">Parapagim 12M</div>
+                <div class="pacard__price">8,000 Lekë</div>
+              </li>
+              <li>
+                <div class="pacard__badge">Kontratë 12M</div>
+                <div class="pacard__price">7,000 Lekë</div>
+              </li>
+              <li>
+                <div class="pacard__badge">Kontratë 24M</div>
+                <div class="pacard__price">7,000 Lekë</div>
+              </li>
+            </ul>
+            <footer class="pacard__foot">
+              <a
+                href="suport.html#oferta"
+                class="pacard__cta pacard__cta--solid"
+                >Merr ofertë</a
+              >
+            </footer>
+          </article>
+        </div>
+
+        <p class="pacards__note">
+          * Çmimet përfshijnë TVSH. Kushtet dhe termat aplikohen.
+        </p>
+      </section>
+
+      <!-- NEW: Comparison Section -->
+      <section class="comparison-section">
+        <div class="comparison-container">
+          <h2 class="comparison-title">Pse të zgjedhësh Abissnet?</h2>
+          <div class="comparison-grid">
+            <div class="comparison-card">
+              <div class="comparison-label our">Abissnet</div>
+              <ul class="comparison-features">
+                <li class="has-feature">✓ Fiber Optike FTTH</li>
+                <li class="has-feature">✓ Shpejtësi të garantuara</li>
+                <li class="has-feature">✓ Wi-Fi 6 i përfshirë</li>
+                <li class="has-feature">✓ Instalim falas</li>
+                <li class="has-feature">✓ Suport 24/7</li>
+                <li class="has-feature">✓ IP Publik falas</li>
+              </ul>
+            </div>
+            <div class="comparison-card">
+              <div class="comparison-label other">Të tjerët</div>
+              <ul class="comparison-features">
+                <li class="no-feature">✗ Kavo ose Wireless</li>
+                <li class="no-feature">✗ "Deri në" shpejtësi</li>
+                <li class="no-feature">✗ Router me pagesë</li>
+                <li class="no-feature">✗ Instalim me kosto</li>
+                <li class="partial-feature">~ Suport i kufizuar</li>
+                <li class="no-feature">✗ IP me kosto shtesë</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features with enhanced design -->
       <section class="feature-tiles">
+        <div class="tiles-header">
+          <h2>Përfitimet e Fiber Optikës</h2>
+          <p>Teknologji e avancuar për eksperiencë superiore</p>
+        </div>
         <div class="tiles">
           <article class="tile">
-            <div class="tile-icon"><img src="/assets/img/feature-shpejte.png" alt="Shpejtësi"/></div>
+            <div class="tile-icon">
+              <img src="/assets/img/feature-shpejte.png" alt="Shpejtësi" />
+            </div>
             <h3>Shpejtësi Reale</h3>
             <p>FTTH i pastër. Gaming, 4K/8K, cloud – pa lag.</p>
           </article>
           <article class="tile">
-            <div class="tile-icon"><img src="/assets/img/feature-fiber.png" alt="Fiber"/></div>
+            <div class="tile-icon">
+              <img src="/assets/img/feature-fiber.png" alt="Fiber" />
+            </div>
             <h3>Fiber Optike</h3>
             <p>Rrjet me peering të mirë dhe stabilitet të lartë.</p>
           </article>
           <article class="tile">
-            <div class="tile-icon"><img src="/assets/img/feature-eksperienca.png" alt="Wi-Fi 6"/></div>
+            <div class="tile-icon">
+              <img src="/assets/img/feature-eksperienca.png" alt="Wi-Fi 6" />
+            </div>
             <h3>Wi-Fi 6 i përfshirë</h3>
             <p>Mbulim i mirë në gjithë shtëpinë, më shumë pajisje.</p>
           </article>
           <article class="tile">
-            <div class="tile-icon"><img src="/assets/img/feature-support.png" alt="Suport"/></div>
+            <div class="tile-icon">
+              <img src="/assets/img/feature-support.png" alt="Suport" />
+            </div>
             <h3>Suport 24/7</h3>
             <p>Agjentë realë, diagnostikim i shpejtë, zgjidhje.</p>
           </article>
         </div>
       </section>
 
-      <!-- LAST CTA -->
-      <div class="features-cta" style="text-align:center">
-        <a href="tel:+35542000000" class="hero-cta-btn"><span class="cta-arrows">>>></span> Telefono Tani</a>
-      </div>
+      <!-- NEW: FAQ Section -->
+      <section class="faq-section">
+        <div class="faq-container">
+          <h2 class="faq-title">Pyetje të Shpeshta</h2>
+          <div class="faq-grid">
+            <details class="faq-item">
+              <summary>Sa kohë zgjat instalimi?</summary>
+              <p>
+                Instalimi kryhet brenda 24-48 orëve nga momenti i kontaktimit.
+                Tekniku do të vijë në adresën tuaj dhe do të kryejë instalimin
+                komplet falas.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>A ka kosto të fshehura?</summary>
+              <p>
+                Jo! Çmimi që shihni përfshin gjithçka: instalim, router Wi-Fi 6,
+                dhe të gjitha taksat. Nuk ka tarifa aktivizimi ose kosto të
+                fshehura.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>A mund të ndryshoj paketën më vonë?</summary>
+              <p>
+                Po, absolutisht! Mund të bëni upgrade ose downgrade të paketës
+                tuaj në çdo kohë pa asnjë penalitet.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Si funksionon garancia e shpejtësisë?</summary>
+              <p>
+                Ne garantojmë shpejtësinë e reklamuar përmes fiber optike. Nëse
+                shpejtësia nuk është si në kontratë, e rregullojmë menjëherë ose
+                kompensojmë.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Enhanced CTA Section -->
+      <section class="final-cta-section">
+        <div class="final-cta-container">
+          <div class="final-cta-content">
+            <h2>Gati për Internet më të Shpejtë?</h2>
+            <p>
+              Bashkohu me 500,000+ klientë të kënaqur që zgjodhën Abissnet për
+              shpejtësi, stabilitet dhe cilësi.
+            </p>
+            <div class="final-cta-buttons">
+              <a href="tel:+35542000000" class="hero-cta-btn"
+                ><span class="cta-arrows">>>></span> Telefono Tani</a
+              >
+              <a href="suport.html" class="hero-cta-btn btn-secondary"
+                >Na Kontakto Online</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-   <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
       <div class="footer-inner">
         <div class="footer-col brand">
@@ -433,7 +612,6 @@
             <li><a href="karriera.html">Karriera</a></li>
             <li><a href="informacioniligjor.html">Informacion Ligjor</a></li>
             <li><a href="blog.html">Blog</a></li>
-            
           </ul>
         </div>
         <div class="footer-col">
@@ -441,10 +619,9 @@
           <ul>
             <li><a href="suport.html">Suport</a></li>
             <li><a href="dyqanet.html">Dyqanet</a></li>
-            <li><a href="internet-ne-shtepi.html">Pse Abissnet</a></li>
-          <li><a href="ftonjemik.html">Refero Nje Mik</a></li>
-          <li><a href="#">Llogaritë Bankare</a></li>
-          
+            <li><a href="internet.html">Pse Abissnet</a></li>
+            <li><a href="ftonjemik.html">Refero Nje Mik</a></li>
+            <li><a href="#">Llogaritë Bankare</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -452,10 +629,10 @@
           <ul>
             <li><a href="tarifat.html">Tarifat</a></li>
             <li><a href="abonentet.html">Abonohu</a></li>
-           <li><a href="https://pay.abissnet.al/">Paguaj Faturen</a></li>
-           <li><a href="internet&tv.html">Ofertat Internet</a></li>
-           <li><a href="#">Speed Test</a></li>
-           <li><a href="#">Si Të Paguaj</a></li>
+            <li><a href="https://pay.abissnet.al/">Paguaj Faturen</a></li>
+            <li><a href="internet-tv.html">Ofertat Internet</a></li>
+            <li><a href="biznesi/speed-test.html">Speed Test</a></li>
+            <li><a href="sitepaguaj.html">Si Të Paguaj</a></li>
           </ul>
         </div>
         <div class="footer-col newsletter-col">
@@ -465,57 +642,76 @@
             <button type="submit">Subscribe</button>
           </form>
           <div class="footer-social">
-            <a href="https://facebook.com/abissnet" target="_blank" aria-label="Facebook">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <a
+              href="https://facebook.com/abissnet"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
             </a>
-            <a href="https://instagram.com/abissnet" target="_blank" aria-label="Instagram">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg>
+            <a
+              href="https://instagram.com/abissnet"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
             </a>
-            <a href="https://youtube.com/@abissnet" target="_blank" aria-label="YouTube">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <a
+              href="https://youtube.com/@abissnet"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
             </a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">© 2025 Abissnet. Të gjitha të drejtat e rezervuara.</div>
+      <div class="footer-bottom">
+        © 2025 Abissnet. Të gjitha të drejtat e rezervuara.
+      </div>
     </footer>
 
-    <!-- WhatsApp + robust hover/touch logic -->
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const whatsappNumber = "+355695588569";
-        const isTouch = window.matchMedia('(hover: none)').matches;
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
 
-        // Desktop: open overlay on hover reliably
-        if (!isTouch) {
-          document.querySelectorAll('.plan').forEach(card => {
-            card.addEventListener('mouseenter', () => card.classList.add('open'));
-            card.addEventListener('mouseleave', () => card.classList.remove('open'));
-          });
-        } else {
-          // Touch: tap to toggle overlay
-          document.querySelectorAll('.plan').forEach(card => {
-            card.addEventListener('click', (e) => {
-              if (e.target.classList.contains('plan-choose') || e.target.closest('.plan-details')) return;
-              card.classList.toggle('open');
-            });
-          });
-        }
-
-        // WhatsApp handler — per kartë
-        document.querySelectorAll('.plan .plan-choose').forEach(btn => {
-          btn.addEventListener('click', (e) => {
-            e.preventDefault(); e.stopPropagation();
-            const card = btn.closest('.plan');
-            const down = card.querySelector('.num.d')?.textContent.trim() || '';
-            const up   = card.querySelector('.num.u')?.textContent.trim() || '';
-            const label = `${down}/${up} Mbps`;
-            const message = encodeURIComponent(`Përshëndetje Abissnet! Jam i interesuar për paketën ${label}.`);
-            window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
-          });
-        });
-      });
-    </script>
+    <script src="assets/js/script.js"></script>
   </body>
-  <script src="assets/js/script.js"></script>
 </html>

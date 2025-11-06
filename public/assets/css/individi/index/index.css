@@ -1,0 +1,453 @@
+/* ========================================
+   INDEX.CSS - Homepage Specific Styles
+   Hero, Packages, Features, Offer Banner
+   ======================================== */
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+.hero-section {
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  padding: var(--spacing-4xl) var(--spacing-2xl) 0 var(--spacing-2xl);
+  position: relative;
+  overflow: visible;
+  margin-top: 0;
+  min-height: 400px;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(246, 135, 50, 0.06),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-3xl);
+  position: relative;
+}
+
+.hero-left {
+  flex: 1;
+  z-index: 2;
+  padding-top: var(--spacing-xl);
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #f68732;
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.2;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-subtitle {
+  color: var(--color-gray-700);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-xl);
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+.hero-speed {
+  font-size: 20rem;
+  font-weight: 900;
+  color: var(--color-primary);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  text-shadow: 0 4px 20px rgba(246, 135, 50, 0.3);
+  animation: fadeInUp 0.8s ease-out 0.4s backwards;
+  font-family: var(--font-primary);
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-img {
+  width: 500px;
+  height: auto;
+  filter: drop-shadow(0 30px 60px rgba(62, 58, 57, 0.15));
+  animation: fadeInRight 1s ease-out 0.3s backwards;
+  position: relative;
+  bottom: 64px;
+}
+
+/* ========================================
+   FEATURES SECTION
+   ======================================== */
+.features-section {
+  background: var(--color-white);
+  padding: var(--spacing-3xl) var(--spacing-2xl) var(--spacing-2xl)
+    var(--spacing-2xl);
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-xl);
+  max-width: var(--max-width);
+  box-shadow: var(--shadow-xl);
+  border-radius: var(--radius-lg);
+}
+
+.feature-title {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-gray-800);
+  font-weight: 700;
+  font-family: var(--font-primary);
+}
+
+.feature-desc {
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+  line-height: 1.65;
+}
+
+/* ========================================
+   FEATURE STRIP (Icon Tiles)
+   ======================================== */
+.feature-strip {
+  max-width: var(--max-width);
+  margin: var(--spacing-xl) auto var(--spacing-2xl);
+  padding: 0 var(--spacing-2xl);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: var(--spacing-xl);
+  justify-items: center;
+}
+
+.fi {
+  width: 120px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-full);
+  background: radial-gradient(
+      120px 120px at 55% 45%,
+      rgba(246, 135, 50, 0.12),
+      rgba(246, 135, 50, 0.04) 60%,
+      rgba(255, 255, 255, 0.8) 61%
+    ),
+    linear-gradient(135deg, rgba(246, 135, 50, 0.08), rgba(255, 255, 255, 0.9));
+  border: 2px solid var(--color-gray-200);
+  box-shadow: 0 8px 24px rgba(62, 58, 57, 0.12);
+  transition: transform var(--transition-base),
+    box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.fi:hover {
+  transform: translateY(-6px) scale(1.04);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-orange-lg);
+}
+
+.fi img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(246, 135, 50, 0.25));
+}
+
+/* ========================================
+   CTA BUTTON SECTION
+   ======================================== */
+.features-cta {
+  padding: 30px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: left;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-cta-btn {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
+  color: var(--color-white);
+  padding: 1rem 2.5rem;
+  margin-top: var(--spacing-lg);
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 15px rgba(246, 135, 50, 0.3);
+  border: none;
+  text-decoration: none;
+}
+
+.hero-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(246, 135, 50, 0.4);
+}
+
+.cta-arrows {
+  font-weight: 900;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+/* ========================================
+   PACKAGES SECTION
+   ======================================== */
+.packages-section {
+  padding: 60px 20px;
+  background: var(--color-white);
+}
+
+.packages-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 50px;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-black);
+}
+
+/* Package Container - FIXED */
+.packages-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px; /* FIXED: Better spacing */
+  flex-wrap: wrap;
+}
+
+/* Package Card Wrapper - FIXED DIMENSIONS */
+.package-card {
+  position: relative;
+  width: 260px; /* FIXED: Narrower for better proportions */
+  height: 340px; /* FIXED: Taller for better ratio */
+  perspective: 1000px;
+  cursor: pointer;
+  flex-shrink: 0; /* FIXED: Prevent shrinking */
+}
+
+/* Badge - FIXED POSITIONING */
+.package-badge {
+  position: absolute;
+  top: -10px; /* FIXED: Less overlap */
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-white);
+  color: var(--color-primary);
+  padding: 6px 16px; /* FIXED: Better padding */
+  border-radius: var(--radius-full);
+  font-size: 0.7rem; /* FIXED: Smaller text */
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* FIXED: Better shadow */
+  z-index: 10;
+  white-space: nowrap; /* FIXED: Prevent wrapping */
+}
+
+.package-card.featured .package-badge {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Package Card Inner (for flip effect) */
+.package-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.package-card:hover .package-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Card Faces - FIXED */
+.package-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px; /* FIXED: Consistent radius */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12); /* FIXED: Better shadow */
+}
+
+/* Front Face - Speed Display - FIXED */
+.package-front {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-light) 100%
+  );
+  color: var(--color-white);
+}
+
+.package-front .package-content {
+  text-align: center;
+  width: 100%;
+  padding: var(--spacing-lg); /* FIXED: Add padding */
+}
+
+/* Speed Display - FIXED */
+.package-speed {
+  font-family: var(--font-primary);
+  font-size: 2.4rem; /* FIXED: Slightly smaller */
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  margin-bottom: 8px; /* FIXED: Add spacing */
+}
+
+.package-speed-small {
+  font-size: 3rem; /* FIXED: For 10G/1G */
+}
+
+.package-unit {
+  display: block;
+  font-size: 1rem; /* FIXED: Slightly smaller */
+  margin-top: 8px;
+  opacity: 0.95;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Back Face - Package Details - FIXED */
+.package-back {
+  background: var(--color-white);
+  transform: rotateY(180deg);
+  border: 2px solid var(--color-gray-200); /* FIXED: Thicker border */
+  padding: var(--spacing-xl); /* FIXED: Better padding */
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.package-back .package-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.package-description {
+  font-size: 0.875rem; /* FIXED: Slightly smaller */
+  color: var(--color-gray-700);
+  line-height: 1.6;
+  text-align: center;
+  margin: auto 0; /* FIXED: Center vertically */
+  padding: 0 8px; /* FIXED: Side padding */
+}
+
+/* CTA Button - FIXED */
+.package-cta {
+  display: block;
+  width: 100%;
+  padding: 12px 20px; /* FIXED: Better padding */
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
+  color: var(--color-white);
+  text-align: center;
+  text-decoration: none;
+  border-radius: 12px; /* FIXED: Less rounded */
+  font-weight: var(--font-weight-bold);
+  font-size: 0.875rem; /* FIXED: Smaller text */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 12px rgba(246, 135, 50, 0.3);
+  border: none;
+  cursor: pointer;
+  margin-top: auto; /* FIXED: Push to bottom */
+}
+
+.package-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(246, 135, 50, 0.4);
+}
+
+.package-cta:active {
+  transform: translateY(0);
+}
+
+/* Premium/Featured Package Variant - FIXED */
+.package-card.featured .package-front {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+/* Hover Effect - FIXED */
+.package-card:hover {
+  transform: translateY(-4px); /* FIXED: Subtle lift */
+  transition: transform 0.3s ease;
+}
+
+/* ========================================
+   OFFER BANNER CAROUSEL
+   ======================================== */
+.offer-banner-carousel {
+  position: relative;
+  margin-top: var(--spacing-3xl);
+  overflow: hidden;
+  height: 100px;
+}
+
+.offer-banner {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
+  color: var(--color-white);
+  text-align: center;
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  padding: var(--spacing-xl) var(--spacing-xl);
+  letter-spacing: 0.5px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.offer-banner.active {
+  opacity: 1;
+  z-index: 1;
+}

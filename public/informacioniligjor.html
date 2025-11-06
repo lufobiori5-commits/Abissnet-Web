@@ -3,124 +3,93 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
     <title>Dokumente Zyrtare – Abissnet</title>
 
-    <!-- CSS kryesor (si te index) -->
-    <link rel="stylesheet" href="assets/css/style-light.css" />
-
-    <!-- Stile të lehta për listën e dokumenteve (përdor variablat ekzistuese) -->
-    <style>
-      .docs-section{
-        max-width: var(--max-width);
-        margin: var(--spacing-3xl) auto;
-        padding: 0 var(--spacing-2xl) var(--spacing-3xl);
-      }
-      .docs-head{ text-align:center; margin: var(--spacing-3xl) 0 var(--spacing-xl); }
-      .docs-title{
-        font-family: var(--font-primary); font-weight: 900; letter-spacing:-.02em;
-        font-size: var(--font-size-4xl);
-        background: linear-gradient(135deg, var(--color-gray-800) 0%, var(--color-primary) 100%);
-        -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-      }
-      .docs-sub{ color: var(--color-gray-600); margin-top:.35rem }
-
-      .docs-controls{
-        display:flex; gap:12px; align-items:center; justify-content:center;
-        margin: var(--spacing-xl) auto var(--spacing-lg); flex-wrap:wrap;
-      }
-      .docs-search{
-        width:min(560px, 100%); padding:.85rem 1rem; border-radius:14px;
-        border:1px solid var(--color-gray-300); background:#fff; color:var(--color-gray-800);
-        box-shadow: var(--shadow-sm);
-      }
-
-      .docs-grid{
-        display:grid; gap:16px;
-        grid-template-columns: repeat(3, 1fr);
-      }
-      @media (max-width:1100px){ .docs-grid{ grid-template-columns: repeat(2, 1fr); } }
-      @media (max-width:680px){  .docs-grid{ grid-template-columns: 1fr; } }
-
-      .doc-card{
-        display:grid; grid-template-columns: 72px 1fr; gap:14px; align-items:center;
-        background:#fff; border:1px solid var(--color-gray-200); border-radius:18px; padding:16px;
-        box-shadow: var(--shadow-md); transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-      }
-      .doc-card:hover{ transform: translateY(-3px); box-shadow: var(--shadow-xl); border-color: var(--color-primary); }
-
-      .doc-ico{
-        width:72px; height:72px; border-radius:16px; display:grid; place-items:center;
-        background: radial-gradient(closest-side, rgba(246,135,50,.15), transparent);
-        border:1px solid rgba(246,135,50,.25);
-      }
-      .doc-ico svg{ width:34px; height:34px; color: var(--color-primary); }
-
-      .doc-body{ display:grid; gap:8px; }
-      .doc-title{ font-weight:800; color:var(--color-gray-800); }
-      .doc-meta{ color:var(--color-gray-600); font-size:.92rem; display:flex; gap:12px; flex-wrap:wrap; }
-      .doc-tags{ display:flex; gap:6px; flex-wrap:wrap; }
-      .tag{
-        display:inline-flex; align-items:center; gap:6px;
-        background:rgba(246,135,50,.08); color:var(--color-gray-800);
-        border:1px solid rgba(246,135,50,.18); padding:.2rem .55rem; border-radius:999px; font-weight:700; font-size:.8rem;
-      }
-
-      .doc-actions{ margin-top:6px; display:flex; gap:10px; flex-wrap:wrap }
-      .btn{
-        display:inline-flex; align-items:center; gap:.5rem; text-decoration:none; font-weight:800; border-radius:12px; padding:.6rem .9rem;
-        transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
-      }
-      .btn.primary{
-        background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
-        color:#fff; box-shadow: var(--shadow-orange);
-      }
-      .btn.primary:hover{ transform: translateY(-2px); box-shadow: var(--shadow-orange-lg); }
-      .btn.ghost{
-        background:#fff; color:var(--color-gray-800); border:1px solid var(--color-gray-300);
-      }
-      .btn.ghost:hover{ border-color: var(--color-primary); color: var(--color-primary); }
-
-      .docs-empty{ display:none; text-align:center; color:var(--color-gray-600); margin-top: var(--spacing-xl); }
-      .docs-empty.show{ display:block; }
-    </style>
+    <!-- Main Stylesheets -->
+    <link rel="stylesheet" href="assets/css/individed-dokumente-style.css" />
   </head>
 
   <body>
-    <!-- Header (si te index) -->
+    <!-- Header -->
     <header class="header" id="siteHeader">
       <div class="header-inner">
         <div class="header-logo">
           <a href="index.html">
-            <img src="assets/img/abissnet-logo-dark.png" alt="Abissnet" height="40"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
-            <span style="display:none;font-style:italic;font-size:1.5rem;font-weight:700;color:#3e3a39;">abissnet</span>
+            <img
+              src="assets/img/abissnet-logo-dark.png"
+              alt="Abissnet"
+              height="40"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <span
+              style="
+                display: none;
+                font-style: italic;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #fff;
+              "
+              >abissnet</span
+            >
           </a>
         </div>
 
         <nav class="header-nav">
           <div class="nav-dropdown" data-dropdown>
-            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
               Internet <span class="chev">▾</span>
             </button>
             <ul class="dropdown-panel" role="menu">
-              <li><a class="dropdown-item" href="internet.html">Internet</a></li>
+              <li>
+                <a class="dropdown-item" href="internet.html">Internet</a>
+              </li>
               <li class="divider" role="separator"></li>
-              <li><a class="dropdown-item" href="internet&tv.html">Internet & TV</a></li>
+              <li>
+                <a class="dropdown-item" href="internet-tv.html"
+                  >Internet & TV</a
+                >
+              </li>
             </ul>
           </div>
 
           <div class="nav-dropdown" data-dropdown>
-            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
               Abissnet <span class="chev">▾</span>
             </button>
             <ul class="dropdown-panel" role="menu">
-              <li><a class="dropdown-item" href="ftonjemik.html">Fto nje Mik</a></li>
+              <li>
+                <a class="dropdown-item" href="ftonjemik.html">Fto nje Mik</a>
+              </li>
               <li class="divider" role="separator"></li>
-              <li><a class="dropdown-item" href="wififalas.html">WiFi Falas</a></li>
-              <li><a class="dropdown-item" href="studentet.html">Benefite për Studentët</a></li>
+              <li>
+                <a class="dropdown-item" href="wififalas.html">WiFi Falas</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="studentet.html"
+                  >Benefite per Studentet</a
+                >
+              </li>
               <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
-              <li><a class="dropdown-item" href="puno-nga-shtepia.html">Puno nga Shtëpia</a></li>
+              <li>
+                <a class="dropdown-item" href="puno-nga-shtepia.html"
+                  >Puno nga Shtëpia</a
+                >
+              </li>
             </ul>
           </div>
 
@@ -133,29 +102,64 @@
 
         <div class="header-actions">
           <a class="header-btn outline" href="dyqanet.html">Harta Retail</a>
-          <a class="header-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+          <a class="header-btn outline" href="https://pay.abissnet.al/"
+            >Paguaj Tani</a
+          >
           <a class="header-btn primary" href="suport.html">Na Kontakto</a>
         </div>
 
-        <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
-          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+        <button
+          class="hamburger-menu"
+          id="hamburger-btn"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span
+          ><span class="hamburger-line"></span
+          ><span class="hamburger-line"></span>
         </button>
       </div>
 
       <div class="mobile-menu" id="mobile-menu">
         <nav class="mobile-nav">
-          <a href="index.html" class="mobile-nav-link">Internet</a>
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Internet
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="internet.html">Internet</a>
+              <a href="internet-tv.html">Internet & TV</a>
+            </div>
+          </div>
+
           <div class="mobile-dropdown">
             <button class="mobile-dropdown-toggle" data-mobile-dropdown>
               Abissnet
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
             <div class="mobile-dropdown-content">
               <a href="ftonjemik.html">Fto nje Mik</a>
-              <a href="gaming.html">WiFi Falas</a>
-              <a href="puno-nga-shtepia.html">Benefite per Studentet</a>
+              <a href="wififalas.html">WiFi Falas</a>
+              <a href="studentet.html">Benefite per Studentet</a>
               <a href="stream.html">Streaming</a>
               <a href="gaming.html">Gaming</a>
               <a href="puno-nga-shtepia.html">Puno nga Shtëpia</a>
@@ -166,11 +170,15 @@
           <a href="partner.html" class="mobile-nav-link">Partnerët</a>
           <a href="abonentet.html" class="mobile-nav-link">Abonentët</a>
           <a href="karriera.html" class="mobile-nav-link">Karriera</a>
-          <a href="blog.html" class="mobile-nav-link">App</a>
+          <a href="app.html" class="mobile-nav-link">App</a>
 
           <div class="mobile-actions">
-            <a class="mobile-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
-            <a class="mobile-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+            <a class="mobile-btn outline" href="dyqanet.html"
+              >Harta e Mbulimit</a
+            >
+            <a class="mobile-btn outline" href="https://pay.abissnet.al/"
+              >Paguaj Tani</a
+            >
             <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
           </div>
         </nav>
@@ -186,40 +194,63 @@
       </div>
     </div>
 
-    <!-- HERO i shkurtër -->
-    <section class="hero-section" style="min-height:auto;padding-bottom:var(--spacing-xl);">
-      <div class="hero-inner" style="align-items:center;">
-        <div class="hero-left" style="padding-top:0;">
-          <h1 class="hero-title" style="margin-bottom:.5rem;">Dokumente Zyrtare</h1>
-          <p class="hero-subtitle" style="margin:0;color:var(--color-gray-700);">
-            Klikoni dokumentat më poshtë për t’i bërë download.
+    <!-- Hero Section -->
+    <section
+      class="hero-section"
+      style="min-height: auto; padding-bottom: var(--spacing-xl)"
+    >
+      <div class="hero-inner" style="align-items: center">
+        <div class="hero-left" style="padding-top: 0">
+          <h1 class="hero-title" style="margin-bottom: 0.5rem">
+            Dokumente Zyrtare
+          </h1>
+          <p
+            class="hero-subtitle"
+            style="margin: 0; color: var(--color-gray-700)"
+          >
+            Klikoni dokumentat më poshtë për t'i bërë download.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Lista e dokumenteve -->
+    <!-- Documents List -->
     <main class="docs-section">
       <header class="docs-head">
-        <h2 class="docs-title">Klikoni dokumentat më poshtë për t’i bërë download</h2>
-        <div class="docs-sub">Termat e shërbimit, politika privatësie, kontrata abonimi, çmimore, etj.</div>
+        <h2 class="docs-title">
+          Klikoni dokumentat më poshtë për t'i bërë download
+        </h2>
+        <div class="docs-sub">
+          Termat e shërbimit, politika privatësie, kontrata abonimi, çmimore,
+          etj.
+        </div>
 
         <div class="docs-controls" role="group" aria-label="Kërko dokument">
-          <input id="docsSearch" class="docs-search" type="search" placeholder="Kërko (p.sh. “privatësia”, “kontratë”, “çmimore”)…" aria-label="Kërko dokument" />
+          <input
+            id="docsSearch"
+            class="docs-search"
+            type="search"
+            placeholder="Kërko (p.sh. 'privatësia', 'kontratë', 'çmimore')…"
+            aria-label="Kërko dokument"
+          />
         </div>
       </header>
 
       <section class="docs-grid" id="docsGrid">
-        <!-- Shembuj; zëvendëso href me path real në /assets/docs/... -->
-        <article class="doc-card" data-text="terma kushte sherbimi terms kushtet">
+        <!-- Document Cards -->
+        <article
+          class="doc-card"
+          data-text="terma kushte sherbimi terms kushtet"
+        >
           <div class="doc-ico" aria-hidden="true">
-            <!-- ikonë PDF -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <path d="M14 2v6h6"/>
-              <path d="M10 13h1.5a1.5 1.5 0 0 1 0 3H10v-3z"/>
-              <path d="M7 16v-3h1.5"/>
-              <path d="M13.5 16v-3H16"/>
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <path d="M14 2v6h6" />
+              <path d="M10 13h1.5a1.5 1.5 0 0 1 0 3H10v-3z" />
+              <path d="M7 16v-3h1.5" />
+              <path d="M13.5 16v-3H16" />
             </svg>
           </div>
           <div class="doc-body">
@@ -234,10 +265,22 @@
               <span class="tag">Shërbime</span>
             </div>
             <div class="doc-actions">
-              <a class="btn primary" href="assets/Informacioni Ligjor/Akep-Treguesi-i-cilesise-te-Internetit-H1-2025.pdf" download="Abissnet_Termat_Kushtet.pdf" type="application/pdf" aria-label="Shkarko Termat dhe Kushtet e Shërbimit (PDF)">
+              <a
+                class="btn primary"
+                href="assets/Informacioni Ligjor/Akep-Treguesi-i-cilesise-te-Internetit-H1-2025.pdf"
+                download="Abissnet_Termat_Kushtet.pdf"
+                type="application/pdf"
+                aria-label="Shkarko Termat dhe Kushtet e Shërbimit (PDF)"
+              >
                 Shkarko
               </a>
-              <a class="btn ghost" href="assets/Informacioni Ligjor/Akep-Treguesi-i-cilesise-te-Internetit-H1-2025.pdf" target="_blank" rel="noopener">Hap</a>
+              <a
+                class="btn ghost"
+                href="assets/Informacioni Ligjor/Akep-Treguesi-i-cilesise-te-Internetit-H1-2025.pdf"
+                target="_blank"
+                rel="noopener"
+                >Hap</a
+              >
             </div>
           </div>
         </article>
@@ -245,40 +288,77 @@
         <article class="doc-card" data-text="politika privatesise privacy">
           <div class="doc-ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <path d="M14 2v6h6"/>
-              <path d="M12 12v6"/>
-              <path d="M9 15h6"/>
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <path d="M14 2v6h6" />
+              <path d="M12 12v6" />
+              <path d="M9 15h6" />
             </svg>
           </div>
           <div class="doc-body">
             <div class="doc-title">Treguesi i cilesise te telefonise</div>
-            <div class="doc-meta"><span>PDF · 980 KB</span><span>·</span><span>Përditësuar: 09/2025</span></div>
+            <div class="doc-meta">
+              <span>PDF · 980 KB</span><span>·</span
+              ><span>Përditësuar: 09/2025</span>
+            </div>
             <div class="doc-tags">
               <span class="tag">Privatësi</span><span class="tag">GDPR</span>
             </div>
             <div class="doc-actions">
-              <a class="btn primary" href="assets/Informacioni Ligjor/Akep-Treguesi-i-cilesise-te-telefonise-H1-2025.pdf" download type="application/pdf">Shkarko</a>
-              <a class="btn ghost" href="assets/Informacioni Ligjor/Akep-Treguesi-i-cilesise-te-telefonise-H1-2025.pdf" target="_blank" rel="noopener">Hap</a>
+              <a
+                class="btn primary"
+                href="assets/Informacioni Ligjor/Akep-Treguesi-i-cilesise-te-telefonise-H1-2025.pdf"
+                download
+                type="application/pdf"
+                >Shkarko</a
+              >
+              <a
+                class="btn ghost"
+                href="assets/Informacioni Ligjor/Akep-Treguesi-i-cilesise-te-telefonise-H1-2025.pdf"
+                target="_blank"
+                rel="noopener"
+                >Hap</a
+              >
             </div>
           </div>
         </article>
 
-        <article class="doc-card" data-text="kontrate abonimi abonent residential rezidencial">
+        <article
+          class="doc-card"
+          data-text="kontrate abonimi abonent residential rezidencial"
+        >
           <div class="doc-ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <path d="M14 2v6h6"/>
-              <path d="M8 13h8M8 17h5M8 9h3"/>
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <path d="M14 2v6h6" />
+              <path d="M8 13h8M8 17h5M8 9h3" />
             </svg>
           </div>
           <div class="doc-body">
             <div class="doc-title">Aneks Kontrate Tip</div>
-            <div class="doc-meta"><span>PDF · 1.8 MB</span><span>·</span><span>Përditësuar: 08/2025</span></div>
+            <div class="doc-meta">
+              <span>PDF · 1.8 MB</span><span>·</span
+              ><span>Përditësuar: 08/2025</span>
+            </div>
             <div class="doc-tags"><span class="tag">Kontrata</span></div>
             <div class="doc-actions">
-              <a class="btn primary" href="assets/Informacioni Ligjor/Aneks-Kontrate-Tip-.pdf" download type="application/pdf">Shkarko</a>
-              <a class="btn ghost" href="assets/Informacioni Ligjor/Aneks-Kontrate-Tip-.pdf" target="_blank" rel="noopener">Hap</a>
+              <a
+                class="btn primary"
+                href="assets/Informacioni Ligjor/Aneks-Kontrate-Tip-.pdf"
+                download
+                type="application/pdf"
+                >Shkarko</a
+              >
+              <a
+                class="btn ghost"
+                href="assets/Informacioni Ligjor/Aneks-Kontrate-Tip-.pdf"
+                target="_blank"
+                rel="noopener"
+                >Hap</a
+              >
             </div>
           </div>
         </article>
@@ -286,18 +366,37 @@
         <article class="doc-card" data-text="cmimore tarifat cmimoret 2025">
           <div class="doc-ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <path d="M14 2v6h6"/>
-              <path d="M8 13h8M8 17h8"/>
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <path d="M14 2v6h6" />
+              <path d="M8 13h8M8 17h8" />
             </svg>
           </div>
           <div class="doc-body">
             <div class="doc-title">Formular ankese per pajtimtarin</div>
-            <div class="doc-meta"><span>PDF · 740 KB</span><span>·</span><span>Përditësuar: 10/2025</span></div>
-            <div class="doc-tags"><span class="tag">Çmime</span><span class="tag">Informim</span></div>
+            <div class="doc-meta">
+              <span>PDF · 740 KB</span><span>·</span
+              ><span>Përditësuar: 10/2025</span>
+            </div>
+            <div class="doc-tags">
+              <span class="tag">Çmime</span><span class="tag">Informim</span>
+            </div>
             <div class="doc-actions">
-              <a class="btn primary" href="assets/Informacioni Ligjor/Formular-ankese-per-pajtimtarin.pdf" download type="application/pdf">Shkarko</a>
-              <a class="btn ghost" href="assets/Informacioni Ligjor/Formular-ankese-per-pajtimtarin.pdf" target="_blank" rel="noopener">Hap</a>
+              <a
+                class="btn primary"
+                href="assets/Informacioni Ligjor/Formular-ankese-per-pajtimtarin.pdf"
+                download
+                type="application/pdf"
+                >Shkarko</a
+              >
+              <a
+                class="btn ghost"
+                href="assets/Informacioni Ligjor/Formular-ankese-per-pajtimtarin.pdf"
+                target="_blank"
+                rel="noopener"
+                >Hap</a
+              >
             </div>
           </div>
         </article>
@@ -305,86 +404,156 @@
         <article class="doc-card" data-text="formulare anulimi sherbimi anulim">
           <div class="doc-ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <path d="M14 2v6h6"/>
-              <path d="M9 15l6-6M15 15l-6-6"/>
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <path d="M14 2v6h6" />
+              <path d="M9 15l6-6M15 15l-6-6" />
             </svg>
           </div>
           <div class="doc-body">
-            <div class="doc-title">Kontrata TIP dhe Udhezuesi per zgjidhjen e ankesave</div>
-            <div class="doc-meta"><span>PDF · 320 KB</span><span>·</span><span>Përditësuar: 07/2025</span></div>
+            <div class="doc-title">
+              Kontrata TIP dhe Udhezuesi per zgjidhjen e ankesave
+            </div>
+            <div class="doc-meta">
+              <span>PDF · 320 KB</span><span>·</span
+              ><span>Përditësuar: 07/2025</span>
+            </div>
             <div class="doc-tags"><span class="tag">Formular</span></div>
             <div class="doc-actions">
-              <a class="btn primary" href="assets/Informacioni Ligjor/Kontrata_TIP_dhe_Udhezuesi_per_zgjidhjen_e_ankesave.pdf" download type="application/pdf">Shkarko</a>
-              <a class="btn ghost" href="assets/Informacioni Ligjor/Kontrata_TIP_dhe_Udhezuesi_per_zgjidhjen_e_ankesave.pdf" target="_blank" rel="noopener">Hap</a>
+              <a
+                class="btn primary"
+                href="assets/Informacioni Ligjor/Kontrata_TIP_dhe_Udhezuesi_per_zgjidhjen_e_ankesave.pdf"
+                download
+                type="application/pdf"
+                >Shkarko</a
+              >
+              <a
+                class="btn ghost"
+                href="assets/Informacioni Ligjor/Kontrata_TIP_dhe_Udhezuesi_per_zgjidhjen_e_ankesave.pdf"
+                target="_blank"
+                rel="noopener"
+                >Hap</a
+              >
             </div>
           </div>
         </article>
-      
-    
-    
-    <article class="doc-card" data-text="formulare anulimi sherbimi anulim">
+
+        <article class="doc-card" data-text="manual moretv perdorim tv">
           <div class="doc-ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <path d="M14 2v6h6"/>
-              <path d="M9 15l6-6M15 15l-6-6"/>
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <path d="M14 2v6h6" />
+              <path d="M9 15l6-6M15 15l-6-6" />
             </svg>
           </div>
           <div class="doc-body">
             <div class="doc-title">Manual perdorimi per MoreTv</div>
-            <div class="doc-meta"><span>PDF · 320 KB</span><span>·</span><span>Përditësuar: 07/2025</span></div>
-            <div class="doc-tags"><span class="tag">Formular</span></div>
+            <div class="doc-meta">
+              <span>PDF · 320 KB</span><span>·</span
+              ><span>Përditësuar: 07/2025</span>
+            </div>
+            <div class="doc-tags"><span class="tag">Manual</span></div>
             <div class="doc-actions">
-              <a class="btn primary" href="assets/Informacioni Ligjor/Manual-perdorimi-per-Moretv.-Prill-2020_pdf.pdf" download type="application/pdf">Shkarko</a>
-              <a class="btn ghost" href="assets/Informacioni Ligjor/Manual-perdorimi-per-Moretv.-Prill-2020_pdf.pdf" target="_blank" rel="noopener">Hap</a>
+              <a
+                class="btn primary"
+                href="assets/Informacioni Ligjor/Manual-perdorimi-per-Moretv.-Prill-2020_pdf.pdf"
+                download
+                type="application/pdf"
+                >Shkarko</a
+              >
+              <a
+                class="btn ghost"
+                href="assets/Informacioni Ligjor/Manual-perdorimi-per-Moretv.-Prill-2020_pdf.pdf"
+                target="_blank"
+                rel="noopener"
+                >Hap</a
+              >
             </div>
           </div>
         </article>
-    
-    <article class="doc-card" data-text="formulare anulimi sherbimi anulim">
+
+        <article class="doc-card" data-text="portabiliteti numrit telefon">
           <div class="doc-ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <path d="M14 2v6h6"/>
-              <path d="M9 15l6-6M15 15l-6-6"/>
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <path d="M14 2v6h6" />
+              <path d="M9 15l6-6M15 15l-6-6" />
             </svg>
           </div>
           <div class="doc-body">
-            <div class="doc-title">/Portabiliteti i numrit</div>
-            <div class="doc-meta"><span>PDF · 320 KB</span><span>·</span><span>Përditësuar: 07/2025</span></div>
-            <div class="doc-tags"><span class="tag">Formular</span></div>
+            <div class="doc-title">Portabiliteti i numrit</div>
+            <div class="doc-meta">
+              <span>PDF · 320 KB</span><span>·</span
+              ><span>Përditësuar: 07/2025</span>
+            </div>
+            <div class="doc-tags"><span class="tag">Telefoni</span></div>
             <div class="doc-actions">
-              <a class="btn primary" href="assets/Informacioni Ligjor/Portabiliteti-i-numrit.-Prill-2020_pdf.pdf" download type="application/pdf">Shkarko</a>
-              <a class="btn ghost" href="assets/Informacioni Ligjor/Portabiliteti-i-numrit.-Prill-2020_pdf.pdf" target="_blank" rel="noopener">Hap</a>
+              <a
+                class="btn primary"
+                href="assets/Informacioni Ligjor/Portabiliteti-i-numrit.-Prill-2020_pdf.pdf"
+                download
+                type="application/pdf"
+                >Shkarko</a
+              >
+              <a
+                class="btn ghost"
+                href="assets/Informacioni Ligjor/Portabiliteti-i-numrit.-Prill-2020_pdf.pdf"
+                target="_blank"
+                rel="noopener"
+                >Hap</a
+              >
             </div>
           </div>
         </article>
-    
-    <article class="doc-card" data-text="formulare anulimi sherbimi anulim">
+
+        <article class="doc-card" data-text="procedura zgjidhje ankesa">
           <div class="doc-ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <path d="M14 2v6h6"/>
-              <path d="M9 15l6-6M15 15l-6-6"/>
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <path d="M14 2v6h6" />
+              <path d="M9 15l6-6M15 15l-6-6" />
             </svg>
           </div>
           <div class="doc-body">
             <div class="doc-title">Procedura per zgjidhjen e ankesave</div>
-            <div class="doc-meta"><span>PDF · 320 KB</span><span>·</span><span>Përditësuar: 07/2025</span></div>
-            <div class="doc-tags"><span class="tag">Formular</span></div>
+            <div class="doc-meta">
+              <span>PDF · 320 KB</span><span>·</span
+              ><span>Përditësuar: 07/2025</span>
+            </div>
+            <div class="doc-tags"><span class="tag">Procedura</span></div>
             <div class="doc-actions">
-              <a class="btn primary" href="assets/Informacioni Ligjor/Procedura-per-zgjidhjen-e-ankesave.-Prill-2020_pdf.pdf" download type="application/pdf">Shkarko</a>
-              <a class="btn ghost" href="assets/Informacioni Ligjor/Procedura-per-zgjidhjen-e-ankesave.-Prill-2020_pdf.pdf" target="_blank" rel="noopener">Hap</a>
+              <a
+                class="btn primary"
+                href="assets/Informacioni Ligjor/Procedura-per-zgjidhjen-e-ankesave.-Prill-2020_pdf.pdf"
+                download
+                type="application/pdf"
+                >Shkarko</a
+              >
+              <a
+                class="btn ghost"
+                href="assets/Informacioni Ligjor/Procedura-per-zgjidhjen-e-ankesave.-Prill-2020_pdf.pdf"
+                target="_blank"
+                rel="noopener"
+                >Hap</a
+              >
             </div>
           </div>
         </article>
-        </section>
+      </section>
 
-      <p id="docsEmpty" class="docs-empty">Nuk u gjet asnjë dokument që përputhet me kërkimin.</p>
+      <p id="docsEmpty" class="docs-empty">
+        Nuk u gjet asnjë dokument që përputhet me kërkimin.
+      </p>
     </main>
 
-  <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
       <div class="footer-inner">
         <div class="footer-col brand">
@@ -394,7 +563,6 @@
             <li><a href="karriera.html">Karriera</a></li>
             <li><a href="informacioniligjor.html">Informacion Ligjor</a></li>
             <li><a href="blog.html">Blog</a></li>
-            
           </ul>
         </div>
         <div class="footer-col">
@@ -402,10 +570,9 @@
           <ul>
             <li><a href="suport.html">Suport</a></li>
             <li><a href="dyqanet.html">Dyqanet</a></li>
-            <li><a href="internet-ne-shtepi.html">Pse Abissnet</a></li>
-          <li><a href="ftonjemik.html">Refero Nje Mik</a></li>
-          <li><a href="#">Llogaritë Bankare</a></li>
-          
+            <li><a href="internet.html">Pse Abissnet</a></li>
+            <li><a href="ftonjemik.html">Refero Nje Mik</a></li>
+            <li><a href="#">Llogaritë Bankare</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -413,10 +580,10 @@
           <ul>
             <li><a href="tarifat.html">Tarifat</a></li>
             <li><a href="abonentet.html">Abonohu</a></li>
-           <li><a href="https://pay.abissnet.al/">Paguaj Faturen</a></li>
-           <li><a href="internet&tv.html">Ofertat Internet</a></li>
-           <li><a href="#">Speed Test</a></li>
-           <li><a href="#">Si Të Paguaj</a></li>
+            <li><a href="https://pay.abissnet.al/">Paguaj Faturen</a></li>
+            <li><a href="internet-tv.html">Ofertat Internet</a></li>
+            <li><a href="biznesi/speed-test.html">Speed Test</a></li>
+            <li><a href="sitepaguaj.html">Si Të Paguaj</a></li>
           </ul>
         </div>
         <div class="footer-col newsletter-col">
@@ -426,53 +593,104 @@
             <button type="submit">Subscribe</button>
           </form>
           <div class="footer-social">
-            <a href="https://facebook.com/abissnet" target="_blank" aria-label="Facebook">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <a
+              href="https://facebook.com/abissnet"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
             </a>
-            <a href="https://instagram.com/abissnet" target="_blank" aria-label="Instagram">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg>
+            <a
+              href="https://instagram.com/abissnet"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
             </a>
-            <a href="https://youtube.com/@abissnet" target="_blank" aria-label="YouTube">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <a
+              href="https://youtube.com/@abissnet"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
             </a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">© 2025 Abissnet. Të gjitha të drejtat e rezervuara.</div>
+      <div class="footer-bottom">
+        © 2025 Abissnet. Të gjitha të drejtat e rezervuara.
+      </div>
     </footer>
 
     <!-- Back to Top -->
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
         <path d="M12 19V5M5 12l7-7 7 7" />
       </svg>
     </button>
 
-    <!-- JS: kërkimi në listë -->
+    <!-- Search Functionality -->
     <script>
-      (function(){
-        const q = document.getElementById('docsSearch');
-        const grid = document.getElementById('docsGrid');
-        const cards = [...grid.querySelectorAll('.doc-card')];
-        const empty = document.getElementById('docsEmpty');
+      (function () {
+        const q = document.getElementById("docsSearch");
+        const grid = document.getElementById("docsGrid");
+        const cards = [...grid.querySelectorAll(".doc-card")];
+        const empty = document.getElementById("docsEmpty");
 
-        function filter(){
-          const term = (q.value || '').trim().toLowerCase();
+        function filter() {
+          const term = (q.value || "").trim().toLowerCase();
           let shown = 0;
-          cards.forEach(c=>{
-            const text = (c.dataset.text || '').toLowerCase() + ' ' + c.innerText.toLowerCase();
+          cards.forEach((c) => {
+            const text =
+              (c.dataset.text || "").toLowerCase() +
+              " " +
+              c.innerText.toLowerCase();
             const hit = !term || text.includes(term);
-            c.style.display = hit ? '' : 'none';
-            if(hit) shown++;
+            c.style.display = hit ? "" : "none";
+            if (hit) shown++;
           });
-          empty.classList.toggle('show', shown === 0);
+          empty.classList.toggle("show", shown === 0);
         }
-        q.addEventListener('input', filter);
+        q.addEventListener("input", filter);
         filter();
       })();
     </script>
 
-    <!-- Skripti yt i përgjithshëm (nëse ke) -->
+    <!-- Main Script -->
     <script src="assets/js/script.js"></script>
   </body>
 </html>

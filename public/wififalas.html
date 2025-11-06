@@ -1,106 +1,116 @@
 <!DOCTYPE html>
 <html lang="sq">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="assets/img/abissnet-logo-dark.png" type="image/x-icon" />
-  <title>Abissnet – WiFi Falas</title>
-  <link rel="stylesheet" href="assets/css/style-light.css" />
-  <style>
-    /* Shtesa të vogla vetëm për këtë faqe (respektojnë paletën ekzistuese) */
-    .wifi-hero .hero-img { max-width: 520px; bottom: 0 }
-    .pill.active-wifi { background: var(--color-primary); color: #fff; border-color: var(--color-primary) }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    .steps3{
-      max-width: var(--max-width);
-      margin: var(--spacing-3xl) auto;
-      padding: 0 var(--spacing-2xl);
-      display:grid;grid-template-columns:repeat(3,1fr);
-      gap: var(--spacing-xl);
-    }
-    .step-card{
-      background:#fff;border:1px solid var(--color-gray-200);
-      border-radius:var(--radius-lg);padding:var(--spacing-2xl);
-      box-shadow:var(--shadow-md);transition:transform .2s ease
-    }
-    .step-card:hover{ transform: translateY(-6px); box-shadow: var(--shadow-xl); border-color: var(--color-primary) }
-    .step-num{
-      width:42px;height:42px;border-radius:999px;display:grid;place-items:center;
-      background:linear-gradient(135deg,var(--color-primary),var(--color-primary-light));
-      color:#fff;font-weight:900;margin-bottom:var(--spacing-md)
-    }
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
 
-    .hotspots{
-      max-width: var(--max-width);
-      margin: var(--spacing-3xl) auto;
-      padding: 0 var(--spacing-2xl);
-    }
-    .hs-grid{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap: var(--spacing-xl);
-    }
-    .hs-card{
-      background:#fff;border:1px solid var(--color-gray-200);border-radius:var(--radius-lg);
-      padding:var(--spacing-xl);box-shadow:var(--shadow-sm);
-      display:flex;flex-direction:column;gap:.5rem
-    }
-    .hs-title{font-weight:800;color:var(--color-gray-800)}
-    .hs-meta{color:var(--color-gray-600);font-size:.95rem}
-    .hs-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.5rem}
-    .chip{
-      padding:.5rem .9rem;border-radius:999px;border:1px solid var(--color-gray-300);
-      background:#fff;font-weight:700;font-size:.9rem;cursor:pointer
-    }
-    .chip:hover{ border-color: var(--color-primary); box-shadow: var(--shadow-md) }
+    <!-- SEO Meta Tags -->
+    <title>WiFi Falas - Abissnet | Internet Falas në Hapësira Publike</title>
+    <meta
+      name="description"
+      content="WiFi Falas nga Abissnet në sheshe, parqe dhe lokale publike. Lidhje e shpejtë dhe e sigurt pa kosto në mbi 6 pika në Tiranë. Gjen hotspot-in më të afërt!"
+    />
+    <meta
+      name="keywords"
+      content="wifi falas, internet falas, abissnet wifi, hotspot falas tirane, wifi publik shqiperi"
+    />
 
-    .legal{
-      max-width: var(--max-width);
-      margin: var(--spacing-3xl) auto;
-      padding: var(--spacing-2xl);
-      background:#fff;border:1px solid var(--color-gray-200);
-      border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)
-    }
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="WiFi Falas - Abissnet" />
+    <meta
+      property="og:description"
+      content="Internet falas në hapësira publike në gjithë Shqipërinë"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/wifi-free.png" />
 
-    @media (max-width: 900px){
-      .steps3{ grid-template-columns:1fr }
-    }
-  </style>
-</head>
-<body>
- <!-- Header -->
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/individed-wififalas-style.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
     <header class="header" id="siteHeader">
       <div class="header-inner">
         <div class="header-logo">
           <a href="index.html">
-            <img src="/assets/img/abissnet-logo-dark.png" alt="Abissnet" height="40"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
-            <span style="display:none;font-style:italic;font-size:1.5rem;font-weight:700;color:#fff;">abissnet</span>
+            <img
+              src="assets/img/abissnet-logo-dark.png"
+              alt="Abissnet"
+              height="40"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <span
+              style="
+                display: none;
+                font-style: italic;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #fff;
+              "
+              >abissnet</span
+            >
           </a>
         </div>
 
         <nav class="header-nav">
           <div class="nav-dropdown" data-dropdown>
-            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
               Internet <span class="chev">▾</span>
             </button>
             <ul class="dropdown-panel" role="menu">
-              <li><a class="dropdown-item" href="internet.html">Internet</a></li>
+              <li>
+                <a class="dropdown-item" href="internet.html">Internet</a>
+              </li>
               <li class="divider" role="separator"></li>
-              <li><a class="dropdown-item" href="internet&tv.html">Internet & TV</a></li>
+              <li>
+                <a class="dropdown-item" href="internet-tv.html"
+                  >Internet & TV</a
+                >
+              </li>
             </ul>
           </div>
 
           <div class="nav-dropdown" data-dropdown>
-            <button class="nav-trigger" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
               Abissnet <span class="chev">▾</span>
             </button>
             <ul class="dropdown-panel" role="menu">
-              <li><a class="dropdown-item" href="ftonjemik.html">Fto nje Mik</a></li>
+              <li>
+                <a class="dropdown-item" href="ftonjemik.html">Fto nje Mik</a>
+              </li>
               <li class="divider" role="separator"></li>
-              <li><a class="dropdown-item" href="wififalas.html">WiFi Falas</a></li>
-              <li><a class="dropdown-item" href="studentet.html">Benefite per Studentet</a></li>
+              <li>
+                <a class="dropdown-item" href="wififalas.html">WiFi Falas</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="studentet.html"
+                  >Benefite per Studentet</a
+                >
+              </li>
               <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
-              <li><a class="dropdown-item" href="puno-nga-shtepia.html">Puno nga Shtëpia</a></li>
+              <li>
+                <a class="dropdown-item" href="puno-nga-shtepia.html"
+                  >Puno nga Shtëpia</a
+                >
+              </li>
             </ul>
           </div>
 
@@ -113,12 +123,21 @@
 
         <div class="header-actions">
           <a class="header-btn outline" href="dyqanet.html">Harta Retail</a>
-          <a class="header-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+          <a class="header-btn outline" href="https://pay.abissnet.al/"
+            >Paguaj Tani</a
+          >
           <a class="header-btn primary" href="suport.html">Na Kontakto</a>
         </div>
 
-        <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
-          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+        <button
+          class="hamburger-menu"
+          id="hamburger-btn"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span
+          ><span class="hamburger-line"></span
+          ><span class="hamburger-line"></span>
         </button>
       </div>
 
@@ -126,28 +145,42 @@
         <nav class="mobile-nav">
           <div class="mobile-dropdown">
             <button class="mobile-dropdown-toggle" data-mobile-dropdown>
-              <a href="index.html" class="mobile-nav-link">Internet</a>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              Internet
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
             <div class="mobile-dropdown-content">
-              <a href="internet-ne-shtepi.html">Internet</a>
-              <a href="abissnet.html">Internet & TV</a>
+              <a href="internet.html">Internet</a>
+              <a href="internet-tv.html">Internet & TV</a>
             </div>
           </div>
 
           <div class="mobile-dropdown">
             <button class="mobile-dropdown-toggle" data-mobile-dropdown>
               Abissnet
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
             <div class="mobile-dropdown-content">
               <a href="ftonjemik.html">Fto nje Mik</a>
-              <a href="gaming.html">WiFi Falas</a>
-              <a href="puno-nga-shtepia.html">Benefite per Studentet</a>
+              <a href="wififalas.html">WiFi Falas</a>
+              <a href="studentet.html">Benefite per Studentet</a>
               <a href="stream.html">Streaming</a>
               <a href="gaming.html">Gaming</a>
               <a href="puno-nga-shtepia.html">Puno nga Shtëpia</a>
@@ -158,193 +191,615 @@
           <a href="partner.html" class="mobile-nav-link">Partnerët</a>
           <a href="abonentet.html" class="mobile-nav-link">Abonentët</a>
           <a href="karriera.html" class="mobile-nav-link">Karriera</a>
-          <a href="blog.html" class="mobile-nav-link">App</a>
+          <a href="app.html" class="mobile-nav-link">App</a>
 
           <div class="mobile-actions">
-            <a class="mobile-btn outline" href="dyqanet.html">Harta e Mbulimit</a>
-            <a class="mobile-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+            <a class="mobile-btn outline" href="dyqanet.html"
+              >Harta e Mbulimit</a
+            >
+            <a class="mobile-btn outline" href="https://pay.abissnet.al/"
+              >Paguaj Tani</a
+            >
             <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
           </div>
         </nav>
       </div>
     </header>
-  <!-- Sub Navigation -->
-  <div class="subnav" role="navigation" aria-label="Shërbime">
-    <div class="subnav-inner">
-      <a href="index.html" class="pill">Individ</a>
-      <a href="biznesi/index.html" class="pill">Biznes</a>
-      <span class="pill active-wifi">WiFi Falas</span>
-    </div>
-  </div>
 
-  <!-- HERO -->
-  <section class="hero-section wifi-hero">
-    <div class="hero-inner">
-      <div class="hero-left">
-        <h1 class="hero-title">WiFi Falas nga Abissnet</h1>
-        <p class="hero-subtitle">Lidhje e shpejtë dhe e sigurt në sheshe, parqe, lokale & ambiente publike.</p>
-        <ul class="hero-benefits">
+    <!-- Sub Navigation -->
+    <div class="subnav" role="navigation" aria-label="Kategoritë e shërbimeve">
+      <div class="subnav-inner">
+        <a href="index.html" class="pill">Individ</a>
+        <a href="biznesi/index.html" class="pill">Biznes</a>
+      </div>
+    </div>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main id="main-content">
+      <!-- HERO SECTION -->
+      <section class="hero-section wifi-hero">
+        <div class="hero-inner">
+          <div class="hero-left">
+            <h1 class="hero-title">WiFi Falas nga Abissnet</h1>
+            <p class="hero-subtitle">
+              Lidhje e shpejtë dhe e sigurt në sheshe, parqe, lokale dhe
+              ambiente publike në gjithë Shqipërinë.
+            </p>
+            <ul class="hero-benefits">
+              <li>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  aria-hidden="true"
+                >
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span
+                  ><strong>Pa kosto</strong> – sponsorizuar nga Abissnet</span
+                >
+              </li>
+              <li>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  aria-hidden="true"
+                >
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span
+                  ><strong>Verifikim i shpejtë</strong> me SMS ose portal</span
+                >
+              </li>
+              <li>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  aria-hidden="true"
+                >
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>Fair-Use</strong> dhe filtrime sigurie bazë</span>
+              </li>
+            </ul>
+          </div>
+          <div class="hero-right">
+            <img
+              src="assets/img/wifi-free.png"
+              alt="Person duke përdorur WiFi Falas në një hapësirë publike"
+              class="hero-img"
+              loading="eager"
+              width="520"
+              height="400"
+              onerror="this.src='assets/img/robot.png'"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW TO CONNECT SECTION -->
+      <section class="steps3" aria-labelledby="steps-title">
+        <h2 id="steps-title" class="sr-only">Si të lidhesh me WiFi Falas</h2>
+
+        <article class="step-card">
+          <div class="step-num" aria-hidden="true">1</div>
+          <h4>Gjej Hotspot-in</h4>
+          <p class="muted-sm">
+            Afër shesheve, parqeve, lokaleve partnere ose pikave Abissnet. Kërko
+            SSID: <strong>ABISSNET_FREE</strong> ose
+            <strong>ABISSNET_WIFI</strong>.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-num" aria-hidden="true">2</div>
+          <h4>Lidhu & Hap Portalin</h4>
+          <p class="muted-sm">
+            Pas lidhjes, portali hapet automatikisht. Nëse jo, hap një faqe
+            (p.sh. google.com) që të shfaqet ekrani i login-it.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-num" aria-hidden="true">3</div>
+          <h4>Verifiko & Shijo</h4>
+          <p class="muted-sm">
+            Verifikim i thjeshtë (SMS ose klik). Seanca zgjat tipikisht 60
+            minuta – mund ta rinovosh me 1 klik sa herë të duash.
+          </p>
+        </article>
+      </section>
+
+      <!-- BENEFITS SECTION -->
+      <section
+        class="features-section features-section--compact"
+        aria-labelledby="benefits-title"
+      >
+        <h2 id="benefits-title" class="sr-only">Përfitimet e WiFi Falas</h2>
+
+        <article class="feature-card visible">
+          <div class="feature-icon" aria-hidden="true">
+            <img
+              src="assets/img/feature-shpejte.png"
+              alt=""
+              width="45"
+              height="45"
+            />
+          </div>
+          <h3 class="feature-title">Shpejtësi Praktike</h3>
+          <p class="feature-desc">
+            Mjafton për rrjete sociale, email, navigim dhe video me cilësi
+            standarde. Prioritet ka trafiku kritik.
+          </p>
+        </article>
+
+        <article class="feature-card visible">
+          <div class="feature-icon" aria-hidden="true">
+            <img
+              src="assets/img/feature-support.png"
+              alt=""
+              width="45"
+              height="45"
+            />
+          </div>
+          <h3 class="feature-title">Siguri Bazë</h3>
+          <p class="feature-desc">
+            Filtrim i faqeve të dëmshme, izolim klientësh (AP isolation) dhe
+            HTTPS i detyruar ku aplikohet.
+          </p>
+        </article>
+
+        <article class="feature-card visible">
+          <div class="feature-icon" aria-hidden="true">
+            <img
+              src="assets/img/feature-fiber.png"
+              alt=""
+              width="45"
+              height="45"
+            />
+          </div>
+          <h3 class="feature-title">Mbulim në Rritje</h3>
+          <p class="feature-desc">
+            Çdo muaj shtojmë pika të reja. Shiko listën më poshtë dhe sugjero
+            një lokacion të ri.
+          </p>
+        </article>
+
+        <article class="feature-card visible">
+          <div class="feature-icon" aria-hidden="true">
+            <img
+              src="assets/img/feature-eksperienca.png"
+              alt=""
+              width="45"
+              height="45"
+            />
+          </div>
+          <h3 class="feature-title">Partnerë Lokalë</h3>
+          <p class="feature-desc">
+            Biznese që ofrojnë WiFi Falas për klientët e tyre – me backhaul në
+            rrjetin tonë fiber optik.
+          </p>
+        </article>
+      </section>
+
+      <!-- HOTSPOTS LIST SECTION -->
+      <section class="hotspots" aria-labelledby="hotspots-title">
+        <h2 id="hotspots-title" class="packages-title">
+          Pikat Aktuale të WiFi Falas
+        </h2>
+
+        <div class="hs-grid">
+          <article class="hs-card">
+            <h3 class="hs-title">Sheshi Skënderbej</h3>
+            <div class="hs-meta">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Qendër, Tiranë
+            </div>
+            <div class="hs-meta">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              24/7
+            </div>
+            <div class="hs-actions">
+              <a
+                class="chip"
+                href="https://maps.google.com/?q=Sheshi+Skenderbej,Tirane"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Shiko në hartë: Sheshi Skënderbej"
+              >
+                📍 Hape në Map
+              </a>
+              <span class="chip" role="status">SSID: ABISSNET_FREE</span>
+            </div>
+          </article>
+
+          <article class="hs-card">
+            <h3 class="hs-title">Parku i Liqenit</h3>
+            <div class="hs-meta">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Tiranë
+            </div>
+            <div class="hs-meta">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              07:00–23:00
+            </div>
+            <div class="hs-actions">
+              <a
+                class="chip"
+                href="https://maps.google.com/?q=Parku+i+Liqenit+Tirane"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Shiko në hartë: Parku i Liqenit"
+              >
+                📍 Hape në Map
+              </a>
+              <span class="chip" role="status">SSID: ABISSNET_WIFI</span>
+            </div>
+          </article>
+
+          <article class="hs-card">
+            <h3 class="hs-title">Pedonalja "Myslym Shyri"</h3>
+            <div class="hs-meta">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Tiranë
+            </div>
+            <div class="hs-meta">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              08:00–22:00
+            </div>
+            <div class="hs-actions">
+              <a
+                class="chip"
+                href="https://maps.google.com/?q=Myslym+Shyri,Tirane"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Shiko në hartë: Pedonalja Myslym Shyri"
+              >
+                📍 Hape në Map
+              </a>
+              <span class="chip" role="status">SSID: ABISSNET_FREE</span>
+            </div>
+          </article>
+
+          <article class="hs-card">
+            <h3 class="hs-title">Universiteti Politeknik</h3>
+            <div class="hs-meta">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Kampus, Tiranë
+            </div>
+            <div class="hs-meta">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              07:30–22:00
+            </div>
+            <div class="hs-actions">
+              <a
+                class="chip"
+                href="https://maps.google.com/?q=Universiteti+Politeknik+Tirane"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Shiko në hartă: Universiteti Politeknik"
+              >
+                📍 Hape në Map
+              </a>
+              <span class="chip" role="status">SSID: ABISSNET_WIFI</span>
+            </div>
+          </article>
+
+          <article class="hs-card">
+            <h3 class="hs-title">Blloku (Bar/Restorante Partnere)</h3>
+            <div class="hs-meta">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Blloku, Tiranë
+            </div>
+            <div class="hs-meta">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              Orari i lokaleve
+            </div>
+            <div class="hs-actions">
+              <a
+                class="chip"
+                href="https://maps.google.com/?q=Blloku,Tirane"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Shiko në hartë: Blloku"
+              >
+                📍 Hape në Map
+              </a>
+              <span class="chip" role="status">SSID: ABISSNET_FREE</span>
+            </div>
+          </article>
+
+          <article class="hs-card">
+            <h3 class="hs-title">Terminali i Autobusëve</h3>
+            <div class="hs-meta">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Tiranë
+            </div>
+            <div class="hs-meta">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              05:30–23:30
+            </div>
+            <div class="hs-actions">
+              <a
+                class="chip"
+                href="https://maps.google.com/?q=Terminali+Autobuseve+Tirane"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Shiko në hartë: Terminali i Autobusëve"
+              >
+                📍 Hape në Map
+              </a>
+              <span class="chip" role="status">SSID: ABISSNET_WIFI</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="features-cta features-cta--center">
+          <a
+            href="mailto:partner@abissnet.al?subject=Sugjerim%20Hotspot%20WiFi%20Falas"
+            class="hero-cta-btn"
+            aria-label="Dërgo email për të sugjeruar një lokacion të ri"
+          >
+            ➕ Sugjero një Lokacion
+          </a>
+          <a href="suport.html" class="hero-cta-btn"> ⚠️ Raporto Problem </a>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="wfh-section soft" aria-labelledby="faq-title">
+        <div class="wfh-section-inner">
+          <h2 class="wfh-h3" id="faq-title">Pyetje të Shpeshta</h2>
+
+          <div class="faq">
+            <details>
+              <summary>Sa zgjat seanca e WiFi Falas?</summary>
+              <div>
+                <p>
+                  Seanca tipikisht zgjat 60 minuta. Mund ta rinovosh menjëherë
+                  me 1 klik kur të përfundojë (politika e fair-use aplikohet).
+                </p>
+              </div>
+            </details>
+
+            <details>
+              <summary>A ka kufizime në përdorimin e WiFi Falas?</summary>
+              <div>
+                <p>
+                  Po, trafiku P2P (peer-to-peer) dhe shërbimet "heavy" mund të
+                  kufizohen për të ruajtur cilësinë e lidhjes për të gjithë
+                  përdoruesit. Kjo është për të siguruar akses të barabartë për
+                  të gjithë.
+                </p>
+              </div>
+            </details>
+
+            <details>
+              <summary>Nuk më hapet portali i login-it. Çfarë të bëj?</summary>
+              <div>
+                <p>
+                  Pasi të lidhesh me SSID-në ABISSNET_FREE ose ABISSNET_WIFI,
+                  provo të hapësh një faqe HTTP (p.sh. example.com ose
+                  neverssl.com). Nëse ende nuk funksionon, fik dhe ndiz Wi-Fi në
+                  pajisjen tënde.
+                </p>
+              </div>
+            </details>
+
+            <details>
+              <summary>A është e sigurt WiFi Falas?</summary>
+              <div>
+                <p>
+                  Po, implementojmë izolim klientësh (AP isolation) dhe filtrime
+                  sigurie bazë për të mbrojtur përdoruesit. Megjithatë, për të
+                  dhëna sensitive rekomandojmë të përdorësh gjithmonë HTTPS ose
+                  VPN.
+                </p>
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                A mund të përdor WiFi Falas për gaming ose streaming?
+              </summary>
+              <div>
+                <p>
+                  WiFi Falas është i dizajnuar për përdorim të përgjithshëm të
+                  internetit (rrjete sociale, email, navigim, video standarde).
+                  Gaming kompetitiv dhe streaming me cilësi të lartë mund të mos
+                  kenë performancën optimale për shkak të shpejtësisë së
+                  kufizuar dhe politikës fair-use.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- TERMS & CONDITIONS SECTION -->
+      <section class="legal" aria-labelledby="terms-title">
+        <h3 id="terms-title">Kushtet & Politika Fair-Use</h3>
+        <ul>
           <li>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Pa kosto – sponsorizuar nga Abissnet</span>
+            <strong>Oferta:</strong> Shërbimi është falas, i ofruar "as-is" dhe
+            mund të ndryshojë ose ndërpritet pa paralajmërim paraprak.
           </li>
           <li>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Verifikim i shpejtë me SMS/portal</span>
+            <strong>Kohëzgjatja:</strong> Seancat mund të kufizohen në kohë dhe
+            shpejtësi për të garantuar akses të barabartë për të gjithë
+            përdoruesit.
           </li>
           <li>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Fair-Use & filtrime sigurie bazë</span>
+            <strong>Sigurie:</strong> Filtrime sigurie bazë janë aktive.
+            Kategoritë e faqeve të dëmshme bllokohen automatikisht për mbrojtjen
+            tuaj.
+          </li>
+          <li>
+            <strong>Përdorim i Pranueshëm:</strong> Shfrytëzimi abuziv (spam,
+            sulme kibernetike, P2P masiv, etj.) çaktivizohet menjëherë dhe
+            përdoruesi mund të bllokohet.
+          </li>
+          <li>
+            <strong>Privatësia:</strong> Abissnet respekton privatësinë tuaj. Ne
+            nuk monitorojmë përmbajtjen e aktivitetit tuaj në internet, por mund
+            të mbajmë log-e për qëllime sigurie dhe diagnostike.
           </li>
         </ul>
+      </section>
+
+      <!-- FINAL CTA -->
+      <div class="features-cta features-cta--center">
+        <a href="app.html" class="hero-cta-btn">
+          <span class="cta-arrows" aria-hidden="true">>>></span>
+          Gjej Pikat në App
+        </a>
       </div>
-      <div class="hero-right">
-        <img src="/assets/img/wifi-free.png" alt="WiFi Falas" class="hero-img"
-             onerror="this.src='/assets/img/robot.png'"/>
-      </div>
-    </div>
-  </section>
+    </main>
 
-  <!-- HOW TO CONNECT -->
-  <section class="steps3" aria-labelledby="si-funksionon">
-    <div class="step-card">
-      <div class="step-num">1</div>
-      <h4 id="si-funksionon">Gjej hotspot-in</h4>
-      <p class="muted-sm">Afer shesheve, parqeve, lokaleve partnere ose pikave Abissnet. Kërko SSID: <strong>ABISSNET_FREE</strong> / <strong>ABISSNET_WIFI</strong>.</p>
-    </div>
-    <div class="step-card">
-      <div class="step-num">2</div>
-      <h4>Lidhu & hap portalin</h4>
-      <p class="muted-sm">Pas lidhjes, hapet automatikisht portali. Nëse jo, hap një faqe (p.sh. google.com) që të shfaqet login.</p>
-    </div>
-    <div class="step-card">
-      <div class="step-num">3</div>
-      <h4>Verifiko & shijo</h4>
-      <p class="muted-sm">Verifikim i thjeshtë (SMS/klik). Seanca zgjat tipikisht 60 min – rinovo me 1 klik sa herë të duash.</p>
-    </div>
-  </section>
-
-  <!-- BENEFITS -->
-  <section class="features-section" style="margin-top:-20px">
-    <div class="feature-card visible">
-      <div class="feature-icon"><img src="/assets/img/feature-shpejte.png" alt="Shpejtësi"/></div>
-      <h3 class="feature-title">Shpejtësi Praktike</h3>
-      <p class="feature-desc">Mjafton për rrjete sociale, email, navigim & video standarde. Prioritet ka trafiku kritik.</p>
-    </div>
-    <div class="feature-card visible">
-      <div class="feature-icon"><img src="/assets/img/feature-support.png" alt="Siguri"/></div>
-      <h3 class="feature-title">Siguri Bazë</h3>
-      <p class="feature-desc">Filtrim faqe të dëmshme, izolim klientësh (AP isolation) dhe HTTPS e detyruar ku aplikohet.</p>
-    </div>
-    <div class="feature-card visible">
-      <div class="feature-icon"><img src="/assets/img/feature-fiber.png" alt="Mbulim"/></div>
-      <h3 class="feature-title">Mbulim në rritje</h3>
-      <p class="feature-desc">Çdo muaj shtojmë pika të reja. Shiko listën më poshtë dhe sugjero një lokacion.</p>
-    </div>
-    <div class="feature-card visible">
-      <div class="feature-icon"><img src="/assets/img/feature-eksperienca.png" alt="Partner"/></div>
-      <h3 class="feature-title">Partnerë Lokalë</h3>
-      <p class="feature-desc">Biznese që ofrojnë WiFi Falas për klientët – me backhaul në rrjetin tonë fiber.</p>
-    </div>
-  </section>
-
-  <!-- HOTSPOTS LIST -->
-  <section class="hotspots" aria-labelledby="hotspots-title">
-    <h2 id="hotspots-title" class="packages-title" style="text-align:center;margin-bottom:var(--spacing-xl)">Pikat aktuale të WiFi Falas</h2>
-    <div class="hs-grid">
-      <article class="hs-card">
-        <div class="hs-title">Sheshi Skënderbej</div>
-        <div class="hs-meta">Qendër, Tiranë • 24/7</div>
-        <div class="hs-actions">
-          <a class="chip" href="https://maps.google.com/?q=Sheshi+Skenderbej,Tirane" target="_blank" rel="noopener">Hape në Map</a>
-          <span class="chip">SSID: ABISSNET_FREE</span>
-        </div>
-      </article>
-
-      <article class="hs-card">
-        <div class="hs-title">Parku i Liqenit</div>
-        <div class="hs-meta">Tiranë • 07:00–23:00</div>
-        <div class="hs-actions">
-          <a class="chip" href="https://maps.google.com/?q=Parku+i+Liqenit+Tirane" target="_blank" rel="noopener">Hape në Map</a>
-          <span class="chip">SSID: ABISSNET_WIFI</span>
-        </div>
-      </article>
-
-      <article class="hs-card">
-        <div class="hs-title">Pedonalja “Myslym Shyri”</div>
-        <div class="hs-meta">Tiranë • 08:00–22:00</div>
-        <div class="hs-actions">
-          <a class="chip" href="https://maps.google.com/?q=Myslym+Shyri,Tirane" target="_blank" rel="noopener">Hape në Map</a>
-          <span class="chip">SSID: ABISSNET_FREE</span>
-        </div>
-      </article>
-
-      <article class="hs-card">
-        <div class="hs-title">Universiteti Politeknik</div>
-        <div class="hs-meta">Kampus, Tiranë • 07:30–22:00</div>
-        <div class="hs-actions">
-          <a class="chip" href="https://maps.google.com/?q=Universiteti+Politeknik+Tirane" target="_blank" rel="noopener">Hape në Map</a>
-          <span class="chip">SSID: ABISSNET_WIFI</span>
-        </div>
-      </article>
-
-      <article class="hs-card">
-        <div class="hs-title">Blloku (Bar/Restorante Partnere)</div>
-        <div class="hs-meta">Tiranë • Orari i lokaleve</div>
-        <div class="hs-actions">
-          <a class="chip" href="https://maps.google.com/?q=Blloku,Tirane" target="_blank" rel="noopener">Hape në Map</a>
-          <span class="chip">SSID: ABISSNET_FREE</span>
-        </div>
-      </article>
-
-      <article class="hs-card">
-        <div class="hs-title">Terminali i Autobusëve</div>
-        <div class="hs-meta">Tiranë • 05:30–23:30</div>
-        <div class="hs-actions">
-          <a class="chip" href="https://maps.google.com/?q=Terminali+Autobuseve+Tirane" target="_blank" rel="noopener">Hape në Map</a>
-          <span class="chip">SSID: ABISSNET_WIFI</span>
-        </div>
-      </article>
-    </div>
-
-    <div class="features-cta" style="text-align:center;margin-top:var(--spacing-2xl)">
-      <a href="mailto:partner@abissnet.al?subject=Sugjerim%20Hotspot%20WiFi%20Falas" class="hero-cta-btn">
-        ➕ Sugjero një lokacion
-      </a>
-      <a href="suport.html" class="hero-cta-btn" style="margin-left:.5rem">
-        ⚠️ Raporto problem
-      </a>
-    </div>
-  </section>
-
-  <!-- SIMPLE FAQ -->
-  <section class="wfh-section soft" style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);">
-    <div class="wfh-section-inner">
-      <h3 class="wfh-h3">Pyetje të shpeshta</h3>
-      <p><strong>Sa zgjat seanca?</strong> Tipikisht 60 minuta. Mund ta rinovosh menjëherë me 1 klik (fair-use aplikohet).</p>
-      <p><strong>A ka kufizime?</strong> Po, trafiku P2P dhe shërbimet “heavy” mund të kufizohen për të ruajtur cilësinë për të gjithë.</p>
-      <p><strong>Nuk më hapet portali.</strong> Pasi të lidhesh me SSID, hap një faqe http (p.sh. example.com) ose fik/ndiz Wi-Fi.</p>
-      <p><strong>A është e sigurt?</strong> Po. Implementojmë izolim klientësh dhe filtrime bazë. Për të dhëna sensitive përdor gjithmonë HTTPS/VPN.</p>
-    </div>
-  </section>
-
-  <!-- TERMS -->
-  <section class="legal" aria-labelledby="kushtet">
-    <h3 id="kushtet" style="margin-bottom:.75rem;">Kushtet & Fair-Use</h3>
-    <ul style="padding-left:1.2rem; line-height:1.8;">
-      <li>Shërbimi është falas, i ofruar “as-is” dhe mund të ndryshojë/ndërpritet pa paralajmërim.</li>
-      <li>Seancat mund të kufizohen në kohë/shpejtësi për të garantuar akses të barabartë.</li>
-      <li>Filtrime sigurie bazë: kategori të dëmshme bllokohen automatikisht.</li>
-      <li>Shfrytëzimi abuziv (spam, sulme, P2P masiv, etj.) çaktivizohet menjëherë.</li>
-    </ul>
-  </section>
-
-  <!-- CTA -->
-  <div class="features-cta" style="text-align:center;">
-    <a href="app.html" class="hero-cta-btn"><span class="cta-arrows">>>></span> Gjej pikat në App</a>
-  </div>
-
-<!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
       <div class="footer-inner">
         <div class="footer-col brand">
@@ -354,7 +809,6 @@
             <li><a href="karriera.html">Karriera</a></li>
             <li><a href="informacioniligjor.html">Informacion Ligjor</a></li>
             <li><a href="blog.html">Blog</a></li>
-            
           </ul>
         </div>
         <div class="footer-col">
@@ -362,10 +816,9 @@
           <ul>
             <li><a href="suport.html">Suport</a></li>
             <li><a href="dyqanet.html">Dyqanet</a></li>
-            <li><a href="internet-ne-shtepi.html">Pse Abissnet</a></li>
-          <li><a href="ftonjemik.html">Refero Nje Mik</a></li>
-          <li><a href="#">Llogaritë Bankare</a></li>
-          
+            <li><a href="internet.html">Pse Abissnet</a></li>
+            <li><a href="ftonjemik.html">Refero Nje Mik</a></li>
+            <li><a href="biznesi/speed-test.html">Llogaritë Bankare</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -373,10 +826,10 @@
           <ul>
             <li><a href="tarifat.html">Tarifat</a></li>
             <li><a href="abonentet.html">Abonohu</a></li>
-           <li><a href="https://pay.abissnet.al/">Paguaj Faturen</a></li>
-           <li><a href="internet&tv.html">Ofertat Internet</a></li>
-           <li><a href="#">Speed Test</a></li>
-           <li><a href="#">Si Të Paguaj</a></li>
+            <li><a href="https://pay.abissnet.al/">Paguaj Faturen</a></li>
+            <li><a href="internet-tv.html">Ofertat Internet</a></li>
+            <li><a href="biznesi/speed-test.html">Speed Test</a></li>
+            <li><a href="sitepaguaj.html">Si Të Paguaj</a></li>
           </ul>
         </div>
         <div class="footer-col newsletter-col">
@@ -386,29 +839,78 @@
             <button type="submit">Subscribe</button>
           </form>
           <div class="footer-social">
-            <a href="https://facebook.com/abissnet" target="_blank" aria-label="Facebook">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <a
+              href="https://facebook.com/abissnet"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
             </a>
-            <a href="https://instagram.com/abissnet" target="_blank" aria-label="Instagram">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg>
+            <a
+              href="https://instagram.com/abissnet"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
             </a>
-            <a href="https://youtube.com/@abissnet" target="_blank" aria-label="YouTube">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <a
+              href="https://youtube.com/@abissnet"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
             </a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">© 2025 Abissnet. Të gjitha të drejtat e rezervuara.</div>
+      <div class="footer-bottom">
+        © 2025 Abissnet. Të gjitha të drejtat e rezervuara.
+      </div>
     </footer>
 
-  <script src="assets/js/toast.js"></script>
-  <script src="assets/js/script.js"></script>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Kthehu në krye">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        aria-hidden="true"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
 
-  <!-- Back to Top -->
-  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M12 19V5M5 12l7-7 7 7" />
-    </svg>
-  </button>
-</body>
+    <!-- Scripts -->
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>

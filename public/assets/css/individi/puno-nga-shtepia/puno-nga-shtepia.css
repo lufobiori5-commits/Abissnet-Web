@@ -1,0 +1,576 @@
+/* ========================================
+   WORK FROM HOME PAGE - Puno nga Shtëpia
+   Page-Specific Styles Only
+   ======================================== */
+
+/* ========================================
+   WFH HERO SECTION
+   ======================================== */
+.wfh-hero {
+  background: linear-gradient(135deg, #5a5a5a 0%, #404040 100%);
+  padding: var(--spacing-4xl) var(--spacing-2xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.wfh-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 152, 0, 0.08),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.wfh-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.wfh-hero-title {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-white);
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.2;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.wfh-hero-title .highlight {
+  color: var(--color-primary);
+  position: relative;
+}
+
+.wfh-hero-sub {
+  font-size: var(--font-size-xl);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--spacing-2xl);
+  line-height: 1.6;
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+.wfh-cta-btn {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
+  color: var(--color-white);
+  padding: var(--spacing-lg) var(--spacing-3xl);
+  border-radius: 50px;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-orange);
+  text-decoration: none;
+  animation: fadeInUp 0.8s ease-out 0.4s backwards;
+  border: none;
+  cursor: pointer;
+}
+
+.wfh-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-orange-lg);
+}
+
+.wfh-cta-btn:active {
+  transform: translateY(-1px);
+}
+
+/* ========================================
+   WFH CONTENT GRID
+   ======================================== */
+.wfh-content {
+  max-width: var(--max-width);
+  margin: var(--spacing-4xl) auto;
+  padding: 0 var(--spacing-2xl);
+}
+
+.wfh-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
+  align-items: center;
+}
+
+.wfh-media {
+  position: relative;
+}
+
+.wfh-media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  transition: transform var(--transition-slow);
+}
+
+.wfh-media:hover img {
+  transform: scale(1.02);
+}
+
+.wfh-copy {
+  padding: var(--spacing-xl);
+}
+
+.wfh-h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-800);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.3;
+  font-family: var(--font-primary);
+}
+
+.wfh-copy p {
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-600);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ========================================
+   WFH FEATURE BULLETS
+   ======================================== */
+.wfh-bullets {
+  list-style: none;
+  margin-top: var(--spacing-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding: 0;
+}
+
+.wfh-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--color-gray-50);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-primary);
+  transition: all var(--transition-base);
+}
+
+.wfh-bullets li:hover {
+  transform: translateX(5px);
+  background: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.wfh-bullets .bullet-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+}
+
+.wfh-bullets strong {
+  color: var(--color-gray-800);
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-lg);
+}
+
+.wfh-bullets div {
+  flex: 1;
+}
+
+.wfh-bullets p {
+  margin: 0;
+  font-size: var(--font-size-base);
+  color: var(--color-gray-600);
+}
+
+/* ========================================
+   WFH SOFT SECTION
+   ======================================== */
+.wfh-section.soft {
+  background: var(--color-gray-100);
+  padding: var(--spacing-4xl) var(--spacing-2xl);
+  text-align: center;
+}
+
+.wfh-section-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.wfh-h3 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-800);
+  margin-bottom: var(--spacing-lg);
+  font-family: var(--font-primary);
+}
+
+.wfh-section-inner p {
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-600);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-lg);
+}
+
+.wfh-section-inner p strong {
+  color: var(--color-gray-900);
+  font-weight: 700;
+}
+
+/* ========================================
+   WFH BENEFITS SECTION
+   ======================================== */
+.wfh-benefits {
+  background: var(--color-white);
+  padding: var(--spacing-4xl) var(--spacing-2xl);
+}
+
+.wfh-benefits-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.wfh-benefits-title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  color: var(--color-gray-800);
+  margin-bottom: var(--spacing-3xl);
+  font-family: var(--font-primary);
+}
+
+.wfh-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-2xl);
+}
+
+.wfh-benefit-card {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  background: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+  opacity: 0;
+  transform: translateY(20px);
+  border: 1px solid var(--color-gray-200);
+}
+
+.wfh-benefit-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wfh-benefit-card.fade-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.wfh-benefit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  background: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.wfh-benefit-card .benefit-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
+  border-radius: var(--radius-full);
+  color: var(--color-white);
+  transition: transform var(--transition-base);
+}
+
+.wfh-benefit-card:hover .benefit-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.wfh-benefit-card h3 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-800);
+  margin-bottom: var(--spacing-sm);
+  font-family: var(--font-primary);
+}
+
+.wfh-benefit-card p {
+  color: var(--color-gray-600);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Desktop - 1200px and below */
+@media (max-width: 1200px) {
+  .wfh-grid {
+    gap: var(--spacing-2xl);
+  }
+}
+
+/* Tablet Large - 1024px and below */
+@media (max-width: 1024px) {
+  .wfh-hero {
+    padding: var(--spacing-3xl) var(--spacing-lg);
+  }
+
+  .wfh-hero-title {
+    font-size: var(--font-size-4xl);
+  }
+
+  .wfh-hero-sub {
+    font-size: var(--font-size-lg);
+  }
+
+  .wfh-content {
+    padding: 0 var(--spacing-lg);
+  }
+
+  .wfh-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+  }
+
+  .wfh-copy {
+    padding: var(--spacing-md);
+  }
+
+  .wfh-benefits {
+    padding: var(--spacing-3xl) var(--spacing-lg);
+  }
+
+  .wfh-benefits-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+/* Tablet - 768px and below */
+@media (max-width: 768px) {
+  .wfh-hero {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+  }
+
+  .wfh-hero-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .wfh-hero-sub {
+    font-size: var(--font-size-base);
+  }
+
+  .wfh-cta-btn {
+    font-size: var(--font-size-lg);
+    padding: var(--spacing-md) var(--spacing-xl);
+  }
+
+  .wfh-h2 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .wfh-copy p {
+    font-size: var(--font-size-base);
+  }
+
+  .wfh-section.soft {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+  }
+
+  .wfh-h3 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .wfh-section-inner p {
+    font-size: var(--font-size-base);
+  }
+
+  .wfh-benefits {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+  }
+
+  .wfh-benefits-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .wfh-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wfh-benefit-card {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* Mobile - 600px and below */
+@media (max-width: 600px) {
+  .wfh-hero {
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+
+  .wfh-hero-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .wfh-hero-sub {
+    font-size: var(--font-size-sm);
+  }
+
+  .wfh-cta-btn {
+    font-size: var(--font-size-base);
+    padding: var(--spacing-md) var(--spacing-xl);
+  }
+
+  .wfh-content {
+    padding: 0 var(--spacing-md);
+  }
+
+  .wfh-copy {
+    padding: 0;
+  }
+
+  .wfh-h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  .wfh-copy p {
+    font-size: var(--font-size-sm);
+  }
+
+  .wfh-bullets {
+    gap: var(--spacing-md);
+  }
+
+  .wfh-bullets li {
+    padding: var(--spacing-md);
+  }
+
+  .wfh-bullets strong {
+    font-size: var(--font-size-base);
+  }
+
+  .wfh-section.soft {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .wfh-h3 {
+    font-size: var(--font-size-xl);
+  }
+
+  .wfh-section-inner p {
+    font-size: var(--font-size-sm);
+  }
+
+  .wfh-benefits {
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+
+  .wfh-benefits-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .wfh-benefit-card {
+    padding: var(--spacing-md);
+  }
+
+  .wfh-benefit-card .benefit-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .wfh-benefit-card .benefit-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Mobile Small - 480px and below */
+@media (max-width: 480px) {
+  .wfh-hero-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .wfh-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .wfh-bullets li {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .wfh-bullets .bullet-icon {
+    margin: 0 auto var(--spacing-sm);
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  .wfh-hero-title,
+  .wfh-hero-sub,
+  .wfh-cta-btn,
+  .wfh-benefit-card {
+    animation: none;
+  }
+
+  .wfh-bullets li:hover,
+  .wfh-benefit-card:hover {
+    transform: none;
+  }
+
+  .wfh-media:hover img {
+    transform: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .wfh-benefit-card,
+  .wfh-bullets li {
+    border-width: 2px;
+  }
+}

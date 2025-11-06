@@ -1,0 +1,21 @@
+/* ========================================
+   STYLE.CSS - Master Stylesheet
+   Imports all modular CSS files in correct order
+   ======================================== */
+
+/* 1. Foundation - Variables, reset, base styles */
+@import url("individi/main.css");
+
+/* 2. Components - Reusable UI components */
+@import url("individi/components.css");
+
+/* 3. Carousel Component - Reusable blog carousel */
+@import url("individi/index/carousel.css");
+
+/* 3. Page Specific - Homepage styles */
+@import url("individi/index/index.css");
+/* 4. Page Specific - Speedtest styles */
+@import url("individi/index/speedtest.css");
+
+/* 4. Responsive - All media queries */
+@import url("individi/responsive.css");

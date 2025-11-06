@@ -230,10 +230,12 @@ window.addEventListener(
 // ========== HAMBURGER MENU FUNCTIONALITY ==========
 function initHamburgerMenu() {
   // Be tolerant to different IDs used across pages
-  const hamburger = document.getElementById("hamburger-btn") || document.querySelector(".hamburger-menu");
+  const hamburger =
+    document.getElementById("hamburger-btn") ||
+    document.querySelector(".hamburger-menu");
   const mobileMenu =
     document.getElementById("mobile-menu") ||
-    document.querySelector("#mobile-menu, .mobile-menu, [id^=\"mobile-menu\"]");
+    document.querySelector('#mobile-menu, .mobile-menu, [id^="mobile-menu"]');
 
   if (!hamburger || !mobileMenu) return;
 
@@ -311,43 +313,82 @@ function initHamburgerMenu() {
   });
 }
 
-// ========== DROPDOWN TOGGLE FOR DESKTOP ==========
+// ========== DROPDOWN TOGGLE FOR DESKTOP (HOVER ONLY WITH INTENT) ==========
 document.querySelectorAll("[data-dropdown]").forEach((dd) => {
   const btn = dd.querySelector("[data-dropdown-toggle]");
   if (!btn) return;
 
-  function closeAll() {
-    document.querySelectorAll("[data-dropdown]").forEach((x) => {
-      x.classList.remove("open");
-      const b = x.querySelector("[data-dropdown-toggle]");
-      if (b) b.setAttribute("aria-expanded", "false");
-    });
+  let closeTimeoutId;
+
+  function openDropdown() {
+    clearTimeout(closeTimeoutId);
+    dd.classList.add("open");
+    btn.setAttribute("aria-expanded", "true");
   }
 
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    const toOpen = !dd.classList.contains("open");
-    closeAll();
-    if (toOpen) {
-      dd.classList.add("open");
-      btn.setAttribute("aria-expanded", "true");
+  function closeDropdown() {
+    dd.classList.remove("open");
+    btn.setAttribute("aria-expanded", "false");
+  }
+
+  function scheduleClose() {
+    clearTimeout(closeTimeoutId);
+    closeTimeoutId = setTimeout(closeDropdown, 180);
+  }
+
+  // Hover intent: open immediately, close with slight delay
+  dd.addEventListener("mouseenter", openDropdown);
+  dd.addEventListener("mouseleave", scheduleClose);
+
+  // Keep open while focusing inside dropdown; close when focus leaves the dropdown entirely
+  dd.addEventListener("focusin", openDropdown);
+  dd.addEventListener("focusout", function (e) {
+    if (!dd.contains(e.relatedTarget)) {
+      scheduleClose();
     }
   });
 
-  document.addEventListener("click", (e) => {
-    if (!dd.contains(e.target)) {
-      dd.classList.remove("open");
-      btn.setAttribute("aria-expanded", "false");
-    }
-  });
-
-  document.addEventListener("keydown", (e) => {
+  // Keyboard support: Escape closes
+  dd.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
-      dd.classList.remove("open");
-      btn.setAttribute("aria-expanded", "false");
+      clearTimeout(closeTimeoutId);
+      closeDropdown();
       btn.focus();
     }
   });
+});
+
+// Remove will-change after animations complete
+document.addEventListener("DOMContentLoaded", () => {
+  // Remove will-change from hero elements after animation
+  setTimeout(() => {
+    document
+      .querySelectorAll(".hero-title, .hero-subtitle, .hero-speed, .hero-img")
+      .forEach((el) => {
+        el.style.willChange = "auto";
+      });
+  }, 1000); // After fadeInUp animation completes
+
+  // Remove will-change from visible cards
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          setTimeout(() => {
+            entry.target.style.willChange = "auto";
+          }, 600);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document
+    .querySelectorAll(".feature-card, .blog-card, .package-card")
+    .forEach((el) => {
+      observer.observe(el);
+    });
 });
 
 // ========== BACK TO TOP BUTTON ==========

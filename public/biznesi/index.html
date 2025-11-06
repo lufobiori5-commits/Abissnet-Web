@@ -3,15 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Favicon -->
     <link
       rel="shortcut icon"
       href="../assets/img/favicon.png"
       type="image/x-icon"
     />
-    <title>Abissnet - Shpejtësia që nuk njeh limite</title>
+    <title>
+      Internet i Dedikuar për Biznes - Shpejtësi deri në 10Gbps | Abissnet
+    </title>
+    <meta
+      name="description"
+      content="Internet i dedikuar për biznes me shpejtësi deri në 10Gbps. Lidhje simetrike, SLA e garantuar, support 24/7 dhe IP publike. Zgjidhje profesionale nga Abissnet."
+    />
     <link rel="stylesheet" href="../assets/css/biznesi/style.css" />
     <link rel="stylesheet" href="../assets/css/biznesi/speedtest.css" />
+    <link rel="stylesheet" href="../assets/css/biznesi/index.css" />
   </head>
   <body>
     <!-- Header -->
@@ -40,9 +46,8 @@
 
         <!-- Desktop Navigation -->
         <nav class="header-nav">
-          <a href="index.html">Internet i Dedikuar</a>
+          <a href="index.html" class="active">Internet i Dedikuar</a>
 
-          <!-- DROPDOWN -->
           <div class="nav-dropdown" data-dropdown>
             <button
               class="nav-trigger"
@@ -74,7 +79,6 @@
           <a href="mbrojtja-ddos.html">Mbrojtja Anti-DDOS</a>
           <a href="telefonia-fix-voip.html">Telefonia Fix&VoiP</a>
           <a href="dark-fiber.html">Dark Fiber</a>
-
           <a href="tv.html">TV</a>
         </nav>
 
@@ -86,7 +90,7 @@
         <!-- Mobile Hamburger Button -->
         <button
           class="hamburger-menu"
-          id="hamburger-btn"
+          id="hamburger-btn-index"
           aria-label="Toggle menu"
           aria-expanded="false"
         >
@@ -97,11 +101,10 @@
       </div>
 
       <!-- Mobile Menu Overlay -->
-      <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-menu" id="mobile-menu-index">
         <nav class="mobile-nav">
           <a href="index.html" class="mobile-nav-link">Internet i Dedikuar</a>
 
-          <!-- Mobile Dropdown -->
           <div class="mobile-dropdown">
             <button class="mobile-dropdown-toggle" data-mobile-dropdown>
               Hosting
@@ -124,14 +127,15 @@
           </div>
 
           <a href="colocation.html" class="mobile-nav-link">Colocation</a>
-          <a href="mbrojtja-ddos.html" class="mobile-nav-link">Mbrojtja Anti-DDOS</a>
-          <a href="abonentet.html" class="mobile-nav-link"
+          <a href="mbrojtja-ddos.html" class="mobile-nav-link"
+            >Mbrojtja Anti-DDoS</a
+          >
+          <a href="telefonia-fix-voip.html" class="mobile-nav-link"
             >Telefonia Fix&VoiP</a
           >
           <a href="dark-fiber.html" class="mobile-nav-link">Dark Fiber</a>
           <a href="tv.html" class="mobile-nav-link">TV</a>
 
-          <!-- Mobile Action Buttons -->
           <div class="mobile-actions">
             <a class="mobile-btn outline" href="dyqanet.html"
               >Harta e Mbulimit</a
@@ -144,305 +148,891 @@
     </header>
 
     <!-- Sub Navigation -->
-    <div class="subnav" role="navigation" aria-label="Shërbime">
+    <div class="subnav" role="navigation" aria-label="Navigimi">
       <div class="subnav-inner">
         <a href="../index.html" class="pill">Individ</a>
         <a href="index.html" class="pill active">Biznes</a>
+        <a href="../fshf.html" class="pill">FSHF</a>
       </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero-section" id="home">
-      <div class="hero-inner">
-        <div class="hero-left">
-          <h1 class="hero-title">Shpejtësia<br />që nuk njeh limite...</h1>
-          <div class="hero-speed">10G</div>
-        </div>
-        <div class="hero-right">
-          <img
-            src="../assets/img/AbissnetCITY.png"
-            alt="AI Robot with Headphones"
-            class="hero-img"
-          />
+    <main>
+      <!-- HERO SECTION -->
+      <div class="business-hero-visual">
+        <!-- New Network Visualization -->
+        <div class="network-visualization">
+          <div class="network-globe">
+            <div class="globe-ring"></div>
+            <div class="globe-ring"></div>
+            <div class="globe-ring"></div>
+
+            <!-- Connection Points -->
+            <div class="connection-point point-1">
+              <div class="point-pulse"></div>
+            </div>
+            <div class="connection-point point-2">
+              <div class="point-pulse"></div>
+            </div>
+            <div class="connection-point point-3">
+              <div class="point-pulse"></div>
+            </div>
+            <div class="connection-point point-4">
+              <div class="point-pulse"></div>
+            </div>
+
+            <!-- Data Flow Lines -->
+            <svg class="connection-lines" viewBox="0 0 400 400">
+              <defs>
+                <linearGradient
+                  id="lineGradient1"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop
+                    offset="0%"
+                    style="stop-color: #f68732; stop-opacity: 0"
+                  />
+                  <stop
+                    offset="50%"
+                    style="stop-color: #f68732; stop-opacity: 1"
+                  />
+                  <stop
+                    offset="100%"
+                    style="stop-color: #f68732; stop-opacity: 0"
+                  />
+                </linearGradient>
+                <linearGradient
+                  id="lineGradient2"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop
+                    offset="0%"
+                    style="stop-color: #10b981; stop-opacity: 0"
+                  />
+                  <stop
+                    offset="50%"
+                    style="stop-color: #10b981; stop-opacity: 1"
+                  />
+                  <stop
+                    offset="100%"
+                    style="stop-color: #10b981; stop-opacity: 0"
+                  />
+                </linearGradient>
+              </defs>
+
+              <path
+                class="data-flow flow-1"
+                d="M100,200 Q200,100 300,200"
+                stroke="url(#lineGradient1)"
+              />
+              <path
+                class="data-flow flow-2"
+                d="M200,100 Q250,200 300,300"
+                stroke="url(#lineGradient2)"
+              />
+              <path
+                class="data-flow flow-3"
+                d="M100,300 Q200,250 300,200"
+                stroke="url(#lineGradient1)"
+              />
+            </svg>
+
+            <!-- Center Hub -->
+            <div class="network-hub">
+              <div class="hub-core"></div>
+              <div class="hub-ring"></div>
+              <div class="hub-ring"></div>
+              <div class="hub-ring"></div>
+            </div>
+          </div>
+
+          <!-- Floating Data Packets -->
+          <div class="data-packet packet-1">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <line x1="9" y1="9" x2="15" y2="9" />
+              <line x1="9" y1="15" x2="15" y2="15" />
+            </svg>
+          </div>
+          <div class="data-packet packet-2">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <line x1="9" y1="9" x2="15" y2="9" />
+              <line x1="9" y1="15" x2="15" y2="15" />
+            </svg>
+          </div>
+          <div class="data-packet packet-3">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <line x1="9" y1="9" x2="15" y2="9" />
+              <line x1="9" y1="15" x2="15" y2="15" />
+            </svg>
+          </div>
         </div>
       </div>
-    </section>
 
-   <!-- Produkte Section  -->
+      <!-- FEATURES HIGHLIGHT -->
+      <section class="business-features-highlight">
+        <div class="business-container">
+          <div class="features-highlight-grid">
+            <div class="feature-highlight-card" data-animate>
+              <div class="feature-highlight-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              </div>
+              <h3 class="feature-highlight-title">Shpejtësi e Lartë</h3>
+              <p class="feature-highlight-desc">
+                Lidhje simetrike deri në 10Gbps për upload dhe download
+              </p>
+            </div>
+
+            <div class="feature-highlight-card" data-animate>
+              <div class="feature-highlight-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <h3 class="feature-highlight-title">SLA e Garantuar</h3>
+              <p class="feature-highlight-desc">
+                99.9% uptime me kompensim automatik nëse nuk përmbushet
+              </p>
+            </div>
+
+            <div class="feature-highlight-card" data-animate>
+              <div class="feature-highlight-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              <h3 class="feature-highlight-title">Support 24/7</h3>
+              <p class="feature-highlight-desc">
+                Ekip teknik i disponueshëm çdo kohë për çdo problem
+              </p>
+            </div>
+
+            <div class="feature-highlight-card" data-animate>
+              <div class="feature-highlight-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+              </div>
+              <h3 class="feature-highlight-title">IP Publike</h3>
+              <p class="feature-highlight-desc">
+                Adresa IP statike për hosting dhe VPN profesionale
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES SECTION -->
       <section class="services-section" id="produktet">
-  <div class="services-head">
-    <h2 class="services-title">Shërbimet tona</h2>
-    <p class="services-sub">Zgjidh zgjidhjen e duhur për biznesin tënd</p>
-  </div>
+        <div class="services-head">
+          <h2 class="services-title">Shërbimet tona</h2>
+          <p class="services-sub">Zgjidh zgjidhjen e duhur për biznesin tënd</p>
+        </div>
 
-  <div class="services-grid">
-    
-    
-        <!-- Internet i Dedikuar -->
-    <article class="service-card">
-      <div class="svc-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 0c3 3 3 17 0 20M2 12h20"/></svg>
-      </div>
-      <h3 class="svc-title">Internet i Dedikuar</h3>
-      <p class="svc-desc">Simetrik, SLA i qartë, 24/7 NOC dhe adresim publik IP.</p>
-      <a class="svc-cta" href="index.html">Mëso më shumë</a>
-    </article>
-  
-    <!-- Email Hosting -->
-    <article class="service-card">
-      <div class="svc-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v1l10 6 10-6V6a2 2 0 0 0-2-2ZM22 9l-10 6L2 9v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9Z"/></svg>
-      </div>
-      <h3 class="svc-title">Email Hosting</h3>
-      <p class="svc-desc">Inbox-e të sigurta, domain i personalizuar, politika anti-spam & arkivim.</p>
-      <a class="svc-cta" href="email-hosting.html">Mëso më shumë</a>
-    </article>
+        <div class="services-grid">
+          <!-- Email Hosting -->
+          <article class="service-card">
+            <div class="svc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4a2 2 0 0 0-2 2v1l10 6 10-6V6a2 2 0 0 0-2-2ZM22 9l-10 6L2 9v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9Z"
+                />
+              </svg>
+            </div>
+            <h3 class="svc-title">Email Hosting</h3>
+            <p class="svc-desc">
+              Inbox-e të sigurta, domain i personalizuar, politika anti-spam &
+              arkivim.
+            </p>
+            <a class="svc-cta" href="email-hosting.html">Mëso më shumë</a>
+          </article>
 
-    <!-- Website Professional Hosting -->
-    <article class="service-card">
-      <div class="svc-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M4 4h16v6H4zM4 14h7v6H4zM13 14h7v6h-7z"/></svg>
-      </div>
-      <h3 class="svc-title">Website Professional Hosting</h3>
-      <p class="svc-desc">Performancë e lartë, SSL, backup-e dhe publikim me 1 klik.</p>
-      <a class="svc-cta" href="website-hosting.html">Mëso më shumë</a>
-    </article>
+          <!-- Website Professional Hosting -->
+          <article class="service-card">
+            <div class="svc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 4h16v6H4zM4 14h7v6H4zM13 14h7v6h-7z" />
+              </svg>
+            </div>
+            <h3 class="svc-title">Website Professional Hosting</h3>
+            <p class="svc-desc">
+              Performancë e lartë, SSL, backup-e dhe publikim me 1 klik.
+            </p>
+            <a class="svc-cta" href="website-hosting.html">Mëso më shumë</a>
+          </article>
 
-    <!-- VPS Hosting -->
-    <article class="service-card">
-      <div class="svc-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M4 5h16v6H4zM4 13h16v6H4zM7 8h2M7 16h2"/></svg>
-      </div>
-      <h3 class="svc-title">VPS Hosting</h3>
-      <p class="svc-desc">Serverë virtualë me root, SSD/NVMe, firewall & panele menaxhimi.</p>
-      <a class="svc-cta" href="vps-hosting.html">Mëso më shumë</a>
-    </article>
+          <!-- VPS Hosting -->
+          <article class="service-card">
+            <div class="svc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 5h16v6H4zM4 13h16v6H4zM7 8h2M7 16h2" />
+              </svg>
+            </div>
+            <h3 class="svc-title">VPS Hosting</h3>
+            <p class="svc-desc">
+              Serverë virtualë me root, SSD/NVMe, firewall & panele menaxhimi.
+            </p>
+            <a class="svc-cta" href="vps-hosting.html">Mëso më shumë</a>
+          </article>
 
-    <!-- Colocation -->
-    <article class="service-card">
-      <div class="svc-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M3 7l9-5 9 5-9 5-9-5Zm0 5 9 5 9-5M3 17l9 5 9-5"/></svg>
-      </div>
-      <h3 class="svc-title">Colocation</h3>
-      <p class="svc-desc">Racks të sigurta, energji redundante, peering dhe akses 24/7.</p>
-      <a class="svc-cta" href="colocation.html">Mëso më shumë</a>
-    </article>
+          <!-- Colocation -->
+          <article class="service-card">
+            <div class="svc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 7l9-5 9 5-9 5-9-5Zm0 5 9 5 9-5M3 17l9 5 9-5" />
+              </svg>
+            </div>
+            <h3 class="svc-title">Colocation</h3>
+            <p class="svc-desc">
+              Racks të sigurta, energji redundante, peering dhe akses 24/7.
+            </p>
+            <a class="svc-cta" href="colocation.html">Mëso më shumë</a>
+          </article>
 
-    <!-- Mbrojtja Anti-DDOS-->
-    <article class="service-card">
-      <div class="svc-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 9-8 9S4 17 4 12V7l8-4Zm0 5v9M8 12h8"/></svg>
-      </div>
-      <h3 class="svc-title">Mbrojtja Anti-DDOS</h3>
-      <p class="svc-desc">Mitigim në kohë reale, analiza trafik & politika të personalizuara.</p>
-      <a class="svc-cta" href="mbrojtja-ddos.html">Mëso më shumë</a>
-    </article>
+          <!-- Mbrojtja Anti-DDOS -->
+          <article class="service-card">
+            <div class="svc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 3l8 4v5c0 5-3.5 9-8 9S4 17 4 12V7l8-4Zm0 5v9M8 12h8"
+                />
+              </svg>
+            </div>
+            <h3 class="svc-title">Mbrojtja Anti-DDOS</h3>
+            <p class="svc-desc">
+              Mitigim në kohë reale, analiza trafik & politika të
+              personalizuara.
+            </p>
+            <a class="svc-cta" href="mbrojtja-ddos.html">Mëso më shumë</a>
+          </article>
 
-    
+          <!-- Dark Fiber -->
+          <article class="service-card">
+            <div class="svc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M2 12h6M16 12h6M8 12a4 4 0 0 0 8 0" />
+              </svg>
+            </div>
+            <h3 class="svc-title">Dark Fiber</h3>
+            <p class="svc-desc">
+              Fibër e dedikuar për lidhje metro & inter-DC me kapacitete
+              10G/100G.
+            </p>
+            <a class="svc-cta" href="dark-fiber.html">Mëso më shumë</a>
+          </article>
 
-  <!-- Telefonia Fiks & Voip  -->
-    <article class="service-card">
-      <div class="svc-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 9-8 9S4 17 4 12V7l8-4Zm0 5v9M8 12h8"/></svg>
-      </div>
-      <h3 class="svc-title">Telefonia Fiks & Voip</h3>
-      <p class="svc-desc">Komunikim i qëndrueshëm dhe shërbime profesionale për biznesin dhe shtëpinë tuaj. Shiko Paketat Kërko Ofertë 3 Paketa €4.50 Nga 3-5 Ditë Aktivizim</p>
-      <a class="svc-cta" href="telefonia-fix-voip.html">Mëso më shumë</a>
-    </article>
+          <!-- Internet i Dedikuar -->
+          <article class="service-card featured">
+            <div class="featured-badge">E Rekomanduar</div>
+            <div class="svc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 0c3 3 3 17 0 20M2 12h20"
+                />
+              </svg>
+            </div>
+            <h3 class="svc-title">Internet i Dedikuar</h3>
+            <p class="svc-desc">
+              Simetrik, SLA i qartë, 24/7 NOC dhe adresim publik IP.
+            </p>
+            <a class="svc-cta" href="#kërko-ofertë">Kërko Ofertë</a>
+          </article>
 
-    <!--Dark Fiber-->
-    <article class="service-card">
-      <div class="svc-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 9-8 9S4 17 4 12V7l8-4Zm0 5v9M8 12h8"/></svg>
-      </div>
-      <h3 class="svc-title">Dark Fiber</h3>
-      <p class="svc-desc">Fibër e dedikuar për lidhje metro & inter-DC me kapacitete 10G/100G.</p>
-      <a class="svc-cta" href="dark-fiber.html">Mëso më shumë</a>
-    </article>
-  
-  
+          <!-- Telefonia -->
+          <article class="service-card">
+            <div class="svc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+            </div>
+            <h3 class="svc-title">Telefonia Fiks & VoiP</h3>
+            <p class="svc-desc">
+              Komunikim i qëndrueshëm dhe shërbime profesionale për biznesin
+              tuaj.
+            </p>
+            <a class="svc-cta" href="telefonia-fix-voip.html">Mëso më shumë</a>
+          </article>
+        </div>
+      </section>
 
-
-
-
-</section>
-
-   
-
-    <!-- Tools Section -->
-    <section class="subs-tools" aria-labelledby="tools-title">
-      <h2 id="tools-title" class="sr-only">Mjetet dhe suporti</h2>
-      <div>
-        <!-- Speed Test Card -->
-        <article class="card-speedtest">
-          <div class="card-h">
-            <h3>Shpejtësia e Internetit</h3>
-            <span class="muted">Test i plotë (down/up/ping)</span>
+      <!-- WHY CHOOSE US -->
+      <section class="business-why-choose">
+        <div class="business-container">
+          <div class="why-choose-header">
+            <h2 class="section-title">Pse të zgjedhësh Abissnet?</h2>
+            <p class="section-subtitle">
+              Infrastrukturë e besueshme dhe shërbim profesional për biznesin
+              tënd
+            </p>
           </div>
 
-          <!-- Progress Bar (shown during test) -->
-          <div id="progressContainer" style="display: none; margin: 0.5rem 0">
+          <div class="why-choose-grid">
+            <div class="why-choose-card" data-animate>
+              <div class="why-icon">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </div>
+              <h3 class="why-title">Performancë e Garantuar</h3>
+              <p class="why-desc">
+                Bandwidth i dedikuar që nuk ndahet me përdorues të tjerë.
+                Shpejtësi konstante 24/7 pa kufizime.
+              </p>
+            </div>
+
+            <div class="why-choose-card" data-animate>
+              <div class="why-icon">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </div>
+              <h3 class="why-title">Siguri Maksimale</h3>
+              <p class="why-desc">
+                Firewall i avancuar, DDoS protection, backup automatik dhe
+                enkriptim i të dhënave.
+              </p>
+            </div>
+
+            <div class="why-choose-card" data-animate>
+              <div class="why-icon">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <h3 class="why-title">Support Ekspert</h3>
+              <p class="why-desc">
+                Ekip i specializuar që njeh nevojat e biznesit. Përgjigjje të
+                shpejta dhe zgjidhje efektive.
+              </p>
+            </div>
+
+            <div class="why-choose-card" data-animate>
+              <div class="why-icon">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <line x1="12" y1="1" x2="12" y2="23" />
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+              </div>
+              <h3 class="why-title">Çmime Transparente</h3>
+              <p class="why-desc">
+                Pa tarifa të fshehura. Çmime konkurruese me raport cilësi-çmim
+                të shkëlqyer.
+              </p>
+            </div>
+
+            <div class="why-choose-card" data-animate>
+              <div class="why-icon">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                  />
+                </svg>
+              </div>
+              <h3 class="why-title">Infrastrukturë Moderne</h3>
+              <p class="why-desc">
+                Data center me standarde ndërkombëtare, rrjet fibër optik dhe
+                teknologji e fundit.
+              </p>
+            </div>
+
+            <div class="why-choose-card" data-animate>
+              <div class="why-icon">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                  <polyline points="17 6 23 6 23 12" />
+                </svg>
+              </div>
+              <h3 class="why-title">Skalabilitet</h3>
+              <p class="why-desc">
+                Rritet me biznesin tënd. Upgrade i thjeshtë pa ndërprerje të
+                shërbimit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SPEED TEST CARD SECTION -->
+      <section class="speedtest-section">
+        <div class="speedtest-container">
+          <div class="speedtest-card" id="speedTestCard">
+            <!-- Card Header -->
+            <div class="speedtest-card-header">
+              <h2 class="speedtest-card-title">Test i Shpejtësisë</h2>
+              <p class="speedtest-card-subtitle">
+                Kliko butonin për të filluar matjen e shpejtësisë
+              </p>
+            </div>
+
+            <!-- Progress Bar -->
             <div
-              style="
-                width: 100%;
-                height: 6px;
-                background: #e5e7eb;
-                border-radius: 10px;
-                overflow: hidden;
-                margin-bottom: 0.5rem;
-              "
+              id="progressContainer"
+              class="progress-container"
+              style="display: none"
             >
-              <div
-                id="progressFill"
-                style="
-                  height: 100%;
-                  background: linear-gradient(
-                    90deg,
-                    var(--color-primary, #ff9800) 0%,
-                    #f57c00 100%
-                  );
-                  width: 0%;
-                  transition: width 0.3s ease;
-                  border-radius: 10px;
-                "
-              ></div>
+              <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+              </div>
+              <div id="progressText" class="progress-text">
+                Duke filluar testin...
+              </div>
             </div>
+
+            <!-- Speed Metrics Display -->
+            <div class="speed-metrics">
+              <div class="metric-card" id="downloadMetric">
+                <div class="metric-icon download">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                </div>
+                <div class="metric-value">
+                  <span id="downMbps" class="metric-number">—</span>
+                  <span class="metric-unit">Mbps</span>
+                </div>
+                <div class="metric-label">Download</div>
+              </div>
+
+              <div class="metric-card" id="uploadMetric">
+                <div class="metric-icon upload">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="17 8 12 3 7 8" />
+                    <line x1="12" y1="3" x2="12" y2="15" />
+                  </svg>
+                </div>
+                <div class="metric-value">
+                  <span id="upMbps" class="metric-number">—</span>
+                  <span class="metric-unit">Mbps</span>
+                </div>
+                <div class="metric-label">Upload</div>
+              </div>
+
+              <div class="metric-card" id="pingMetric">
+                <div class="metric-icon ping">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="2" />
+                    <path
+                      d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"
+                    />
+                  </svg>
+                </div>
+                <div class="metric-value">
+                  <span id="pingSpeed" class="metric-number">—</span>
+                  <span class="metric-unit">ms</span>
+                </div>
+                <div class="metric-label">Ping</div>
+              </div>
+            </div>
+
+            <!-- Additional Stats -->
             <div
-              id="progressText"
-              style="
-                text-align: center;
-                color: #6b7280;
-                font-size: 0.875rem;
-                font-weight: 500;
-              "
+              id="additionalStats"
+              class="additional-stats"
+              style="display: none"
             >
-              Duke filluar testin...
+              <div class="stats-grid">
+                <div class="stat-item-small">
+                  <span class="stat-label-small">Jitter:</span>
+                  <strong id="jitterValue" class="stat-value-small"
+                    >— ms</strong
+                  >
+                </div>
+                <div class="stat-item-small">
+                  <span class="stat-label-small">Humbje Pakete:</span>
+                  <strong id="packetLoss" class="stat-value-small">—%</strong>
+                </div>
+                <div class="stat-item-small">
+                  <span class="stat-label-small">Kohëzgjatja:</span>
+                  <strong id="testDuration" class="stat-value-small">—s</strong>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <!-- Speed Display -->
-          <div class="speed-wrap">
-            <div class="speed-number" id="downloadMetric">
-              <span id="downMbps" aria-label="Shpejtësia e shkarkimit">—</span>
-              <small>Mbps Down</small>
-            </div>
-            <div class="speed-number" id="uploadMetric">
-              <span id="upMbps" aria-label="Shpejtësia e ngarkimit">—</span>
-              <small>Mbps Up</small>
-            </div>
-            <div class="speed-number" id="pingMetric">
-              <span id="pingSpeed" aria-label="Ping">—</span>
-              <small>ms Ping</small>
-            </div>
-          </div>
-
-          <!-- Additional Stats (shown after test) -->
-          <div id="additionalStats" style="display: none">
-            <div class="list">
-              <li>
-                <span>Jitter:</span>
-                <strong id="jitterValue">— ms</strong>
-              </li>
-              <li>
-                <span>Humbje Pakete:</span>
-                <strong id="packetLoss">—%</strong>
-              </li>
-              <li>
-                <span>Kohëzgjatja:</span>
-                <strong id="testDuration">—s</strong>
-              </li>
-            </div>
-          </div>
-
-          <!-- Connection Info (shown after test) -->
-          <div
-            id="connectionInfo"
-            style="
-              display: none;
-              background: #f9fafb;
-              border-radius: 8px;
-              padding: 1rem;
-              margin-top: 0.5rem;
-              border: 1px solid #e5e7eb;
-            "
-          >
+            <!-- Connection Info -->
             <div
-              style="
-                font-weight: 700;
-                font-size: 0.875rem;
-                color: #111827;
-                margin-bottom: 0.5rem;
-              "
+              id="connectionInfo"
+              class="connection-info"
+              style="display: none"
             >
-              📊 Informacioni i Lidhjes
+              <div class="connection-info-header">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="16" x2="12" y2="12" />
+                  <line x1="12" y1="8" x2="12.01" y2="8" />
+                </svg>
+                <span>Informacioni i Lidhjes</span>
+              </div>
+              <div class="connection-grid">
+                <div class="connection-item">
+                  <span class="connection-label">IP Adresa:</span>
+                  <strong id="ipAddress" class="connection-value">—</strong>
+                </div>
+                <div class="connection-item">
+                  <span class="connection-label">ISP:</span>
+                  <strong id="isp" class="connection-value">—</strong>
+                </div>
+                <div class="connection-item">
+                  <span class="connection-label">Vendndodhja:</span>
+                  <strong id="location" class="connection-value">—</strong>
+                </div>
+                <div class="connection-item">
+                  <span class="connection-label">Tipi i Lidhjes:</span>
+                  <strong id="connectionType" class="connection-value"
+                    >—</strong
+                  >
+                </div>
+              </div>
             </div>
-            <div class="list">
-              <li>
-                <span>IP Adresa:</span>
-                <strong id="ipAddress">—</strong>
-              </li>
-              <li>
-                <span>ISP:</span>
-                <strong id="isp">—</strong>
-              </li>
-              <li>
-                <span>Vendndodhja:</span>
-                <strong id="location">—</strong>
-              </li>
-              <li>
-                <span>Tipi i Lidhjes:</span>
-                <strong id="connectionType">—</strong>
-              </li>
-            </div>
-          </div>
 
-          <button
-            class="btn primary"
-            id="btnSpeedTest"
-            aria-label="Fillo testin e shpejtësisë"
-          >
-            Fillo Testin
-          </button>
-
-          <!-- Test History (shown after first test) -->
-          <div
-            id="historySection"
-            style="
-              display: none;
-              margin-top: 1rem;
-              padding-top: 1rem;
-              border-top: 1px solid #e5e7eb;
-            "
-          >
-            <div
-              style="
-                font-weight: 700;
-                font-size: 0.875rem;
-                color: #111827;
-                margin-bottom: 0.75rem;
-              "
+            <!-- Action Button -->
+            <button
+              class="speedtest-btn"
+              id="btnSpeedTest"
+              aria-label="Fillo testin e shpejtësisë"
             >
-              📜 Historiku i Testeve
-            </div>
-            <div
-              id="historyList"
-              style="display: flex; flex-direction: column; gap: 0.5rem"
-            ></div>
-          </div>
-        </article>
-      </div>
-    </section>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+              <span class="btn-text">Fillo Testin</span>
+            </button>
 
-  <footer class="footer">
+            <!-- Test History -->
+            <div
+              id="historySection"
+              class="history-section"
+              style="display: none"
+            >
+              <div class="history-header">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                <span>Historiku i Testeve</span>
+              </div>
+              <div id="historyList" class="history-list"></div>
+            </div>
+          </div>
+
+          <!-- Info Cards -->
+          <div class="info-cards-grid">
+            <div class="info-card" data-animate>
+              <div class="info-card-icon">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
+              </div>
+              <h3 class="info-card-title">Çfarë është Download Speed?</h3>
+              <p class="info-card-desc">
+                Shpejtësia e shkarkimit tregon sa shpejt mund të merrësh të
+                dhëna nga interneti. E rëndësishme për streaming, gaming dhe
+                shkarkim skedarësh.
+              </p>
+            </div>
+
+            <div class="info-card" data-animate>
+              <div class="info-card-icon">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="17 8 12 3 7 8" />
+                  <line x1="12" y1="3" x2="12" y2="15" />
+                </svg>
+              </div>
+              <h3 class="info-card-title">Çfarë është Upload Speed?</h3>
+              <p class="info-card-desc">
+                Shpejtësia e ngarkimit tregon sa shpejt mund të dërgosh të dhëna
+                në internet. E rëndësishme për video calls, cloud backup dhe
+                live streaming.
+              </p>
+            </div>
+
+            <div class="info-card" data-animate>
+              <div class="info-card-icon">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="2" />
+                  <path d="M16.24 7.76a6 6 0 0 1 0 8.49" />
+                </svg>
+              </div>
+              <h3 class="info-card-title">Çfarë është Ping?</h3>
+              <p class="info-card-desc">
+                Ping-u mat kohën e përgjigjes së lidhjes. Sa më i ulët, aq më
+                mirë. Kritik për gaming dhe video conferencing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA SECTION -->
+      <section class="business-cta-section" id="kërko-ofertë">
+        <div class="business-cta-container">
+          <div class="business-cta-content">
+            <h2 class="business-cta-title">Gati për të filluar?</h2>
+            <p class="business-cta-text">
+              Na kontakto për një ofertë të personalizuar sipas nevojave të
+              biznesit tënd. Ekipi ynë do të të ndihmojë të zgjedhësh zgjidhjen
+              më të mirë.
+            </p>
+            <div class="business-cta-actions">
+              <a href="suport.html" class="cta-btn primary">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                  />
+                </svg>
+                Kërko Ofertë Falas
+              </a>
+              <a href="tel:+355442222222" class="cta-btn secondary">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+                Telefono Tani
+              </a>
+            </div>
+            <div class="cta-features">
+              <div class="cta-feature">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Pa detyrim</span>
+              </div>
+              <div class="cta-feature">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Përgjigje brenda 24h</span>
+              </div>
+              <div class="cta-feature">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Konsulencë falas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
       <div class="footer-inner">
         <div class="footer-col brand">
           <div class="footer-logo">Abissnet</div>
           <ul>
-            <li><a href="index.html">Rreth Abissnet</a></li>
+            <li><a href="../abissnet.html">Rreth Abissnet</a></li>
             <li><a href="../karriera.html">Karriera</a></li>
             <li><a href="../informacioniligjor.html">Informacion Ligjor</a></li>
             <li><a href="../blog.html">Blog</a></li>
-            
           </ul>
         </div>
         <div class="footer-col">
@@ -450,21 +1040,20 @@
           <ul>
             <li><a href="suport.html">Suport</a></li>
             <li><a href="../dyqanet.html">Dyqanet</a></li>
-            <li><a href="internet-ne-shtepi.html">Pse Abissnet</a></li>
-          <li><a href="../ftonjemik.html">Refero Nje Mik</a></li>
-          <li><a href="#">Llogaritë Bankare</a></li>
-          
+            <li><a href="../internet.html">Pse Abissnet</a></li>
+            <li><a href="../ftonjemik.html">Refero Nje Mik</a></li>
+            <li><a href="#">Llogaritë Bankare</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h3>Më të Populluara</h3>
           <ul>
-            <li><a href="tarifat.html">Tarifat</a></li>
+            <li><a href="../tarifat.html">Tarifat</a></li>
             <li><a href="../abonentet.html">Abonohu</a></li>
-           <li><a href="https://pay.abissnet.al/">Paguaj Faturen</a></li>
-           <li><a href="internet&tv.html">Ofertat Internet</a></li>
-           <li><a href="#">Speed Test</a></li>
-           <li><a href="sitepaguaj.html">Si Të Paguaj</a></li>
+            <li><a href="https://pay.abissnet.al/">Paguaj Faturen</a></li>
+            <li><a href="../internet-tv.html">Ofertat Internet</a></li>
+            <li><a href="speed-test.html">Speed Test</a></li>
+            <li><a href="../sitepaguaj.html">Si Të Paguaj</a></li>
           </ul>
         </div>
         <div class="footer-col newsletter-col">
@@ -474,25 +1063,88 @@
             <button type="submit">Subscribe</button>
           </form>
           <div class="footer-social">
-            <a href="https://facebook.com/abissnet" target="_blank" aria-label="Facebook">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <a
+              href="https://facebook.com/abissnet"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
             </a>
-            <a href="https://instagram.com/abissnet" target="_blank" aria-label="Instagram">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg>
+            <a
+              href="https://instagram.com/abissnet"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
             </a>
-            <a href="https://youtube.com/@abissnet" target="_blank" aria-label="YouTube">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <a
+              href="https://youtube.com/@abissnet"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
             </a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">© 2025 Abissnet. Të gjitha të drejtat e rezervuara.</div>
+      <div class="footer-bottom">
+        © 2025 Abissnet. Të gjitha të drejtat e rezervuara.
+      </div>
     </footer>
-
 
     <script src="../assets/js/toast.js"></script>
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/biznesi/speedtest.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              // Optional: stop observing after animation
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        // Observe all elements with data-animate attribute
+        const animatedElements = document.querySelectorAll("[data-animate]");
+        animatedElements.forEach((el) => observer.observe(el));
+      });
+    </script>
+
     <!-- Back to Top Button -->
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">
       <svg
