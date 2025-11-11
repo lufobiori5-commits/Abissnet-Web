@@ -89,7 +89,7 @@
   filter: drop-shadow(0 30px 60px rgba(62, 58, 57, 0.15));
   animation: fadeInRight 1s ease-out 0.3s backwards;
   position: relative;
-  bottom: 64px;
+  bottom: 0px;
 }
 
 /* ========================================
