@@ -205,8 +205,8 @@
    ======================================== */
 .refer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: var(--spacing-2xl);
+  grid-template-columns: 1fr;
+  justify-items: center;
 }
 
 /* ========================================

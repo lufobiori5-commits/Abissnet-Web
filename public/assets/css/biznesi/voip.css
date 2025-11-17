@@ -1,0 +1,1298 @@
+/* ========================================
+   VOIP PAGE - DARK MODERN STYLES
+   Scoped to voip.html
+   ======================================== */
+
+/* VOIP THEME TOKENS (use existing global fonts from main.css) */
+:root {
+  --voip-primary: #f68732;
+  --voip-primary-hover: #f68732;
+  --voip-secondary: #3b82f6;
+  --voip-dark-bg: #0f1419;
+  --voip-dark-card: #1a1f2e;
+  --voip-text-primary: #ffffff;
+  --voip-text-secondary: #cbd5e1;
+  --voip-text-muted: #94a3b8;
+  --voip-border: #334155;
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.voip-hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 50%, #0f1419 100%);
+}
+
+.voip-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(255, 107, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
+}
+
+.signal-waves {
+  position: absolute;
+  inset: 0;
+}
+
+.signal-waves .wave {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 2px solid rgba(255, 107, 0, 0.2);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: voip-pulse-wave 3s ease-out infinite;
+}
+
+.signal-waves .wave:nth-child(2) {
+  animation-delay: 1s;
+}
+.signal-waves .wave:nth-child(3) {
+  animation-delay: 2s;
+}
+
+@keyframes voip-pulse-wave {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+.voip-hero-container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  z-index: 10;
+}
+
+.voip-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.voip-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 107, 0, 0.1);
+  border: 1px solid rgba(255, 107, 0, 0.3);
+  border-radius: 50px;
+  color: var(--voip-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  animation: voip-fadeInDown 0.6s ease-out;
+}
+
+.voip-badge svg {
+  display: block;
+}
+
+.voip-hero-title {
+  font-family: var(--font-primary);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--voip-text-primary);
+  margin-bottom: 1.5rem;
+  animation: voip-fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--voip-primary) 0%,
+    var(--voip-secondary) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.voip-hero-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--voip-text-secondary);
+  margin-bottom: 1.25rem;
+  max-width: 600px;
+  animation: voip-fadeInUp 0.6s ease-out 0.4s both;
+}
+
+.voip-hero-subtitle.small {
+  font-size: 0.95rem;
+  color: var(--voip-text-muted);
+}
+
+.voip-hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2rem 0 3rem;
+  animation: voip-fadeInUp 0.6s ease-out 0.6s both;
+}
+
+.voip-btn {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.voip-btn.primary {
+  background: var(--voip-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(255, 107, 0, 0.3);
+}
+
+.voip-btn.primary:hover {
+  background: var(--voip-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(255, 107, 0, 0.4);
+}
+
+.voip-btn.secondary {
+  background: transparent;
+  color: var(--voip-text-primary);
+  border: 2px solid var(--voip-border);
+}
+
+.voip-btn.secondary:hover {
+  border-color: var(--voip-primary);
+  color: var(--voip-primary);
+  transform: translateY(-2px);
+}
+
+/* HERO STATS */
+
+.voip-stats {
+  display: flex;
+  gap: 3rem;
+  animation: voip-fadeInUp 0.6s ease-out 0.8s both;
+}
+
+.voip-stats .stat-item is {
+  text-align: left;
+}
+
+.voip-stats .stat-item {
+  text-align: left;
+}
+
+.voip-stats .stat-value {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--voip-primary);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.voip-stats .stat-label {
+  font-size: 0.8rem;
+  color: var(--voip-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ========================================
+   HERO VISUAL - NEW MODEL (VoIP call card)
+   ======================================== */
+
+.voip-hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: voip-fadeIn 0.8s ease-out 0.4s both;
+}
+
+/* Outer panel */
+.voip-visual-panel {
+  position: relative;
+  width: min(420px, 100%);
+  padding: 2.5rem 2.25rem;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 0 0, rgba(255, 107, 0, 0.18), transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(59, 130, 246, 0.18), transparent 65%),
+    #020617;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+/* Elliptical signal bands */
+.voip-signal-orbits {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.signal-orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  transform: translate(-50%, -50%);
+  animation: voipBandPulse 7s ease-out infinite;
+}
+
+.signal-orbit.o1 {
+  width: 260px;
+  height: 140px;
+  opacity: 0.45;
+}
+.signal-orbit.o2 {
+  width: 320px;
+  height: 180px;
+  opacity: 0.3;
+  animation-delay: 1.2s;
+}
+.signal-orbit.o3 {
+  width: 380px;
+  height: 220px;
+  opacity: 0.18;
+  animation-delay: 2.2s;
+}
+
+@keyframes voipBandPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 0;
+  }
+}
+
+/* Device stack */
+.voip-device-stack {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.device-card {
+  width: 190px;
+  height: 260px;
+  border-radius: 24px;
+  background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.8), #020617);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  position: relative;
+}
+
+/* Ghost card behind */
+.device-card.ghost {
+  position: absolute;
+  inset: 0;
+  transform: translate(-26px, -20px) scale(0.96);
+  opacity: 0.55;
+  filter: blur(0.4px);
+  background: radial-gradient(circle at 100% 0, rgba(59, 130, 246, 0.4), #020617);
+}
+
+/* Main card */
+.device-card.main {
+  padding: 1.4rem 1.2rem;
+  background: radial-gradient(circle at 0 0, rgba(255, 107, 0, 0.25), #020617);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+.device-card.main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #f68732, #3b82f6);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0.7;
+}
+
+/* Card inner content */
+.device-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.device-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: radial-gradient(circle, #22c55e 0%, #16a34a 50%, #052e16 100%);
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
+}
+
+.device-header-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--voip-text-secondary);
+}
+
+/* call "text" lines */
+.device-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.device-line {
+  height: 7px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(148, 163, 184, 0.32), rgba(31, 41, 55, 0.2));
+  position: relative;
+  overflow: hidden;
+}
+
+.device-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(246, 135, 50, 0.9), rgba(59, 130, 246, 0.9));
+  transform: translateX(-100%);
+  animation: voipLineSweep 4s linear infinite;
+}
+
+.device-line.strong {
+  width: 100%;
+}
+.device-line.short {
+  width: 60%;
+}
+
+.device-line:nth-child(2) {
+  width: 80%;
+  opacity: 0.8;
+}
+
+@keyframes voipLineSweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+/* Footer row */
+.device-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.device-pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(246, 135, 50, 0.16);
+  border: 1px solid rgba(246, 135, 50, 0.6);
+  font-size: 0.73rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #fed7aa;
+}
+
+.device-meta {
+  font-size: 0.75rem;
+  color: var(--voip-text-muted);
+}
+
+/* Status chips on side */
+.voip-status-chips {
+  position: absolute;
+  right: 1.6rem;
+  bottom: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  z-index: 3;
+}
+
+.status-chip {
+  font-size: 0.7rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  color: var(--voip-text-secondary);
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(12px);
+}
+
+.status-chip.inbound {
+  border-color: rgba(16, 185, 129, 0.9);
+  color: #bbf7d0;
+}
+.status-chip.outbound {
+  border-color: rgba(59, 130, 246, 0.9);
+  color: #bfdbfe;
+}
+
+/* ========================================
+   ANIMATIONS (scoped names to avoid clashes)
+   ======================================== */
+
+@keyframes voip-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes voip-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes voip-fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utility used by telephony.js scroll-observer */
+.voip-section [data-animate] {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.voip-section [data-animate].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================
+   GENERIC CONTAINERS FOR THIS PAGE
+   ======================================== */
+
+.voip-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.voip-container-small {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Shared header styles but only inside VOIP sections */
+
+.voip-steps .section-header,
+.voip-features .section-header,
+.voip-benefits .section-header,
+.voip-packages .section-header,
+.voip-form-section .form-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.voip-steps .section-title,
+.voip-features .section-title,
+.voip-benefits .section-title,
+.voip-packages .section-title {
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--voip-text-primary);
+  margin-bottom: 1rem;
+}
+
+.voip-steps .section-subtitle,
+.voip-features .section-subtitle,
+.voip-packages .section-subtitle {
+  font-size: 1.1rem;
+  color: var(--voip-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   HOW VOIP WORKS (STEPS)
+   ======================================== */
+
+.voip-steps {
+  padding: 5rem 0;
+  background: radial-gradient(circle at top left, #1a1f2e 0, #0b1016 45%);
+}
+
+.voip-steps .section-title {
+  color: var(--voip-text-primary);
+}
+
+.voip-steps .section-subtitle {
+  color: var(--voip-text-secondary);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2rem;
+}
+
+.step-card {
+  position: relative;
+  background: rgba(15, 20, 25, 0.9);
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 2rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.step-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(246, 135, 50, 0.16), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--voip-primary);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.step-card:hover::before {
+  opacity: 1;
+}
+
+.step-number {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--voip-primary);
+  margin-bottom: 0.75rem;
+}
+
+.step-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--voip-text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.step-card p {
+  font-size: 0.95rem;
+  color: var(--voip-text-secondary);
+  line-height: 1.7;
+}
+
+/* ========================================
+   FEATURES
+   ======================================== */
+
+.voip-features {
+  padding: 6rem 0;
+  background: var(--voip-dark-bg);
+}
+
+.voip-features .section-title {
+  color: var(--voip-text-primary);
+}
+
+.voip-features .section-subtitle {
+  color: var(--voip-text-secondary);
+}
+
+.voip-features .features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* override global .feature-card only inside this section */
+.voip-features .feature-card {
+  background: var(--voip-dark-card);
+  border: 1px solid var(--voip-border);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  box-shadow: none;
+  text-align: left;
+}
+
+.voip-features .feature-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.voip-features .feature-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--voip-primary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* override feature-icon inside voip-features */
+.voip-features .feature-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+/* color variants */
+.voip-features .feature-icon.orange {
+  background: linear-gradient(135deg, #f68732 0%, #f68732 100%);
+}
+.voip-features .feature-icon.blue {
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+}
+.voip-features .feature-icon.green {
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+}
+.voip-features .feature-icon.purple {
+  background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+}
+.voip-features .feature-icon.red {
+  background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
+}
+.voip-features .feature-icon.teal {
+  background: linear-gradient(135deg, #14b8a6 0%, #2dd4bf 100%);
+}
+
+.voip-features .feature-title {
+  font-family: var(--font-primary);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--voip-text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.voip-features .feature-desc {
+  color: var(--voip-text-secondary);
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+/* ========================================
+   BENEFITS
+   ======================================== */
+
+.voip-benefits {
+  padding: 6rem 0;
+  background: linear-gradient(
+    180deg,
+    var(--voip-dark-bg) 0%,
+    var(--voip-dark-card) 100%
+  );
+}
+
+.voip-benefits .section-title {
+  color: var(--voip-text-primary);
+}
+
+.voip-benefits .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.voip-benefits .benefit-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--voip-border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.voip-benefits .benefit-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.voip-benefits .benefit-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--voip-primary) 0%,
+    var(--voip-secondary) 100%
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.voip-benefits .benefit-item:hover::before {
+  transform: scaleX(1);
+}
+
+.voip-benefits .benefit-item:hover {
+  transform: translateY(-8px);
+  border-color: var(--voip-primary);
+  background: rgba(255, 107, 0, 0.05);
+}
+
+.voip-benefits .benefit-number {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--voip-primary);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.voip-benefits .benefit-item h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--voip-text-primary);
+  margin-bottom: 1rem;
+}
+
+.voip-benefits .benefit-item p {
+  color: var(--voip-text-secondary);
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+/* ========================================
+   PACKAGES
+   ======================================== */
+
+.voip-packages {
+  padding: 6rem 0;
+  background: var(--voip-dark-bg);
+}
+
+.voip-packages .section-title {
+  color: var(--voip-text-primary);
+}
+
+.voip-packages .section-subtitle {
+  color: var(--voip-text-secondary);
+}
+
+.voip-packages .packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.voip-packages .package-card {
+  background: var(--voip-dark-card);
+  border: 2px solid var(--voip-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.voip-packages .package-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.voip-packages .package-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--voip-primary);
+  box-shadow: 0 20px 40px rgba(255, 107, 0, 0.2);
+}
+
+.voip-packages .package-card.featured {
+  border-color: var(--voip-primary);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 0, 0.05) 0%,
+    rgba(59, 130, 246, 0.05) 100%
+  );
+}
+
+.voip-packages .featured-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: var(--voip-primary);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.voip-packages .package-header {
+  text-align: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--voip-border);
+  margin-bottom: 2rem;
+}
+
+.voip-packages .package-name {
+  font-family: var(--font-primary);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--voip-text-primary);
+  margin-bottom: 1rem;
+}
+
+.voip-packages .package-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.voip-packages .package-price .price {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--voip-primary);
+}
+
+.voip-packages .package-price .period {
+  font-size: 0.95rem;
+  color: var(--voip-text-muted);
+}
+
+.voip-packages .package-features {
+  margin-bottom: 2rem;
+}
+
+.voip-packages .package-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  color: var(--voip-text-secondary);
+  font-size: 0.97rem;
+}
+
+.voip-packages .package-feature svg {
+  flex-shrink: 0;
+  color: var(--voip-primary);
+}
+
+.voip-packages .package-btn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid var(--voip-border);
+  background: transparent;
+  color: var(--voip-text-primary);
+}
+
+.voip-packages .package-btn:hover {
+  border-color: var(--voip-primary);
+  color: var(--voip-primary);
+  transform: translateY(-2px);
+}
+
+.voip-packages .package-btn.primary {
+  background: var(--voip-primary);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 20px rgba(255, 107, 0, 0.3);
+}
+
+.voip-packages .package-btn.primary:hover {
+  background: var(--voip-primary-hover);
+  box-shadow: 0 6px 30px rgba(255, 107, 0, 0.4);
+}
+
+.voip-packages .package-note {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--voip-dark-card);
+  border: 1px solid var(--voip-border);
+  border-left: 4px solid var(--voip-primary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.voip-packages .package-note p {
+  color: var(--voip-text-secondary);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ========================================
+   FORM SECTION
+   ======================================== */
+
+.voip-form-section {
+  padding: 6rem 0;
+  background: linear-gradient(
+    180deg,
+    var(--voip-dark-bg) 0%,
+    var(--voip-dark-card) 100%
+  );
+}
+
+.voip-form-section .form-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.voip-form-section .form-title {
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--voip-text-primary);
+  margin-bottom: 1rem;
+}
+
+.voip-form-section .form-subtitle {
+  font-size: 1.05rem;
+  color: var(--voip-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* override generic form styling only in this section */
+.voip-form-section .voip-form {
+  background: var(--voip-dark-card);
+  border: 1px solid var(--voip-border);
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.voip-form-section .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* override components.css .form-group for this page */
+.voip-form-section .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.voip-form-section .form-group label {
+  font-weight: 600;
+  color: var(--voip-text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.voip-form-section .form-group input,
+.voip-form-section .form-group select,
+.voip-form-section .form-group textarea {
+  padding: 1rem;
+  border: 2px solid var(--voip-border);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--voip-text-primary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.voip-form-section .form-group input::placeholder,
+.voip-form-section .form-group textarea::placeholder {
+  color: var(--voip-text-muted);
+}
+
+.voip-form-section .form-group input:focus,
+.voip-form-section .form-group select:focus,
+.voip-form-section .form-group textarea:focus {
+  outline: none;
+  border-color: var(--voip-primary);
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0 3px rgba(246, 135, 50, 0.18);
+}
+
+.voip-form-section .form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+/* error messages used by telephony.js */
+.voip-form-section .form-error {
+  color: #ef4444;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  display: none;
+}
+
+.voip-form-section .form-group.error input,
+.voip-form-section .form-group.error select,
+.voip-form-section .form-group.error textarea {
+  border-color: #ef4444;
+}
+
+.voip-form-section .form-group.error .form-error {
+  display: block;
+}
+
+/* checkbox row */
+
+.voip-form-section .form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.voip-form-section .form-checkbox input[type="checkbox"] {
+  margin-top: 0.25rem;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.voip-form-section .form-checkbox label {
+  color: var(--voip-text-secondary);
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.voip-form-section .form-checkbox label a {
+  color: var(--voip-primary);
+  text-decoration: none;
+}
+
+.voip-form-section .form-checkbox label a:hover {
+  text-decoration: underline;
+}
+
+/* submit button */
+
+.voip-form-section .form-submit {
+  width: 100%;
+  padding: 1.25rem;
+  background: var(--voip-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(255, 107, 0, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.voip-form-section .form-submit:hover:not(:disabled) {
+  background: var(--voip-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(255, 107, 0, 0.4);
+}
+
+.voip-form-section .form-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.voip-form-section .btn-text {
+  display: inline-block;
+}
+
+.voip-form-section .btn-loader {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.voip-form-section .spinner {
+  animation: voip-spin 1s linear infinite;
+}
+
+@keyframes voip-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================================
+   RESPONSIVE (only VOIP-specific overrides)
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .voip-hero {
+    min-height: auto;
+    padding: 4rem 0;
+  }
+
+  .voip-hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .voip-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .voip-hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .voip-hero-visual {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .voip-stats {
+    justify-content: center;
+  }
+
+  .voip-steps,
+  .voip-features,
+  .voip-benefits,
+  .voip-packages,
+  .voip-form-section {
+    padding: 4.5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .voip-hero-container {
+    padding: 2rem 1.25rem;
+  }
+
+  .voip-hero-title {
+    font-size: 2rem;
+  }
+
+  .voip-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .voip-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .voip-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .voip-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .voip-container,
+  .voip-container-small {
+    padding: 0 1.25rem;
+  }
+
+  .voip-features .features-grid,
+  .voip-benefits .benefits-grid,
+  .voip-packages .packages-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .voip-form-section .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .voip-form-section .voip-form {
+    padding: 2rem 1.5rem;
+  }
+
+  .voip-visual-panel {
+    padding: 2rem 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .voip-hero-title {
+    font-size: 1.75rem;
+  }
+
+  .voip-steps .section-title,
+  .voip-features .section-title,
+  .voip-benefits .section-title,
+  .voip-packages .section-title {
+    font-size: 1.75rem;
+  }
+
+  .voip-form-section .form-title {
+    font-size: 1.75rem;
+  }
+}

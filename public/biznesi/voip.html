@@ -8,13 +8,13 @@
       href="../assets/img/favicon.png"
       type="image/x-icon"
     />
-    <title>Abissnet — Colocation (Server me Qira/Rack Unit)</title>
+    <title>VoIP – Abissnet</title>
     <meta
       name="description"
-      content="Colocation në Data Center-et e Abissnet: rack units, fuqi e pandërprerë, klimë, siguri fizike/kibernetike, lidhje të shpejta, fleksibilitet dhe shkallëzim."
+      content="VoIP profesional nga Abissnet: thirrje zanore përmes internetit, kosto të ulëta, fleksibilitet global dhe cilësi e lartë zëri për biznese dhe individë."
     />
     <link rel="stylesheet" href="../assets/css/biznesi/style.css" />
-    <link rel="stylesheet" href="../assets/css/biznesi/colocation.css" />
+    <link rel="stylesheet" href="../assets/css/biznesi/voip.css" />
    <script type="text/javascript" src="https://portal2.abissnet.al/im_livechat/loader/2"></script>
     <script type="text/javascript" src="https://portal2.abissnet.al/im_livechat/assets_embed.js"></script>
   </head>
@@ -70,15 +70,15 @@
                 >
               </li>
               <li>
-                <a class="dropdown-item" href="vps-hosting.html">VPS Hosting</a>
+                <a class="dropdown-item" class="active" href="vps-hosting.html">VPS Hosting</a>
               </li>
             </ul>
           </div>
 
-          <a href="colocation.html"class="active">Colocation</a>
+          <a href="colocation.html">Colocation</a>
           <a href="mbrojtja-ddos.html">Mbrojtja Anti-DDOS</a>
           <a href="telefonia-fix-voip.html">Telefonia Fix</a>
-          <a href="voip.html">VoiP</a>
+          <a href="voip.html" class="active">VoiP</a>
           <a href="dark-fiber.html">Dark Fiber</a>
           <a href="tv.html">TV</a>
         </nav>
@@ -91,7 +91,7 @@
         <!-- Mobile Hamburger Button -->
         <button
           class="hamburger-menu"
-          id="hamburger-btn-colo"
+          id="hamburger-btn-tel"
           aria-label="Toggle menu"
           aria-expanded="false"
         >
@@ -102,7 +102,7 @@
       </div>
 
       <!-- Mobile Menu Overlay -->
-      <div class="mobile-menu" id="mobile-menu-colo">
+      <div class="mobile-menu" id="mobile-menu-tel">
         <nav class="mobile-nav">
           <a href="index.html" class="mobile-nav-link">Internet i Dedikuar</a>
 
@@ -131,8 +131,9 @@
           <a href="colocation.html" class="mobile-nav-link">Colocation</a>
           <a href="mbrojtja-ddos.html" class="mobile-nav-link">Mbrojtja DDOS</a>
           <a href="telefonia-fix-voip.html" class="mobile-nav-link"
-            >Telefonia Fix&VoiP</a
+            >Telefonia Fix</a
           >
+          <a href="voip.html" class="mobile-nav-link">VoiP</a>
           <a href="dark-fiber.html" class="mobile-nav-link">Dark Fiber</a>
           <a href="tv.html" class="mobile-nav-link">TV</a>
 
@@ -149,71 +150,178 @@
     </header>
 
     <!-- Sub Navigation -->
-    <div class="subnav" role="navigation" aria-label="Shërbime">
+    <div class="subnav" role="navigation" aria-label="Navigimi">
       <div class="subnav-inner">
         <a href="../index.html" class="pill">Individ</a>
         <a href="index.html" class="pill active">Biznes</a>
-      <a href="../fshf.html" class="pill">Abissnet Superiore</a>
+        <a href="index.html" class="pill">Abissnet Superiore</a>
       </div>
     </div>
 
     <main>
-      <!-- HERO SECTION - MODERNIZED -->
-      <section class="colo-hero">
-        <div class="colo-hero-bg"></div>
-        <div class="colo-hero-container">
-          <div class="colo-hero-content">
-            <div class="colo-badge">🏢 Enterprise Data Center</div>
-            <h1 class="colo-hero-title">
-              Colocation & <span class="gradient-text">Server me Qira</span>
-            </h1>
-            <p class="colo-hero-subtitle">
-              Vendos pajisjet e tua në Data Center-at tanë tonë me siguri maksimale,
-              energji të pandërprerë, klimë të kontrolluar dhe uplinks 10Gbps+.
-              Shkallëzo nga 1U në kabinet të plotë 42U.
-            </p>
-            <div class="colo-hero-actions">
-              <a href="#apliko" class="colo-btn primary">Kërko Ofertën</a>
-              <a href="#paketat" class="colo-btn secondary">Shiko Paketat</a>
+      <!-- HERO SECTION -->
+      <section class="voip-hero">
+        <div class="voip-hero-bg">
+          <div class="signal-waves">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+          </div>
+        </div>
+        <div class="voip-hero-container">
+          <div class="voip-hero-content">
+            <div class="voip-badge">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z"
+                />
+              </svg>
+              VoIP Profesionale Globale
             </div>
-            <div class="colo-hero-stats">
+            <h1 class="voip-hero-title">
+              VoIP <span class="gradient-text">nga Abissnet</span>
+            </h1>
+            <p class="voip-hero-subtitle">
+              Shërbimi VoIP (Voice over Internet Protocol) nga Abissnet është
+              një zgjidhje moderne komunikimi që përdor internetin për të bërë
+              dhe pranuar thirrje telefonike, me cilësi të lartë zëri dhe kosto
+              të ulëta – kudo në botë.
+            </p>
+            <p class="voip-hero-subtitle small">
+              Abissnet ofron shërbimin VoIP në <strong>gjithë botën</strong>,
+              për biznese dhe individë që kanë nevojë për komunikim fleksibël,
+              të sigurt dhe ekonomik.
+            </p>
+
+            <div class="voip-hero-actions">
+              <a href="#paketat" class="voip-btn primary">Shiko Paketat VoIP</a>
+              <a href="#apliko" class="voip-btn secondary">Kërko Ofertë</a>
+            </div>
+
+            <!-- Stats -->
+            <div class="voip-stats">
               <div class="stat-item">
-                <div class="stat-value">99.99%</div>
-                <div class="stat-label">Uptime</div>
+                <div class="stat-label">Zona mbulimi</div>
+                <div class="stat-value">Global</div>
               </div>
               <div class="stat-item">
-                <div class="stat-value">24/7</div>
-                <div class="stat-label">Suport</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-value">10Gbps</div>
-                <div class="stat-label">Uplink</div>
+                <div class="stat-label">Platformë</div>
+                <div class="stat-value">IP Based</div>
               </div>
             </div>
           </div>
-          <div class="colo-hero-image">
-            <div class="image-glow"></div>
-            <img
-              src="../assets/img/Colocation.png"
-              alt="Data Center Infrastructure"
-              loading="eager"
-              onerror="this.src='../assets/img/hero-fallback.png'"
-            />
+
+ <div class="voip-hero-visual">
+  <div class="voip-visual-panel">
+    <div class="voip-signal-orbits">
+      <span class="signal-orbit o1"></span>
+      <span class="signal-orbit o2"></span>
+      <span class="signal-orbit o3"></span>
+    </div>
+
+    <div class="voip-device-stack">
+      <div class="device-card ghost"></div>
+
+      <div class="device-card main">
+        <div class="device-header">
+          <span class="device-status-dot"></span>
+          <span class="device-header-label">Abissnet VoIP</span>
+        </div>
+
+        <div class="device-lines">
+          <span class="device-line strong"></span>
+          <span class="device-line"></span>
+          <span class="device-line short"></span>
+        </div>
+
+        <div class="device-footer">
+          <span class="device-pill">Thirrje aktive</span>
+          <span class="device-meta">HD • Global • IP</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="voip-status-chips">
+      <div class="status-chip inbound">Inbound</div>
+      <div class="status-chip outbound">Outbound</div>
+    </div>
+  </div>
+</div>
+
+
+
+        
+    
+        </div>
+      </section>
+
+      <!-- HOW VOIP WORKS -->
+      <section class="voip-steps">
+        <div class="voip-container">
+          <div class="section-header">
+            <h2 class="section-title">Si funksionon VoIP?</h2>
+            <p class="section-subtitle">
+              Nga zëri i përdoruesit deri te sinjali zanor në anën tjetër – i
+              gjithë procesi kalon nëpër rrjetin IP me shpejtësi dhe siguri.
+            </p>
+          </div>
+
+          <div class="steps-grid">
+            <div class="step-card" data-animate>
+              <div class="step-number">01</div>
+              <h3>Kapja dhe konvertimi i sinjalit zanor</h3>
+              <p>
+                Zëri përpunohet dhe konvertohet në të dhëna digjitale për t’u
+                transmetuar përmes rrjetit.
+              </p>
+            </div>
+            <div class="step-card" data-animate>
+              <div class="step-number">02</div>
+              <h3>Kompresimi dhe enkapsulimi</h3>
+              <p>
+                Të dhënat digjitale kompresohen dhe paketohen në paket IP për
+                transmetim efikas.
+              </p>
+            </div>
+            <div class="step-card" data-animate>
+              <div class="step-number">03</div>
+              <h3>Transmetimi përmes rrjetit IP</h3>
+              <p>
+                Paketat kalojnë përmes internetit me shpejtësi dhe cilësi të
+                lartë, kudo në botë.
+              </p>
+            </div>
+            <div class="step-card" data-animate>
+              <div class="step-number">04</div>
+              <h3>Dekapsulimi dhe rikthimi në zë</h3>
+              <p>
+                Në destinacion, paketat dekapsulohen dhe rikthehen në sinjal
+                zanor të qartë për përdoruesin.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- FEATURES SECTION -->
-      <section class="colo-features">
-        <div class="colo-container">
+      <section class="voip-features">
+        <div class="voip-container">
           <div class="section-header">
-            <h2 class="section-title">Çfarë Përfshihet</h2>
+            <h2 class="section-title">
+              Zgjidhje VoIP profesionale për biznesin dhe ekipet moderne
+            </h2>
             <p class="section-subtitle">
-              Infrastrukturë e plotë për hosting të pajisjeve tuaja
+              Fleksibilitet global, funksionalitete të avancuara dhe integrim me
+              infrastrukturën ekzistuese.
             </p>
           </div>
 
-          <div class="feature-grid">
+          <div class="features-grid">
             <div class="feature-card" data-animate>
               <div class="feature-icon orange">
                 <svg
@@ -224,15 +332,15 @@
                   stroke="currentColor"
                   stroke-width="2"
                 >
-                  <rect x="2" y="3" width="20" height="14" rx="2" />
-                  <line x1="8" y1="21" x2="16" y2="21" />
-                  <line x1="12" y1="17" x2="12" y2="21" />
+                  <path
+                    d="M21 10h-3l-4 8-4-16-3 8H3"
+                  />
                 </svg>
               </div>
-              <h3 class="feature-title">Rack Units (U/RU)</h3>
+              <h3 class="feature-title">Mbulim Global</h3>
               <p class="feature-desc">
-                Njësi standarte 1U ≈ 4.45cm. Zgjidh nga 1U, 2U, 4U, 20U deri në
-                kabinet të plotë 42U sipas nevojave tuaja.
+                VoIP nga Abissnet funksionon kudo ku ka internet. Ideal për
+                ekipe të shpërndara, degë ndërkombëtare dhe punë në distancë.
               </p>
             </div>
 
@@ -246,13 +354,14 @@
                   stroke="currentColor"
                   stroke-width="2"
                 >
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                  <rect x="3" y="4" width="18" height="14" rx="2" />
+                  <path d="M7 8h10M7 12h6" />
                 </svg>
               </div>
-              <h3 class="feature-title">Energji e Pandërprerë</h3>
+              <h3 class="feature-title">Funksione të Avancuara</h3>
               <p class="feature-desc">
-                UPS dhe gjenerator për të garantuar 99.99% uptime. Fuqi e
-                dedikuar nga 1A deri 16A @230V.
+                Thirrje hyrëse/dalëse, numra virtualë, forward, IVR, voicemail,
+                integrim me centralë IP dhe softphone.
               </p>
             </div>
 
@@ -266,14 +375,14 @@
                   stroke="currentColor"
                   stroke-width="2"
                 >
-                  <rect x="3" y="11" width="18" height="11" rx="2" />
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  <path d="M4 21V8l8-5 8 5v13" />
+                  <path d="M9 21v-6h6v6" />
                 </svg>
               </div>
-              <h3 class="feature-title">Siguri Maksimale</h3>
+              <h3 class="feature-title">Shkallëzim i Lehtë</h3>
               <p class="feature-desc">
-                Kontrolli i aksesit fizik, kamera, alarm, mbrojtje Anti-DDoS dhe
-                monitorim 24/7 për sigurinë tuaj.
+                Shto ose hiq ekstensione, numra dhe përdorues pa ndryshuar
+                infrastrukturën fizike.
               </p>
             </div>
 
@@ -287,14 +396,16 @@
                   stroke="currentColor"
                   stroke-width="2"
                 >
-                  <circle cx="12" cy="12" r="10" />
-                  <polyline points="12 6 12 12 16 14" />
+                  <circle cx="12" cy="12" r="3" />
+                  <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 8 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 8a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 8 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09A1.65 1.65 0 0 0 16 4.6a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 8a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"
+                  />
                 </svg>
               </div>
-              <h3 class="feature-title">Klimë e Kontrolluar</h3>
+              <h3 class="feature-title">Integrim me Sistemet</h3>
               <p class="feature-desc">
-                Sistemet e avancuara të ftohjes dhe klimës ruajnë temperaturën
-                dhe lagështinë ideale për pajisjet.
+                Integrim me IP PBX ekzistuese, CRM, call center, softphone dhe
+                aplikacione të tjera biznesi.
               </p>
             </div>
 
@@ -308,14 +419,16 @@
                   stroke="currentColor"
                   stroke-width="2"
                 >
-                  <polyline points="16 18 22 12 16 6" />
-                  <polyline points="8 6 2 12 8 18" />
+                  <path d="M10 14l2-2 2 2 4-4" />
+                  <path
+                    d="M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9z"
+                  />
                 </svg>
               </div>
-              <h3 class="feature-title">Uplink të Shpejta</h3>
+              <h3 class="feature-title">Besueshmëri dhe QoS</h3>
               <p class="feature-desc">
-                Lidhje nga 1Gbps deri në 2×10Gbps me IP publike (/30 deri /26)
-                dhe mundësi për BGP routing.
+                Infrastrukturë e optimizuar për VoIP, prioritizim trafiku dhe
+                monitorim 24/7 për cilësi të qëndrueshme.
               </p>
             </div>
 
@@ -329,16 +442,16 @@
                   stroke="currentColor"
                   stroke-width="2"
                 >
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  <path
+                    d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                  />
+                  <path d="M9 11l2 2 4-4" />
                 </svg>
               </div>
-              <h3 class="feature-title">Suport 24/7</h3>
+              <h3 class="feature-title">Siguri e Lartë</h3>
               <p class="feature-desc">
-                Ekip teknike i disponueshëm gjithë kohën për asistencë në
-                vendosje, konfigurimin dhe mbajtjen e pajisjeve.
+                Enkriptim, kontroll aksesesh dhe politika sigurie për thirrjet
+                dhe sinjalizimin.
               </p>
             </div>
           </div>
@@ -346,224 +459,84 @@
       </section>
 
       <!-- BENEFITS SECTION -->
-      <section class="colo-benefits">
-        <div class="colo-container">
+      <section class="voip-benefits">
+        <div class="voip-container">
           <div class="section-header">
-            <h2 class="section-title">Përfitimet Kryesore</h2>
-            <p class="section-subtitle">
-              Pse të zgjedhësh Colocation në Abissnet
-            </p>
+            <h2 class="section-title">
+              Përfitimet kryesore të përdorimit të VoIP
+            </h2>
           </div>
 
           <div class="benefits-grid">
-            <div class="benefit-card" data-animate>
+            <div class="benefit-item" data-animate>
               <div class="benefit-number">01</div>
-              <h3>Besueshmëri e Lartë</h3>
+              <h3>Kosto efektive</h3>
               <p>
-                Infrastrukturë redundante me UPS, gjeneratorë dhe sistemet e
-                shumëfishta të rrjetit për uptime 99.99%.
+                Ul ndjeshëm kostot e komunikimit duke përdorur internetin për
+                thirrje, veçanërisht për ato ndërkombëtare dhe me distanca të
+                gjata.
               </p>
             </div>
 
-            <div class="benefit-card" data-animate>
+            <div class="benefit-item" data-animate>
               <div class="benefit-number">02</div>
-              <h3>Shkallëzueshmëri</h3>
+              <h3>Fleksibilitet dhe lëvizshmëri</h3>
               <p>
-                Fillo me 1U dhe rritet deri në kabinet të plotë 42U pa ndryshuar
-                lokacionin apo kontratën.
+                Kryeni thirrje nga çdo vend me internet dhe nga çdo pajisje:
+                telefon IP, laptop, smartphone, softphone.
               </p>
             </div>
 
-            <div class="benefit-card" data-animate>
+            <div class="benefit-item" data-animate>
               <div class="benefit-number">03</div>
-              <h3>Kosto Efektive</h3>
+              <h3>Cilësi e lartë e zërit</h3>
               <p>
-                Eleminon kostot e ndërtimit të data center-it tuaj: energji,
-                klimë, siguri dhe maintenance.
+                Teknologjitë moderne të kodimit dhe reduktimit të zhurmës
+                sigurojnë zë të pastër edhe në lidhje me shpejtësi të ndryshme.
               </p>
             </div>
 
-            <div class="benefit-card" data-animate>
+            <div class="benefit-item" data-animate>
               <div class="benefit-number">04</div>
-              <h3>Lidhje të Shpejta</h3>
+              <h3>Përshtatshmëri sipas nevojave</h3>
               <p>
-                Akses direkt në backbone-in e Abissnet me uplinks 10Gbps dhe
-                mundësi për BGP peering.
+                Analizojmë minutat dhe destinacionet e thirrjeve për të ndërtuar
+                një plan sa më të përshtatshëm dhe ekonomik për ju.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- PRICING TABLE SECTION -->
-      <section class="colo-pricing" id="paketat">
-        <div class="colo-container">
-          <div class="section-header">
-            <h2 class="section-title">Paketat e Colocation</h2>
-            <p class="section-subtitle">
-              Zgjidh paketen që përshtatet me infrastrukturën tuaj
-            </p>
-          </div>
+      
 
-          <div class="pricing-table-wrapper">
-            <table class="pricing-table">
-              <thead>
-                <tr>
-                  <th class="feature-col">Karakteristika</th>
-                  <th>
-                    <div class="package-header">
-                      <div class="package-name">1 Unit</div>
-                      <div class="package-price">
-                        5,000 ALL <span>Pcs/Muaj</span>
-                      </div>
-                    </div>
-                  </th>
-                  <th>
-                    <div class="package-header">
-                      <div class="package-name">Deri në 12 U</div>
-                      <div class="package-price">
-                        4,000 ALL<span>Pcs/Muaj</span>
-                      </div>
-                    </div>
-                  </th>
-                  <th class="featured">
-                    <div class="featured-badge">Më e Zgjedhur</div>
-                    <div class="package-header">
-                      <div class="package-name">Deri në 24 U</div>
-                      <div class="package-price">
-                        3,500 ALL<span>Pcs/Muaj</span>
-                      </div>
-                    </div>
-                  </th>
-                  <th>
-                    <div class="package-header">
-                      <div class="package-name">Deri në 42 U</div>
-                      <div class="package-price">
-                        3,000 ALL<span>Pcs/Muaj</span>
-                      </div>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th>Rack Units</th>
-                  <td>1U</td>
-                  <td>2U-12U Rack Unit</td>
-                  <td class="featured">14U-25 Rack Unit</td>
-                  <td>30U-42U Full Rack</td>
-                </tr>
-
-                <tr>
-                  <th>Konfigurim Units</th>
-                  <td>1 Unit</td>
-                  <td>Deri në 12 U</td>
-                  <td class="featured">Deri në 24 U</td>
-                  <td>Deri në 42 U</td>
-                </tr>
-                <tr>
-                  <th>Internet Connectivity</th>
-                  <td>1 Gbps</td>
-                  <td>1 Gbps</td>
-                  <td class="featured">1 Gbps</td>
-                  <td>1 Gbps</td>
-                </tr>
-                <tr>
-                  <th>Bandwidth</th>
-                  <td>10 TB / muaj</td>
-                  <td>30TB / muaj</td>
-                  <td class="featured">50TB / muaj</td>
-                  <td>80TB / muaj</td>
-                </tr>
-                <tr>
-                  <th>Switch Port 1x</th>
-                  <td>10 Gbps</td>
-                  <td>10 Gbps</td>
-                  <td class="featured">10/40 Gbps</td>
-                  <td>10/40/100 Gbps</td>
-                </tr>
-                <tr>
-                  <th>Furnizimi i Mbivendosur</th>
-                  <td>AC 220 V DC-48 V</td>
-                  <td>AC 220 V DC -48 V</td>
-                  <td class="featured">AC 220 V DC -48 V</td>
-                  <td>AC 220 V DC -48 V</td>
-                </tr>
-                <tr>
-                  <th>Availability Network</th>
-                  <td>99.99%</td>
-                  <td>99.99%</td>
-                  <td class="featured">99.99%</td>
-                  <td>99.99%</td>
-                </tr>
-                <tr>
-                  <th>NS & Reverse DNS</th>
-                  <td>✓ Përfshihet</td>
-                  <td>✓ Përfshihet</td>
-                  <td class="featured">✓ Përfshihet</td>
-                  <td>✓ Përfshihet</td>
-                </tr>
-                <tr>
-                  <th>Anti DDOS</th>
-                  <td>✓ Përfshihet</td>
-                  <td>✓ Përfshihet</td>
-                  <td class="featured">✓ Përfshihet</td>
-                  <td>✓ Përfshihet</td>
-                </tr>
-                <tr>
-                  <th>Suport teknik</th>
-                  <td>24/7</td>
-                  <td>24/7</td>
-                  <td class="featured">24/7</td>
-                  <td>24/7</td>
-                </tr>
-                <tr class="cta-row">
-                  <th></th>
-                  <td><a href="#apliko" class="table-btn">Zgjidh</a></td>
-                  <td><a href="#apliko" class="table-btn">Zgjidh</a></td>
-                  <td class="featured">
-                    <a href="#apliko" class="table-btn primary">Zgjidh</a>
-                  </td>
-                  <td><a href="#apliko" class="table-btn">Zgjidh</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p class="pricing-note">
-            *Çmimet e shfaqura janë bazë. Shtesa si IP shtesë, uplink shtesë,
-            fuqi shtesë, cross-connect dhe mbrojtje e avancuar Anti-DDoS mund të
-            tarifohen veçmas.
-          </p>
-        </div>
-      </section>
-
-      <!-- APPLICATION FORM -->
-      <section class="colo-form-section" id="apliko">
-        <div class="colo-container-small">
+      <!-- QUOTE REQUEST FORM -->
+      <section class="voip-form-section" id="apliko">
+        <div class="voip-container-small">
           <div class="form-header">
-            <h2 class="form-title">Kërko Ofertë për Colocation</h2>
+            <h2 class="form-title">Kërko ofertë për VoIP</h2>
             <p class="form-subtitle">
-              Plotëso formularin dhe ne do të të kontaktojmë brenda 24 orëve me
-              një ofertë të personalizuar.
+              Plotëso formularin dhe ekipi ynë do të të kontaktojë brenda 24
+              orëve për një ofertë të personalizuar VoIP, bazuar në minutat dhe
+              destinacionet që përdor.
             </p>
           </div>
 
-          <form class="colo-form" id="colo-form">
+          <form class="voip-form" id="voip-form">
             <div class="form-row">
               <div class="form-group">
-                <label for="emri">Emri & Mbiemri *</label>
+                <label for="emri">Emri i Biznesit / Individit *</label>
                 <input
                   id="emri"
                   name="emri"
                   type="text"
-                  placeholder="p.sh. Arlind Hoxha"
+                  placeholder="p.sh. Company Shpk / Emër Mbiemër"
                   required
                 />
                 <span class="form-error" id="emri-error"></span>
               </div>
               <div class="form-group">
-                <label for="telefoni">Telefoni *</label>
+                <label for="telefoni">Telefon Kontakti *</label>
                 <input
                   id="telefoni"
                   name="telefoni"
@@ -582,55 +555,58 @@
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="email@kompania.com"
+                  placeholder="contact@kompania.al"
                   required
                 />
                 <span class="form-error" id="email-error"></span>
               </div>
               <div class="form-group">
-                <label for="kompania">Kompania *</label>
+                <label for="paketa">Interesi kryesor *</label>
+                <select id="paketa" name="paketa" required>
+                  <option value="">Zgjidh opsionin...</option>
+                  <option value="global">VoIP me mbulim global</option>
+                  <option value="callcenter">VoIP për call center</option>
+                  <option value="remote">VoIP për ekipe remote</option>
+                  <option value="integ">Integrim me IP PBX ekzistues</option>
+                </select>
+                <span class="form-error" id="paketa-error"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="përdoruesit">Numri i përdoruesve / ekstensioneve</label>
                 <input
-                  id="kompania"
-                  name="kompania"
+                  id="përdoruesit"
+                  name="përdoruesit"
                   type="text"
-                  placeholder="Emri i kompanisë"
-                  required
+                  placeholder="p.sh. 5, 20, 50+"
                 />
-                <span class="form-error" id="kompania-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="minutat"
+                  >Vlerësimi i minutave në muaj (afërsisht)</label
+                >
+                <input
+                  id="minutat"
+                  name="minutat"
+                  type="text"
+                  placeholder="p.sh. 1 000, 5 000, 10 000+"
+                />
               </div>
             </div>
 
             <div class="form-group">
-              <label for="paketa">Paketa e Interesit *</label>
-              <select id="paketa" name="paketa" required>
-                <option value="">Zgjidh paketen...</option>
-                <option value="1U">1U Rack Unit (5000ALL/muaj)</option>
-                <option value="2U">2U-12U Rack Unit (4000ALL/muaj)</option>
-                <option value="4U">
-                  14U-25 Rack Unit (3500ALL/muaj) — E REKOMANDUAR
-                </option>
-                <option value="20U">30U-42U Full Rack(3000ALL/muaj)</option>
-
-                <option value="custom">Konfiguracion i personalizuar</option>
-              </select>
-              <span class="form-error" id="paketa-error"></span>
-            </div>
-
-            <div class="form-group">
-              <label for="mesazhi">Detajet Teknike</label>
+              <label for="mesazhi">Detaje shtesë</label>
               <textarea
                 id="mesazhi"
                 name="mesazhi"
-                rows="6"
-                placeholder="Përshkruani nevojat tuaja teknike:
-• Sa RU ju duhen?
-• Fuqi e nevojshme (Ampere)?
-• Uplink (1Gbps, 10Gbps)?
-• Sa IP publike?
-• A keni nevojë për BGP routing?
-• Cross-connect me ISP të tjerë?
-• Mbrojtje e avancuar Anti-DDoS?
-• Koha e fillimit të shërbimit?"
+                rows="5"
+                placeholder="Ju lutemi përshkruani:
+• Destinacionet kryesore (lokale, mobile, ndërkombëtare)
+• A keni tashmë një zgjidhje VoIP / centralë IP?
+• A keni nevojë për numra të rinj apo portim?
+• Orari i preferuar për kontakt"
               ></textarea>
             </div>
 
@@ -753,7 +729,7 @@
                 fill="currentColor"
               >
                 <path
-                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"
                 />
               </svg>
             </a>
@@ -768,7 +744,7 @@
     <!-- Scripts -->
     <script src="../assets/js/toast.js"></script>
     <script src="../assets/js/script.js"></script>
-    <script src="../assets/js/biznesi/colocation.js"></script>
+    <script src="../assets/js/biznesi/telephony.js"></script>
 
     <!-- Back to Top -->
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">
