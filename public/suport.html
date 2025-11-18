@@ -181,14 +181,11 @@
       </div>
     </header>
 
-    <!-- Sub Navigation -->
     <div class="subnav" role="navigation" aria-label="Shërbime">
       <div class="subnav-inner">
         <a href="index.html" class="pill active">Individ</a>
         <a href="biznesi/index.html" class="pill">Biznes</a>
-      <a href="index.html" class="pill "
-          >Abissnet Superiore</a
-        >
+        <a href="AbissnetSuperiore/abissnet_superiore.html" class="pill">Abissnet Superiore</a>
       </div>
     </div>
 
@@ -250,7 +247,36 @@
         </form>
       </div>
     </section>
+    <script>
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
 
+      const form = e.target;
+      const payload = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        city: form.city.value,
+        subject: form.subject.value,
+        client_status: form['client-status'].value,
+        message: form.message.value,
+      };
+
+      const resp = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload),
+      });
+
+      const data = await resp.json();
+      if (data.success) {
+        alert('Mesazhi u dërgua. Faleminderit!');
+        form.reset();
+      } else {
+        alert('Gabim gjatë dërgimit. Provo përsëri.');
+      }
+    });
+    </script>  
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-inner">

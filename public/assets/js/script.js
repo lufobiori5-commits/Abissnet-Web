@@ -429,3 +429,48 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 console.log("🚀 Abissnet website scripts loaded!");
+
+// ====== Footer logo replacement (make logo clickable and context-aware) ======
+document.addEventListener("DOMContentLoaded", function () {
+  try {
+    const logoContainer = document.querySelector(".footer-col.brand .footer-logo");
+    if (!logoContainer) return;
+
+    const segments = window.location.pathname.split("/").filter(Boolean);
+    const depth = segments.length; // root pages -> 1 (index.html), subfolder pages -> 2
+    const inBiz = segments[0] === "biznesi";
+
+    const imgPrefix = depth >= 2 ? "../assets/img/" : "assets/img/";
+    const logoSrc = imgPrefix + "abissnet-logo.png";
+
+    let href;
+    if (inBiz) {
+      // On biznesi pages, link to the biznes index (same folder)
+      href = "index.html";
+    } else if (depth >= 2) {
+      // On other subfolders (e.g., AbissnetSuperiore), go to root index
+      href = "../index.html";
+    } else {
+      // On root pages, link to index (same)
+      href = "index.html";
+    }
+
+    const a = document.createElement("a");
+    a.href = href;
+    a.setAttribute("aria-label", "Abissnet Home");
+
+    const img = document.createElement("img");
+    img.src = logoSrc;
+    img.alt = "Abissnet";
+    img.style.height = "36px";
+    img.style.display = "inline-block";
+    img.style.objectFit = "contain";
+
+    // Clear existing text and insert link
+    logoContainer.innerHTML = "";
+    a.appendChild(img);
+    logoContainer.appendChild(a);
+  } catch (err) {
+    console.error("Footer logo replacement failed:", err);
+  }
+});

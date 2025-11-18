@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Abissnet Superiore - Partneriteti & Grupmoshat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Global CSS të projektit (master that imports shared modules) -->
+    <link rel="stylesheet" href="../assets/css/individed-index-style.css" />
+
+    <!-- CSS specifike për këtë faqe -->
+    <link rel="stylesheet" href="../assets/css/abissnet_superiore/abissnet-superiore.css" />
+  <script type="text/javascript" src="https://portal2.abissnet.al/im_livechat/loader/2"></script>
+    <script type="text/javascript" src="https://portal2.abissnet.al/im_livechat/assets_embed.js"></script>
+  </head>
+  <body>
+    <a href="#main" class="skip-to-main">Kalo te përmbajtja kryesore</a>
+
+    <!-- Header (site canonical) -->
+    <header class="header" id="siteHeader">
+      <div class="header-inner">
+        <div class="header-logo">
+          <a href="../index.html">
+            <img
+              src="../assets/img/abissnet-logo-dark.png"
+              alt="Abissnet"
+              height="40"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <span
+              style="display: none; font-style: italic; font-size: 1.5rem; font-weight: 700; color: #fff;"
+              >abissnet</span
+            >
+          </a>
+        </div>
+
+        <nav class="header-nav">
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Internet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li>
+                <a class="dropdown-item" href="../internet.html">Internet</a>
+              </li>
+              <li class="divider" role="separator"></li>
+              <li>
+                <a class="dropdown-item" href="../internet-tv.html">Internet & TV</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Abissnet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li>
+                <a class="dropdown-item" href="../ftonjemik.html">Fto një mik</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="../studentet.html">Përfitime për studentët</a>
+              </li>
+              <li><a class="dropdown-item" href="../gaming.html">Gaming</a></li>
+              <li>
+                <a class="dropdown-item" href="../puno-nga-shtepia.html">Puno nga Shtëpia</a>
+              </li>
+            </ul>
+          </div>
+
+          <a href="../suport.html">Suport</a>
+          <a href="../partner.html">Partnerët</a>
+          <a href="../abonentet.html">Abonentët</a>
+          <a href="../karriera.html">Karriera</a>
+          <a href="../app.html">APP</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="header-btn outline" href="../dyqanet.html">Harta Retail</a>
+          <a class="header-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+          <a class="header-btn primary" href="../suport.html">Na Kontakto</a>
+        </div>
+
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Internet
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="../internet.html">Internet</a>
+              <a href="../internet-tv.html">Internet & TV</a>
+            </div>
+          </div>
+
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Abissnet
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+           <div class="mobile-dropdown-content">
+              <a href="../ftonjemik.html">Fto një mik</a>
+              <a href="../studentet.html">Përfitime për studentët</a>
+              <a href="../gaming.html">Gaming</a>
+              <a href="../puno-nga-shtepia.html">Puno nga Shtëpia</a>
+            </div>
+          </div>
+
+          <a href="../suport.html" class="mobile-nav-link">Suport</a>
+          <a href="../partner.html" class="mobile-nav-link">Partnerët</a>
+          <a href="../abonentet.html" class="mobile-nav-link">Abonentët</a>
+          <a href="../karriera.html" class="mobile-nav-link">Karriera</a>
+          <a href="../app.html" class="mobile-nav-link">App</a>
+
+          <div class="mobile-actions">
+            <a class="mobile-btn outline" href="../dyqanet.html">Harta e Mbulimit</a>
+            <a class="mobile-btn outline" href="https://pay.abissnet.al/">Paguaj Tani</a>
+            <a class="mobile-btn primary" href="../suport.html">Na Kontakto</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="subnav" role="navigation" aria-label="Shërbime">
+      <div class="subnav-inner">
+        <a href="../index.html" class="pill">Individ</a>
+        <a href="../biznesi/index.html" class="pill">Biznes</a>
+        <a href="abissnet_superiore.html" class="pill active">Abissnet Superiore</a>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <main id="main">
+      <!-- HERO -->
+      <section class="abiss-hero">
+        <div class="abiss-hero-inner">
+          <div class="abiss-hero-left">
+            <div class="abiss-hero-badge">
+              <span class="dot"></span>
+              <span>Partneritet strategjik FSHF &amp; Abissnet</span>
+            </div>
+            <h1 class="abiss-hero-title">
+              Abissnet Superiore
+              <span>Emri i kampionatit elitar shqiptar</span>
+            </h1>
+            <p class="abiss-hero-text">
+              Nga nënshkrimi i marrëveshjes së parë në vitin 2021 deri te
+              rinovimi trevjeçar 2024–2027 dhe eventi “Më të mirët e
+              grupmoshave”, Abissnet Superiore është bërë referencë për
+              futbollin elitar dhe zhvillimin e talenteve të rinj në Shqipëri.
+            </p>
+
+            <div class="abiss-hero-actions">
+              <a href="#kartat" class="btn btn-primary">Shiko 3 momentet kryesore</a>
+              <a href="#eventi" class="btn btn-outline">Më të mirët U15–U21</a>
+            </div>
+
+            <div class="abiss-hero-stats">
+              <div class="stat">
+                <span class="label">Kohëzgjatja</span>
+                <span class="value">2021–2027</span>
+              </div>
+              <div class="stat">
+                <span class="label">Trofe të ndarë</span>
+                <span class="value">72+</span>
+              </div>
+              <div class="stat">
+                <span class="label">Grupmoshat</span>
+                <span class="value">U15–U21</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="abiss-hero-right">
+            <div class="abiss-hero-card">
+              <img
+                src="../assets/img/superiore2 (2).jpeg"
+                alt="Nënshkrimi i marrëveshjes Abissnet Superiore"
+                loading="lazy"
+              />
+              <div class="abiss-hero-card-overlay">
+                <p>
+                  Marrëveshja e re trevjeçare 2024–2027 mes Abissnet sh.a dhe
+                  Federatës Shqiptare të Futbollit.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 KARTA KRYESORE -->
+      <section class="abiss-cards-section" id="kartat">
+        <div class="abiss-section-inner">
+          <h2 class="packages-title">3 momente që përkufizojnë Abissnet Superiore</h2>
+          <p class="abiss-section-intro">
+            Partneriteti fillestar, rinovimi trevjeçar dhe eventi “Më të mirët
+            e grupmoshave” – e gjithë historia e Abissnet Superiore në tre
+            karta, me detajet që shfaqen sapo kalon maus-in mbi to.
+          </p>
+
+          <div class="abiss-cards-grid">
+            <!-- KARTA 1 -->
+            <article class="abiss-card" id="partneriteti">
+              <div class="abiss-card-image">
+                <img
+                  src="../assets/img/superiore1 (1).jpeg"
+                  alt="Prezantimi i parë i Abissnet Superiore"
+                  loading="lazy"
+                />
+              </div>
+              <div class="abiss-card-body">
+                <h3 class="abiss-card-title">
+                  Partneriteti i parë 2021–2024
+                </h3>
+                <p class="abiss-card-meta">
+                  Marrëveshja fillestare që i dha kampionatit elitar emrin
+                  “Abissnet Superiore”.
+                </p>
+              </div>
+              <div class="abiss-card-details">
+                <p>
+                  Abissnet sh.a, me administrator z. Koço Kokëdhima, u shpall
+                  fituese në ankandin e FSHF-së për shitjen e emrit të
+                  kampionatit elitar për sezonet 2021–2022, 2022–2023 dhe
+                  2023–2024. 
+                </p>
+                <p>
+                  Marrëveshja, e nënshkruar në “Air Albania”, u konceptua sipas
+                  modeleve të kampionateve më të mira europiane, me synim që të
+                  siguronte të ardhura shtesë për klubet dhe të rritej niveli i
+                  futbollit elitar në vend. 
+                </p>
+              </div>
+            </article>
+
+            <!-- KARTA 2 -->
+            <article class="abiss-card">
+              <div class="abiss-card-image">
+                <img
+                  src="../assets/img/superiore2 (2).jpeg"
+                  alt="Nënshkrimi i marrëveshjes së re trevjeçare"
+                  loading="lazy"
+                />
+              </div>
+              <div class="abiss-card-body">
+                <h3 class="abiss-card-title">
+                  Marrëveshja e re 2024–2027
+                </h3>
+                <p class="abiss-card-meta">
+                  Vazhdimësi e partneritetit me standarde të reja investimi dhe
+                  përfshirjeje komunitare.
+                </p>
+              </div>
+              <div class="abiss-card-details">
+                <p>
+                  Në mars 2025 u hap procesi i ri i përzgjedhjes nga FSHF dhe
+                  Abissnet u shpall sërish fituese falë ofertës më të mirë dhe
+                  vizionit për rritjen e vlerës së kampionatit. 
+                </p>
+                <p>
+                  Nga sezoni 2024–2025 deri në 2026–2027 kampionati elitar mban
+                  përsëri emrin “Abissnet Superiore”, duke konsoliduar rolin e
+                  kompanisë si partner afatgjatë i futbollit shqiptar. 
+                </p>
+              </div>
+            </article>
+
+            <!-- KARTA 3 -->
+            <article class="abiss-card">
+              <div class="abiss-card-image">
+                <img
+                  src="../assets/img/superiore3 (3).jpeg"
+                  alt="Eventi Më të mirët e grupmoshave"
+                  loading="lazy"
+                />
+              </div>
+              <div class="abiss-card-body">
+                <h3 class="abiss-card-title">
+                  Eventi “Më të mirët e grupmoshave”
+                </h3>
+                <p class="abiss-card-meta">
+                  Një mbrëmje e dedikuar talenteve më të spikatur U15–U21.
+                </p>
+              </div>
+              <div class="abiss-card-details">
+                <p>
+                  Në “Shtëpinë e Futbollit”, Abissnet dhe FSHF organizuan
+                  eventin “Më të mirët e grupmoshave të Abissnet Superiore” për
+                  sezonin 2024–2025, ku u nderuan futbollistët dhe trajnerët më
+                  të mirë të kampionateve U15, U16, U17, U18, U19 dhe U21. 
+                </p>
+                <p>
+                  U shpërndanë gjithsej 72 trofe, ndërsa drejtuesit e FSHF-së
+                  dhe Abissnet theksuan rëndësinë e promovimit të talenteve të
+                  rinj dhe të një kampionati të pastër e të besueshëm. 
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- EVENTI & FORMACIONET - TEKST I SHKURTËR -->
+      <section class="abiss-event-section" id="eventi">
+        <div class="abiss-section-inner">
+          <div class="abiss-event-layout">
+            <div class="abiss-event-text">
+              <h2 class="packages-title">
+                Më të mirët e grupmoshave U15–U21, sezoni 2024–2025
+              </h2>
+              <p>
+                Në secilën grupmoshë u përzgjodh “formacioni i vitit” dhe
+                trajneri më i mirë, duke u fokusuar te lojtarët që kanë
+                spikatur gjatë sezonit në kampionatet “Abissnet Superiore”
+                U15–U21. 
+              </p>
+              <p>
+                Nga Rei Shpuza te U15, te Aizak Babe dhe lojtarët e tjerë të
+                U19, e deri te Arber Jata në U21, lista e fituesve tregon
+                gjerësinë e talentit në futbollin shqiptar dhe rëndësinë e
+                punës së akademive dhe klubeve në të gjithë vendin. 
+              </p>
+              <p>
+                Ky event është kthyer në një traditë vjetore që nderon jo vetëm
+                lojtarët, por edhe trajnerët që punojnë çdo ditë me ta për
+                t’i çuar në nivele më të larta.
+              </p>
+            </div>
+            <aside class="abiss-event-highlight">
+              <h3>Shifra kryesore</h3>
+              <ul>
+                <li><strong>6</strong> kampionate grupmoshash (U15–U21)</li>
+                <li><strong>66</strong> lojtarë në formacionet e vitit</li>
+                <li><strong>6</strong> trajnerë të vlerësuar</li>
+                <li><strong>72</strong> trofe të dorëzuar në një mbrëmje</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOG SECTION -->
+      <section class="abiss-blog-section" id="blog">
+        <div class="abiss-section-inner">
+          <header class="abiss-blog-header">
+            <h2 class="blog-hero-title">Blogu i Abissnet Superiore</h2>
+            <p class="abiss-blog-subtitle">
+              Artikuj shpjegues mbi partneritetin, eventet dhe ndikimin e
+              Abissnet Superiore në futbollin shqiptar.
+            </p>
+          </header>
+
+          <div class="abiss-blog-grid">
+            <!-- Post 1 -->
+            <article class="abiss-blog-card">
+              <div class="abiss-blog-tag">Partneriteti</div>
+              <h3 class="abiss-blog-title">
+                Si lindi marka “Abissnet Superiore”
+              </h3>
+              <p class="abiss-blog-excerpt">
+                Historia nis me ankandin e FSHF-së dhe vendimin e Abissnet për
+                të lidhur emrin e kompanisë me kampionatin elitar shqiptar, si
+                shenjë besimi në rritjen e nivelit të futbollit në vend. 
+              </p>
+              <a href="#partneriteti" class="abiss-blog-link">
+                Lexo më shumë te partneriteti
+              </a>
+            </article>
+
+            <!-- Post 2 -->
+            <article class="abiss-blog-card">
+              <div class="abiss-blog-tag">Rinovimi</div>
+              <h3 class="abiss-blog-title">
+                2024–2027: një marrëveshje për të ardhmen
+              </h3>
+              <p class="abiss-blog-excerpt">
+                Rinovimi trevjeçar i kontratës me FSHF nuk është thjesht
+                vazhdimësi, por një angazhim për standarde të reja promovimi,
+                investimi dhe përfshirjeje në komunitet, duke afruar modelin e
+                kampionatit me ligat më të zhvilluara europiane. 
+              </p>
+              <a href="#kartat" class="abiss-blog-link">
+                Shiko kartën e marrëveshjes së re
+              </a>
+            </article>
+
+            <!-- Post 3 -->
+            <article class="abiss-blog-card">
+              <div class="abiss-blog-tag">Talente</div>
+              <h3 class="abiss-blog-title">
+                Më të mirët e grupmoshave: më shumë se një event
+              </h3>
+              <p class="abiss-blog-excerpt">
+                “Më të mirët e grupmoshave të Abissnet Superiore” është një
+                skenë ku njihen lojtarët dhe trajnerët që përfaqësojnë të
+                ardhmen e futbollit shqiptar, duke i dhënë peshë reale punës
+                së akademive dhe klubeve në të gjithë vendin. 
+              </p>
+              <a href="#eventi" class="abiss-blog-link">
+                Detaje nga eventi i këtij sezoni
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer (site canonical) -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col brand">
+          <div class="footer-logo">Abissnet</div>
+          <ul>
+            <li><a href="../abissnet.html">Rreth Abissnet</a></li>
+            <li><a href="../karriera.html">Karriera</a></li>
+            <li><a href="../informacioniligjor.html">Informacion Ligjor</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Shërbime/Produkte</h3>
+          <ul>
+            <li><a href="../suport.html">Suport</a></li>
+            <li><a href="../dyqanet.html">Dyqanet</a></li>
+            <li><a href="../internet.html">Pse Abissnet</a></li>
+            <li><a href="../ftonjemik.html">Refero Nje Mik</a></li>
+            <li><a href="#">Llogaritë Bankare</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Më të Populluara</h3>
+          <ul>
+            <li><a href="../tarifat.html">Tarifat</a></li>
+            <li><a href="../abonentet.html">Abonohu</a></li>
+            <li><a href="https://pay.abissnet.al/">Paguaj Faturen</a></li>
+            <li><a href="../internet-tv.html">Ofertat Internet</a></li>
+            <li><a href="../biznesi/speed-test.html">Speed Test</a></li>
+            <li><a href="../sitepaguaj.html">Si Të Paguaj</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Shkruaj email-in tuaj" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="footer-social">
+            <a
+              href="https://facebook.com/abissnet"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://instagram.com/abissnet"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://youtube.com/@abissnet"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2025 Abissnet. Të gjitha të drejtat e rezervuara.
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+
+    <!-- Skriptet e faqes (relative to this folder) -->
+    <script src="../assets/js/individi/index/carousel.js"></script>
+    <script src="../assets/js/toast.js"></script>
+    <script src="../assets/js/speedtest.js"></script>
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

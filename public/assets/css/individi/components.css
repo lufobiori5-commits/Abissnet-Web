@@ -73,7 +73,7 @@
 
 .header-inner {
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: -6px auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -297,7 +297,7 @@
    ======================================== */
 .subnav {
   background-color: var(--color-gray-100);
-  padding: var(--spacing-md) var(--spacing-2xl);
+  padding: 0.75rem var(--spacing-2xl);
   position: fixed;
   top: var(--header-height);
   left: 0;
@@ -307,6 +307,8 @@
   border-bottom: 1px solid var(--color-gray-200);
   display: flex;
   align-items: center;
+  /* use padding for vertical spacing so pills stay centered */
+  height: auto;
 }
 
 .subnav-inner {
@@ -316,6 +318,9 @@
   gap: var(--spacing-md);
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  padding-top: 0;
+  height: auto;
 }
 
 .pill {
@@ -528,7 +533,7 @@
 .back-to-top {
   position: fixed;
   bottom: 30px;
-  right: 30px;
+  left: 30px;
   width: 50px;
   height: 50px;
   background: linear-gradient(
@@ -543,7 +548,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 999;
+  z-index: 11000;
   box-shadow: var(--shadow-orange);
   transition: all var(--transition-base);
   opacity: 0;

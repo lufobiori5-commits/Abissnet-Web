@@ -10,6 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+import { odooExecute } from "./odooClient.js";
 app.use(cors());
 app.use(express.json());
 
@@ -107,6 +108,17 @@ function requireAuth(req, res, next) {
 }
 
 // ============ API ROUTES ============
+app.post("/api/contact", async (req, res) => {
+  const payload = req.body; // name, email, phone, city, subject, client_status, message
+
+  try {
+    const leadId = await odooExecute("crm.lead", "create_from_api", [payload]);
+    res.json({ success: true, lead_id: leadId });
+  } catch (err) {
+    console.error("ODDO ERROR:", err);
+    res.status(500).json({ success: false, error: err.toString() });
+  }
+});
 
 app.post("/api/login", async (req, res) => {
   const { email, password } = req.body || {};

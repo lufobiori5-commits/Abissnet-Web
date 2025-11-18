@@ -218,7 +218,7 @@ button {
 
 .header-inner {
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: -6px auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -4353,11 +4353,10 @@ button {
 /* ========================================
    BACK TO TOP BUTTON
    ======================================== */
-
 .back-to-top {
   position: fixed;
   bottom: 30px;
-  right: 30px;
+  left: 30px;
   width: 50px;
   height: 50px;
   background: linear-gradient(
@@ -4372,7 +4371,7 @@ button {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 999;
+  z-index: 11000;
   box-shadow: var(--shadow-orange);
   transition: all var(--transition-base);
   opacity: 0;
@@ -4389,20 +4388,6 @@ button {
 .back-to-top:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-orange-lg);
-}
-
-.back-to-top:active {
-  transform: translateY(-2px);
-}
-
-.back-to-top svg {
-  width: 24px;
-  height: 24px;
-  transition: transform var(--transition-base);
-}
-
-.back-to-top:hover svg {
-  transform: translateY(-3px);
 }
 
 /* Pulse animation when first appears */

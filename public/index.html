@@ -186,7 +186,7 @@
       <div class="subnav-inner">
         <a href="index.html" class="pill active">Individ</a>
         <a href="biznesi/index.html" class="pill">Biznes</a>
-        <a href="AbissnetSuperiore/indexsuperiore.html" class="pill">Abissnet Superiore</a>
+        <a href="AbissnetSuperiore/abissnet_superiore.html" class="pill">Abissnet Superiore</a>
       </div>
     </div>
 
@@ -818,49 +818,35 @@
     <!-- WhatsApp Integration for Package Cards -->
     <script>
       (function () {
-        const WHATSAPP_NUMBER = "+355695588569";
+        const WHATSAPP_NUMBER = "+355695588569"; // international with +
 
         // Handle package card button clicks
         const packageSection = document.getElementById("paketat");
-        if (packageSection) {
-          // Get all package buttons
-          packageSection.querySelectorAll(".package-btn").forEach((btn) => {
-            btn.addEventListener("click", function (e) {
-              e.preventDefault();
-              e.stopPropagation();
+        if (!packageSection) return;
 
-              // Get the card container
-              const card = this.closest(".package-card");
+        packageSection.querySelectorAll(".package-cta").forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
 
-              if (card) {
-                // Get speed from data attribute
-                const speed = card.dataset.speed;
+            const card = this.closest(".package-card");
+            if (!card) return;
 
-                // Get package name for better message
-                const packageName =
-                  card.querySelector(".package-name")?.textContent.trim() || "";
+            const speed = card.dataset.speed || "";
+            const badge = card.querySelector(".package-badge")?.textContent.trim();
+            const speedText = speed ? `${speed}` : "";
 
-                // Create WhatsApp message
-                let message;
-                if (packageName) {
-                  message = encodeURIComponent(
-                    `Përshëndetje Abissnet! Jam i interesuar për paketën "${packageName}" (${speed}).`
-                  );
-                } else {
-                  message = encodeURIComponent(
-                    `Përshëndetje Abissnet! Jam i interesuar për paketën ${speed}.`
-                  );
-                }
+            let messageText = "Përshëndetje Abissnet! Jam i interesuar për paketën";
+            if (badge) messageText += ` \"${badge}\"`;
+            if (speedText) messageText += ` (${speedText})`;
+            messageText += ".";
 
-                // Open WhatsApp
-                window.open(
-                  `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`,
-                  "_blank"
-                );
-              }
-            });
+            const message = encodeURIComponent(messageText);
+            const phone = WHATSAPP_NUMBER.replace(/\D/g, ""); // strip + and formatting
+
+            window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
           });
-        }
+        });
       })();
     </script>
 
