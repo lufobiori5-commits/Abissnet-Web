@@ -320,15 +320,44 @@
 /* Speed Display - FIXED */
 .package-speed {
   font-family: var(--font-primary);
-  font-size: 2.4rem; /* FIXED: Slightly smaller */
   font-weight: 900;
   line-height: 1;
   letter-spacing: -0.05em;
-  margin-bottom: 8px; /* FIXED: Add spacing */
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
 }
 
-.package-speed-small {
-  font-size: 3rem; /* FIXED: For 10G/1G */
+.speed-top {
+  font-size: 2.8rem;
+  display: block;
+}
+
+.speed-divider {
+  width: 80%;
+  height: 3px;
+  background: currentColor;
+  display: block;
+  margin: 4px 0;
+  opacity: 0.8;
+  border-radius: 2px;
+}
+
+.speed-bottom {
+  font-size: 2.8rem;
+  display: block;
+}
+
+.package-speed-small .speed-top,
+.package-speed-small .speed-bottom {
+  font-size: 3.2rem;
+}
+
+.package-speed-small .speed-divider {
+  height: 4px;
+  width: 85%;
 }
 
 .package-unit {

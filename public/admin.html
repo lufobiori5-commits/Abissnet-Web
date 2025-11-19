@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Admin - Post Jobs</title>
+    <link rel="stylesheet" href="assets/css/individed-partner-style.css" />
+    <style>
+      /* minimal admin styles */
+      body{font-family:Inter, system-ui, Arial, sans-serif; padding:24px; background:#fff}
+      .admin-wrap{max-width:900px;margin:0 auto}
+      .card{background:#fff;border:1px solid #eee;padding:18px;border-radius:12px;box-shadow:0 6px 30px rgba(0,0,0,.06)}
+      label{display:block;margin-top:12px;font-weight:600}
+      input[type=text], textarea, input[type=date]{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd}
+      .row{display:flex;gap:12px}
+      .row>div{flex:1}
+      .actions{margin-top:12px}
+      button{background:linear-gradient(135deg,#f68732,#ff9d5c);color:#fff;border:none;padding:10px 16px;border-radius:10px;cursor:pointer}
+      .jobs-list{margin-top:18px}
+      .job-item{border-radius:8px;padding:12px;border:1px solid #eee;margin-bottom:10px}
+      .muted{color:#666;font-size:0.9rem}
+      .danger{background:#fff;color:#c0392b;border:1px solid rgba(192,57,43,.12)}
+      .logout{float:right;background:#ccc;color:#111}
+    </style>
+  </head>
+  <body>
+    <div class="admin-wrap">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px">
+        <h1>HR — Post New Job</h1>
+        <button id="btnLogout" class="logout">Logout</button>
+      </div>
+
+      <div class="card">
+        <form id="jobForm">
+          <div class="row">
+            <div>
+              <label for="title">Titulli i punës</label>
+              <input id="title" name="title" type="text" required />
+            </div>
+            <div>
+              <label for="location">Vendndodhja</label>
+              <input id="location" name="location" type="text" />
+            </div>
+          </div>
+
+          <label for="date">Data publike</label>
+          <input id="date" name="date" type="date" />
+
+          <label for="desc">Përshkrimi</label>
+          <textarea id="desc" name="desc" rows="6" required></textarea>
+
+          <div class="actions">
+            <button type="submit">Publiko Punën</button>
+            <button type="button" id="btnExport" style="margin-left:8px">Export JSON</button>
+          </div>
+        </form>
+
+        <div class="jobs-list" id="jobsList">
+          <!-- existing jobs will render here -->
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/admin.js"></script>
+  </body>
+</html>

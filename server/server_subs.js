@@ -120,6 +120,39 @@ app.post("/api/contact", async (req, res) => {
   }
 });
 
+app.post("/api/careers/apply", async (req, res) => {
+  const data = req.body; // position_title, full_name, email, phone, message, resume_name
+
+  try {
+    // Prepare payload for Odoo - 'name' is required field for crm.lead
+    const payload = {
+      name: `Aplikim: ${data.position_title || 'Pozicion i paspecifikuar'} - ${data.full_name || 'N/A'}`,
+      contact_name: data.full_name || "",
+      email_from: data.email || "",
+      phone: data.phone || "",
+      description: data.message || "",
+      position_title: data.position_title || "",
+      resume_name: data.resume_name || "",
+    };
+
+    // Create lead in Odoo - Odoo will handle email sending to b.njerezore@abissnet.al
+    const leadId = await odooExecute("crm.lead", "create_from_api_job", [payload]);
+    
+    console.log(`${colors.green}✅ Job application submitted - Lead #${leadId} created${colors.reset}`);
+    console.log(`${colors.cyan}   Applicant: ${data.full_name}${colors.reset}`);
+    console.log(`${colors.cyan}   Position: ${data.position_title}${colors.reset}`);
+    console.log(`${colors.cyan}   Email will be sent to: b.njerezore@abissnet.al${colors.reset}`);
+    
+    res.json({ success: true, lead_id: leadId });
+  } catch (err) {
+    console.error(`${colors.red}❌ Job application error:${colors.reset}`, err);
+    res.status(500).json({ 
+      success: false, 
+      error: "Gabim në dërgimin e aplikimit. Ju lutem provoni përsëri ose kontaktoni support." 
+    });
+  }
+});
+
 app.post("/api/login", async (req, res) => {
   const { email, password } = req.body || {};
   if (email === "demo@abissnet.al" && password === "demo123") {

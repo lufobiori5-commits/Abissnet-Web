@@ -1,6 +1,11 @@
 // ---- constants
 const LS_KEY = "abissnet_jobs";
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+// Replace this with the actual HR email address where applications should be sent.
+// Using FormSubmit.co: the script will POST the form to FormSubmit which forwards to the email.
+// To make this work you should replace the value below with the real HR email
+// (and verify the email at formsubmit.co on first submit if required).
+const HR_EMAIL = "b.njerezore@abissnet.al"; // set to provided HR email
 const adminPanel = document.getElementById("adminPanel");
 const btnAdminToggle = document.getElementById("btnAdminToggle");
 const csvInput = document.getElementById("csvInput");
@@ -67,34 +72,23 @@ saveJobs();
   if (urlParams.get("admin") === "1") {
     adminPanel.hidden = false;
   }
-  btnAdminToggle?.addEventListener("click", async () => {
+  btnAdminToggle?.addEventListener("click", () => {
+    // Simpler, reliable demo flow: prompt for demo password and redirect
+    const user = prompt("Shkruaj user admin:");
     const pass = prompt("Shkruaj fjalëkalimin admin:");
+    if (!user) return;
     if (!pass) return;
 
-    // TODO: Replace with actual backend authentication
-    // For now, this is CLIENT-SIDE ONLY (not secure for production)
-    try {
-      const response = await fetch("/api/admin/verify", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ password: pass }),
-      });
-
-      if (response.ok) {
-        adminPanel.hidden = false;
-        showToast("Mirë se vini, Admin!", "success");
-      } else {
-        showToast("Fjalëkalim i pasaktë.", "error");
-      }
-    } catch (err) {
-      // Fallback for demo (remove in production!)
-      if (pass === "abissnet-admin") {
-        adminPanel.hidden = false;
-        showToast("Demo mode - Admin panel i hapur", "warning");
-      } else {
-        showToast("Fjalëkalim i pasaktë.", "error");
-      }
+    // Demo-only: accept the known demo password and open admin page
+    if (user === "@b1ssn3t" && pass === "abissnet-admin") {
+      try { sessionStorage.setItem('abiss_hr_auth', '1'); } catch (e) {}
+      // go to the admin page
+      window.location.href = 'admin.html';
+      return;
     }
+
+    // Otherwise show a clear message — no silent failures
+    alert('Kredenciale të pasakta.');
   });
 })();
 
@@ -399,12 +393,18 @@ cancelModal?.addEventListener("click", () => applyModal.close());
 // ---- file validation
 resumeInput?.addEventListener("change", (e) => {
   const file = e.target.files?.[0];
-  if (!file) return;
+  const fileNameDisplay = document.getElementById("fileName");
+  
+  if (!file) {
+    if (fileNameDisplay) fileNameDisplay.textContent = "";
+    return;
+  }
 
   // Check file size
   if (file.size > MAX_FILE_SIZE) {
     showToast("Skedari është shumë i madh (max 5MB).", "error");
     resumeInput.value = "";
+    if (fileNameDisplay) fileNameDisplay.textContent = "";
     return;
   }
 
@@ -417,48 +417,13 @@ resumeInput?.addEventListener("change", (e) => {
   if (!validTypes.includes(file.type)) {
     showToast("Format i pasaktë. Përdor PDF, DOC, ose DOCX.", "error");
     resumeInput.value = "";
-    return;
-  }
-});
-
-// ---- submit application
-applyForm?.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  applyStatus.textContent = "Po dërgohet…";
-  applyStatus.className = "status";
-
-  const formData = new FormData(applyForm);
-
-  // Validate email
-  const email = formData.get("email");
-  if (email && !isValidEmail(email.toString())) {
-    applyStatus.textContent = "Email i pasaktë.";
-    applyStatus.classList.add("err");
+    if (fileNameDisplay) fileNameDisplay.textContent = "";
     return;
   }
 
-  try {
-    const res = await fetch("/api/apply", {
-      method: "POST",
-      body: formData,
-    });
-
-    if (!res.ok) {
-      const errorData = await res.json().catch(() => ({}));
-      throw new Error(errorData.message || `HTTP ${res.status}`);
-    }
-
-    applyStatus.textContent = "✓ Aplikimi u dërgua me sukses!";
-    applyStatus.classList.add("ok");
-    setTimeout(() => {
-      applyModal.close();
-      applyForm.reset();
-    }, 1200);
-  } catch (err) {
-    applyStatus.textContent =
-      err.message || "Dështoi dërgimi. Kontrollo rrjetin.";
-    applyStatus.classList.add("err");
-    console.error("Application error:", err);
+  // Display selected file name
+  if (fileNameDisplay) {
+    fileNameDisplay.textContent = file.name;
   }
 });
 
@@ -553,3 +518,64 @@ document.head.appendChild(style);
 
 // initial render
 render();
+
+// Listen for storage changes (updates from admin page in other tabs)
+window.addEventListener('storage', (e) => {
+  if (!e.key) return;
+  if (e.key === 'abissnet_jobs') {
+    try {
+      const updated = JSON.parse(e.newValue || '[]');
+      jobs = updated;
+      render();
+    } catch (err) {
+      console.warn('Failed to parse updated jobs from storage event', err);
+    }
+  }
+});
+
+// ---- Optional test helper (opt-in)
+// Opens when you visit karriera.html?testmail=1 and shows a small floating button
+// that attempts a FormSubmit POST and reports the result. This helps detect
+// whether the browser can reach FormSubmit and whether a CORS/network error occurs.
+async function testEmailSend() {
+  const endpoint = `https://formsubmit.co/${encodeURIComponent(HR_EMAIL)}`;
+  showToast('Duke dërguar testin...', 'info');
+  try {
+    const fd = new FormData();
+    fd.append('position_title', 'TEST - formsend');
+    fd.append('full_name', 'Test User');
+    fd.append('email', 'test@example.com');
+    fd.append('_subject', 'TEST Aplikim - Karriera');
+    fd.append('_captcha', 'false');
+
+    const res = await fetch(endpoint, { method: 'POST', body: fd });
+    if (res.ok || res.status === 302) {
+      showToast('Testi u dërgua (status ok). Kontrollo inbox-in HR.', 'success');
+      console.info('FormSubmit test response:', res);
+      return { ok: true, status: res.status };
+    }
+    const text = await res.text().catch(() => '');
+    showToast('Test dështoi: server lajmëroi gabim.', 'error');
+    console.error('FormSubmit test non-ok:', res.status, text);
+    return { ok: false, status: res.status, body: text };
+  } catch (err) {
+    // Network errors (including CORS) will land here and are usually TypeError
+    showToast('Test dështoi: gabim rrjeti/CORS. Shiko console.', 'error');
+    console.error('FormSubmit test error (likely CORS/network):', err);
+    return { ok: false, error: String(err) };
+  }
+}
+
+// If ?testmail=1 is present, add a small floating button to trigger the test helper
+try {
+  const params = new URLSearchParams(location.search);
+  if (params.get('testmail') === '1') {
+    const btn = document.createElement('button');
+    btn.textContent = 'Send test email';
+    btn.style.cssText = 'position:fixed;right:1rem;bottom:4.5rem;z-index:99999;background:#111;color:#fff;border-radius:8px;padding:0.6rem 0.9rem;border:none;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.2)';
+    btn.addEventListener('click', () => testEmailSend());
+    document.body.appendChild(btn);
+  }
+} catch (e) {
+  /* ignore in non-browser environments */
+}

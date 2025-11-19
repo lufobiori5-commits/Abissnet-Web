@@ -4,11 +4,13 @@
 .abiss-hero {
   background: var(--color-bg-hero);
   padding: var(--spacing-3xl) var(--spacing-2xl) var(--spacing-4xl);
+  overflow-x: hidden;
 }
 
 .abiss-section-inner {
   max-width: var(--max-width);
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .abiss-hero-inner {
@@ -152,6 +154,7 @@
 .abiss-cards-section {
   padding: var(--spacing-4xl) var(--spacing-2xl) var(--spacing-4xl);
   background: var(--color-gray-50);
+  overflow-x: hidden;
 }
 
 .abiss-section-intro {
@@ -245,6 +248,7 @@
 .abiss-event-section {
   padding: var(--spacing-4xl) var(--spacing-2xl);
   background: var(--color-bg-light);
+  overflow-x: hidden;
 }
 
 .abiss-event-layout {
@@ -289,6 +293,7 @@
 .abiss-blog-section {
   padding: var(--spacing-4xl) var(--spacing-2xl) var(--spacing-4xl);
   background: var(--color-gray-50);
+  overflow-x: hidden;
 }
 
 .abiss-blog-header {
@@ -339,10 +344,248 @@
 
 }
 
+/* CTA Section */
+
+.abiss-cta-section {
+  padding: var(--spacing-4xl) var(--spacing-2xl);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #3a3a3a 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.abiss-cta-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      circle at 20% 50%,
+      rgba(246, 135, 50, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(255, 157, 92, 0.15) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+.abiss-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.abiss-cta-content h2 {
+  font-size: var(--font-size-4xl);
+  color: var(--color-white);
+  margin-bottom: var(--spacing-md);
+}
+
+.abiss-cta-content p {
+  font-size: var(--font-size-lg);
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: var(--spacing-2xl);
+  line-height: 1.6;
+}
+
+.abiss-cta-content .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.cta-arrows {
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
 /* Ensure the back-to-top button appears on the left on this page (matches index) */
 .back-to-top {
   left: 30px !important;
   right: auto !important;
   bottom: 30px !important;
   z-index: 12000 !important;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+  .abiss-hero {
+    padding: var(--spacing-2xl) var(--spacing-sm) var(--spacing-3xl);
+    overflow-x: hidden;
+  }
+
+  .abiss-hero-inner {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+    padding: 0;
+  }
+
+  .abiss-hero-left {
+    order: 1;
+  }
+
+  .abiss-hero-right {
+    order: 2;
+    width: 100%;
+  }
+
+  .abiss-hero-card {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .abiss-hero-card img {
+    max-height: 320px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .abiss-hero-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .abiss-hero-text {
+    max-width: 100%;
+  }
+
+  .abiss-hero-stats {
+    gap: var(--spacing-sm);
+  }
+
+  /* Cards: stack into single column on mobile */
+  .abiss-cards-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .abiss-cards-section,
+  .abiss-event-section,
+  .abiss-blog-section {
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+    overflow-x: hidden;
+  }
+
+  .abiss-card {
+    border-radius: 12px;
+  }
+
+  .abiss-card-image img {
+    height: auto;
+    max-height: 280px;
+  }
+
+  /* On touch devices, make the details visible (no hover) */
+  .abiss-card-details {
+    max-height: none;
+    opacity: 1;
+    transform: none;
+    border-top-color: var(--color-gray-200);
+    padding-bottom: var(--spacing-xl);
+  }
+
+  .abiss-event-layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .abiss-blog-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 420px) {
+  .abiss-hero {
+    padding: var(--spacing-xl) 0.75rem var(--spacing-2xl);
+  }
+
+  .abiss-hero-inner {
+    padding: 0 0.5rem;
+  }
+
+  .abiss-section-inner {
+    padding: 0 0.5rem;
+  }
+
+  .abiss-hero-title {
+    font-size: var(--font-size-2xl);
+    line-height: 1.15;
+  }
+
+  .abiss-hero-text {
+    font-size: var(--font-size-sm);
+  }
+
+  .abiss-card-image img {
+    max-height: 220px;
+  }
+
+  .abiss-card-body {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* Extra tweaks for very large phones (e.g. iPhone 14 Pro Max ~428px wide) */
+@media (max-width: 430px) {
+  .abiss-hero-title {
+    font-size: 1.6rem;
+  }
+
+  .abiss-hero-text {
+    font-size: 0.95rem;
+  }
+
+  .abiss-hero-card img {
+    max-height: 240px;
+    object-position: center top;
+  }
+
+  .abiss-hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .abiss-hero-actions .btn {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.85rem 0.75rem;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+  }
+
+  .abiss-hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .abiss-card {
+    border-radius: 10px;
+  }
+
+  .abiss-card-image img {
+    max-height: 200px;
+  }
+
+  .abiss-card-title {
+    font-size: 1.05rem;
+  }
+
+  .abiss-card-body {
+    padding: 0.875rem;
+  }
 }

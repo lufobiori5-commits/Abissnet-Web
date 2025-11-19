@@ -122,8 +122,48 @@ body {
   color: var(--color-gray-800);
   background: var(--color-bg-darker);
   overflow-x: hidden;
-  padding-top: calc(var(--header-height) + var(--subnav-height));
+  /* Reserve space for the fixed header only; subnav is sticky so it remains in flow */
+  padding-top: var(--header-height);
 }
+
+/* =========================
+   OVERRIDES: Ensure subnav sits flush under header
+   This is a targeted, high-specificity fix to remove the visible gap
+   seen on some pages caused by competing CSS rules or injected elements.
+   Keep this at the end so it overrides other styles.
+   ========================= */
+:root {
+  --subnav-flush-offset: -2px; /* small negative offset to remove 1-3px band if present */
+}
+
+.header {
+  z-index: 1100 !important;
+}
+
+.subnav {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: calc(var(--header-height) + var(--subnav-flush-offset)) !important;
+  margin-top: 0 !important;
+  transform: none !important;
+  /* keep a subtle box-shadow but ensure it doesn't create extra spacing */
+  box-shadow: var(--shadow-md) !important;
+  z-index: 1099 !important;
+}
+
+/* If any intermediary element is accidentally inserted between header and subnav, pull subnav visually up */
+.header + * + .subnav,
+.header + .subnav {
+  margin-top: 0 !important;
+}
+
+/* Ensure sticky behaviour on mobile as well */
+@media (max-width: 1024px) {
+  .subnav {
+    top: calc(var(--header-height) + var(--subnav-flush-offset)) !important;
+  }
+}
+
 /* All headings use Orbitron */
 h1,
 h2,
@@ -498,12 +538,13 @@ select:focus-visible {
 }
 
 /* ========================================
-   SUB NAVIGATION - LIGHT VERSION (FIXED)
+   SUB NAVIGATION - LIGHT VERSION (STICKY)
    ======================================== */
 .subnav {
   background-color: var(--color-gray-100);
   padding: var(--spacing-md) var(--spacing-2xl);
-  position: fixed;
+  /* Use sticky so subnav stays in flow and doesn't cause double spacing */
+  position: sticky;
   top: var(--header-height);
   left: 0;
   width: 100%;

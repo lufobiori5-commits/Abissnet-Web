@@ -83,8 +83,14 @@ body {
 
 /* Logo - SMALLER */
 .coming-soon-logo {
-  margin-bottom: 1.5rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 0;
   animation: fadeInDown 0.8s ease-out;
+  text-align: center;
+  z-index: 100;
 }
 
 .coming-soon-logo img {
@@ -100,6 +106,7 @@ body {
   font-weight: var(--font-weight-black);
   color: var(--color-white);
   margin-bottom: 0.75rem;
+  margin-top: 4rem;
   line-height: 1.1;
   letter-spacing: -0.03em;
   animation: fadeInUp 0.8s ease-out 0.2s backwards;
@@ -202,61 +209,13 @@ body {
   box-shadow: 0 0 0 3px rgba(246, 135, 50, 0.2);
 }
 
-.coming-soon-form button {
-  padding: 0.75rem 1.5rem;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary),
-    var(--color-primary-light)
-  );
-  color: var(--color-white);
-  border: none;
-  border-radius: 25px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(246, 135, 50, 0.3);
-}
-
-.coming-soon-form button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(246, 135, 50, 0.4);
-}
-
 /* Social Links - COMPACT */
 .coming-soon-social {
   display: flex;
   gap: 0.75rem;
   justify-content: center;
   animation: fadeInUp 0.8s ease-out 1s backwards;
-}
-
-.coming-soon-social a {
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  color: var(--color-white);
-}
-
-.coming-soon-social a:hover {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  transform: translateY(-3px) scale(1.1);
-  box-shadow: 0 4px 12px rgba(246, 135, 50, 0.4);
-}
-
-.coming-soon-social svg {
-  width: 20px;
-  height: 20px;
+  margin-top: 1rem;
 }
 
 /* Back to Home Link - COMPACT */
@@ -268,25 +227,11 @@ body {
   animation: fadeIn 1s ease-out 1.2s backwards;
 }
 
-.back-home a {
+.back-home a.btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.5rem 0.75rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  color: var(--color-white);
-  font-weight: 600;
-  font-size: 0.85rem;
-  transition: all 0.3s ease;
   text-decoration: none;
-}
-
-.back-home a:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateX(-5px);
 }
 
 /* Animations */

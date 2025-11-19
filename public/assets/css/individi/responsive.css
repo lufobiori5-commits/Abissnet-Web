@@ -125,7 +125,8 @@
    ======================================== */
 @media (max-width: 1024px) {
   body {
-    padding-top: calc(var(--header-height) + 50px);
+    /* Keep top padding only for the header height to avoid extra gap under header on smaller screens */
+    padding-top: calc(var(--header-height));
   }
 
   /* ========================================
@@ -136,7 +137,8 @@
     flex-direction: row !important;
     justify-content: space-between !important;
     align-items: center !important;
-    padding: var(--spacing-sm) var(--spacing-lg);
+    /* Increase vertical padding for touch devices so header feels less cramped */
+    padding: var(--spacing-md) var(--spacing-lg);
     gap: var(--spacing-md);
   }
 
@@ -872,7 +874,8 @@
     justify-content: space-between !important;
     align-items: center !important;
     gap: var(--spacing-md);
-    padding: var(--spacing-sm) var(--spacing-md);
+    /* Larger tappable area for mobile */
+    padding: calc(var(--spacing-md) + 0.25rem) var(--spacing-md);
   }
 
   .header-logo {
@@ -1586,3 +1589,65 @@
     font-size: 2.5rem;
   }
 }
+
+/* ========================================
+   GLOBAL RESPONSIVE TWEAKS (site-wide improvements)
+   - Make images responsive by default
+   - Make card containers flexible and use max-widths
+   - Ensure back-to-top stays on the left across breakpoints
+   ======================================== */
+
+/* Ensure generic images scale to their containers */
+.site-image,
+.hero-img img,
+.abiss-hero-card img,
+.abiss-card-image img,
+.feature-card img,
+.package-card img,
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Make generic content cards flexible so grids/columns can adapt */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-lg);
+}
+
+.container .card {
+  width: 100%;
+  max-width: 360px;
+  box-sizing: border-box;
+}
+
+/* More forgiving package/card sizing for very narrow screens */
+@media (max-width: 420px) {
+  .package-card,
+  .container .card {
+    max-width: 320px;
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+  }
+}
+
+/* Force back-to-top to left side consistently to avoid overlap */
+.back-to-top {
+  left: 20px !important;
+  right: auto !important;
+}
+
+/* Prevent horizontal layout shifts caused by scrollbar appearing/disappearing
+   and guard against accidental horizontal overflow. Keep box-sizing consistent. */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+

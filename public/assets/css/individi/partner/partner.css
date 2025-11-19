@@ -170,13 +170,13 @@ BLOG PAGE STYLES - LIGHT VERSION
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   text-align: center;
-  border: 1px solid rgba(0, 173, 181, 0.1);
+  border: 1px solid rgba(246, 135, 50, 0.15);
 }
 
 .benefit-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(0, 173, 181, 0.15);
-  border-color: rgba(0, 173, 181, 0.3);
+  box-shadow: 0 20px 50px rgba(246, 135, 50, 0.2);
+  border-color: rgba(246, 135, 50, 0.4);
 }
 
 .benefit-icon {
@@ -188,8 +188,8 @@ BLOG PAGE STYLES - LIGHT VERSION
   justify-content: center;
   background: linear-gradient(
     135deg,
-    rgba(0, 173, 181, 0.1),
-    rgba(236, 64, 122, 0.1)
+    rgba(246, 135, 50, 0.1),
+    rgba(255, 157, 92, 0.1)
   );
   border-radius: 20px;
   transition: all 0.3s ease;
@@ -198,14 +198,14 @@ BLOG PAGE STYLES - LIGHT VERSION
 .benefit-card:hover .benefit-icon {
   background: linear-gradient(
     135deg,
-    rgba(0, 173, 181, 0.2),
-    rgba(236, 64, 122, 0.2)
+    rgba(246, 135, 50, 0.2),
+    rgba(255, 157, 92, 0.2)
   );
   transform: rotateY(360deg);
 }
 
 .benefit-icon svg {
-  color: #00adb5;
+  color: #f68732;
 }
 
 .benefit-title {
@@ -257,7 +257,8 @@ BLOG PAGE STYLES - LIGHT VERSION
    ================== */
 .partners-cta-section {
   padding: 100px 20px;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  /* Match gaming page dark hero background */
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #3a3a3a 100%);
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -272,12 +273,12 @@ BLOG PAGE STYLES - LIGHT VERSION
   height: 100%;
   background: radial-gradient(
       circle at 20% 50%,
-      rgba(0, 173, 181, 0.1) 0%,
+      rgba(246, 135, 50, 0.15) 0%,
       transparent 50%
     ),
     radial-gradient(
       circle at 80% 80%,
-      rgba(236, 64, 122, 0.1) 0%,
+      rgba(255, 157, 92, 0.15) 0%,
       transparent 50%
     );
   pointer-events: none;
@@ -300,7 +301,7 @@ BLOG PAGE STYLES - LIGHT VERSION
 
 .partners-cta-text {
   font-size: clamp(1rem, 2vw, 1.25rem);
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: 40px;
   line-height: 1.6;
 }
@@ -310,19 +311,20 @@ BLOG PAGE STYLES - LIGHT VERSION
   align-items: center;
   gap: 10px;
   padding: 18px 40px;
-  background: linear-gradient(135deg, #00adb5 0%, #ec407a 100%);
+  /* Use gaming orange gradient */
+  background: linear-gradient(135deg, #f68732 0%, #ff9d5c 50%, #ffa366 100%);
   color: #ffffff;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 700;
   font-size: 1.1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0, 173, 181, 0.3);
+  box-shadow: 0 8px 20px rgba(246, 135, 50, 0.4);
 }
 
 .partners-cta-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0, 173, 181, 0.5);
+  box-shadow: 0 12px 30px rgba(246, 135, 50, 0.6);
 }
 
 .cta-arrows {

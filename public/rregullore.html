@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Rregullore – Abissnet</title>
+
+    <!-- Main Stylesheets -->
+    <link rel="stylesheet" href="assets/css/individed-dokumente-style.css" />
+    <script type="text/javascript" src="https://portal2.abissnet.al/im_livechat/loader/2"></script>
+    <script type="text/javascript" src="https://portal2.abissnet.al/im_livechat/assets_embed.js"></script>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header" id="siteHeader">
+      <div class="header-inner">
+        <div class="header-logo">
+          <a href="index.html">
+            <img
+              src="assets/img/abissnet-logo-dark.png"
+              alt="Abissnet"
+              height="40"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <span
+              style="
+                display: none;
+                font-style: italic;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #fff;
+              "
+              >abissnet</span
+            >
+          </a>
+        </div>
+
+        <nav class="header-nav">
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Internet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li>
+                <a class="dropdown-item" href="internet.html">Internet</a>
+              </li>
+              <li class="divider" role="separator"></li>
+              <li>
+                <a class="dropdown-item" href="internet-tv.html"
+                  >Internet & TV</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Abissnet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li>
+                <a class="dropdown-item" href="ftonjemik.html">Fto një mik</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="coming-soon.html"
+                  >Përfitime për studentët</a
+                >
+              </li>
+              <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
+              <li>
+                <a class="dropdown-item" href="puno-nga-shtepia.html"
+                  >Puno nga Shtëpia</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <a href="suport.html">Suport</a>
+          <a href="partner.html">Partnerët</a>
+          <a href="abonentet.html">Abonentët</a>
+          <a href="karriera.html">Karriera</a>
+          <a href="app.html">APP</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="header-btn outline" href="dyqanet.html">Harta Retail</a>
+          <a class="header-btn outline" href="https://pay.abissnet.al/"
+            >Paguaj Tani</a
+          >
+          <a class="header-btn primary" href="suport.html">Na Kontakto</a>
+        </div>
+
+        <button
+          class="hamburger-menu"
+          id="hamburger-btn"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span
+          ><span class="hamburger-line"></span
+          ><span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Internet
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="internet.html">Internet</a>
+              <a href="internet-tv.html">Internet & TV</a>
+            </div>
+          </div>
+
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Abissnet
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="ftonjemik.html">Fto një mik</a>
+              <a href="coming-soon.html">Përfitime për studentët</a>
+              <a href="gaming.html">Gaming</a>
+              <a href="puno-nga-shtepia.html">Puno nga Shtëpia</a>
+            </div>
+          </div>
+
+          <a href="suport.html" class="mobile-nav-link">Suport</a>
+          <a href="partner.html" class="mobile-nav-link">Partnerët</a>
+          <a href="abonentet.html" class="mobile-nav-link">Abonentët</a>
+          <a href="karriera.html" class="mobile-nav-link">Karriera</a>
+          <a href="app.html" class="mobile-nav-link">App</a>
+
+          <div class="mobile-actions">
+            <a class="mobile-btn outline" href="dyqanet.html">Harta Retail</a>
+            <a class="mobile-btn outline" href="https://pay.abissnet.al/"
+              >Paguaj Tani</a
+            >
+            <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="subnav" role="navigation" aria-label="Shërbime">
+      <div class="subnav-inner">
+        <a href="index.html" class="pill">Individ</a>
+        <a href="biznesi/index.html" class="pill">Biznes</a>
+        <a href="AbissnetSuperiore/abissnet_superiore.html" class="pill"
+          >Abissnet Superiore</a
+        >
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero-section">
+      <div class="hero-inner" style="align-items: center">
+        <div class="hero-left" style="padding-top: 0">
+          <h1 class="hero-title" style="margin-bottom: 0.5rem">
+            Rregullore
+          </h1>
+          <p
+            class="hero-subtitle"
+            style="margin: 0; color: var(--color-gray-700)"
+          >
+            Rregulloret dhe dispozitat ligjore të Abissnet.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Documents List -->
+    <main class="docs-section">
+      <header class="docs-head">
+        <h2 class="docs-title">
+          Klikoni dokumentat më poshtë për t'i bërë download
+        </h2>
+        <div class="docs-sub">
+          Rregulloret, dispozitat, standardet dhe udhëzimet ligjore.
+        </div>
+
+        <div class="docs-controls" role="group" aria-label="Kërko dokument">
+          <input
+            id="docsSearch"
+            class="docs-search"
+            type="search"
+            placeholder="Kërko (p.sh. 'rregullore', 'standard', 'dispoziata')…"
+            aria-label="Kërko dokument"
+          />
+        </div>
+      </header>
+
+      <section class="docs-grid" id="docsGrid">
+        <!-- Document Cards -->
+        <article
+          class="doc-card"
+          data-text="kodi etike etika ethics code conduct sjellje"
+        >
+          <div class="doc-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <path d="M14 2v6h6" />
+              <path d="M12 11v5M9.5 14l5 0" />
+            </svg>
+          </div>
+          <div class="doc-body">
+            <div class="doc-title">Kodi i Etikës</div>
+            <div class="doc-meta">
+              <span>PDF</span>
+              <span>·</span>
+              <span>Përditësuar: 04/2020</span>
+            </div>
+            <div class="doc-tags">
+              <span class="tag">Etikë</span>
+              <span class="tag">Sjellje</span>
+            </div>
+            <div class="doc-actions">
+              <a
+                class="btn primary"
+                href="assets/Rregullore/Kodi-i-Etikes.-Prill-2020_pdf.pdf"
+                download="Abissnet_Kodi_Etikes.pdf"
+                type="application/pdf"
+                aria-label="Shkarko Kodi i Etikës (PDF)"
+              >
+                Shkarko
+              </a>
+              <a
+                class="btn ghost"
+                href="assets/Rregullore/Kodi-i-Etikes.-Prill-2020_pdf.pdf"
+                target="_blank"
+                rel="noopener"
+                >Hap</a
+              >
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="doc-card"
+          data-text="siguria sigurise security safety rregullore rrjeti network"
+        >
+          <div class="doc-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <path d="M14 2v6h6" />
+              <path
+                d="M12 11c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"
+              />
+            </svg>
+          </div>
+          <div class="doc-body">
+            <div class="doc-title">Rregullore mbi Sigurinë e Rrjetit</div>
+            <div class="doc-meta">
+              <span>PDF</span><span>·</span
+              ><span>Përditësuar: 04/2020</span>
+            </div>
+            <div class="doc-tags">
+              <span class="tag">Siguri</span><span class="tag">Rrjeti</span>
+            </div>
+            <div class="doc-actions">
+              <a
+                class="btn primary"
+                href="assets/Rregullore/Rregullore-mbi-sigurine-e-rrjetit.-Prill-2020_pdf.pdf"
+                download="Abissnet_Rregullore_Sigurise_Rrjetit.pdf"
+                type="application/pdf"
+                >Shkarko</a
+              >
+              <a
+                class="btn ghost"
+                href="assets/Rregullore/Rregullore-mbi-sigurine-e-rrjetit.-Prill-2020_pdf.pdf"
+                target="_blank"
+                rel="noopener"
+                >Hap</a
+              >
+            </div>
+          </div>
+        </article>
+
+        <article class="doc-card" data-text="udhezues perdoruesit incidenteve probleme emergency">
+          <div class="doc-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <path d="M14 2v6h6" />
+              <path d="M8 13h8M8 17h8" />
+            </svg>
+          </div>
+          <div class="doc-body">
+            <div class="doc-title">Udhëzues për Përdoruesit rreth Incidenteve</div>
+            <div class="doc-meta">
+              <span>PDF</span><span>·</span
+              ><span>Përditësuar: 04/2020</span>
+            </div>
+            <div class="doc-tags">
+              <span class="tag">Udhëzime</span><span class="tag">Incidente</span>
+            </div>
+            <div class="doc-actions">
+              <a
+                class="btn primary"
+                href="assets/Rregullore/Udhezues-per-perdoruesit-rreth-incidenteve.-Prill-2020_pdf.pdf"
+                download="Abissnet_Udhezues_Incidenteve.pdf"
+                type="application/pdf"
+                >Shkarko</a
+              >
+              <a
+                class="btn ghost"
+                href="assets/Rregullore/Udhezues-per-perdoruesit-rreth-incidenteve.-Prill-2020_pdf.pdf"
+                target="_blank"
+                rel="noopener"
+                >Hap</a
+              >
+            </div>
+          </div>
+        </article>
+      
+
+        <article class="doc-card" data-text="udhezues perdoruesit incidenteve probleme emergency">
+          <div class="doc-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <path d="M14 2v6h6" />
+              <path d="M8 13h8M8 17h8" />
+            </svg>
+          </div>
+          <div class="doc-body">
+            <div class="doc-title">Rregullore e privatësisë</div>
+            <div class="doc-meta">
+              <span>PDF</span><span>·</span
+              ><span>Përditësuar: 04/2020</span>
+            </div>
+            <div class="doc-tags">
+              <span class="tag">Udhëzime</span><span class="tag">Incidente</span>
+            </div>
+            <div class="doc-actions">
+              <a
+                class="btn primary"
+                href="assets/Rregullore/Rregullore-e-privatesise.pdf"
+                download="Abissnet_Rregullore_Privatesise.pdf"
+                type="application/pdf"
+                >Shkarko</a
+              >
+              <a
+                class="btn ghost"
+                href="assets/Rregullore/Rregullore-e-privatesise.pdf"
+                target="_blank"
+                rel="noopener"
+                >Hap</a
+              >
+            </div>
+          </div>
+        </article>
+      
+      
+      
+      
+      
+      </section>
+
+      <div class="docs-empty" id="noResults" style="display: none">
+        <svg
+          width="120"
+          height="120"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1"
+          style="opacity: 0.3; margin-bottom: 1rem"
+        >
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35" />
+        </svg>
+        <p style="color: #999; font-size: 1.125rem">
+          Asnjë dokument nuk u gjet.
+        </p>
+        <p style="color: #bbb; font-size: 0.875rem; margin-top: 0.5rem">
+          Provoni me një kërkesë tjetër.
+        </p>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-col brand">
+          <div class="footer-logo">Abissnet</div>
+          <ul>
+            <li><a href="abissnet.html">Rreth Abissnet</a></li>
+            <li><a href="karriera.html">Karriera</a></li>
+            <li><a href="informacioniligjor.html">Informacion Ligjor</a></li>
+            <li><a href="rregullore.html">Rregullore</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Shërbime/Produkte</h3>
+          <ul>
+            <li><a href="suport.html">Suport</a></li>
+            <li><a href="dyqanet.html">Dyqanet</a></li>
+            <li><a href="internet.html">Pse Abissnet</a></li>
+            <li><a href="ftonjemik.html">Refero Nje Mik</a></li>
+            <li><a href="#">Llogaritë Bankare</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Më të Populluara</h3>
+          <ul>
+            <li><a href="tarifat.html">Tarifat</a></li>
+            <li><a href="abonentet.html">Abonohu</a></li>
+            <li><a href="https://pay.abissnet.al/">Paguaj Faturen</a></li>
+            <li><a href="internet-tv.html">Ofertat Internet</a></li>
+            <li><a href="biznesi/speed-test.html">Speed Test</a></li>
+            <li><a href="sitepaguaj.html">Si Të Paguaj</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-col">
+          <h3>Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Shkruaj email-in tuaj" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="footer-social">
+            <a
+              href="https://facebook.com/abissnet"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://instagram.com/abissnet"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://youtube.com/@abissnet"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2025 Abissnet. Të gjitha të drejtat e rezervuara.
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="assets/js/script.js"></script>
+    <script>
+      // Search Functionality
+      const searchInput = document.getElementById("docsSearch");
+      const docsGrid = document.getElementById("docsGrid");
+      const noResults = document.getElementById("noResults");
+      const allCards = docsGrid.querySelectorAll(".doc-card");
+
+      searchInput.addEventListener("input", function () {
+        const query = this.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        allCards.forEach((card) => {
+          const text = card.dataset.text || "";
+          const title =
+            card.querySelector(".doc-title")?.textContent.toLowerCase() || "";
+          const match = text.includes(query) || title.includes(query);
+
+          if (match) {
+            card.style.display = "";
+            visibleCount++;
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        if (visibleCount === 0) {
+          noResults.style.display = "flex";
+        } else {
+          noResults.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

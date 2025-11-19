@@ -227,6 +227,53 @@ window.addEventListener(
   }, 10)
 );
 
+// Measure header height and set CSS variable so sticky elements can align correctly.
+function updateHeaderHeight() {
+  try {
+    const headerEl = document.querySelector(".header");
+    const height = headerEl ? headerEl.offsetHeight : 0;
+    document.documentElement.style.setProperty("--header-height", height + "px");
+  } catch (err) {
+    console.warn("Could not update header height variable:", err);
+  }
+}
+
+// Keep variable updated on resize and initial load
+window.addEventListener("resize", debounce(updateHeaderHeight, 80));
+window.addEventListener("load", updateHeaderHeight);
+
+// Diagnostic: detect elements wider than the viewport when ?diag=1 is present
+function detectOverflowElements(limit = 20) {
+  try {
+    const offenders = [];
+    document.querySelectorAll("*")
+      .forEach((el) => {
+        if (!(el instanceof HTMLElement)) return;
+        const w = el.getBoundingClientRect().width;
+        if (w > window.innerWidth + 0.5) {
+          offenders.push({ el, w });
+        }
+      });
+
+    if (offenders.length === 0) {
+      console.info("No overflowing elements detected.");
+      return;
+    }
+
+    console.warn(`Detected ${offenders.length} elements wider than viewport:`);
+    offenders.slice(0, limit).forEach((o, i) => {
+      console.warn(i + 1, o.el.tagName.toLowerCase(), o.w, o.el);
+    });
+  } catch (err) {
+    console.error("Overflow detection failed:", err);
+  }
+}
+
+// Run diagnostic if requested via query param, e.g. ?diag=1
+if (new URLSearchParams(window.location.search).get("diag") === "1") {
+  window.addEventListener("load", () => setTimeout(detectOverflowElements, 250));
+}
+
 // ========== HAMBURGER MENU FUNCTIONALITY ==========
 function initHamburgerMenu() {
   // Be tolerant to different IDs used across pages
@@ -425,6 +472,13 @@ function initBackToTop() {
 document.addEventListener("DOMContentLoaded", () => {
   initHamburgerMenu();
   initBackToTop();
+  // Ensure CSS variable for header height is set so sticky subnav sits directly under header
+  try {
+    if (typeof updateHeaderHeight === "function") updateHeaderHeight();
+  } catch (e) {
+    console.warn("updateHeaderHeight not available:", e);
+  }
+
   console.log("🚀 Abissnet website initialized!");
 });
 
