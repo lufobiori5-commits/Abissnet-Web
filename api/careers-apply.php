@@ -5,7 +5,7 @@
  */
 
 require_once __DIR__ . '/config.php';
-require_once __DIR__ . '/OdooClient.php';
+require_once __DIR__ . '/OdooClientAlt.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     jsonResponse(['error' => 'Method not allowed'], 405);
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $input = getJsonInput();
 
 try {
-    $odoo = new OdooClient(ODOO_URL, ODOO_DB, ODOO_UID, ODOO_PASS);
+    $odoo = new OdooClientAlt(ODOO_URL, ODOO_DB, ODOO_UID, ODOO_PASS);
     
     // Prepare payload for Odoo - 'name' is required field for crm.lead
     $payload = [
@@ -39,16 +39,6 @@ try {
     jsonResponse(['success' => true, 'lead_id' => $leadId]);
     
 } catch (Exception $e) {
-    error_log("Job application error: " . $e->getMessage());
-    
-    // Show detailed error for debugging (remove in production)
-    jsonResponse([
-        'success' => false, 
-        'error' => $e->getMessage(),
-        'debug' => [
-            'file' => $e->getFile(),
-            'line' => $e->getLine(),
-            'trace' => $e->getTraceAsString()
-        ]
-    ], 500);
+    error_log("ODOO ERROR: " . $e->getMessage());
+    jsonResponse(['success' => false, 'error' => $e->getMessage()], 500);
 }
