@@ -1,24 +1,23 @@
-# Enable rewrite engine
-RewriteEngine On
+# Enable URL rewriting
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
 
-# API routing
-RewriteBase /
+    # Contact form
+    RewriteRule ^api/contact/?$ api/contact.php [L,NC]
 
-# Contact form
-RewriteRule ^api/contact/?$ api/contact.php [L]
+    # Careers/Job application
+    RewriteRule ^api/careers/apply/?$ api/careers-apply.php [L,NC]
 
-# Careers/Job application
-RewriteRule ^api/careers/apply/?$ api/careers-apply.php [L]
+    # Login
+    RewriteRule ^api/login/?$ api/login.php [L,NC]
 
-# Login
-RewriteRule ^api/login/?$ api/login.php [L]
+    # All subscriber portal endpoints
+    RewriteRule ^api/(overview|devices|invoices|tickets|speedtest|line-test|restart-cpe|pay|upgrade|add-tv|public-ip|health)/?$ api/subscriber.php [L,NC]
+</IfModule>
 
-# All subscriber portal endpoints
-RewriteRule ^api/(overview|devices|invoices|tickets|speedtest|line-test|restart-cpe|pay|upgrade|add-tv|public-ip|health)/?$ api/subscriber.php [L]
-
-# Health check (public)
-RewriteRule ^api/health/?$ api/subscriber.php [L]
-
-# 404 for unknown API routes
-RewriteCond %{REQUEST_URI} ^/api/
-RewriteRule .* - [R=404,L]
+# If mod_rewrite is not available, try FallbackResource
+<IfModule !mod_rewrite.c>
+    # Fallback routing (won't work for all endpoints but worth trying)
+    FallbackResource /index.html
+</IfModule>
