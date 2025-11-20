@@ -190,24 +190,41 @@ if ($curlError) {
 // Parse Odoo response
 $odooResponse = json_decode($response, true);
 
-if (isset($odooResponse['error'])) {
+// Log response for debugging (remove in production)
+error_log("Odoo Response: " . print_r($odooResponse, true));
+
+if (!$odooResponse) {
     http_response_code(500);
     echo json_encode([
         'success' => false,
-        'error' => $odooResponse['error']['data']['message'] ?? $odooResponse['error']['message'] ?? 'Odoo error'
+        'error' => 'Invalid response from Odoo',
+        'debug' => $response
     ]);
     exit;
 }
 
+if (isset($odooResponse['error'])) {
+    http_response_code(500);
+    echo json_encode([
+        'success' => false,
+        'error' => $odooResponse['error']['data']['message'] ?? $odooResponse['error']['message'] ?? 'Odoo error',
+        'debug' => $odooResponse['error']
+    ]);
+    exit;
+}
+
+// Check for result field (could be integer ID or array)
 if (isset($odooResponse['result'])) {
     echo json_encode([
         'success' => true,
         'lead_id' => $odooResponse['result']
     ]);
 } else {
+    // No result and no error - log full response
     http_response_code(500);
     echo json_encode([
         'success' => false,
-        'error' => 'Unexpected response from Odoo'
+        'error' => 'Unexpected response from Odoo',
+        'debug' => $odooResponse
     ]);
 }
