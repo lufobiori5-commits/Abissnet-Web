@@ -111,27 +111,56 @@ function requireAuth(req, res, next) {
 app.post("/api/contact", async (req, res) => {
   const payload = req.body; // name, email, phone, city, subject, client_status, message
 
+  // Basic validation
+  if (!payload.email || !payload.name) {
+    return res.status(400).json({ 
+      success: false, 
+      error: 'Email dhe emri janë të detyrueshëm' 
+    });
+  }
+
   try {
     const leadId = await odooExecute("crm.lead", "create_from_api", [payload]);
+    console.log(`${colors.green}✅ Contact form submitted - Lead #${leadId} created${colors.reset}`);
     res.json({ success: true, lead_id: leadId });
   } catch (err) {
-    console.error("ODDO ERROR:", err);
-    res.status(500).json({ success: false, error: err.toString() });
+    console.error(`${colors.red}❌ Contact form error:${colors.reset}`, err.message);
+    res.status(500).json({ 
+      success: false, 
+      error: 'Gabim në dërgimin e mesazhit. Ju lutem provoni përsëri ose kontaktoni support.' 
+    });
   }
 });
 
 app.post("/api/careers/apply", async (req, res) => {
   const data = req.body; // position_title, full_name, email, phone, message, resume_name
 
+  // Validate required fields
+  if (!data.full_name || !data.email || !data.position_title) {
+    return res.status(400).json({ 
+      success: false, 
+      error: 'Emri, email dhe pozicioni janë të detyrueshëm' 
+    });
+  }
+
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(data.email)) {
+    return res.status(400).json({ 
+      success: false, 
+      error: 'Email adresa nuk është e vlefshme' 
+    });
+  }
+
   try {
     // Prepare payload for Odoo - 'name' is required field for crm.lead
     const payload = {
-      name: `Aplikim: ${data.position_title || 'Pozicion i paspecifikuar'} - ${data.full_name || 'N/A'}`,
-      contact_name: data.full_name || "",
-      email_from: data.email || "",
+      name: `Aplikim: ${data.position_title} - ${data.full_name}`,
+      contact_name: data.full_name,
+      email_from: data.email,
       phone: data.phone || "",
       description: data.message || "",
-      position_title: data.position_title || "",
+      position_title: data.position_title,
       resume_name: data.resume_name || "",
     };
 
@@ -145,7 +174,7 @@ app.post("/api/careers/apply", async (req, res) => {
     
     res.json({ success: true, lead_id: leadId });
   } catch (err) {
-    console.error(`${colors.red}❌ Job application error:${colors.reset}`, err);
+    console.error(`${colors.red}❌ Job application error:${colors.reset}`, err.message);
     res.status(500).json({ 
       success: false, 
       error: "Gabim në dërgimin e aplikimit. Ju lutem provoni përsëri ose kontaktoni support." 
