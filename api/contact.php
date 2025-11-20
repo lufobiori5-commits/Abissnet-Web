@@ -23,5 +23,14 @@ try {
     
 } catch (Exception $e) {
     error_log("Contact API Error: " . $e->getMessage());
-    jsonResponse(['success' => false, 'error' => $e->getMessage()], 500);
+    
+    // Show detailed error for debugging (remove in production)
+    jsonResponse([
+        'success' => false, 
+        'error' => $e->getMessage(),
+        'debug' => [
+            'file' => $e->getFile(),
+            'line' => $e->getLine()
+        ]
+    ], 500);
 }

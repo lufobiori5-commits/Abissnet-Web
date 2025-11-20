@@ -40,8 +40,15 @@ try {
     
 } catch (Exception $e) {
     error_log("Job application error: " . $e->getMessage());
+    
+    // Show detailed error for debugging (remove in production)
     jsonResponse([
         'success' => false, 
-        'error' => 'Gabim në dërgimin e aplikimit. Ju lutem provoni përsëri ose kontaktoni support.'
+        'error' => $e->getMessage(),
+        'debug' => [
+            'file' => $e->getFile(),
+            'line' => $e->getLine(),
+            'trace' => $e->getTraceAsString()
+        ]
     ], 500);
 }
