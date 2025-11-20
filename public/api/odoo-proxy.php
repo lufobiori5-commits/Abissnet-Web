@@ -61,17 +61,6 @@ if ($endpoint === 'contact') {
         exit;
     }
     
-    // Build description with all details
-    $description = "Contact Form Submission\n\n";
-    $description .= "Name: $name\n";
-    $description .= "Email: $email\n";
-    if ($phone) $description .= "Phone: $phone\n";
-    if ($city) $description .= "City: $city\n";
-    if ($subject) $description .= "Subject: $subject\n";
-    if ($clientStatus) $description .= "Client Status: $clientStatus\n";
-    if ($message) $description .= "\nMessage:\n$message\n";
-    
-    // Use standard Odoo 'create' method (works on all Odoo instances)
     $odooPayload = [
         'jsonrpc' => '2.0',
         'method' => 'call',
@@ -83,15 +72,15 @@ if ($endpoint === 'contact') {
                 ODOO_UID,
                 ODOO_PASSWORD,
                 'crm.lead',
-                'create',
+                'create_from_api',
                 [[
-                    'name' => $subject ?: "Contact: $name",
-                    'contact_name' => $name,
-                    'email_from' => $email,
+                    'name' => $name,
+                    'email' => $email,
                     'phone' => $phone,
                     'city' => $city,
-                    'description' => $description,
-                    'type' => 'lead'
+                    'subject' => $subject,
+                    'client_status' => $clientStatus,
+                    'message' => $message
                 ]]
             ]
         ],
@@ -120,17 +109,6 @@ if ($endpoint === 'contact') {
         exit;
     }
     
-    // Build detailed description
-    $description = "Job Application\n\n";
-    $description .= "Position: $positionTitle\n";
-    $description .= "Applicant: $fullName\n";
-    $description .= "Email: $email\n";
-    if ($phone) $description .= "Phone: $phone\n";
-    if ($resumeName) $description .= "CV File: $resumeName\n";
-    if ($message) $description .= "\nCover Letter:\n$message\n";
-    $description .= "\n---\nPlease contact b.njerezore@abissnet.al for follow-up.";
-    
-    // Use standard Odoo 'create' method
     $odooPayload = [
         'jsonrpc' => '2.0',
         'method' => 'call',
@@ -142,14 +120,15 @@ if ($endpoint === 'contact') {
                 ODOO_UID,
                 ODOO_PASSWORD,
                 'crm.lead',
-                'create',
+                'create_from_api_job',
                 [[
                     'name' => "Aplikim: $positionTitle - $fullName",
                     'contact_name' => $fullName,
                     'email_from' => $email,
                     'phone' => $phone,
-                    'description' => $description,
-                    'type' => 'opportunity'
+                    'description' => $message,
+                    'position_title' => $positionTitle,
+                    'resume_name' => $resumeName
                 ]]
             ]
         ],
@@ -190,41 +169,24 @@ if ($curlError) {
 // Parse Odoo response
 $odooResponse = json_decode($response, true);
 
-// Log response for debugging (remove in production)
-error_log("Odoo Response: " . print_r($odooResponse, true));
-
-if (!$odooResponse) {
-    http_response_code(500);
-    echo json_encode([
-        'success' => false,
-        'error' => 'Invalid response from Odoo',
-        'debug' => $response
-    ]);
-    exit;
-}
-
 if (isset($odooResponse['error'])) {
     http_response_code(500);
     echo json_encode([
         'success' => false,
-        'error' => $odooResponse['error']['data']['message'] ?? $odooResponse['error']['message'] ?? 'Odoo error',
-        'debug' => $odooResponse['error']
+        'error' => $odooResponse['error']['data']['message'] ?? $odooResponse['error']['message'] ?? 'Odoo error'
     ]);
     exit;
 }
 
-// Check for result field (could be integer ID or array)
 if (isset($odooResponse['result'])) {
     echo json_encode([
         'success' => true,
         'lead_id' => $odooResponse['result']
     ]);
 } else {
-    // No result and no error - log full response
     http_response_code(500);
     echo json_encode([
         'success' => false,
-        'error' => 'Unexpected response from Odoo',
-        'debug' => $odooResponse
+        'error' => 'Unexpected response from Odoo'
     ]);
 }
