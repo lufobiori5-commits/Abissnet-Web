@@ -78,6 +78,10 @@ BLOG PAGE STYLES - LIGHT VERSION
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--color-gray-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .blog-hero-section::before {
   content: "";
@@ -98,6 +102,8 @@ BLOG PAGE STYLES - LIGHT VERSION
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  text-align: center;
+  width: 100%;
 }
 .blog-hero-title {
   font-size: var(--font-size-5xl);
@@ -112,12 +118,49 @@ BLOG PAGE STYLES - LIGHT VERSION
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: fadeInUp 0.8s ease-out;
+  text-align: center;
 }
 .blog-hero-subtitle {
   font-size: var(--font-size-xl);
   color: var(--color-gray-700);
   line-height: 1.6;
   animation: fadeInUp 0.8s ease-out 0.2s backwards;
+  text-align: center;
+}
+
+/* Careers Hero Inner Section */
+.careers-hero-inner {
+  max-width: 800px;
+  margin: 2rem auto 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(246, 135, 50, 0.05) 0%, rgba(246, 135, 50, 0.02) 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(246, 135, 50, 0.1);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.careers-hero-inner h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  color: var(--color-gray-900);
+  line-height: 1.2;
+  text-align: center;
+  width: 100%;
+}
+
+.careers-hero-inner p {
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-700);
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+  width: 100%;
 }
 
 /* Jobs Section */
@@ -181,6 +224,44 @@ BLOG PAGE STYLES - LIGHT VERSION
   .jobs-grid {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
+
+  /* Tablet hero adjustments */
+  .blog-hero-section {
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .blog-hero-inner {
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  .blog-hero-title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .blog-hero-subtitle {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .careers-hero-inner {
+    margin: 2rem auto 0 auto;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    width: 90%;
+  }
+
+  .careers-hero-inner h1 {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  .careers-hero-inner p {
+    font-size: 1rem;
+    text-align: center;
+  }
 }
 
 @media (max-width: 640px) {
@@ -203,6 +284,74 @@ BLOG PAGE STYLES - LIGHT VERSION
   
   .jobs-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Mobile hero adjustments */
+  .blog-hero-section {
+    padding: 2rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .blog-hero-inner {
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .blog-hero-title {
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .blog-hero-subtitle {
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .careers-hero-inner {
+    margin: 1.5rem auto 0 auto;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    width: calc(100% - 2rem);
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .careers-hero-inner h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .careers-hero-inner p {
+    font-size: 0.95rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Ensure any images in hero are centered */
+  .blog-hero-section img,
+  .careers-hero-inner img,
+  .blog-hero-inner img {
+    display: block;
+    margin: 1rem auto;
+    max-width: 100%;
+    height: auto;
+    text-align: center;
   }
 }
 

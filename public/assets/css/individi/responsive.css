@@ -408,7 +408,10 @@
      CONTENT SECTIONS
      ======================================== */
   .hero-section {
-    padding: var(--spacing-2xl) var(--spacing-lg) 0 var(--spacing-lg);
+    padding: calc(var(--spacing-2xl) + 80px) var(--spacing-lg) 0 var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-inner {
@@ -416,26 +419,43 @@
     text-align: center;
     gap: var(--spacing-xl);
     min-height: auto;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
 
   .hero-left {
     padding-bottom: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
 
   .hero-right {
     justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
   }
 
   .hero-title {
     font-size: var(--font-size-4xl);
+    text-align: center;
+    width: 100%;
   }
 
   .hero-speed {
     font-size: 6rem;
+    text-align: center;
+    width: 100%;
   }
 
   .hero-img {
     width: 350px;
+    margin: 0 auto;
+    display: block;
   }
 
   .features-section {
@@ -919,17 +939,56 @@
   }
 
   /* Hero */
+  .hero-section {
+    padding: calc(2rem + 100px) 1rem 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+  }
+
+  .hero-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
   .hero-title {
     font-size: var(--font-size-3xl);
+    text-align: center;
+    width: 100%;
   }
 
   .hero-speed {
     font-size: 4.5rem;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
   }
 
   .hero-img {
     width: 100%;
     max-width: 300px;
+    margin: 0 auto;
+    display: block;
   }
 
   .hero-benefits {

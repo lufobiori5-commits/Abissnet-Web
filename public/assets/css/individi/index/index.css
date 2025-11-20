@@ -8,7 +8,7 @@
    ======================================== */
 .hero-section {
   background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
-  padding: var(--spacing-4xl) var(--spacing-2xl) 0 var(--spacing-2xl);
+  padding: calc(var(--spacing-4xl) + 80px) var(--spacing-2xl) 0 var(--spacing-2xl);
   position: relative;
   overflow: visible;
   margin-top: 0;
