@@ -9,6 +9,14 @@
   --vip-orange: #f68732;
 }
 
+/* ==================
+   PAGE CONTAINER
+   ================== */
+main {
+  background: linear-gradient(180deg, #16191e 0%, #1a1d24 50%, #16191e 100%);
+  min-height: 100vh;
+}
+
 /* ========================================
    HERO SECTION - LIGHT VERSION
    ======================================== */
@@ -54,7 +62,7 @@
 }
 
 .hero-title {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 700;
   color: #f68732;
   margin-bottom: var(--spacing-xl);
@@ -83,18 +91,34 @@
   flex: 1;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
   z-index: 1;
 }
 
 .hero-img {
-  width: 500px;
+  width: 100%;
+  max-width: 400px;
   height: auto;
   filter: drop-shadow(0 30px 60px rgba(62, 58, 57, 0.15));
   animation: fadeInRight 1s ease-out 0.3s backwards;
   position: relative;
-  bottom: 64px;
+}
+
+@media (max-width: 992px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-right {
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+  }
+  
+  .hero-img {
+    max-width: 300px;
+  }
 }
 
 /* FIXED: Animation performance optimization */
@@ -124,7 +148,8 @@
    ================== */
 .hero-section--short {
   min-height: auto;
-  padding-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-2xl);
+  padding-top: var(--spacing-3xl);
   background: radial-gradient(
       1200px 600px at 80% -10%,
       rgba(246, 135, 50, 0.12),
@@ -147,12 +172,19 @@
 }
 
 .hero-section--short .hero-title {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
 }
 
 .hero-section--short .hero-subtitle {
   color: rgba(255, 255, 255, 0.9);
-  margin: 0;
+  margin-bottom: var(--spacing-xl);
+}
+
+.hero-section--short .hero-img {
+  bottom: 0;
+  max-width: 100%;
+  height: auto;
 }
 
 /* ==================
@@ -209,7 +241,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 80px 20px;
-  background: linear-gradient(180deg, #1a1a2e 0%, #0f1419 100%);
+  background: linear-gradient(180deg, #16191e 0%, #1a1d24 100%);
 }
 
 .steps-head {
@@ -239,9 +271,15 @@
 /* Modern Steps Grid */
 .steps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .step-card {
@@ -326,8 +364,10 @@
    PAYMENT METHODS SECTION (MODERN)
    ================== */
 .pay-methods {
-  background: linear-gradient(180deg, #0f1419 0%, #1a1a2e 100%);
+  background: linear-gradient(180deg, #1a1d24 0%, #16191e 100%);
   padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .pay-methods .steps-head {
@@ -336,10 +376,16 @@
 
 .pay-methods-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .pay-methods-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .payment-method-card {
@@ -440,6 +486,7 @@
   max-width: 1000px;
   margin: 80px auto;
   padding: 0 20px;
+  background: transparent;
 }
 
 .modern-warning-box {
@@ -544,8 +591,14 @@
 
 .modern-stats-strip {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .modern-stats-strip {
+    grid-template-columns: 1fr;
+  }
 }
 
 .stat-card {
@@ -613,20 +666,6 @@
 /* ==================
    RESPONSIVE DESIGN
    ================== */
-@media (max-width: 900px) {
-  .steps-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .pay-methods-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-
-  .modern-stats-strip {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 768px) {
   .hero-section--short {
     padding-bottom: 40px;
@@ -680,7 +719,6 @@
 
   .pay-methods-grid {
     gap: 20px;
-    grid-template-columns: 1fr;
   }
 
   .payment-method-card {

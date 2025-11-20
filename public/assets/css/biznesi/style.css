@@ -4209,11 +4209,13 @@ button {
 }
 
 .footer-logo {
-  font-size: var(--font-size-3xl);
-  font-weight: 700;
-  font-style: italic;
   margin-bottom: var(--spacing-lg);
-  color: var(--color-primary);
+}
+
+.footer-logo img {
+  height: 32px;
+  width: auto;
+  display: block;
 }
 
 .footer-col h3 {

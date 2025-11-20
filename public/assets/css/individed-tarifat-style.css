@@ -9,8 +9,11 @@
 /* 2. Components - Reusable UI components */
 @import url("individi/components.css");
 
-/* 3. Page Specific - Homepage styles */
+/* 3. Page Specific - Internet card styles */
+@import url("individi/internet/internet.css");
+
+/* 4. Page Specific - Tarifat page styles */
 @import url("individi/tarifat/tarifat.css");
 
-/* 4. Responsive - All media queries */
+/* 5. Responsive - All media queries */
 @import url("individi/responsive.css");
