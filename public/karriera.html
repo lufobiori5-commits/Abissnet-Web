@@ -359,6 +359,369 @@
           >
             <option value="">Të gjitha departamentet</option>
           </select>
+*** End Patch
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
+    <meta
+      name="description"
+      content="Bashkohu me ekipin e Abissnet. Shiko pozicionet e hapura dhe apliko direkt me CV për karrierë në teknologji dhe telekomunikacion."
+    />
+    <meta
+      name="keywords"
+      content="karriera, punë, Abissnet, telekomunikacion, IT, internet"
+    />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Karriera - Abissnet" />
+    <meta
+      property="og:description"
+      content="Shiko pozicionet e hapura dhe apliko direkt me CV."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://abissnet.al/karriera.html" />
+
+    <title>Karriera - Abissnet | Pozicione të Hapura</title>
+    <link rel="stylesheet" href="assets/css/individed-karriera-style.css" />
+  <script type="text/javascript" src="https://portal2.abissnet.al/im_livechat/loader/2"></script>
+    <script type="text/javascript" src="https://portal2.abissnet.al/im_livechat/assets_embed.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="siteHeader">
+      <div class="header-inner">
+        <div class="header-logo">
+          <a href="index.html">
+            <img
+              src="assets/img/abissnet-logo-dark.png"
+              alt="Abissnet"
+              height="40"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <span
+              style="
+                display: none;
+                font-style: italic;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #fff;
+              "
+              >abissnet</span
+            >
+          </a>
+        </div>
+
+        <nav class="header-nav">
+          <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Internet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li>
+                <a class="dropdown-item" href="internet.html">Internet</a>
+              </li>
+              <li class="divider" role="separator"></li>
+              <li>
+                <a class="dropdown-item" href="internet-tv.html"
+                  >Internet & TV</a
+                >
+              </li>
+            </ul>
+          </div>
+
+         <div class="nav-dropdown" data-dropdown>
+            <button
+              class="nav-trigger"
+              data-dropdown-toggle
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Abissnet <span class="chev">▾</span>
+            </button>
+            <ul class="dropdown-panel" role="menu">
+              <li>
+                <a class="dropdown-item" href="ftonjemik.html">Fto një mik</a>
+              </li>
+              
+            
+              <li>
+                <a class="dropdown-item" href="coming-soon.html"
+                  >Përfitime për studentët</a
+                >
+              </li>
+              <li><a class="dropdown-item" href="gaming.html">Gaming</a></li>
+              <li>
+                <a class="dropdown-item" href="puno-nga-shtepia.html"
+                  >Puno nga Shtëpia</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <a href="suport.html">Suport</a>
+          <a href="partner.html">Partnerët</a>
+          
+          <a href="karriera.html">Karriera</a>
+          <a href="app.html">APP</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="header-btn outline" href="dyqanet.html">Harta Retail</a>
+          <a class="header-btn outline" href="https://pay.abissnet.al/"
+            >Paguaj Tani</a
+          >
+          <a class="header-btn primary" href="suport.html">Na Kontakto</a>
+        </div>
+
+        <button
+          class="hamburger-menu"
+          id="hamburger-btn"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span
+          ><span class="hamburger-line"></span
+          ><span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Internet
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content">
+              <a href="internet.html">Internet</a>
+              <a href="internet-tv.html">Internet & TV</a>
+            </div>
+          </div>
+
+          <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" data-mobile-dropdown>
+              Abissnet
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+             <div class="mobile-dropdown-content">
+              <a href="ftonjemik.html">Fto një mik</a>
+              <a href="coming-soon.html">Përfitime për studentët</a>
+              <a href="gaming.html">Gaming</a>
+              <a href="puno-nga-shtepia.html">Puno nga Shtëpia</a>
+            </div>
+          </div>
+
+          <a href="suport.html" class="mobile-nav-link">Suport</a>
+          <a href="partner.html" class="mobile-nav-link">Partnerët</a>
+          
+          <a href="karriera.html" class="mobile-nav-link">Karriera</a>
+          <a href="app.html" class="mobile-nav-link">App</a>
+
+          <div class="mobile-actions">
+            <a class="mobile-btn outline" href="dyqanet.html"
+              >Harta e Mbulimit</a
+            >
+            <a class="mobile-btn outline" href="https://pay.abissnet.al/"
+              >Paguaj Tani</a
+            >
+            <a class="mobile-btn primary" href="suport.html">Na Kontakto</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="subnav" role="navigation" aria-label="Shërbime">
+      <div class="subnav-inner">
+        <a href="index.html" class="pill active">Individ</a>
+        <a href="biznesi/index.html" class="pill">Biznes</a>
+        <a href="AbissnetSuperiore/abissnet_superiore.html" class="pill">Abissnet Superiore</a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Hero -->
+      <section
+        class="blog-hero-section"
+        style="opacity: 1; transition: opacity 0.8s ease-in"
+      >
+        <div class="blog-hero-inner">
+          <h1 class="blog-hero-title">Karriera</h1>
+          <p class="blog-hero-subtitle">
+          Rekrutojmë talentes e së ardhmes
+          </p>
+        </div>
+
+        <div class="careers-hero-inner">
+          <h1>Bashkohu me Abissnet</h1>
+          <p>Informohu mbi pozicionet vakante dhe apliko direkt me CV-në tënde personale.</p>
+        </div>
+      </section>
+
+      <!-- Admin Panel -->
+      <section
+        class="admin-panel"
+        id="adminPanel"
+        hidden
+        aria-labelledby="admin-title"
+      >
+        <div class="admin-card">
+          <div class="admin-header">
+            <h2 id="admin-title">Paneli i Karrierës (Admin)</h2>
+            <div class="admin-actions">
+              <button
+                class="btn sm"
+                id="btnExportCSV"
+                aria-label="Eksporto CSV"
+              >
+                Eksporto CSV
+              </button>
+              <button
+                class="btn sm danger"
+                id="btnClearAll"
+                aria-label="Fshi të gjitha pozicionet"
+              >
+                Fshi të gjitha
+              </button>
+            </div>
+          </div>
+
+          <div class="admin-grid">
+            <!-- Upload CSV -->
+            <div class="admin-block">
+              <h3>Ngarko Pozicione (CSV)</h3>
+              <p>
+                Formato CSV:
+                <code>title,department,location,type,description</code>
+              </p>
+              <label for="csvInput" class="sr-only">Zgjidh skedarin CSV</label>
+              <input
+                type="file"
+                id="csvInput"
+                accept=".csv"
+                aria-describedby="csv-format"
+              />
+              <p id="csv-format" class="sr-only">
+                Formato: title, department, location, type, description
+              </p>
+              <button class="btn" id="btnImportCSV">Importo</button>
+            </div>
+
+            <!-- Manual Add -->
+            <div class="admin-block">
+              <h3>Shto Pozicion Manualisht</h3>
+              <form id="addJobForm" class="form-grid">
+                <label for="jobTitle" class="sr-only"
+                  >Titulli i pozicionit</label
+                >
+                <input
+                  id="jobTitle"
+                  name="title"
+                  placeholder="Titulli*"
+                  required
+                  maxlength="100"
+                  aria-required="true"
+                />
+
+                <label for="jobDepartment" class="sr-only">Departamenti</label>
+                <input
+                  id="jobDepartment"
+                  name="department"
+                  placeholder="Departamenti"
+                  maxlength="50"
+                />
+
+                <label for="jobLocation" class="sr-only">Lokacioni</label>
+                <input
+                  id="jobLocation"
+                  name="location"
+                  placeholder="Lokacioni"
+                  maxlength="50"
+                />
+
+                <label for="jobType" class="sr-only">Tipi i punës</label>
+                <input
+                  id="jobType"
+                  name="type"
+                  placeholder="Tipi (p.sh. Full-time)"
+                  maxlength="30"
+                />
+
+                <label for="jobDescription" class="sr-only">Përshkrimi</label>
+                <textarea
+                  id="jobDescription"
+                  name="description"
+                  placeholder="Përshkrimi i shkurtër"
+                  rows="4"
+                  maxlength="500"
+                ></textarea>
+
+                <label class="checkbox-label">
+                  <input type="checkbox" name="published" checked />
+                  <span>Publiko këtë pozicion</span>
+                </label>
+
+                <button class="btn" type="submit">Shto Pozicionin</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Search & Filter Controls -->
+      <section class="careers-controls" aria-label="Filtro pozicionet">
+        <div class="controls-inner">
+          <label for="searchInput" class="sr-only">Kërko pozicione</label>
+          <input
+            id="searchInput"
+            class="search"
+            type="search"
+            placeholder="Kërko pozicione (titull, departament, lokacion)…"
+            aria-label="Kërko pozicione sipas titullit, departamentit ose lokacionit"
+          />
+
+          <label for="filterDepartment" class="sr-only"
+            >Filtro sipas departamentit</label
+          >
+          <select
+            id="filterDepartment"
+            class="select"
+            aria-label="Filtro sipas departamentit"
+          >
+            <option value="">Të gjitha departamentet</option>
+          </select>
+
           <label for="filterType" class="sr-only">Filtro sipas tipit</label>
           <select
             id="filterType"
@@ -654,34 +1017,17 @@
         const formData = new FormData(applyForm);
         
         // Convert FormData to JSON object
-        const position = formData.get("position_title") || "";
-        const fullName = formData.get("full_name") || "";
-        const email = formData.get("email") || "";
-        const phone = formData.get("phone") || "";
-        const message = formData.get("message") || "";
-        const resumeName = formData.get("resume")?.name || "";
-
-        // Validate required fields
-        if (!fullName || !email || !position) {
-          applyStatus.textContent = "Ju lutem plotësoni të gjitha fushat e detyrueshme.";
-          applyStatus.style.color = "red";
-          return;
-        }
-
-        applyStatus.textContent = "Po dërgohet aplikimi...";
-        applyStatus.style.color = "#444";
+        const payload = {
+          position_title: formData.get("position_title") || "",
+          full_name: formData.get("full_name") || "",
+          email: formData.get("email") || "",
+          phone: formData.get("phone") || "",
+          message: formData.get("message") || "",
+          resume_name: formData.get("resume")?.name || "",
+        };
 
         try {
-          const payload = {
-            position_title: position,
-            full_name: fullName,
-            email: email,
-            phone: phone,
-            message: message,
-            resume_name: resumeName
-          };
-
-          const resp = await fetch("api/odoo-proxy.php?endpoint=careers", {
+          const resp = await fetch("/api/careers/apply", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

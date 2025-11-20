@@ -1,0 +1,24 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# API routing
+RewriteBase /
+
+# Contact form
+RewriteRule ^api/contact/?$ api/contact.php [L]
+
+# Careers/Job application
+RewriteRule ^api/careers/apply/?$ api/careers-apply.php [L]
+
+# Login
+RewriteRule ^api/login/?$ api/login.php [L]
+
+# All subscriber portal endpoints
+RewriteRule ^api/(overview|devices|invoices|tickets|speedtest|line-test|restart-cpe|pay|upgrade|add-tv|public-ip|health)/?$ api/subscriber.php [L]
+
+# Health check (public)
+RewriteRule ^api/health/?$ api/subscriber.php [L]
+
+# 404 for unknown API routes
+RewriteCond %{REQUEST_URI} ^/api/
+RewriteRule .* - [R=404,L]
