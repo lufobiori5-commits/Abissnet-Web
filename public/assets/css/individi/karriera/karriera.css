@@ -4,7 +4,7 @@
 .careers-controls {
   background: white;
   border-bottom: 1px solid var(--color-gray-200, #e5e7eb);
-  padding: 2rem 1rem;
+  padding: 2rem var(--spacing-xl);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
@@ -31,8 +31,8 @@
 
 .controls-inner .search:focus {
   outline: none;
-  border-color: var(--color-primary, #ff9800);
-  box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.1);
+  border-color: var(--color-primary, #f68732);
+  box-shadow: 0 0 0 3px rgba(246, 135, 50, 0.1);
 }
 
 .controls-inner .search::placeholder {
@@ -59,8 +59,8 @@
 
 .controls-inner .select:focus {
   outline: none;
-  border-color: var(--color-primary, #ff9800);
-  box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.1);
+  border-color: var(--color-primary, #f68732);
+  box-shadow: 0 0 0 3px rgba(246, 135, 50, 0.1);
 }
 
 .controls-inner .select:hover {
@@ -73,8 +73,7 @@ BLOG PAGE STYLES - LIGHT VERSION
 /* Blog Hero Section */
 .blog-hero-section {
   background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
-  padding: var(--spacing-4xl) var(--spacing-2xl) var(--spacing-3xl)
-    var(--spacing-2xl);
+  padding: var(--spacing-4xl) var(--spacing-xl) var(--spacing-3xl) var(--spacing-xl);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -121,6 +120,29 @@ BLOG PAGE STYLES - LIGHT VERSION
   animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
+/* Jobs Section */
+.jobs-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--spacing-3xl) var(--spacing-xl);
+}
+
+/* Jobs Grid */
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Empty State */
+.empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--color-gray-500);
+  font-size: var(--font-size-lg);
+}
+
 /* Admin Button */
 .controls-inner .btn.ghost {
   padding: 0.875rem 1.5rem;
@@ -155,6 +177,10 @@ BLOG PAGE STYLES - LIGHT VERSION
   .controls-inner .search {
     grid-column: 1 / -1;
   }
+  
+  .jobs-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
 }
 
 @media (max-width: 640px) {
@@ -169,6 +195,14 @@ BLOG PAGE STYLES - LIGHT VERSION
 
   .controls-inner .search {
     grid-column: 1;
+  }
+  
+  .jobs-section {
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+  
+  .jobs-grid {
+    grid-template-columns: 1fr;
   }
 }
 

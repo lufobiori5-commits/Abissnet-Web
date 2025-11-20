@@ -61,6 +61,17 @@ if ($endpoint === 'contact') {
         exit;
     }
     
+    // Build description with all details
+    $description = "Contact Form Submission\n\n";
+    $description .= "Name: $name\n";
+    $description .= "Email: $email\n";
+    if ($phone) $description .= "Phone: $phone\n";
+    if ($city) $description .= "City: $city\n";
+    if ($subject) $description .= "Subject: $subject\n";
+    if ($clientStatus) $description .= "Client Status: $clientStatus\n";
+    if ($message) $description .= "\nMessage:\n$message\n";
+    
+    // Use standard Odoo 'create' method (works on all Odoo instances)
     $odooPayload = [
         'jsonrpc' => '2.0',
         'method' => 'call',
@@ -72,15 +83,15 @@ if ($endpoint === 'contact') {
                 ODOO_UID,
                 ODOO_PASSWORD,
                 'crm.lead',
-                'create_from_api',
+                'create',
                 [[
-                    'name' => $name,
-                    'email' => $email,
+                    'name' => $subject ?: "Contact: $name",
+                    'contact_name' => $name,
+                    'email_from' => $email,
                     'phone' => $phone,
                     'city' => $city,
-                    'subject' => $subject,
-                    'client_status' => $clientStatus,
-                    'message' => $message
+                    'description' => $description,
+                    'type' => 'lead'
                 ]]
             ]
         ],
@@ -109,6 +120,17 @@ if ($endpoint === 'contact') {
         exit;
     }
     
+    // Build detailed description
+    $description = "Job Application\n\n";
+    $description .= "Position: $positionTitle\n";
+    $description .= "Applicant: $fullName\n";
+    $description .= "Email: $email\n";
+    if ($phone) $description .= "Phone: $phone\n";
+    if ($resumeName) $description .= "CV File: $resumeName\n";
+    if ($message) $description .= "\nCover Letter:\n$message\n";
+    $description .= "\n---\nPlease contact b.njerezore@abissnet.al for follow-up.";
+    
+    // Use standard Odoo 'create' method
     $odooPayload = [
         'jsonrpc' => '2.0',
         'method' => 'call',
@@ -120,15 +142,14 @@ if ($endpoint === 'contact') {
                 ODOO_UID,
                 ODOO_PASSWORD,
                 'crm.lead',
-                'create_from_api_job',
+                'create',
                 [[
                     'name' => "Aplikim: $positionTitle - $fullName",
                     'contact_name' => $fullName,
                     'email_from' => $email,
                     'phone' => $phone,
-                    'description' => $message,
-                    'position_title' => $positionTitle,
-                    'resume_name' => $resumeName
+                    'description' => $description,
+                    'type' => 'opportunity'
                 ]]
             ]
         ],
