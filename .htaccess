@@ -1,0 +1,32 @@
+# Enable URL rewriting
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Remove .html extension from URLs
+    # If the request is for a file that exists with .html, redirect to remove extension
+    RewriteCond %{THE_REQUEST} ^GET\ /([^.]+)\.html [NC]
+    RewriteRule ^ /%1 [R=301,L]
+
+    # If the request doesn't have .html and the file exists, serve it
+    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteRule ^(.*)$ $1.html [L]
+
+    # Contact form
+    RewriteRule ^api/contact/?$ api/contact.php [L,NC]
+
+    # Careers/Job application
+    RewriteRule ^api/careers/apply/?$ api/careers-apply.php [L,NC]
+
+    # Login
+    RewriteRule ^api/login/?$ api/login.php [L,NC]
+
+    # All subscriber portal endpoints
+    RewriteRule ^api/(overview|devices|invoices|tickets|speedtest|line-test|restart-cpe|pay|upgrade|add-tv|public-ip|health)/?$ api/subscriber.php [L,NC]
+</IfModule>
+
+# If mod_rewrite is not available, try FallbackResource
+<IfModule !mod_rewrite.c>
+    # Fallback routing (won't work for all endpoints but worth trying)
+    FallbackResource /index.html
+</IfModule>

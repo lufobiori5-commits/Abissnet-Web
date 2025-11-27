@@ -1,0 +1,32 @@
+# Protect SQLite database from direct access
+<Files "jobs.db">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# Protect config file
+<Files "config.php">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# Allow API endpoints
+<Files "jobs.php">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files "careers-apply.php">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files "contact.php">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files "subscriber.php">
+    Order Allow,Deny
+    Allow from all
+</Files>

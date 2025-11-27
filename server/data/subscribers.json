@@ -1,0 +1,54 @@
+{
+  "overview": {
+    "service": {
+      "status": "active",
+      "note": "Shërbimi aktiv pa alarme."
+    },
+    "billing": {
+      "cycle": "Mujor",
+      "last_invoice": "3,200 ALL",
+      "due_date": "10/11/2025",
+      "balance": "0 ALL"
+    },
+    "plan": {
+      "name": "10G",
+      "desc": "10G Mbps, kontratë 12M, IP dinamike"
+    }
+  },
+  "devices": [
+    {
+      "title": "ONT/Modem",
+      "model": "ZTE F660",
+      "mac": "AC:12:34:56:78:9A",
+      "ip": "192.168.1.1",
+      "status": "Online"
+    },
+    {
+      "title": "STB",
+      "model": "MAG 520",
+      "mac": "B0:AA:BC:DE:F0:11",
+      "ip": "192.168.1.50",
+      "status": "Online"
+    },
+    {
+      "title": "Mesh AP",
+      "model": "TP-Link X20",
+      "mac": "10:22:33:44:55:66",
+      "ip": "192.168.1.3",
+      "status": "Offline"
+    }
+  ],
+  "invoices": [
+    {
+      "date": "10/10/2025",
+      "amount": "3,200",
+      "status": "Paguar"
+    },
+    {
+      "date": "10/09/2025",
+      "amount": "3,200",
+      "status": "Paguar"
+    }
+  ],
+  "tickets": []
+}

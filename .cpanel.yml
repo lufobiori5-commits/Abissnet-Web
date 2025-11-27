@@ -1,0 +1,32 @@
+---
+deployment:
+  tasks:
+    - |
+      /bin/bash -lc '
+      set -euo pipefail
+
+      SRC="$PWD"
+      DST="/home/abissneti/public_html/abissnet.cloud"
+
+      mkdir -p "$DST" "$DST/.well-known"
+
+      if command -v rsync >/dev/null 2>&1; then
+        rsync -a --delete --info=stats2 \
+          --exclude="/.git" \
+          --exclude="/.github" \
+          --exclude="/.cpanel.yml" \
+          --exclude="/.env*" \
+          --exclude="/node_modules" \
+          --exclude="/server" \
+          --exclude="/.well-known" \
+          "$SRC"/ "$DST"/
+      else
+        echo "rsync missing, using cp fallback"
+        find "$DST" -mindepth 1 -maxdepth 1 ! -name ".well-known" -exec rm -rf {} +
+        cp -a "$SRC"/. "$DST"/
+        rm -f "$DST/.cpanel.yml" || true
+      fi
+
+      [ -f "$DST/.htaccess" ] || printf "Options -Indexes\n" > "$DST/.htaccess"
+      echo "DEPLOY-OK $(date)" > "$DST/.deploy_marker"
+      '
